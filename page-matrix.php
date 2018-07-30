@@ -1,29 +1,10 @@
 <?php /* Template Name: Matrix */ ?>
 <?php get_header(); ?>
-<script>
-// Find all iframes
-var $iframes = $( "iframe" );
- 
-// Find &#x26; save the aspect ratio for all iframes
-$iframes.each(function () {
-  $( this ).data( "ratio", this.height / this.width )
-    // Remove the hardcoded width &#x26; height attributes
-    .removeAttr( "width" )
-    .removeAttr( "height" );
-});
- 
-// Resize the iframes when the window is resized
-$( window ).resize( function () {
-  $iframes.each( function() {
-    // Get the parent container&#x27;s width
-    var width = $( this ).parent().width();
-    $( this ).width( width )
-      .height( width * $( this ).data( "ratio" ) );
-  });
-// Resize to fix all iframes on page load.
-}).resize();	
-</script>
-	<div class="embed-responsive embed-responsive-4by3">
-		<iframe class="embed-responsive-item" src="https://agclassroom.org/oregon/matrix/"></iframe>
+<div class="section section-sm section-alt">
+	<div class="container">
+		<div class="embed-responsive embed-responsive-4by3">
+			<iframe class="embed-responsive-item" src="https://agclassroom.org/oregon/matrix/"></iframe>
+		</div>
 	</div>
+</div>
 <?php get_footer(); ?>
