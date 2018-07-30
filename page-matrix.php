@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <div class="section section-sm section-alt">
 	<div class="container">
-		<div class="embed-responsive embed-responsive-4by3">
+		<div class="embed-responsive embed-responsive-4by3 bg-white">
 			<iframe class="embed-responsive-item" src="https://agclassroom.org/oregon/matrix/"></iframe>
 		</div>
 	</div>
