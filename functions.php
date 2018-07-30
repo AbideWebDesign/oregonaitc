@@ -1,5 +1,14 @@
 <?php
-	
+
+require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/AbideWebDesign/oregonaitc',
+	__FILE__,
+	'oregonaitc'
+);
+
+$myUpdateChecker->setBranch('master'); 
+
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
 
 function enqueue_child_theme_styles() {
