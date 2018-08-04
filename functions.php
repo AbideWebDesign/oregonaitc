@@ -30,6 +30,213 @@ add_image_size('logo-sm', 300, 150);
 add_image_size('jumbotron', 1280, 600, true);
 add_image_size('jumbotron-mobile', 375, 500, true);
 
+
+/**
+ * ACF Options page
+ */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Map Settings',
+		'menu_title'	=> 'Map Settings',
+		'menu_slug' 	=> 'map-settings',
+		'redirect'		=> false,
+		'icon_url'		=> 'dashicons-location-alt',
+	));
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Library Settings',
+		'menu_title'	=> 'Library Settings',
+		'menu_slug' 	=> 'library-settings',
+		'redirect'		=> false
+	));
+		
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Hold Page',
+		'menu_title' 	=> 'Hold Page',
+		'parent_slug' 	=> 'library-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Angus',
+		'menu_title' 	=> 'Angus',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Apple',
+		'menu_title' 	=> 'Apple',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Beans',
+		'menu_title' 	=> 'Beans',
+		'parent_slug' 	=> 'map-settings',
+	));
+		
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Berries',
+		'menu_title' 	=> 'Berries',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Blueberries',
+		'menu_title' 	=> 'Blueberries',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Broccoli',
+		'menu_title' 	=> 'Broccoli',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Carrot',
+		'menu_title' 	=> 'Carrot',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Cherries',
+		'menu_title' 	=> 'Cherries',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Christmas Tree',
+		'menu_title' 	=> 'Christmas Tree',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Corn',
+		'menu_title' 	=> 'Corn',
+		'parent_slug' 	=> 'map-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Crab',
+		'menu_title' 	=> 'Crab',
+		'parent_slug' 	=> 'map-settings',
+	));
+		
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Cranberries',
+		'menu_title' 	=> 'Cranberries',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Dairy',
+		'menu_title' 	=> 'Dairy',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Eggs',
+		'menu_title' 	=> 'Eggs',
+		'parent_slug' 	=> 'map-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Filberts',
+		'menu_title' 	=> 'Filberts',
+		'parent_slug' 	=> 'map-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Fish',
+		'menu_title' 	=> 'Fish',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Grapes',
+		'menu_title' 	=> 'Grapes',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Grass Seed',
+		'menu_title' 	=> 'Grass Seed',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Hay',
+		'menu_title' 	=> 'Hay',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Mint',
+		'menu_title' 	=> 'Mint',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Nursery',
+		'menu_title' 	=> 'Nursery',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Onions',
+		'menu_title' 	=> 'Onions',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Pears',
+		'menu_title' 	=> 'Pears',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Potatoes',
+		'menu_title' 	=> 'Potatoes',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Pumpkin',
+		'menu_title' 	=> 'Pumpkin',
+		'parent_slug' 	=> 'map-settings',
+	));	
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Sheep',
+		'menu_title' 	=> 'Sheep',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Shrimp',
+		'menu_title' 	=> 'Shrimp',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Tree',
+		'menu_title' 	=> 'Tree',
+		'parent_slug' 	=> 'map-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Watermelon',
+		'menu_title' 	=> 'Watermelon',
+		'parent_slug' 	=> 'map-settings',
+	));	
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Wheat',
+		'menu_title' 	=> 'Wheat',
+		'parent_slug' 	=> 'map-settings',
+	));
+}
+
 /* Pagniation links */
 function show_pagination_links()
 {
