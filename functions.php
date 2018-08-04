@@ -56,6 +56,7 @@ function show_pagination_links()
     );
 }
 
+
 /* Pagniation links */
 function show_pagination_links_home()
 {

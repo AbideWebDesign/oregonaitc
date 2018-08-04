@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.0.3
+Version: 1.0.4
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -9146,3 +9146,63 @@ body .gform_wrapper .gform_footer {
 #footer-global-top .gform_wrapper .gform_footer input.button, #footer-global-top .gform_wrapper .gform_footer input[type=submit], #footer-global-top .gform_wrapper .gform_page_footer input.button, #footer-global-top .gform_wrapper .gform_page_footer input[type=submit] {
   border-color: white;
   color: #0FA3F2; }
+
+/* Map */
+@media (max-width: 767px) {
+  .media {
+    width: 100%;
+    height: auto; } }
+
+.media-body p {
+  margin-top: 0;
+  padding-top: 0; }
+
+.media-object {
+  width: 100px; }
+
+.cls-1, .cls-11, .cls-12 {
+  fill: #b08153; }
+
+.cls-2, .cls-5 {
+  fill: #92a9d7; }
+
+.cls-11, .cls-12, .cls-13, .cls-14, .cls-2, .cls-3, .cls-6, .cls-8, .cls-9 {
+  stroke: #fff; }
+
+.cls-3, .cls-4 {
+  fill: #cfdd45; }
+
+.cls-6 {
+  fill: none; }
+
+.cls-7, .cls-8 {
+  fill: #faa22c; }
+
+.cls-9 {
+  fill: #e86e34; }
+
+.cls-10 {
+  fill: #a97c50; }
+
+.cls-12 {
+  opacity: 0.99; }
+
+.cls-13 {
+  fill: #ead57d; }
+
+.cls-14, .cls-15 {
+  fill: #a5ad7a; }
+
+.cls-16, .cls-17, .cls-18 {
+  font-size: 26px;
+  font-family: MyriadPro-BoldCond, Myriad Pro;
+  font-weight: 700; }
+
+.cls-16 {
+  letter-spacing: 0.03em; }
+
+.cls-17 {
+  letter-spacing: 0.02em; }
+
+.cls-18 {
+  letter-spacing: 0.02em; }
