@@ -403,8 +403,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
  */
 add_filter( 'wpmem_register_data', 'nationbuilder_hook' );
 
-function nationbuilder_hook( $fields )
-{
+function nationbuilder_hook( $fields ){	
 	
 	$token = 'aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154'; 
 	
@@ -429,6 +428,7 @@ function nationbuilder_hook( $fields )
 
 	$person = array();
 	$address = array();
+	$tags = array();
 	
 	$person['email'] = $fields['user_email'];
 	$person['first_name'] = $fields['first_name'];
@@ -450,9 +450,51 @@ function nationbuilder_hook( $fields )
 	}
 	
 	$person['phone'] = $fields['phone1'];
-	$person['employer'] = $fields['school'];
-	$person['school_district'] = $fields['school_district'];
-	$person['tags'] = 'Library User, Teacher';
+	
+	if ($fields['school_district']) {
+		$person['school_district'] = $fields['school_district'];
+		array_push($tags, $fields['school_district']);
+	}
+	
+	if ($fields['school']) {
+		array_push($tags, $fields['school']);		
+	}
+	
+	$person['county_district'] = $fields['county'];
+	
+	switch($fields['library_user_role']) {
+		case 'Classroom_Teacher':
+			$person['employer'] = $fields['school'];
+			$person['occupation'] = 'Classroom Teacher';
+			array_push($tags, 'Teacher');
+			break;
+		case 'Informal_Educator':
+			array_push($tags, 'Partner');
+			break;
+		case 'Volunteer':
+			array_push($tags, 'Volunteer');
+			break;
+		case 'Homeschool':
+			array_push($tags, 'Other, Homeschool');
+			break;
+		case 'Parent':
+			array_push($tags, 'Other');
+			break;
+		case 'Administrator':
+			array_push($tags, 'Teacher, Administrator');
+			$person['employer'] = $fields['school'];
+			$person['occupation'] = 'Administrator';
+			break;
+		case 'Student':
+			array_push($tags, 'Other, Student');
+			$person['occupation'] = 'Student';
+			break;
+	}
+	
+	array_push($tags, 'Library User');
+	
+	$person['tags'] = $tags;
+	
 	$data = array('person' => $person);
 	
     $ch = curl_init();
