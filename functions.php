@@ -367,11 +367,27 @@ function my_login_form_rows_filter($rows, $action) {
 }
 add_filter( 'wpmem_register_form_args', 'my_register_form_args', 10, 2 );
 
-add_filter( 'wpmem_register_links', 'my_register_links' );
 function my_register_links( $string ) {
     $string = str_replace( '<li><a href="https://oregonaitc.org">Begin using the site.</a></li>	', '', $string);     
     return $string;
 }
+add_filter( 'wpmem_register_links', 'my_register_links' );
+
+function remove_username_field_filter( $fields, $tag ) {
+ 
+    if ( 'register' == $tag ) {
+        unset( $fields['username'] );
+    }
+     
+    return $fields;
+}
+add_filter( 'wpmem_fields', 'remove_username_field_filter', 10, 2 );
+ 
+function set_email_for_username_filter( $fields ) {
+ 	$fields['username'] = $fields['user_email'];
+    return $fields;
+}
+add_filter( 'wpmem_pre_validate_form', 'set_email_for_username_filter' );
 
 /**
  * Woocommerce
