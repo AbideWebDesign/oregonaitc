@@ -56,7 +56,7 @@ $image = get_field('resource_image');
 						</div>
 						<?php if ($type == 'resource'): ?>
 							<div class="text-md text-description">
-								<?php if ($get_field('short_description')): ?>
+								<?php if (get_field('short_description')): ?>
 									<?php the_field('short_description'); ?>
 								<?php else: ?>s
 									<?php the_field('resource_description'); ?>
