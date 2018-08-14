@@ -64,7 +64,7 @@ $image = get_field('resource_image');
 							</div>
 						<?php elseif ($type == 'lessonplan'): ?>
 							<div class="text-md text-description">
-								<?php if ($get_field('short_description')): ?>
+								<?php if (get_field('short_description')): ?>
 									<?php the_field('short_description'); ?>
 								<?php else: ?>
 									<?php the_field('lesson_plan_description'); ?>
