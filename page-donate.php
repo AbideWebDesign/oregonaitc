@@ -31,7 +31,7 @@ get_header();
 						        <div class="input-group-prepend">
 							        <div class="input-group-text">$</div>
 						        </div>
-						        <input type="number" class="form-control" placeholder="40.00" min="1.00" /> 
+						        <input type="number" id="custom-donation" class="form-control" placeholder="40.00" min="1.00" /> 
 						    </div>
 						    <script>
 						        jQuery('#custom-donation').change(function() {
@@ -51,8 +51,8 @@ get_header();
 						            <input class="mt-1" type="checkbox" name="pay-fee" id="pay-fee" aria-invalid="false"> <span class="text-md"><?php the_field('donate_box_1_text'); ?> </span>
 						        </label>
 						    </div>
-						    <input type="hidden" id="amount" name="amount" value="" />
-						    <input type="hidden" id="total" name="total" value="" />
+						    <input type="hidden" id="amount" name="amount" value="40" />
+						    <input type="hidden" id="total" name="total" value="41.50" />
 						    <button id="customButton" class="btn btn-primary btn-lg btn-block"><?php the_field('donate_box_1_label'); ?> </button>
 						</form>
 					</div>
