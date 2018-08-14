@@ -3,120 +3,25 @@
 <?php get_header(); ?>
 <?php
 if(isset($_POST['submit'])){ 
+	
 	if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { 
+	
 		$error = false;
+	
 		foreach($_SESSION['cart'] as $id=>$value) {
+	
 			if (isset($_POST['q'.$id])) {
+	
 				if ($_POST['q'.$id] == 0) {
 					$error = true;
 				}
 			}
 		}
 		
-		$current_user = wp_get_current_user();
-			
-		// Send email notification
-		$message = "<h2>Library Order Details</h2><p><strong>Library User:</strong><br>" 
-					. $current_user->user_firstname 
-					. " " 
-					. $current_user->user_lastname
-					. "<br>" 
-					. $current_user->school
-					. "<br><br>"
-					. $current_user->addr1
-					. " "
-					. $current_user->addr2
-					. "<br>" 
-					. $current_user->city
-					. ", "
-					. $current_user->thestate
-					. " "
-					. $current_user->zip
-					. "<br><br>"
-					. $current_user->user_email
-					. "<br>"
-					. $current_user->phone1								
-					. "</p><p><strong>Comments</strong><br>"
-					. $_POST['comment']
-					. "</p>"
-					. "<table border='0' cellpadding='10' style='border: 1px solid #ccc;' cellpadding=10>
-						<tr>
-							<td><strong>Resource Name</strong></td>
-							<td><strong>Quantity</strong></td>
-							<td><strong>Link</strong></td>
-						</tr>";
-		$headers = array('Content-Type: text/html; charset=UTF-8');
-		
-		// Create Order Var
-		$order = $message;
-		
-		// Run through order
-		foreach($_SESSION['cart'] as $id=>$value) {
-			$resource = get_field_object('resource_name', $id);
-			$name = $resource['value'];
-			$link = get_permalink( $id );				
-			
-			// Update quantity available and checkout total
-			$available = get_field_object('total_available', $id);
-			$a = $available['value'] - 1;
-			
-			$total = get_field_object('checked_out_total', $id);
-			$types = get_the_terms($id, 'resource_type');
-			$quantity = 1;
-			
-			foreach($types as $type) {
-				if ($type->name == "Kits") {
-					$t = $total['value'] + $_POST['q'.$id];
-					$quantity = $_POST['q'.$id];
-				} else {
-					$t = $total['value'] + 1;
-				}
-			}
-			
-			$usertotal = get_user_meta($current_user->ID, 'total_library_checkouts'); 
-			$ut = (int)$usertotal + 1;
-			
-			update_field('total_available', $a, $id);
-			update_field('checked_out_total', $t, $id);
-			
-			// Update user checkout total
-			update_user_meta($current_user->ID, 'total_library_checkouts', $ut);
-			
-			// Add to email
-			$message .= 
-			"
-			<tr>
-				<td>$name</td><td>$quantity</td><td><a href='$link' target='_blank'>Resource Link</a></td>
-			</tr>
-			";
-			
-			// Update order
-			$order .= $message;
+		if (!$error) {
+			$status = submit_library_order();
+			session_unset();
 		}
-		
-		// Send notification
-		//wp_mail( 'aitc@oregonstate.edu', 'Library Hold Placed', $message, $headers);
-		
-		// Create new Order post		
-		$post_data = array(
-			'post_type'     => 'resource_order',
-			'post_status'   => 'publish',
-			'post_author'   => 1,
-			'post_title'    => 'temp',
-		);
-		
-		// Insert the post into Wordpress
-	 	$post_id = wp_insert_post($post_data, true);
-	 	
-		if($post_id) {		
-			$title = 'Order #' . $post_id;
-			update_post_meta($post_id, 'post_title', $title);
-			update_field('details', $order, $post_id); 
-			update_field('user', $current_user, $post_id);
-		} else {
-			$error = true;
-		}
-		session_unset();
 	} 
 }
 ?>
@@ -156,8 +61,8 @@ if(isset($_POST['submit'])){
 												</td>
 												<td><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
 												<td><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
-												<td><?php echo $arrivalDate; ?></td>
-												<td><?php echo $returnDate; ?></td>
+												<td><input id="arrival-date-picker" width="176" /></td>
+												<td><input id="return-date-picker" width="176" /></td>
 												<td><a href="<?php echo home_url(); ?>/place-hold?action=remove&id=<?php echo $id; ?>">Remove Item</a></td>
 											</tr>
 										<?php endforeach; ?>		
