@@ -55,9 +55,21 @@ $image = get_field('resource_image');
 							<?php endif; ?>
 						</div>
 						<?php if ($type == 'resource'): ?>
-							<div class="text-md text-description"><?php the_field('resource_description'); ?></div>
+							<div class="text-md text-description">
+								<?php if ($get_field('short_description')): ?>
+									<?php the_field('short_description'); ?>
+								<?php else: ?>s
+									<?php the_field('resource_description'); ?>
+								<?php endif; ?>
+							</div>
 						<?php elseif ($type == 'lessonplan'): ?>
-							<div class="text-md text-description"><?php the_field('lesson_plan_description'); ?></div>
+							<div class="text-md text-description">
+								<?php if ($get_field('short_description')): ?>
+									<?php the_field('short_description'); ?>
+								<?php else: ?>
+									<?php the_field('lesson_plan_description'); ?>
+								<?php endif; ?>
+							</div>
 						<?php endif; ?>
 						<div class="card-footer px-0 pb-0">				
 							<p class="text-md text-grey m-0 pt-2 border-top border-light">Categories: 
