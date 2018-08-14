@@ -32,7 +32,24 @@ add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
  */
 function enqueue_child_theme_scripts() {
 	if (is_page_template('page-map.php')) {
-		wp_enqueue_script( 'oregon_map', get_stylesheet_directory_uri() . '/includes/js/oregon_map.js', array( 'jquery', 'bootstrap' ), null, true );
+		wp_enqueue_script( 'oregon-map', get_stylesheet_directory_uri() . '/includes/js/oregon-map.js', array( 'jquery', 'bootstrap' ), null, true );
+	}
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, null );
+	wp_enqueue_script( 'jquery' );
+	
+	// Library resource scripts
+	if (is_page_template('page-library-hold.php')) {
+		wp_enqueue_style( 'gijgo.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/css/gijgo.min.css' );
+		wp_enqueue_script( 'gijgo.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/js/gijgo.min.js', 'jquery', '', true );
+		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
+	}
+	
+	// Remove woocommerce scripts
+	if (!is_woocommerce() && !is_cart() && !is_checkout()) {
+		remove_action('wp_enqueue_scripts', [WC_Frontend_Scripts::class, 'load_scripts']);
+		remove_action('wp_print_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
+		remove_action('wp_print_footer_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
 	}
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
@@ -392,10 +409,11 @@ add_filter( 'wpmem_pre_validate_form', 'set_email_for_username_filter' );
 /**
  * Woocommerce
  */
-function mytheme_add_woocommerce_support() {
+
+function add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'add_woocommerce_support' );
 
 function custom_override_checkout_fields( $fields ) {
 	$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
@@ -682,4 +700,115 @@ function nb_add_teacher( $entry, $form ) {
     }
 	
 	curl_close($ch);
+}
+
+/**
+ * Resource Library
+ */
+ 
+// Library hold submission
+function submit_library_order() {
+		$current_user = wp_get_current_user();
+			
+		// Send email notification
+		$message = "<h2>Library Order Details</h2><p><strong>Library User:</strong><br>" 
+					. $current_user->user_firstname 
+					. " " 
+					. $current_user->user_lastname
+					. "<br>" 
+					. $current_user->school
+					. "<br><br>"
+					. $current_user->addr1
+					. " "
+					. $current_user->addr2
+					. "<br>" 
+					. $current_user->city
+					. ", "
+					. $current_user->thestate
+					. " "
+					. $current_user->zip
+					. "<br><br>"
+					. $current_user->user_email
+					. "<br>"
+					. $current_user->phone1								
+					. "</p><p><strong>Comments</strong><br>"
+					. $_POST['comment']
+					. "</p>"
+					. "<table border='0' cellpadding='10' style='border: 1px solid #ccc;' cellpadding=10>
+						<tr>
+							<td><strong>Resource Name</strong></td>
+							<td><strong>Quantity</strong></td>
+							<td><strong>Link</strong></td>
+						</tr>";
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+		
+		// Create Order Var
+		$order = $message;
+		
+		// Run through order
+		foreach($_SESSION['cart'] as $id=>$value) {
+			$resource = get_field_object('resource_name', $id);
+			$name = $resource['value'];
+			$link = get_permalink( $id );				
+			
+			// Update quantity available and checkout total
+			$available = get_field_object('total_available', $id);
+			$a = $available['value'] - 1;
+			
+			$total = get_field_object('checked_out_total', $id);
+			$types = get_the_terms($id, 'resource_type');
+			$quantity = 1;
+			
+			foreach($types as $type) {
+				if ($type->name == "Kits") {
+					$t = $total['value'] + $_POST['q'.$id];
+					$quantity = $_POST['q'.$id];
+				} else {
+					$t = $total['value'] + 1;
+				}
+			}
+			
+			$usertotal = get_user_meta($current_user->ID, 'total_library_checkouts'); 
+			$ut = (int)$usertotal + 1;
+			
+			update_field('total_available', $a, $id);
+			update_field('checked_out_total', $t, $id);
+			
+			// Update user checkout total
+			update_user_meta($current_user->ID, 'total_library_checkouts', $ut);
+			
+			// Add to email
+			$message .= 
+			"
+			<tr>
+				<td>$name</td><td>$quantity</td><td><a href='$link' target='_blank'>Resource Link</a></td>
+			</tr>
+			";
+			
+			// Update order
+			$order .= $message;
+		}
+		
+		// Send notification
+		wp_mail( 'josh@abidewebdesign.com', 'Library Hold Placed', $message, $headers);
+		
+		// Create new Order post		
+		$post_data = array(
+			'post_type'     => 'resource_order',
+			'post_status'   => 'publish',
+			'post_author'   => 1,
+			'post_title'    => 'temp',
+		);
+		
+		// Insert the post into Wordpress
+	 	$post_id = wp_insert_post($post_data, true);
+	 	
+		if($post_id) {		
+			$title = 'Order #' . $post_id;
+			update_post_meta($post_id, 'post_title', $title);
+			update_field('details', $order, $post_id); 
+			update_field('user', $current_user, $post_id);
+		} else {
+			$error = true;
+		}
 }

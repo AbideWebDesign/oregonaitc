@@ -9297,3 +9297,7 @@ body .gform_wrapper .gform_footer {
 
 .cls-18 {
   letter-spacing: 0.02em; }
+
+/* Library Hold */
+#arrival-date-picker, #return-date-picker, .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
+  font-size: 14px; }

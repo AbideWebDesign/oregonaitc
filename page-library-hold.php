@@ -33,8 +33,6 @@ if(isset($_POST['submit'])){
 				<div class="card">
 					<div class="card-body">
 						<?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
-							<?php $arrivalDate = date("l, M d", mktime(0, 0, 0, date("m"), date("d")+14, date("y"))); ?>
-							<?php $returnDate = date("l, M d", mktime(0, 0, 0, date("m"), date("d")+35, date("Y"))); ?>
 							<h2 class="mb-2"><?php the_title(); ?></h2>
 							<?php if ($error == "true"): ?>
 								<div class="alert alert-danger" role="alert">
@@ -44,14 +42,14 @@ if(isset($_POST['submit'])){
 							<form method="post" id="form" class="inb30" action="<?php echo home_url(); ?>/place-hold">
 								<div class="table-responsive">
 									<table class="table table-bordered text-md	">
-										<tr><th>Resource Name</th><th>Quantity</th><th>Resource Type</th><th>Age Group</th><th>Estimated Arrival</th><th>Return Date</th><th>Remove</th></tr>
+										<tr><th>Resource Name</th><th>Qyt</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
 										<?php foreach($_SESSION['cart'] as $id=>$value): ?>
 											<?php $permalink = get_permalink($id); ?>
 											<?php $types = get_the_terms($id, 'resource_type'); ?>
 											<?php $categories = get_the_terms($id, 'resource_category'); ?>
 											<tr>
-												<td><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a></td>
-												<td>
+												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a></td>
+												<td class="align-middle">
 													<?php foreach($types as $type): ?>
 														<?php if($type->name == "Kits"): $kit = true; ?>
 															<input style="width:50px;padding: 0 5px;font-weight:bold;" type="text" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
@@ -59,11 +57,15 @@ if(isset($_POST['submit'])){
 													<?php endforeach; ?>
 													<?php echo (!$kit) ? 1 : ''; ?>
 												</td>
-												<td><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
-												<td><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
-												<td><input id="arrival-date-picker" width="176" /></td>
-												<td><input id="return-date-picker" width="176" /></td>
-												<td><a href="<?php echo home_url(); ?>/place-hold?action=remove&id=<?php echo $id; ?>">Remove Item</a></td>
+												<td class="align-middle"><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
+												<td class="align-middle"><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
+												<td class="align-middle"><input id="arrival-date-picker" width="150" /></td>
+												<td class="align-middle">
+													<div class="input-group">
+														<input id="return-date-picker" class="form-control" width="150" value="<?php echo date('n/d/Y', strtotime("+35 days"))?>" />
+													</div>
+												</td>
+												<td class="align-middle text-center"><a href="<?php echo home_url(); ?>/place-hold?action=remove&id=<?php echo $id; ?>"><i class="fas fa-trash"></i></a></td>
 											</tr>
 										<?php endforeach; ?>		
 									</table>
