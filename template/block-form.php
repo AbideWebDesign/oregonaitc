@@ -4,7 +4,7 @@
 	<div class="row justify-content-center">
 		<div class="col-lg-8">
 			<h2 class="mb-4"><?php $form_object['title']; ?></h2>
-			<?php echo do_shortcode('[gravityform id="' . $form_object['id'] . '" title="true" description="true" ajax="true"]'); ?>
+			<?php echo do_shortcode('[gravityform id="' . $form_object['id'] . '" title="false" description="false" ajax="true"]'); ?>
 		</div>
 	</div>
 </div>
