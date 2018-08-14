@@ -6,9 +6,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
+					<h3>Manage Profile</h3>
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">Manage Profile</h5>
 							<?php the_content(); ?>
 						</div>
 					</div>
