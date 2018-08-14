@@ -2,7 +2,7 @@
 <!-- Form Content Block -->
 <div class="basic-content-block">
 	<div class="row justify-content-center">
-		<div class="col-lg-8">
+		<div class="col-lg-10">
 			<?php if(get_sub_field('form_title')): ?>
 				<h2 class="mb-3"><?php the_sub_field('form_title'); ?></h2>
 			<?php endif; ?>
