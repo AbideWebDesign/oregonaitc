@@ -70,6 +70,12 @@
 							
 							<?php get_template_part('template/block', 'calendars-archive'); ?>
 						
+						<?php endif; ?>	
+						
+						<?php if(get_row_layout() == 'form_block'): ?>
+							
+							<?php get_template_part('template/block', 'form'); ?>
+						
 						<?php endif; ?>																						
 						
 					<?php endwhile; // while Page Block end ?>
