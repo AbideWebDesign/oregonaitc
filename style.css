@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.1.6
+Version: 1.1.7
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -9299,5 +9299,10 @@ body .gform_wrapper .gform_footer {
   letter-spacing: 0.02em; }
 
 /* Library Hold */
-#arrival-date-picker, #return-date-picker, .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
+.page-template-page-library-hold .form-control, .page-template-page-library-hold .facetwp-search, .page-template-page-library-hold #wpmem_login .div_text input, #wpmem_login .div_text .page-template-page-library-hold input, .page-template-page-library-hold .input-text, .page-template-page-library-hold body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .page-template-page-library-hold input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
   font-size: 14px; }
+
+.kit-qty {
+  width: 50px;
+  padding: 0 5px;
+  font-weight: bold; }
