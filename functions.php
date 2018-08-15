@@ -72,18 +72,6 @@ add_image_size('card-3', 255, 141, true);
  * ACF Options page
  */
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Library Settings',
-		'menu_title'	=> 'Library Settings',
-		'menu_slug' 	=> 'library-settings',
-		'redirect'		=> false
-	));
-		
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Hold Page',
-		'menu_title' 	=> 'Hold Page',
-		'parent_slug' 	=> 'library-settings',
-	));
 	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Map Settings',
