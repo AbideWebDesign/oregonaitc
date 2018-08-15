@@ -833,5 +833,5 @@ function submit_library_order() {
 	} 
 		
 	// Send notification
-	wp_mail(the_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers);
+	wp_mail(get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers);
 }
