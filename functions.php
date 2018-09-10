@@ -513,6 +513,10 @@ function nationbuilder_hook( $fields ){
 			break;
 	}
 	
+	if (!$person['subscribe']) {
+		array_push($tags, 'does not receive emails');
+	}
+	
 	array_push($tags, 'Library User');
 	
 	$person['tags'] = $tags;
