@@ -12,7 +12,7 @@ $args = array(
 $children = get_children($args);
 ?>
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-8 align-self-center">
 		<h2 class="mb-4"><?php echo $fields['section_title']; ?></h2>
 		<?php echo $fields['section_text']; ?>
 		<?php if($fields['section_button_label']): ?>
