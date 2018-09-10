@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.1.9
+Version: 1.1.10
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8505,6 +8505,15 @@ p {
 .shiftnav-toggle-button .fa {
   font-size: 1.3em; }
 
+.shiftnav ul.shiftnav-menu li#menu-item-15922, .shiftnav ul.shiftnav-menu li#menu-item-15924 {
+  width: 50%;
+  font-size: 12px;
+  display: inline-block;
+  text-align: left; }
+
+.shiftnav ul.shiftnav-menu li#menu-item-15922 > .shiftnav-target, .shiftnav ul.shiftnav-menu li#menu-item-15924 > .shiftnav-target {
+  padding: 5px 15px 5px 25px; }
+
 #mobile-menu {
   display: none; }
 
@@ -8565,7 +8574,9 @@ p {
   #global-header {
     background-color: #f6f6f6; }
   #global-header-mobile {
-    padding: 1em 0; } }
+    padding: 1em 0; }
+  #row-account {
+    margin-bottom: 1em; } }
 
 /* 
 ** Global Footer Top
@@ -8901,6 +8912,10 @@ p {
 
 .side-navigation-content .current {
   font-weight: bold; }
+
+@media (max-width: 472px) {
+  .side-navigation {
+    margin-top: 2em; } }
 
 #accordion .card {
   background-color: #f6f6f6;

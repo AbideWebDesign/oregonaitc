@@ -1,6 +1,14 @@
 <?php
+	
 $jumbotron_image = get_field('jumbotron_image'); 
-$jumbotron_image_mobile = get_field('jumbotron_image_mobile');	
+	
+// Check to see if mobile version is set. If not, use desktop
+if (get_field('jumbotron_image_mobile')) {
+	$jumbotron_image_mobile = get_field('jumbotron_image_mobile');
+} else {
+	$jumbotron_image_mobile = $jumbotron_image; 
+}
+	
 ?>
 <div class="jumbotron jumbotron-fluid">
 	<div class="jumbotron-bg-wrap">
@@ -13,7 +21,9 @@ $jumbotron_image_mobile = get_field('jumbotron_image_mobile');
 				<div class="col-12 d-flex align-items-end h-100">
 					<div class="jumbotron-content d-flex flex-column">
 						<h1><?php the_field('jumbotron_title'); ?></h1>
-						<p class="mb-0"><?php the_field('jumbotron_text'); ?></p>
+						<?php if(get_field('jumbotron_text')): ?>
+							<p class="mb-0"><?php the_field('jumbotron_text'); ?></p>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

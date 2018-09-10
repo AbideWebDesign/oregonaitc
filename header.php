@@ -72,7 +72,7 @@ $logo = get_field('logo_color', 'options');
 					</div>
 				<?php else: ?>
 					<div class="row">
-						<div id="row-account" class="col d-flex flex-row-reverse">
+						<div id="row-account" class="col d-none d-lg-flex flex-row-reverse">
 							<div class="text-md"><a href="<?php echo home_url(); ?>/login"><i class="fas fa-sign-in-alt"></i> Log In</a></div>
 							<div class="pr-3 text-md"><a  href="<?php echo home_url(); ?>/signup"><i class="fas fa-user-plus"></i> Sign Up</a></div>
 						</div>
