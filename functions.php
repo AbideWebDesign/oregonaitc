@@ -482,6 +482,15 @@ function nationbuilder_hook( $fields ){
 		array_push($tags, $fields['school']);		
 	}
 	
+	if($fields['grade']) {
+		$grades = $fields['grade'];
+		$grades = explode(", ", $grades);
+		
+		foreach($grades as $grade) {
+			array_push($tags, $grade);
+		}
+	}
+	
 	$person['county_district'] = $fields['county'];
 	
 	switch($fields['library_user_role']) {
@@ -513,8 +522,8 @@ function nationbuilder_hook( $fields ){
 			break;
 	}
 	
-	if (!$person['subscribe']) {
-		array_push($tags, 'does not receive emails');
+	if ($fields['subscribe'] != 'subscribed') {
+		$person['email_opt_in'] = false;
 	}
 	
 	array_push($tags, 'Library User');

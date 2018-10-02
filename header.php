@@ -82,6 +82,7 @@ $logo = get_field('logo_color', 'options');
 					<div class="col d-flex flex-row-lg-reverse justify-content-center justify-content-lg-end flex-nowrap">
 						<div class="pr-2 order-1"><a href="<?php the_field('header_button_1_link', 'options'); ?>" class="btn btn-primary btn-lg"><?php the_field('header_button_1_label', 'options'); ?></a></div>
 						<div class="order-2"><a href="<?php the_field('header_button_2_link', 'options'); ?>" class="btn btn-secondary btn-lg"><?php the_field('header_button_2_label', 'options'); ?></a></div>
+						<div class="d-flex align-items-center order-3 ml-3"><a href="#" id="search-toggle" class="color-primary"><i class="fa fa-search"></i></a></div>
 						<div id="mobile-menu" class="order-3"><?php shiftnav_toggle( 'shiftnav-main' , '' , array( 'icon' => 'bars' , 'class' => 'shiftnav-toggle-button') ); ?></div>
 					</div>
 				</div>
