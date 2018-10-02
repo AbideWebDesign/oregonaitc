@@ -48,7 +48,7 @@
 							<div class="row justify-content-center">
 								<div class="col-12">
 									<?php $accordion_name = str_replace(' ', '-', $settings['section_name']); ?>
-									<div id="accordion-<?php echo $accordion_name; ?>" class="accordion <?php if(get_sub_field('list_group_size')): ?>accordion-sm<?php endif; ?>">
+									<div id="accordion-<?php echo $accordion_name; ?>" class="accordion <?php if(get_sub_field('list_group_size') == "Small"): ?>accordion-sm<?php endif; ?>">
 										<?php if (have_rows('list_group')): ?>
 											<?php while (have_rows('list_group')): the_row(); ?>
 												<?php $x ++; ?>
