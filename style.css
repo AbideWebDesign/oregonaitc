@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.1.14
+Version: 1.1.15
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8920,41 +8920,55 @@ p {
   .side-navigation {
     margin-top: 2em; } }
 
-#accordion .card {
+.accordion .card {
+  background-color: #f6f6f6;
+  border: none;
+  padding: 1.5rem;
+  margin-bottom: 1rem; }
+
+.accordion .card-header {
   background-color: #f6f6f6;
   border: none; }
 
-#accordion .card-header {
-  background-color: #f6f6f6; }
-
-#accordion .card-header {
-  border: none; }
-
-.section-alt #accordion .card,
-.section-alt #accordion .card-header {
+.section-alt .accordion .card,
+.section-alt .accordion .card-header {
   background-color: white; }
 
-.section-alt #accordion .card-header {
+.section-alt .accordion .card-header {
   border: none; }
 
-#accordion button {
+.accordion button {
   font-size: 18px;
   border: none; }
 
-#accordion button:hover {
+.accordion button:hover {
   text-decoration: none; }
 
-#accordion button:after {
+.accordion button:after {
   font-family: 'FontAwesome';
   content: "\f0d7";
   position: absolute;
   right: 30px; }
 
-#accordion button.collapsed:after {
+.accordion button.collapsed:after {
   content: "\f0da"; }
 
-#accordion .btn-link:focus {
+.accordion .btn-link:focus {
   text-decoration: none; }
+
+.accordion-sm .card {
+  padding: .05rem;
+  margin-bottom: .50rem; }
+
+.accordion-sm .card-body, .accordion-sm .single-product .product, .single-product .accordion-sm .product {
+  padding: 0 2rem 1.25rem 2rem; }
+
+.accordion-sm button {
+  font-size: 15px; }
+
+.accordion-sm p {
+  font-size: 16px;
+  margin-bottom: 1rem; }
 
 .basic-content-block {
   background-color: #f6f6f6;

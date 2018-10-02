@@ -47,19 +47,20 @@
 							</div>
 							<div class="row justify-content-center">
 								<div class="col-12">
-									<div id="accordion-<?php echo $settings['section_name']; ?>" class="accordion">
+									<?php $accordion_name = str_replace(' ', '-', $settings['section_name']); ?>
+									<div id="accordion-<?php echo $accordion_name; ?>" class="accordion <?php if(get_sub_field('list_group_size')): ?>accordion-sm<?php endif; ?>">
 										<?php if (have_rows('list_group')): ?>
 											<?php while (have_rows('list_group')): the_row(); ?>
 												<?php $x ++; ?>
-												<div class="card p-3 mb-3">
+												<div class="card">
 													<div class="card-header" id="heading<?php echo $x; ?>">
 														<h5 class="mb-0">
-															<button class="btn btn-link d-block collapsed" data-toggle="collapse" data-target="#collapse-<?php echo $settings['section_name']; ?>-<?php echo $x; ?>" aria-expanded="false" aria-controls="collapse<?php echo $x; ?>">
+															<button class="btn btn-link d-block collapsed" data-toggle="collapse" data-target="#collapse-<?php echo $accordion_name; ?>-<?php echo $x; ?>" aria-expanded="false" aria-controls="collapse<?php echo $x; ?>">
 																<?php the_sub_field('list_item_title'); ?>
 															</button>
 														</h5>
 													</div>
-													<div id="collapse-<?php echo $settings['section_name']; ?>-<?php echo $x; ?>" class="collapse" aria-labelledby="heading<?php echo $x; ?>" data-parent="#accordion-<?php echo $settings['section_name']; ?>">
+													<div id="collapse-<?php echo $accordion_name; ?>-<?php echo $x; ?>" class="collapse" aria-labelledby="heading<?php echo $x; ?>" data-parent="#accordion-<?php echo $accordion_name; ?>">
 														<div class="card-body"><?php the_sub_field('list_item_text'); ?></div>
 													</div>
 												</div>
