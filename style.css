@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.1.13
+Version: 1.1.14
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8517,12 +8517,15 @@ p {
 #mobile-menu {
   display: none; }
 
+#search-toggle {
+  color: #666666; }
+
 #search-menu a {
   color: #333333; }
 
 #search-bar {
   position: relative;
-  background: #333333;
+  background: #05354e;
   display: none; }
 
 #search-text {
