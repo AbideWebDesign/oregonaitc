@@ -6,6 +6,11 @@
 				<?php if(get_sub_field('lead_type') == 'image'): ?>
 					<?php $image = get_sub_field('lead_image'); ?>
 					<?php echo wp_get_attachment_image($image['id'], 'square', 0, array('class' => 'img-fluid rounded-circle mb-4 mb-sm-0')); ?>
+					<?php if($image['caption']): ?>
+						<div class="text-center">
+							<div class="caption d-inline-block"><?php echo $image['caption']; ?></div>
+						</div>
+					<?php endif; ?>
 				<?php else: ?>
 					<div class="lead-large"><?php the_sub_field('lead_large_text'); ?></div>
 					<?php if (get_sub_field('lead_button_label')): ?>

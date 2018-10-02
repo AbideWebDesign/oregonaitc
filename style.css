@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.1.16
+Version: 1.1.17
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -34,6 +34,7 @@ Version: 1.1.16
   --green: #59C77F;
   --gray: #333333;
   --gray-light: #f6f6f6;
+  --gray-lighten: #cccccc;
   --gray-medium: #666666;
   --blue-light: #DDEDF5;
   --blue-dark: #05354e;
@@ -1208,6 +1209,17 @@ pre {
   .table-hover .table-gray-light:hover > th {
     background-color: #efefef; }
 
+.table-gray-lighten,
+.table-gray-lighten > th,
+.table-gray-lighten > td {
+  background-color: #f1f1f1; }
+
+.table-hover .table-gray-lighten:hover {
+  background-color: #e4e4e4; }
+  .table-hover .table-gray-lighten:hover > td,
+  .table-hover .table-gray-lighten:hover > th {
+    background-color: #e4e4e4; }
+
 .table-gray-medium,
 .table-gray-medium > th,
 .table-gray-medium > td {
@@ -2082,6 +2094,29 @@ fieldset:disabled a.button {
     .show > .btn-gray-light.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(246, 246, 246, 0.5); }
 
+.btn-gray-lighten {
+  color: #212529;
+  background-color: #cccccc;
+  border-color: #cccccc; }
+  .btn-gray-lighten:hover {
+    color: #212529;
+    background-color: #b9b9b9;
+    border-color: #b3b2b2; }
+  .btn-gray-lighten:focus, .btn-gray-lighten.focus {
+    box-shadow: 0 0 0 0.2rem rgba(204, 204, 204, 0.5); }
+  .btn-gray-lighten.disabled, .btn-gray-lighten:disabled {
+    color: #212529;
+    background-color: #cccccc;
+    border-color: #cccccc; }
+  .btn-gray-lighten:not(:disabled):not(.disabled):active, .btn-gray-lighten:not(:disabled):not(.disabled).active,
+  .show > .btn-gray-lighten.dropdown-toggle {
+    color: #212529;
+    background-color: #b3b2b2;
+    border-color: #acacac; }
+    .btn-gray-lighten:not(:disabled):not(.disabled):active:focus, .btn-gray-lighten:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-gray-lighten.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(204, 204, 204, 0.5); }
+
 .btn-gray-medium {
   color: #fff;
   background-color: #666666;
@@ -2426,6 +2461,29 @@ fieldset:disabled a.button {
     .btn-outline-gray-light:not(:disabled):not(.disabled):active:focus, .btn-outline-gray-light:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-gray-light.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(246, 246, 246, 0.5); }
+
+.btn-outline-gray-lighten {
+  color: #cccccc;
+  background-color: transparent;
+  background-image: none;
+  border-color: #cccccc; }
+  .btn-outline-gray-lighten:hover {
+    color: #212529;
+    background-color: #cccccc;
+    border-color: #cccccc; }
+  .btn-outline-gray-lighten:focus, .btn-outline-gray-lighten.focus {
+    box-shadow: 0 0 0 0.2rem rgba(204, 204, 204, 0.5); }
+  .btn-outline-gray-lighten.disabled, .btn-outline-gray-lighten:disabled {
+    color: #cccccc;
+    background-color: transparent; }
+  .btn-outline-gray-lighten:not(:disabled):not(.disabled):active, .btn-outline-gray-lighten:not(:disabled):not(.disabled).active,
+  .show > .btn-outline-gray-lighten.dropdown-toggle {
+    color: #212529;
+    background-color: #cccccc;
+    border-color: #cccccc; }
+    .btn-outline-gray-lighten:not(:disabled):not(.disabled):active:focus, .btn-outline-gray-lighten:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-gray-lighten.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(204, 204, 204, 0.5); }
 
 .btn-outline-gray-medium {
   color: #666666;
@@ -5265,6 +5323,14 @@ tbody.collapse.show {
     text-decoration: none;
     background-color: #dddcdc; }
 
+.badge-gray-lighten {
+  color: #212529;
+  background-color: #cccccc; }
+  .badge-gray-lighten[href]:hover, .badge-gray-lighten[href]:focus {
+    color: #212529;
+    text-decoration: none;
+    background-color: #b3b2b2; }
+
 .badge-gray-medium {
   color: #fff;
   background-color: #666666; }
@@ -5431,6 +5497,15 @@ tbody.collapse.show {
     border-top-color: #efefef; }
   .alert-gray-light .alert-link {
     color: #676666; }
+
+.alert-gray-lighten {
+  color: #6a6a6a;
+  background-color: whitesmoke;
+  border-color: #f1f1f1; }
+  .alert-gray-lighten hr {
+    border-top-color: #e4e4e4; }
+  .alert-gray-lighten .alert-link {
+    color: #515050; }
 
 .alert-gray-medium {
   color: #353535;
@@ -5680,6 +5755,17 @@ tbody.collapse.show {
     color: #fff;
     background-color: gray;
     border-color: gray; }
+
+.list-group-item-gray-lighten {
+  color: #6a6a6a;
+  background-color: #f1f1f1; }
+  .list-group-item-gray-lighten.list-group-item-action:hover, .list-group-item-gray-lighten.list-group-item-action:focus {
+    color: #6a6a6a;
+    background-color: #e4e4e4; }
+  .list-group-item-gray-lighten.list-group-item-action.active {
+    color: #fff;
+    background-color: #6a6a6a;
+    border-color: #6a6a6a; }
 
 .list-group-item-gray-medium {
   color: #353535;
@@ -6318,6 +6404,14 @@ button.bg-gray-light:hover,
 button.bg-gray-light:focus {
   background-color: #dddcdc !important; }
 
+.bg-gray-lighten {
+  background-color: #cccccc !important; }
+
+a.bg-gray-lighten:hover, a.bg-gray-lighten:focus,
+button.bg-gray-lighten:hover,
+button.bg-gray-lighten:focus {
+  background-color: #b3b2b2 !important; }
+
 .bg-gray-medium {
   background-color: #666666 !important; }
 
@@ -6418,6 +6512,9 @@ button.bg-text:focus {
 
 .border-gray-light {
   border-color: #f6f6f6 !important; }
+
+.border-gray-lighten {
+  border-color: #cccccc !important; }
 
 .border-gray-medium {
   border-color: #666666 !important; }
@@ -8205,6 +8302,12 @@ a.text-gray:hover, a.text-gray:focus {
 a.text-gray-light:hover, a.text-gray-light:focus {
   color: #dddcdc !important; }
 
+.text-gray-lighten {
+  color: #cccccc !important; }
+
+a.text-gray-lighten:hover, a.text-gray-lighten:focus {
+  color: #b3b2b2 !important; }
+
 .text-gray-medium {
   color: #666666 !important; }
 
@@ -8804,6 +8907,24 @@ p {
   .page-numbers li:first-child,
   .page-numbers li:last-child {
     display: inline; } }
+
+/* 
+** Caption
+*/
+.caption, .wp-caption-text {
+  border-top: 1px dashed #cccccc;
+  padding-top: .25rem;
+  margin-top: 1rem;
+  font-size: .6rem;
+  color: #666666;
+  font-style: italic; }
+
+.card .caption {
+  margin-top: -18px;
+  border: none;
+  color: #f6f6f6;
+  padding-left: 1rem;
+  text-align: left; }
 
 /* 
 ** Page Builder

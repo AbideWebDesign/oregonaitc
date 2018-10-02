@@ -12,6 +12,9 @@
 							<?php else: ?>
 								<?php echo wp_get_attachment_image($image['id'], 'card-4', 0, array('class' => 'card-img-top img-fluid')); ?>
 							<?php endif; ?>
+							<?php if($image['caption']): ?>
+								<div class="caption d-inline-block"><?php echo $image['caption']; ?></div>
+							<?php endif; ?>
 						<?php endif; ?>
 						<div class="card-body">
 							<h5 class="card-title"><?php echo $card['card_title']; ?></h5>
