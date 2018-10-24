@@ -1,0 +1,62 @@
+{
+    "key": "group_58221d264ff1e",
+    "title": "Post Type - Calendar Contest",
+    "fields": [
+        {
+            "key": "field_56dde04822202",
+            "label": "Cover Art",
+            "name": "cover_art",
+            "type": "image_crop",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "hard",
+            "target_size": "custom",
+            "width": 800,
+            "height": 618,
+            "preview_size": "medium",
+            "force_crop": "yes",
+            "save_in_media_library": "yes",
+            "retina_mode": "no",
+            "save_format": "object",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "calendar-contest"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1540419522
+}

@@ -1,0 +1,76 @@
+{
+    "key": "group_5bd0dc63b3148",
+    "title": "Block - Image Gallery",
+    "fields": [
+        {
+            "key": "field_5bd0dd0f1ca41",
+            "label": "Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "Use other to make images clickable to a specified link. Otherwise, images will be clickable to the full-size version of the image and display in a lightbox.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Photos": "Photos",
+                "Other": "Other"
+            },
+            "default_value": [
+                "Other"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bd0dc6ab6910",
+            "label": "Gallery",
+            "name": "gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ".jpg, .jpeg, .png"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540418808
+}

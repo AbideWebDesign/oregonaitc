@@ -1,0 +1,168 @@
+{
+    "key": "group_5b48f2434eda3",
+    "title": "Block - Button Group",
+    "fields": [
+        {
+            "key": "field_5b48f24b56408",
+            "label": "Buttons",
+            "name": "buttons",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Button",
+            "sub_fields": [
+                {
+                    "key": "field_5b48f32ea2218",
+                    "label": "Button Title",
+                    "name": "button_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b48f25756409",
+                    "label": "Button Label",
+                    "name": "button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b48f2605640a",
+                    "label": "Button Type",
+                    "name": "button_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "internal": "Internal Link",
+                        "external": "External Link"
+                    },
+                    "default_value": [
+                        "internal"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5b48f2815640b",
+                    "label": "Button Link",
+                    "name": "button_link",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5b48f2605640a",
+                                "operator": "==",
+                                "value": "internal"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page",
+                        "attachment",
+                        "calendar-contestant",
+                        "calendar-contest",
+                        "lessonplan",
+                        "resource"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "allow_archives": 0,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5b48f2995640c",
+                    "label": "Button Link External",
+                    "name": "button_link_external",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5b48f2605640a",
+                                "operator": "==",
+                                "value": "external"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540418689
+}
