@@ -50,7 +50,7 @@ $section_3_image = get_field('section_3_image');
 	<div class="container">
 		<div class="row justify-content-center align-items-center">
 			<div class="col-md-3">
-				<img src="http://oregonaitc.local/wp-content/uploads/2018/07/oregon-map.png" class="img-fluid mb-4 mb-sm-0" />
+				<img src="<?php echo home_url(); ?>/wp-content/uploads/2018/07/oregon-map.png" class="img-fluid mb-4 mb-sm-0" />
 			</div>
 			<div class="col-md-9 text-center text-sm-left">
 				<h2 class="mb-2"><?php the_field('section_3_title'); ?></h2>

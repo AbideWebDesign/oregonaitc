@@ -1,6 +1,16 @@
 <?php $calendar_year = get_sub_field('calendar_year'); ?>
 <?php $type = get_sub_field('type'); ?>
-<?php $args = array('post_type' => 'calendar-contestant', 'posts_per_page' => -1, 'toolset_relationships' => array('role' => 'child', 'related_to' => $calendar_year, 'relationship' => array('calendar-contest', 'calendar-contestant'))); ?>
+<?php 
+	$args = array(
+		'post_type' => 'calendar-contestant', 
+		'posts_per_page' => -1, 
+		'toolset_relationships' => array(
+			'role' => 'child',
+			'related_to' => $calendar_year,
+			'relationship' => array('calendar-contest', 'calendar-contestant')
+		)
+	); 
+?>
 <?php $query = new WP_Query($args); ?>
 <div class="row">
 	<div class="col-12">
