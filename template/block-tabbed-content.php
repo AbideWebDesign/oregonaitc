@@ -1,6 +1,5 @@
 <!-- Basic Content Block -->
 <?php $x = 0; ?>
-<?php $tabID = str_replace(' ', '_', get_sub_field('section_title')); ?>
 <div class="tabbed-content">
 	<div class="row justify-content-center">
 		<div class="col-12 text-center">
@@ -14,7 +13,7 @@
 						<?php while (have_rows('tabs')): the_row(); ?>
 							<?php $x ++; ?>
 							<li class="nav-item">
-								<a class="nav-link <?php echo ($x == 1) ? 'active' : ''; ?>" data-toggle="tab" href="#<?php echo $tabID; ?>_<?php echo $x; ?>" role="tab" aria-controls="<?php echo $tabID; ?>_<?php echo $x; ?>" aria-selected="<?php echo ($x == 1) ? 'true' : 'false'; ?>"><?php the_sub_field('tab_title'); ?></a>
+								<a class="nav-link <?php echo ($x == 1) ? 'active' : ''; ?>" data-toggle="tab" href="#<?php echo str_replace(' ', '_', get_sub_field('tab_title')); ?>_<?php echo $x; ?>" role="tab" aria-controls="<?php echo str_replace(' ', '_', get_sub_field('tab_title')); ?>_<?php echo $x; ?>" aria-selected="<?php echo ($x == 1) ? 'true' : 'false'; ?>"><?php the_sub_field('tab_title'); ?></a>
 							</li>
 						<?php endwhile; ?>
 					<?php endif; ?>
@@ -29,7 +28,7 @@
 					<?php $x = 0; ?>
 					<?php while (have_rows('tabs')): the_row(); ?>
 						<?php $x ++; ?>
-						<div class="tab-pane fade <?php echo ($x == 1) ? 'show active' : ''; ?>" id="<?php echo $tabID; ?>_<?php echo $x; ?>" role="tabpanel" aria-labelledby="<?php echo $tabID; ?>_<?php echo $x; ?>-tab">
+						<div class="tab-pane fade <?php echo ($x == 1) ? 'show active' : ''; ?>" id="<?php echo str_replace(' ', '_', get_sub_field('tab_title')); ?>_<?php echo $x; ?>" role="tabpanel" aria-labelledby="<?php echo str_replace(' ', '_', get_sub_field('tab_title')); ?>_<?php echo $x; ?>-tab">
 							<?php if(get_sub_field('tab_image')): ?>
 								<?php $image = get_sub_field('tab_image'); ?>
 								<div class="row">
