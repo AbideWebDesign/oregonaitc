@@ -373,6 +373,11 @@ function my_forgot_link( $str ) {
 }
 add_filter( 'wpmem_forgot_link', 'my_forgot_link' );
 
+function my_username_link_str( $str, $link ) {
+	return "<a href=" . home_url('/username-lost') .">Retrieve Username</a>";
+}
+add_filter( 'wpmem_username_link_str', 'my_username_link_str', 10, 2 );
+
 function remove_username_field_filter( $fields, $tag ) {
  
     if ( 'register' == $tag ) {
