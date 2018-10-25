@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.2.7
+Version: 1.2.8
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8620,6 +8620,9 @@ p {
 .shiftnav-menu-image img {
   width: 75px; }
 
+.shiftnav .fa, .shiftnav-toggle .fa {
+  font-family: 'Font Awesome 5 Free'; }
+
 @media (max-width: 1200px) {
   #mobile-menu {
     display: block; }
@@ -9019,7 +9022,7 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
   text-decoration: none; }
 
 .accordion button:after {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: "\f0d7";
   position: absolute;
   right: 30px; }
