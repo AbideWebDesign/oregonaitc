@@ -352,18 +352,7 @@ function show_pagination_links()
 /**
  * WP-Membership
  */
-function my_login_inputs($array) {
-	$array[0]['name'] = 'Email or Username';
-	$array[0]['class'] = 'form-control input-lg';
-	$array[0]['div'] = 'form-group';
-	$array[1]['class'] = 'form-control input-lg';
-	$array[1]['div'] = 'form-group';
-
-	return $array;
-}
-add_filter('wpmem_login_form_rows', 'my_login_form_rows_filter', 10, 2);
-
-function my_login_form_rows_filter($rows, $action) {
+function my_register_form_rows_filter($rows, $action) {
 		$rows[] = array( 
 			'row_before' => '<div class="form-group">',
 			'row_after'  => '</div>'
