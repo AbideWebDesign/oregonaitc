@@ -33,7 +33,7 @@
 								<?php $image = get_sub_field('tab_image'); ?>
 								<div class="row">
 									<div class="col-md-5">
-										<?php echo wp_get_attachment_image($image['id'], 'col-5', 0, array('class' => 'img-fluid mb-4 mb-md-0')); ?>
+										<?php echo wp_get_attachment_image($image, 'col-5', 0, array('class' => 'img-fluid mb-4 mb-md-0')); ?>
 										<?php if($image['caption']): ?>
 											<div class="caption"><?php echo $image['caption']; ?></div>
 										<?php endif; ?>

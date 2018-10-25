@@ -107,7 +107,13 @@
 							
 							<?php get_template_part('template/block', 'form'); ?>
 						
-						<?php endif; ?>																						
+						<?php endif; ?>		
+						
+						<?php if(get_row_layout() == 'image_gallery'): ?>
+							
+							<?php get_template_part('template/block', 'image-gallery'); ?>
+						
+						<?php endif; ?>																					
 						
 					<?php endwhile; // while Page Block end ?>
 					

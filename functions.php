@@ -67,6 +67,7 @@ add_image_size('jumbotron', 1280, 600, true);
 add_image_size('jumbotron-mobile', 375, 500, true);
 add_image_size('card-4', 362, 200, true);
 add_image_size('card-3', 255, 141, true);
+add_image_size('photo-3', 255, 170, true);
 
 /**
  * ACF Options page
@@ -377,6 +378,11 @@ function my_register_links( $string ) {
     return $string;
 }
 add_filter( 'wpmem_register_links', 'my_register_links' );
+ 
+function my_forgot_link( $str ) {
+    return home_url() . '/password-reset';
+}
+add_filter( 'wpmem_forgot_link', 'my_forgot_link' );
 
 function remove_username_field_filter( $fields, $tag ) {
  

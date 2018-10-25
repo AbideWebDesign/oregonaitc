@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.2.1
+Version: 1.2.2
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8908,6 +8908,9 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
   .card-horizontal img {
     width: 75%; } }
 
+.card {
+  width: 100%; }
+
 .section-alt .card {
   border: none; }
 
@@ -9202,6 +9205,10 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 
 #row-account a:hover {
   text-decoration: none; }
+
+#wpmem_login .link-text {
+  width: 100%;
+  font-size: 13px; }
 
 /*
 ** Woocommerce Overrides
