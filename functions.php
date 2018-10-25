@@ -65,9 +65,8 @@ register_nav_menu( 'Menu Footer', 'Footer Menu' );
 add_image_size('logo-sm', 300, 150);
 add_image_size('jumbotron', 1280, 600, true);
 add_image_size('jumbotron-mobile', 375, 500, true);
-add_image_size('card-4', 362, 200, true);
 add_image_size('card-3', 255, 141, true);
-add_image_size('photo-3', 255, 170, true);
+add_image_size('card-4', 362, 200, true);
 
 /**
  * ACF Options page
