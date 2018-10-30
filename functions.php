@@ -850,13 +850,13 @@ function submit_library_order() {
 }
 
 function washington_county_filter($query) {
-	if (!is_admin() && $query->is_main_query() && $query->is_tax('branch', 'washington')){
+	if (!is_admin() && $query->is_main_query() && $query->is_tax('branch', 'washington_county')){
 		$query->set('tax_query', array(
             'relation' => 'OR',
             array(
                 'taxonomy' => 'branch',
                 'field' => 'slug',
-                'terms' => array('oregon', 'washington'),
+                'terms' => array('oregon', 'washington_county'),
                 'operator' => 'IN'
             )
         ));			

@@ -3,6 +3,60 @@
     "title": "Page - Library Fields",
     "fields": [
         {
+            "key": "field_5bd8d9b72ee1d",
+            "label": "Library Top",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bd8d9d22ee1e",
+            "label": "Library Page Title",
+            "name": "library_page_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bd8d9e22ee1f",
+            "label": "Library Lead Text",
+            "name": "library_lead_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5b4d097ca15eb",
             "label": "Library Intro Steps",
             "name": "",
@@ -15,7 +69,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -299,5 +353,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1540419488
+    "modified": 1540938278
 }
