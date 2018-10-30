@@ -50,8 +50,8 @@ if (is_user_logged_in()) {
 			</div>
 			<div class="col-8 col-sm-4 text-center mt-4">
 				<ul class="list-unstyled">
-					<li class="mb-2"><a href="<?php echo home_url(); ?>/branch/oregon" class="btn btn-primary btn-lg btn-block">Oregon Resources</a></li>
-					<li><a href="<?php echo home_url(); ?>/branch/washington" class="btn btn-secondary btn-lg btn-block">Washington County Resources</a></li>
+					<li class="mb-2"><a href="<?php echo home_url(); ?>/library/oregon" class="btn btn-primary btn-lg btn-block">Oregon Resources</a></li>
+					<li><a href="<?php echo home_url(); ?>/library/washington_county" class="btn btn-secondary btn-lg btn-block">Washington County Resources</a></li>
 				</ul>
 			</div>
 		</div>		
