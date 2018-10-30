@@ -11,14 +11,14 @@ if (is_user_logged_in()) {
 	}
 }
 ?>
-<div class="section section-xs section-primary">
+<div class="section section-xs <?php echo (is_tax('branch', 'oregon') ? 'section-primary' : 'section-secondary'); ?>">
 	<div class="container">
 		<div id="search-form" class="row search-form-top justify-content-center align-items-center">
 			<div class="col-lg-5 col-sm-12 mt-4 mt-lg-0 order-3 order-lg-1">
 				<h5 class="card-title text-white m-0">
-					<?php if(is_post_type_archive('resource')): ?>
-						<a class="text-white" href="<?php echo home_url(); ?>/resource">Resource Library</a> 
-					<?php elseif(is_post_type_archive('lessonplan')): ?>
+					<?php if(is_tax()): ?>
+						<a class="text-white" href="<?php get_term_link($post); ?>"><?php echo (is_tax('branch', 'oregon') ? 'Oregon' : 'Washington'); ?> Resource Library</a> 
+					<?php elseif(is_archive('lessonplan')): ?>
 						<a class="text-white" href="<?php home_url(); ?>/lessonplan">Lesson Plans</a>
 					<?php endif; ?>
 				</h5>

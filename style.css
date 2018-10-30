@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.2.8
+Version: 1.2.9
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8503,6 +8503,9 @@ p {
   background-color: #F6893C;
   color: white; }
 
+.section-secondary .btn-white, .section-secondary .button-btn .btn-primary, .button-btn .section-secondary .btn-primary, .section-secondary .button-btn .buttons, .button-btn .section-secondary .buttons, .section-secondary .button-btn .woocommerce #respond input#submit, .button-btn .woocommerce #respond .section-secondary input#submit, .section-secondary .woocommerce #respond .button-btn input#submit, .woocommerce #respond .button-btn .section-secondary input#submit, .section-secondary .button-btn .woocommerce a.button, .button-btn .woocommerce .section-secondary a.button, .section-secondary .woocommerce .button-btn a.button, .woocommerce .button-btn .section-secondary a.button, .section-secondary .button-btn .woocommerce button.button, .button-btn .woocommerce .section-secondary button.button, .section-secondary .woocommerce .button-btn button.button, .woocommerce .button-btn .section-secondary button.button, .section-secondary .button-btn .woocommerce input.button, .button-btn .woocommerce .section-secondary input.button, .section-secondary .woocommerce .button-btn input.button, .woocommerce .button-btn .section-secondary input.button, .section-secondary .button-btn .gform_wrapper .gform_footer input.button, .button-btn .gform_wrapper .gform_footer .section-secondary input.button, .section-secondary .gform_wrapper .gform_footer .button-btn input.button, .gform_wrapper .gform_footer .button-btn .section-secondary input.button, .section-secondary .button-btn .gform_wrapper .gform_footer input[type=submit], .button-btn .gform_wrapper .gform_footer .section-secondary input[type=submit], .section-secondary .gform_wrapper .gform_footer .button-btn input[type=submit], .gform_wrapper .gform_footer .button-btn .section-secondary input[type=submit], .section-secondary .button-btn .gform_wrapper .gform_page_footer input.button, .button-btn .gform_wrapper .gform_page_footer .section-secondary input.button, .section-secondary .gform_wrapper .gform_page_footer .button-btn input.button, .gform_wrapper .gform_page_footer .button-btn .section-secondary input.button, .section-secondary .button-btn .gform_wrapper .gform_page_footer input[type=submit], .button-btn .gform_wrapper .gform_page_footer .section-secondary input[type=submit], .section-secondary .gform_wrapper .gform_page_footer .button-btn input[type=submit], .gform_wrapper .gform_page_footer .button-btn .section-secondary input[type=submit], .section-secondary #footer-global-top .gform_wrapper .gform_footer input.button, #footer-global-top .gform_wrapper .gform_footer .section-secondary input.button, .section-secondary #footer-global-top .gform_wrapper .gform_footer input[type=submit], #footer-global-top .gform_wrapper .gform_footer .section-secondary input[type=submit], .section-secondary #footer-global-top .gform_wrapper .gform_page_footer input.button, #footer-global-top .gform_wrapper .gform_page_footer .section-secondary input.button, .section-secondary #footer-global-top .gform_wrapper .gform_page_footer input[type=submit], #footer-global-top .gform_wrapper .gform_page_footer .section-secondary input[type=submit] {
+  color: #F6893C; }
+
 .section-green {
   background-color: #59C77F; }
 
@@ -8773,6 +8776,9 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 .facetwp-type-search body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) .fa,
 body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) .fa {
   color: #0FA3F2; }
+
+.section-secondary .search-form-top .fas {
+  color: #F6893C; }
 
 .box-categories .box-category {
   line-height: 55px;

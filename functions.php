@@ -67,6 +67,7 @@ add_image_size('jumbotron', 1280, 600, true);
 add_image_size('jumbotron-mobile', 375, 500, true);
 add_image_size('card-3', 255, 141, true);
 add_image_size('card-4', 362, 200, true);
+add_image_size('photo-3', 255, 170, true);
 
 /**
  * ACF Options page
@@ -847,3 +848,18 @@ function submit_library_order() {
 	// Send notification
 	wp_mail(get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers);
 }
+
+function washington_county_filter($query) {
+	if (!is_admin() && $query->is_main_query() && $query->is_tax('branch', 'washington')){
+		$query->set('tax_query', array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'branch',
+                'field' => 'slug',
+                'terms' => array('oregon', 'washington'),
+                'operator' => 'IN'
+            )
+        ));			
+	}
+}
+add_action('pre_get_posts','washington_county_filter', 999);
