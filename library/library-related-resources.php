@@ -10,8 +10,15 @@
 			<?php if($post_object): ?>
 				<?php $post = $post_object; ?>
 				<?php setup_postdata($post); ?>
+				
+				<?php if($post->post_type == "lessonplan"): ?>
+					<?php $image = (get_field('image_1') ? get_field('image_1') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php else: ?>
+					<?php $image = (get_field('resource_image') ? get_field('resource_image') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php endif; ?>
+					
 				<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
-				<?php $image = get_field('resource_image'); ?>
+				
 				<div class="col-lg-3 col-sm-6 text-center mb-3 mb-lg-0 d-flex align-items-end">
 					<div class="card w-100">
 						<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
@@ -28,8 +35,15 @@
 			<?php if($post_object): ?>
 				<?php $post = $post_object; ?>
 				<?php setup_postdata($post); ?>
+				
+				<?php if($post->post_type == "lessonplan"): ?>
+					<?php $image = (get_field('image_1') ? get_field('image_1') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php else: ?>
+					<?php $image = (get_field('resource_image') ? get_field('resource_image') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php endif; ?>
+				
 				<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
-				<?php $image = get_field('resource_image'); ?>
+				
 				<div class="col-lg-3 col-sm-6 text-center mb-3 mb-lg-0 d-flex align-items-end">
 					<div class="card w-100">
 						<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
@@ -46,8 +60,15 @@
 			<?php if($post_object): ?>
 				<?php $post = $post_object; ?>
 				<?php setup_postdata($post); ?>
+				
+				<?php if($post->post_type == "lessonplan"): ?>
+					<?php $image = (get_field('image_1') ? get_field('image_1') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php else: ?>
+					<?php $image = (get_field('resource_image') ? get_field('resource_image') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php endif; ?>
+				
 				<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
-				<?php $image = get_field('resource_image'); ?>
+				
 				<div class="col-lg-3 col-sm-6 text-center mb-3 mb-lg-0 d-flex align-items-end">
 					<div class="card w-100">
 						<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
@@ -64,8 +85,15 @@
 			<?php if($post_object): ?>
 				<?php $post = $post_object; ?>
 				<?php setup_postdata($post); ?>
+				
+				<?php if($post->post_type == "lessonplan"): ?>
+					<?php $image = (get_field('image_1') ? get_field('image_1') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php else: ?>
+					<?php $image = (get_field('resource_image') ? get_field('resource_image') : home_url('/wp-content/uploads/2015/10/lessonplan.jpg')); ?>
+				<?php endif; ?>
+				
 				<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
-				<?php $image = get_field('resource_image'); ?>
+				
 				<div class="col-lg-3 col-sm-6 text-center mb-3 mb-lg-0 d-flex">
 					<div class="card w-100">
 						<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
