@@ -473,19 +473,6 @@ function nationbuilder_hook( $fields ){
 	
 	$person['phone'] = $fields['phone1'];
 	
-/*
-	if ($fields['school_district']) {
-		$person['school_district'] = $fields['school_district'];
-		array_push($tags, $fields['school_district']);
-	}
-*/
-	
-/*
-	if ($fields['school']) {
-		array_push($tags, $fields['school']);		
-	}
-*/
-	
 	if($fields['grade']) {
 		$grades = $fields['grade'];
 		$grades = explode(", ", $grades);
@@ -503,6 +490,10 @@ function nationbuilder_hook( $fields ){
 		if(in_array_any($hs, $grades)) {
 			array_push($tags, 'HS');
 		}		
+		
+		foreach($grades as $grade) {
+			array_push($tags, $grade);
+		}
 	}
 	
 	$person['county_district'] = $fields['county'];
