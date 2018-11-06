@@ -10,13 +10,14 @@
  */
  
 $logo = get_field('logo_color', 'options'); 
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 	<link rel="icon shortcut" href="<?php echo home_url(); ?>/wp-content/themes/abide-child/img/favicon.png" type="image/png" /> -->
+	<link rel="icon shortcut" href="<?php the_field('fav_icon', 'options'); ?>" type="image/png" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37648780-1"></script>

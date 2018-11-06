@@ -74,8 +74,8 @@ if (is_user_logged_in()) {
 						<?php setup_postdata($post); ?>
 						<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
 						<?php $image = get_field('resource_image'); ?>
-					    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
-					    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+					    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+					    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 					    <div class="card-body">
 					    	<p class="card-text text-sm mb-0">For Grades: <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> | Type: <?php foreach($terms as $term) echo rtrim($term->name, "s"); ?></p>
 					    </div>
@@ -91,8 +91,8 @@ if (is_user_logged_in()) {
 					<?php setup_postdata($post); ?>
 					<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
 					<?php $image = get_field('resource_image'); ?>
-				    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
-				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 				    <div class="card-body">
 				    	<p class="card-text text-sm mb-0">For Grades: <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> | Type: <?php foreach($terms as $term) echo rtrim($term->name, "s"); ?></p>
 				    </div>
@@ -108,8 +108,8 @@ if (is_user_logged_in()) {
 					<?php setup_postdata($post); ?>
 					<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
 					<?php $image = get_field('resource_image'); ?>
-				    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
-				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 				    <div class="card-body">
 				    	<p class="card-text text-sm mb-0">For Grades: <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> | Type: <?php foreach($terms as $term) echo rtrim($term->name, "s"); ?></p>
 				    </div>
@@ -125,8 +125,8 @@ if (is_user_logged_in()) {
 					<?php setup_postdata($post); ?>
 					<?php $terms = get_the_terms($post->id, 'resource_type'); ?>
 					<?php $image = get_field('resource_image'); ?>
-				    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
-				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 				    <div class="card-body">
 				    	<p class="card-text text-sm mb-0">For Grades: <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> | Type: <?php foreach($terms as $term) echo rtrim($term->name, "s"); ?></p>
 				    </div>

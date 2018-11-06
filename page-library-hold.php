@@ -6,19 +6,25 @@ if(isset($_POST['submit'])){
 	
 	if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { 
 	
-		$error = false;
-	
+		$errors = array();
+		$b = array();
+		$branches = array('Oregon', 'Washington County');
+		
 		foreach($_SESSION['cart'] as $id=>$value) {
-	
+			$b[] = $value['branch'];
 			if (isset($_POST['q'.$id])) {
 	
 				if ($_POST['q'.$id] == 0) {
-					$error = true;
+					$errors[] = 'Please specify quantity of kits you’d like to request (1 per student)';
 				}
 			}
 		}
 		
-		if (!$error) {
+		if(in_array_all($branches, $b)) {
+			$errors[] = 'You have items from the Washington County Resource Library. Please verify that these resources will be used in Washington County.';
+		}
+		
+		if (count($errors) == 0) {
 			$status = submit_library_order();
 			session_unset();
 		}
@@ -26,7 +32,6 @@ if(isset($_POST['submit'])){
 }
 ?>
 <?php get_template_part('library/library', 'top'); ?>
-
 <div class="section section-sm section-alt">
 	<div class="container">
 		<div class="row">
@@ -38,27 +43,25 @@ if(isset($_POST['submit'])){
 							
 							<h2 class="mb-2"><?php the_title(); ?></h2>
 							
-							<?php if ($error == "true"): ?>
-								
+							<?php if (count($errors) > 0): ?>
+								<?php foreach($errors as $error): ?>
 								<div class="alert alert-danger" role="alert">
-									<p class="m-0"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Please specify quantity of kits you’d like to request (1 per student)</p>
+									<p class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php echo $error; ?></p>
 								</div>
-							
+								<?php endforeach; ?>
 							<?php endif; ?>
 							
 							<form method="post" id="form" class="inb30" action="<?php echo home_url(); ?>/place-hold">
 								<div class="table-responsive">
 									<table class="table table-bordered text-md	">
-										<tr><th>Resource Name</th><th>Qyt</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
-										
-										<?php foreach($_SESSION['cart'] as $id=>$value): ?>
-											
+										<tr><th>Resource Name</th><th>Library Branch</th><th>Qyt</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
+										<?php foreach($_SESSION['cart'] as $id=>$value): ?>											
 											<?php $permalink = get_permalink($id); ?>
 											<?php $types = get_the_terms($id, 'resource_type'); ?>
 											<?php $categories = get_the_terms($id, 'resource_category'); ?>
-											
 											<tr>
 												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a></td>
+												<td class="align-middle"><?php echo $value['branch']; ?></td>
 												<td class="align-middle">
 													
 													<?php foreach($types as $type): ?>

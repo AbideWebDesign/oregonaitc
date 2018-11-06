@@ -13,8 +13,23 @@ if (have_posts()) :
 		$id = get_the_ID();
 		$available = get_field_object('total_available', $id);
 		$image = get_field('resource_image');
+		
+		// Check for current branch
+		if (isset($_GET['branch'])) {
+			$branch = ucwords($_GET['branch']);
+		} else {
+			$branch = 'Oregon';
+		}
+		
+		// Setup slug
+		$slug = str_replace(' ', '_', $branch);
+		
+		// Check if item was added
+		if($_GET['action'] && $_GET['action']=="add") {
+			$message = '<i class="fa fa-check-square"></i> Resource added to cart. <a href="' . home_url() . '/library/' . $slug . '">Keep browsing</a> or <a href="' . home_url() . '/place-hold">view cart</a> and place hold.';
+		}
+		
 		?>
-		<?php get_template_part('template/library', 'top'); ?>
 		<div class="section section-sm section-alt">
 			<div class="container">
 				<div class="row">
@@ -30,7 +45,7 @@ if (have_posts()) :
 										<p class="mb-1"><a href="#" class="btn btn-white btn-block disabled"><i class="fa fa-shopping-cart"></i> In Cart</a></p>
 							 			<p class="mb-0"><a class="btn btn-secondary btn-block" href="<?php echo home_url(); ?>/place-hold"></i> Check Out</a></p>										 		
 									<?php elseif ($available['value'] > 0): ?>
-										<p class="mb-0"><a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add" class="btn btn-white btn-block">Place Hold</a></p>
+										<p class="mb-0"><a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch; ?>" class="btn btn-white btn-block">Place Hold</a></p>
 									<?php endif; ?>
 								<?php else: ?>
 									<p class="text-center mb-0"><a href="<?php echo home_url(); ?>/login?redirect_to=oregonaitc.org/place-hold/?resource_id=<?php the_ID(); ?>" class="btn btn-white btn-block">Login to Hold</a></p>
@@ -47,6 +62,11 @@ if (have_posts()) :
 						</div>
 					</div>
 					<div class="col-lg-9">
+						<?php if ($message): ?>
+							<div id="msg-added" class="card bg-green mb-3 p-3">
+								<p class="m-0 text-md text-white "><?php echo $message; ?></p>
+							</div>
+						<?php endif; ?>
 						<div class="card mb-1">
 							<div class="card-body">									
 								<h2><?php the_field('resource_name'); ?></h2>
@@ -55,7 +75,7 @@ if (have_posts()) :
 									<?php $x = 0; ?>
 									<?php foreach($categories as $category): ?>
 										<?php echo ($x > 0) ? ", " : ""; ?>
-										<?php echo "<a href='/resource/?fwp_resource_category=$category->slug' />" . $category->name . "</a>";  ?>
+										<?php echo "<a href='/library/$slug/?fwp_resource_category=$category->slug' />" . $category->name . "</a>";  ?>
 										<?php $x++; ?>
 									<?php endforeach; ?>
 								</p>							

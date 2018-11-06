@@ -1,8 +1,9 @@
 <?php 
 if (is_user_logged_in()) {
-	if(isset( $_GET['action']) && $_GET['action']=="add") {	
+	if(isset($_GET['action']) && $_GET['action']=="add") {	
 		if(!isset( $_SESSION['cart'][$_GET['id']])) { 
 			$_SESSION['cart'][$_GET['id']] = $_GET['id'];
+			$_SESSION['cart'][$_GET['id']] = array('branch' => $_GET['branch']);
 		}
 	} elseif (isset( $_GET['action'] ) && $_GET['action']=="remove") {
 		if(isset($_SESSION['cart'][$_GET['id']])) { 
@@ -10,14 +11,37 @@ if (is_user_logged_in()) {
 		}
 	}
 }
+if (isset($_GET['branch'])) {
+	$branch = ucwords($_GET['branch']);
+	$slug = str_replace(' ', '_', $branch);
+	
+	if ($branch == 'Oregon') {
+		$class = 'section-primary';
+	} else {
+		$class = 'section-secondary';
+	}
+} elseif (is_tax('branch')) {
+	if (is_tax('branch', 'oregon')) {
+		$branch = 'Oregon';
+		$slug = 'oregon';
+		$class = 'section-primary';
+	} else {
+		$branch = 'Washington County';
+		$slug = 'washington_county';
+		$class = 'section-secondary';
+	}
+} else {
+	$branch = '';
+	$class = 'section-primary';
+}
 ?>
-<div class="section section-xs <?php echo (is_tax('branch', 'oregon') ? 'section-primary' : 'section-secondary'); ?>">
+<div class="section section-xs <?php echo $class; ?>">
 	<div class="container">
 		<div id="search-form" class="row search-form-top justify-content-center align-items-center">
 			<div class="col-lg-5 col-sm-12 mt-4 mt-lg-0 order-3 order-lg-1">
 				<h5 class="card-title text-white m-0">
-					<?php if(is_tax()): ?>
-						<a class="text-white" href="<?php get_term_link($post); ?>"><?php echo (is_tax('branch', 'oregon') ? 'Oregon' : 'Washington'); ?> Resource Library</a> 
+					<?php if($branch != ''): ?>
+						<a class="text-white" href="/library/<?php echo $slug; ?>"><?php echo $branch; ?> Resource Library</a> 
 					<?php elseif(is_archive('lessonplan')): ?>
 						<a class="text-white" href="<?php home_url(); ?>/lessonplan">Lesson Plans</a>
 					<?php endif; ?>

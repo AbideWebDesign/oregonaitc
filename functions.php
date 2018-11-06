@@ -473,25 +473,40 @@ function nationbuilder_hook( $fields ){
 	
 	$person['phone'] = $fields['phone1'];
 	
+/*
 	if ($fields['school_district']) {
 		$person['school_district'] = $fields['school_district'];
 		array_push($tags, $fields['school_district']);
 	}
+*/
 	
+/*
 	if ($fields['school']) {
 		array_push($tags, $fields['school']);		
 	}
+*/
 	
 	if($fields['grade']) {
 		$grades = $fields['grade'];
 		$grades = explode(", ", $grades);
 		
-		foreach($grades as $grade) {
-			array_push($tags, $grade);
+		$es = array('k','1','2','3','4','5');
+		$ms = array('6','7','8');
+		$hs = array('9','10','11','12');
+		
+		if(in_array_any($es, $grades)) {
+			array_push($tags, 'ES');
 		}
+		if(in_array_any($ms, $grades)) {
+			array_push($tags, 'MS');
+		} 
+		if(in_array_any($hs, $grades)) {
+			array_push($tags, 'HS');
+		}		
 	}
 	
 	$person['county_district'] = $fields['county'];
+	array_push($tags, $fields['county']);
 	
 	switch($fields['library_user_role']) {
 		case 'Classroom_Teacher':
@@ -732,16 +747,17 @@ function submit_library_order() {
 				. $current_user->user_firstname 
 				. " " 
 				. $current_user->user_lastname
-				. "<br>" 
+				. "<br><br>" 
 				. "<strong>Mailing Address:</strong><br>"
 				. $mailing_address
-				. "<br>"
+				. "<br><br>"
 				. "<strong>Contact Information:</strong><br>"
 				. $contact_info	
 				. "</p>"						
 				. "<table border='0' cellpadding='10' style='border: 1px solid #ccc;'>
 					<tr>
 						<td><strong>Resource Name</strong></td>
+						<td><strong>Branch</strong></td>
 						<td><strong>Quantity</strong></td>
 						<td><strong>Arrival</strong></td>
 						<td><strong>Return</strong></td>
@@ -756,6 +772,7 @@ function submit_library_order() {
 	foreach($_SESSION['cart'] as $id=>$value) {
 		$resource = get_field_object('resource_name', $id);
 		$name = $resource['value'];
+		$branch = $value['branch'];
 		$link = get_permalink($id);	
 		$arrival_date = $_POST[$id];
 		$return_date = $_POST['return-date-picker-' . $id];		
@@ -787,7 +804,7 @@ function submit_library_order() {
 		update_user_meta($current_user->ID, 'total_library_checkouts', $ut);
 		
 		// Add to content string
-		$content .= "<tr><td>$name</td><td>$quantity</td><td>$arrival_date</td><td>$return_date</td><td><a href='$link' target='_blank'>Resource Link</a></td></tr>";
+		$content .= "<tr><td>$name</td><td>$branch</td><td>$quantity</td><td>$arrival_date</td><td>$return_date</td><td><a href='$link' target='_blank'>Resource Link</a></td></tr>";
 		
 		$item = array(
 			'url' => $link,
@@ -798,6 +815,7 @@ function submit_library_order() {
 		// Add to order array
 		$order[] = array(
 			'item' => $item,
+			'branch' => $branch,
 			'quantity' => $quantity,
 			'arrival' => $arrival_date,
 			'return' => $return_date,
@@ -863,3 +881,13 @@ function washington_county_filter($query) {
 	}
 }
 add_action('pre_get_posts','washington_county_filter', 999);
+
+// Check for both branches in placing holds
+function in_array_all($needles, $haystack) {
+   return empty(array_diff($needles, $haystack));
+}
+
+// Check if any key exists
+function in_array_any($needles, $haystack) {
+   return !empty(array_intersect($needles, $haystack));
+}

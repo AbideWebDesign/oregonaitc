@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -19,6 +19,33 @@
             "allow_null": 0,
             "multiple": 0,
             "return_format": "array"
+        },
+        {
+            "key": "field_5be0ceca149f7",
+            "label": "Status",
+            "name": "status",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Processing": "Processing",
+                "Shipped": "Shipped"
+            },
+            "default_value": [
+                "Processing"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
         },
         {
             "key": "field_5b7458b40818a",
@@ -48,11 +75,30 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "65",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "url"
+                },
+                {
+                    "key": "field_5be0beca904b0",
+                    "label": "Branch",
+                    "name": "branch",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5b7459110818c",
@@ -186,5 +232,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1540419565
+    "modified": 1541459801
 }

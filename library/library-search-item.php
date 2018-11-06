@@ -13,6 +13,7 @@ if ($type == 'lessonplan') {
 
 $available = get_field('total_available');
 $image = get_field('resource_image');
+$branch = get_queried_object();
 ?>
 
 <div class="row mb-3">
@@ -30,7 +31,7 @@ $image = get_field('resource_image');
 						 			</p>
 								<?php elseif($available > 0): ?>
 						 			<p class="text-center mt-2 mb-0">
-						 				<a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add" class="btn btn-primary btn-sm btn-block d-none d-lg-block">Place Hold</a>
+						 				<a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch->name; ?>" class="btn btn-primary btn-sm btn-block d-none d-lg-block">Place Hold</a>
 						 			</p>
 						 		<?php elseif($available == 0): ?>
 						 			<a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm btn-block disabled mt-2 d-none d-lg-block">Place Hold</a>
@@ -47,7 +48,7 @@ $image = get_field('resource_image');
 					</div>
 					<div class="col-sm-8 col-lg-9">
 						<div class="border-bottom border-light mb-2">
-							<h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+							<h5 class="card-title"><a href="<?php the_permalink(); ?>?branch=<?php echo $branch->name; ?>"><?php the_title(); ?></a></h5>
 							<?php if ($type == 'lessonplan'): ?>
 								<p class="text-sm m-0"><?php the_field('lesson_plan_time_estimate'); ?> min	lesson</p>
 							<?php elseif ($type == 'resource'): ?>
@@ -76,15 +77,15 @@ $image = get_field('resource_image');
 							<?php $last = end($categories); ?>
 							<?php foreach($categories as $category): ?>
 								<?php if ($category == $last): ?>
-									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'resource/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a> 
+									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a> 
 								<?php else: ?>
-									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'resource/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>, 
+									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>, 
 								<?php endif; ?>
 							<?php endforeach; ?>						
 							<?php if ($type == 'resource'): ?>
 								| Type: 
 								<?php foreach($types as $type): ?>
-									<a href="<?php echo home_url(); ?>/resource/?fwp_resource_type=<?php echo $type->slug; ?>"><?php echo rtrim($type->name, "s"); ?></a>
+									<a href="<?php echo home_url(); ?>/library/<?php echo $branch->slug; ?>/?fwp_resource_type=<?php echo $type->slug; ?>"><?php echo rtrim($type->name, "s"); ?></a>
 								<?php endforeach; ?>
 							<?php endif; ?>
 							<?php if ($type == 'resource'): ?>
