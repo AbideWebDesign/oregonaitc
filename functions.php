@@ -483,12 +483,15 @@ function nationbuilder_hook( $fields ){
 		
 		if(in_array_any($es, $grades)) {
 			array_push($tags, 'ES');
+			array_push($tags, 'Primary E-News');
 		}
 		if(in_array_any($ms, $grades)) {
 			array_push($tags, 'MS');
+			array_push($tags, 'Secondary E-news');
 		} 
 		if(in_array_any($hs, $grades)) {
 			array_push($tags, 'HS');
+			array_push($tags, 'Secondary E-news');
 		}		
 		
 		foreach($grades as $grade) {
