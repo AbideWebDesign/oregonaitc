@@ -26,8 +26,8 @@ $branch = get_queried_object();
 							<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 mb-lg-0 w-100')); ?></a>
 							<?php if (is_user_logged_in()): ?>
 								<?php if(isset($_SESSION['cart'][$id])): ?>
-						 			<p class="text-center m-0">
-						 				<a href="#" class="btn btn-primary btn-sm btn-block d-none d-lg-block"><i class="fas fa-shopping-cart"></i> In Cart</a>
+						 			<p class="text-center mt-2 mb-0">
+						 				<a href="#" class="btn btn-secondary btn-disabled btn-sm btn-block d-none d-lg-block"><i class="fas fa-shopping-cart"></i> In Cart</a>
 						 			</p>
 								<?php elseif($available > 0): ?>
 						 			<p class="text-center mt-2 mb-0">
