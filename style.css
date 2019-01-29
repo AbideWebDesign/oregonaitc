@@ -8816,8 +8816,49 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
   padding-right: 12px;
   display: inline-block; }
 
+.facetwp-counts {
+  display: inline-block; }
+
 .facetwp-facet:last-child {
   margin-bottom: 0 !important; }
+
+.facetwp-per-page-select {
+  height: 42px;
+  padding: 2px 30px 5px 15px;
+  line-height: 1.4em;
+  font-size: 14px;
+  font-weight: 400;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-appearance: none;
+  -moz-border-radius: 0;
+  outline: none;
+  cursor: pointer; }
+
+.facetwp-per-page, .facetwp-sort {
+  position: relative;
+  display: inline-block;
+  height: 42px;
+  border: 1px solid #d6d6d6;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  min-width: 100px;
+  background-color: #fff; }
+
+.facetwp-per-page:before, .facetwp-sort:before {
+  font-family: fontawesome;
+  content: "\f0d7";
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  color: #5c5c5c;
+  font-size: 14px;
+  pointer-events: none; }
 
 /* Pagination Styles */
 .page-numbers {

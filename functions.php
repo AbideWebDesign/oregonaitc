@@ -885,3 +885,59 @@ function in_array_all($needles, $haystack) {
 function in_array_any($needles, $haystack) {
    return !empty(array_intersect($needles, $haystack));
 }
+
+/**
+ * Filters the shipping method cost to account for tiered quantity pricing.
+ * 
+ * @param float $cost the shipping method cost
+ * @param \WC_Shipping_Rate $method the shipping method
+ * @return float cost
+ */
+function wc_shipping_cost_tiers( $cost, $method ) {
+
+	// see if this shipping instance is one we want to modify cost for
+	if ( in_array( $method->get_instance_id(), array( 1 ) ) && WC()->cart ) {
+		
+		$cart_item_count = WC()->cart->get_cart_contents_count();
+
+		// if we have items that need shipping, round the quantity / 2 to the nearest whole number
+		// this produces tiered cost increases for every 2 items
+		if ( $cart_item_count > 1 ) {
+			
+			$cart_items = WC()->cart->get_cart_contents();
+			
+			foreach( $cart_items as $item ) {
+				
+				if ( $item['product_id'] == 529 || $item['product_id'] == 542 ) {
+					
+					if( $item['quantity'] == 1 ) {
+						
+						$cost += 6;
+						
+					} elseif ( $item['quantity'] == 2 ) {
+						
+						$cost += 8;
+						
+					} elseif ( $item['quantity'] == 3 ) {
+						
+						$cost += 10;
+						
+					} elseif ( $item['quantity'] >= 4 && $item['quantity'] <= 8 ) {
+						
+						$cost += 12;
+						
+					} else {
+						
+						$cost += $item['quantity'] * 1.5;
+					
+					}
+					
+				} 
+				
+			}
+		}
+	}
+
+	return $cost;
+}
+add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
