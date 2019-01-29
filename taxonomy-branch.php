@@ -24,11 +24,7 @@
 					<?php while (have_posts()): the_post(); ?>					
 						<?php get_template_part('library/library', 'search-item'); ?>						
 					<?php endwhile; ?>
-					<div class="row justify-content-center align-items-center mb-2">
-						<div class="col-12 text-center mb-3"><button class="fwp-load-more btn btn-primary">View more</button></div>
-						<div class="col-2"><?php echo do_shortcode('[facetwp per_page="true"]'); ?></div>
-						<div class="col-10 text-right text-sm">Viewing <?php echo do_shortcode('[facetwp counts="true"]'); ?></div>
-					</div>
+					
 				<?php else: ?>
 					<div class="card">
 						<div class="card-body">
@@ -36,6 +32,11 @@
 						</div>
 					</div>
 				<?php endif; ?>
+				<div class="row justify-content-center align-items-center mb-2">
+					<div class="col-12 text-center mb-3"><?php echo do_shortcode('[facetwp pager="true"]'); ?></div>
+					<div class="col-2"><?php echo do_shortcode('[facetwp per_page="true"]'); ?></div>
+					<div class="col-10 text-right text-sm">Viewing <?php echo do_shortcode('[facetwp counts="true"]'); ?></div>
+				</div>
 			</div>
 		</div>
 	</div>

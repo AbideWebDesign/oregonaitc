@@ -56,10 +56,10 @@ get_header(); ?>
 				<?php wp_reset_postdata(); ?>
 				<?php if ($swp_query->max_num_pages > 1): ?>
 					<div class="row justify-content-center align-items-center mb-2">
-						<div class="col-12 text-center mb-3"><button class="fwp-load-more btn btn-primary">View more</button></div>
+						<div class="col-12 text-center mb-3"><?php echo do_shortcode('[facetwp pager="true"]'); ?></div>
 						<div class="col-2"><?php echo do_shortcode('[facetwp per_page="true"]'); ?></div>
 						<div class="col-10 text-right text-sm">Viewing <?php echo do_shortcode('[facetwp counts="true"]'); ?></div>
-					</div>					
+					</div>				
 				<?php endif; ?>
 			</div>
 		</div>
