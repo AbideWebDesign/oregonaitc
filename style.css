@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.4.4
+Version: 1.4.5
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -1348,7 +1348,7 @@ pre {
   .table-responsive > .table-bordered {
     border: 0; }
 
-.form-control, .facetwp-search, #wpmem_login .div_text input, .input-text, body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+.form-control, #footer-global-top .gform_wrapper .gfield_select, .facetwp-search, #wpmem_login .div_text input, .input-text, body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -1360,26 +1360,26 @@ pre {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
-  .form-control::-ms-expand, .facetwp-search::-ms-expand, #wpmem_login .div_text input::-ms-expand, .input-text::-ms-expand, body .gform_wrapper input:not([type=file]):not([type=image]):not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio])::-ms-expand {
+  .form-control::-ms-expand, #footer-global-top .gform_wrapper .gfield_select::-ms-expand, .facetwp-search::-ms-expand, #wpmem_login .div_text input::-ms-expand, .input-text::-ms-expand, body .gform_wrapper input:not([type=file]):not([type=image]):not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio])::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus, .facetwp-search:focus, #wpmem_login .div_text input:focus, .input-text:focus, body .gform_wrapper input:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  .form-control:focus, #footer-global-top .gform_wrapper .gfield_select:focus, .facetwp-search:focus, #wpmem_login .div_text input:focus, .input-text:focus, body .gform_wrapper input:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
     color: #495057;
     background-color: #fff;
     border-color: #88d1f9;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(15, 163, 242, 0.25); }
-  .form-control::placeholder, .facetwp-search::placeholder, #wpmem_login .div_text input::placeholder, .input-text::placeholder, body .gform_wrapper input:not([type=file]):not([type=image]):not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio])::placeholder {
+  .form-control::placeholder, #footer-global-top .gform_wrapper .gfield_select::placeholder, .facetwp-search::placeholder, #wpmem_login .div_text input::placeholder, .input-text::placeholder, body .gform_wrapper input:not([type=file]):not([type=image]):not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio])::placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:disabled, .facetwp-search:disabled, #wpmem_login .div_text input:disabled, .input-text:disabled, body .gform_wrapper input:disabled:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control[readonly], .facetwp-search[readonly], #wpmem_login .div_text input[readonly], .input-text[readonly], body .gform_wrapper input[readonly]:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  .form-control:disabled, #footer-global-top .gform_wrapper .gfield_select:disabled, .facetwp-search:disabled, #wpmem_login .div_text input:disabled, .input-text:disabled, body .gform_wrapper input:disabled:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control[readonly], #footer-global-top .gform_wrapper .gfield_select[readonly], .facetwp-search[readonly], #wpmem_login .div_text input[readonly], .input-text[readonly], body .gform_wrapper input[readonly]:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
     background-color: #e9ecef;
     opacity: 1; }
 
-select.form-control:not([size]):not([multiple]), select.facetwp-search:not([size]):not([multiple]), select.input-text:not([size]):not([multiple]) {
+select.form-control:not([size]):not([multiple]), #footer-global-top .gform_wrapper select.gfield_select:not([size]):not([multiple]), select.facetwp-search:not([size]):not([multiple]), select.input-text:not([size]):not([multiple]) {
   height: calc(2.25rem + 2px); }
 
-select.form-control:focus::-ms-value, select.facetwp-search:focus::-ms-value, select.input-text:focus::-ms-value {
+select.form-control:focus::-ms-value, #footer-global-top .gform_wrapper select.gfield_select:focus::-ms-value, select.facetwp-search:focus::-ms-value, select.input-text:focus::-ms-value {
   color: #495057;
   background-color: #fff; }
 
@@ -1417,11 +1417,11 @@ select.form-control:focus::-ms-value, select.facetwp-search:focus::-ms-value, se
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0; }
-  .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control, .input-group-sm > .form-control-plaintext.facetwp-search, #wpmem_login .div_text .input-group-sm > input.form-control-plaintext, .input-group-sm > .form-control-plaintext.input-text, body .gform_wrapper .input-group-sm > input.form-control-plaintext:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control, #footer-global-top .gform_wrapper .input-group-sm > .form-control-plaintext.gfield_select, .input-group-sm > .form-control-plaintext.facetwp-search, #wpmem_login .div_text .input-group-sm > input.form-control-plaintext, .input-group-sm > .form-control-plaintext.input-text, body .gform_wrapper .input-group-sm > input.form-control-plaintext:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .input-group-sm > .input-group-prepend > .form-control-plaintext.input-group-text,
   .input-group-sm > .input-group-append > .form-control-plaintext.input-group-text,
   .input-group-sm > .input-group-prepend > .form-control-plaintext.btn, .input-group-sm > .input-group-prepend > .form-control-plaintext.buttons, .woocommerce #respond .input-group-sm > .input-group-prepend > input.form-control-plaintext#submit, .woocommerce .input-group-sm > .input-group-prepend > a.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-prepend > button.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-prepend > input.form-control-plaintext[type=submit], .gform_wrapper .gform_page_footer .input-group-sm > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_page_footer .input-group-sm > .input-group-prepend > input.form-control-plaintext[type=submit],
-  .input-group-sm > .input-group-append > .form-control-plaintext.btn, .input-group-sm > .input-group-append > .form-control-plaintext.buttons, .woocommerce #respond .input-group-sm > .input-group-append > input.form-control-plaintext#submit, .woocommerce .input-group-sm > .input-group-append > a.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-append > button.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-append > input.form-control-plaintext[type=submit], .gform_wrapper .gform_page_footer .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_page_footer .input-group-sm > .input-group-append > input.form-control-plaintext[type=submit], .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control, .input-group-lg > .form-control-plaintext.facetwp-search, #wpmem_login .div_text .input-group-lg > input.form-control-plaintext, .input-group-lg > .form-control-plaintext.input-text, body .gform_wrapper .input-group-lg > input.form-control-plaintext:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .input-group-sm > .input-group-append > .form-control-plaintext.btn, .input-group-sm > .input-group-append > .form-control-plaintext.buttons, .woocommerce #respond .input-group-sm > .input-group-append > input.form-control-plaintext#submit, .woocommerce .input-group-sm > .input-group-append > a.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-append > button.form-control-plaintext.button, .woocommerce .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-append > input.form-control-plaintext[type=submit], .gform_wrapper .gform_page_footer .input-group-sm > .input-group-append > input.form-control-plaintext.button, .gform_wrapper .gform_page_footer .input-group-sm > .input-group-append > input.form-control-plaintext[type=submit], .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control, #footer-global-top .gform_wrapper .input-group-lg > .form-control-plaintext.gfield_select, .input-group-lg > .form-control-plaintext.facetwp-search, #wpmem_login .div_text .input-group-lg > input.form-control-plaintext, .input-group-lg > .form-control-plaintext.input-text, body .gform_wrapper .input-group-lg > input.form-control-plaintext:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .input-group-lg > .input-group-prepend > .form-control-plaintext.input-group-text,
   .input-group-lg > .input-group-append > .form-control-plaintext.input-group-text,
   .input-group-lg > .input-group-prepend > .form-control-plaintext.btn, .input-group-lg > .input-group-prepend > .form-control-plaintext.buttons, .woocommerce #respond .input-group-lg > .input-group-prepend > input.form-control-plaintext#submit, .woocommerce .input-group-lg > .input-group-prepend > a.form-control-plaintext.button, .woocommerce .input-group-lg > .input-group-prepend > button.form-control-plaintext.button, .woocommerce .input-group-lg > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-lg > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_footer .input-group-lg > .input-group-prepend > input.form-control-plaintext[type=submit], .gform_wrapper .gform_page_footer .input-group-lg > .input-group-prepend > input.form-control-plaintext.button, .gform_wrapper .gform_page_footer .input-group-lg > .input-group-prepend > input.form-control-plaintext[type=submit],
@@ -1429,7 +1429,7 @@ select.form-control:focus::-ms-value, select.facetwp-search:focus::-ms-value, se
     padding-right: 0;
     padding-left: 0; }
 
-.form-control-sm, .input-group-sm > .form-control, .input-group-sm > .facetwp-search, #wpmem_login .div_text .input-group-sm > input, .input-group-sm > .input-text, body .gform_wrapper .input-group-sm > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.form-control-sm, .input-group-sm > .form-control, #footer-global-top .gform_wrapper .input-group-sm > .gfield_select, .input-group-sm > .facetwp-search, #wpmem_login .div_text .input-group-sm > input, .input-group-sm > .input-text, body .gform_wrapper .input-group-sm > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-prepend > .buttons, .woocommerce #respond .input-group-sm > .input-group-prepend > input#submit, .woocommerce .input-group-sm > .input-group-prepend > a.button, .woocommerce .input-group-sm > .input-group-prepend > button.button, .woocommerce .input-group-sm > .input-group-prepend > input.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-prepend > input.button, .gform_wrapper .gform_footer .input-group-sm > .input-group-prepend > input[type=submit], .gform_wrapper .gform_page_footer .input-group-sm > .input-group-prepend > input.button, .gform_wrapper .gform_page_footer .input-group-sm > .input-group-prepend > input[type=submit],
@@ -1439,14 +1439,14 @@ select.form-control:focus::-ms-value, select.facetwp-search:focus::-ms-value, se
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]), .input-group-sm > select.facetwp-search:not([size]):not([multiple]), .input-group-sm > select.input-text:not([size]):not([multiple]),
+select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]), #footer-global-top .gform_wrapper .input-group-sm > select.gfield_select:not([size]):not([multiple]), .input-group-sm > select.facetwp-search:not([size]):not([multiple]), .input-group-sm > select.input-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-append > select.input-group-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-prepend > select.buttons:not([size]):not([multiple]),
 .input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-append > select.buttons:not([size]):not([multiple]) {
   height: calc(1.8125rem + 2px); }
 
-.form-control-lg, .input-group-lg > .form-control, .input-group-lg > .facetwp-search, #wpmem_login .div_text .input-group-lg > input, .input-group-lg > .input-text, body .gform_wrapper .input-group-lg > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.form-control-lg, .input-group-lg > .form-control, #footer-global-top .gform_wrapper .input-group-lg > .gfield_select, .input-group-lg > .facetwp-search, #wpmem_login .div_text .input-group-lg > input, .input-group-lg > .input-text, body .gform_wrapper .input-group-lg > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-prepend > .buttons, .woocommerce #respond .input-group-lg > .input-group-prepend > input#submit, .woocommerce .input-group-lg > .input-group-prepend > a.button, .woocommerce .input-group-lg > .input-group-prepend > button.button, .woocommerce .input-group-lg > .input-group-prepend > input.button, .gform_wrapper .gform_footer .input-group-lg > .input-group-prepend > input.button, .gform_wrapper .gform_footer .input-group-lg > .input-group-prepend > input[type=submit], .gform_wrapper .gform_page_footer .input-group-lg > .input-group-prepend > input.button, .gform_wrapper .gform_page_footer .input-group-lg > .input-group-prepend > input[type=submit],
@@ -1456,7 +1456,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]), .input-group-lg > select.facetwp-search:not([size]):not([multiple]), .input-group-lg > select.input-text:not([size]):not([multiple]),
+select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]), #footer-global-top .gform_wrapper .input-group-lg > select.gfield_select:not([size]):not([multiple]), .input-group-lg > select.facetwp-search:not([size]):not([multiple]), .input-group-lg > select.input-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-lg > .input-group-prepend > select.buttons:not([size]):not([multiple]),
@@ -1527,24 +1527,27 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   background-color: rgba(64, 73, 84, 0.8);
   border-radius: .2rem; }
 
-.was-validated .form-control:valid, .was-validated .facetwp-search:valid, .was-validated #wpmem_login .div_text input:valid, #wpmem_login .div_text .was-validated input:valid, .was-validated .input-text:valid, .was-validated body .gform_wrapper input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-valid, .is-valid.facetwp-search, #wpmem_login .div_text input.is-valid, .is-valid.input-text, body .gform_wrapper input.is-valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
+.was-validated .form-control:valid, .was-validated #footer-global-top .gform_wrapper .gfield_select:valid, #footer-global-top .gform_wrapper .was-validated .gfield_select:valid, .was-validated .facetwp-search:valid, .was-validated #wpmem_login .div_text input:valid, #wpmem_login .div_text .was-validated input:valid, .was-validated .input-text:valid, .was-validated body .gform_wrapper input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-valid, #footer-global-top .gform_wrapper .is-valid.gfield_select, .is-valid.facetwp-search, #wpmem_login .div_text input.is-valid, .is-valid.input-text, body .gform_wrapper input.is-valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
 .custom-select:valid,
 .custom-select.is-valid {
   border-color: #404954; }
-  .was-validated .form-control:valid:focus, .was-validated .facetwp-search:valid:focus, .was-validated #wpmem_login .div_text input:valid:focus, #wpmem_login .div_text .was-validated input:valid:focus, .was-validated .input-text:valid:focus, .was-validated body .gform_wrapper input:valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-valid:focus, .is-valid.facetwp-search:focus, #wpmem_login .div_text input.is-valid:focus, .is-valid.input-text:focus, body .gform_wrapper input.is-valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
+  .was-validated .form-control:valid:focus, .was-validated #footer-global-top .gform_wrapper .gfield_select:valid:focus, #footer-global-top .gform_wrapper .was-validated .gfield_select:valid:focus, .was-validated .facetwp-search:valid:focus, .was-validated #wpmem_login .div_text input:valid:focus, #wpmem_login .div_text .was-validated input:valid:focus, .was-validated .input-text:valid:focus, .was-validated body .gform_wrapper input:valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-valid:focus, #footer-global-top .gform_wrapper .is-valid.gfield_select:focus, .is-valid.facetwp-search:focus, #wpmem_login .div_text input.is-valid:focus, .is-valid.input-text:focus, body .gform_wrapper input.is-valid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
   .custom-select:valid:focus,
   .custom-select.is-valid:focus {
     border-color: #404954;
     box-shadow: 0 0 0 0.2rem rgba(64, 73, 84, 0.25); }
-  .was-validated .form-control:valid ~ .valid-feedback, .was-validated .facetwp-search:valid ~ .valid-feedback, .was-validated #wpmem_login .div_text input:valid ~ .valid-feedback, #wpmem_login .div_text .was-validated input:valid ~ .valid-feedback, .was-validated .input-text:valid ~ .valid-feedback, .was-validated body .gform_wrapper input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback, body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback,
+  .was-validated .form-control:valid ~ .valid-feedback, .was-validated #footer-global-top .gform_wrapper .gfield_select:valid ~ .valid-feedback, #footer-global-top .gform_wrapper .was-validated .gfield_select:valid ~ .valid-feedback, .was-validated .facetwp-search:valid ~ .valid-feedback, .was-validated #wpmem_login .div_text input:valid ~ .valid-feedback, #wpmem_login .div_text .was-validated input:valid ~ .valid-feedback, .was-validated .input-text:valid ~ .valid-feedback, .was-validated body .gform_wrapper input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback, body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback,
   .was-validated .form-control:valid ~ .valid-tooltip,
+  .was-validated #footer-global-top .gform_wrapper .gfield_select:valid ~ .valid-tooltip,
+  #footer-global-top .gform_wrapper .was-validated .gfield_select:valid ~ .valid-tooltip,
   .was-validated .facetwp-search:valid ~ .valid-tooltip,
   .was-validated #wpmem_login .div_text input:valid ~ .valid-tooltip,
   #wpmem_login .div_text .was-validated input:valid ~ .valid-tooltip,
   .was-validated .input-text:valid ~ .valid-tooltip,
   .was-validated body .gform_wrapper input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-tooltip,
-  body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .is-valid.facetwp-search ~ .valid-feedback, #wpmem_login .div_text input.is-valid ~ .valid-feedback, .is-valid.input-text ~ .valid-feedback, body .gform_wrapper input.is-valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback,
+  body .gform_wrapper .was-validated input:valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, #footer-global-top .gform_wrapper .is-valid.gfield_select ~ .valid-feedback, .is-valid.facetwp-search ~ .valid-feedback, #wpmem_login .div_text input.is-valid ~ .valid-feedback, .is-valid.input-text ~ .valid-feedback, body .gform_wrapper input.is-valid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .valid-feedback,
   .form-control.is-valid ~ .valid-tooltip,
+  #footer-global-top .gform_wrapper .is-valid.gfield_select ~ .valid-tooltip,
   .is-valid.facetwp-search ~ .valid-tooltip,
   #wpmem_login .div_text input.is-valid ~ .valid-tooltip,
   .is-valid.input-text ~ .valid-tooltip,
@@ -1614,24 +1617,27 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   background-color: rgba(255, 65, 54, 0.8);
   border-radius: .2rem; }
 
-.was-validated .form-control:invalid, .was-validated .facetwp-search:invalid, .was-validated #wpmem_login .div_text input:invalid, #wpmem_login .div_text .was-validated input:invalid, .was-validated .input-text:invalid, .was-validated body .gform_wrapper input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-invalid, .is-invalid.facetwp-search, #wpmem_login .div_text input.is-invalid, .is-invalid.input-text, body .gform_wrapper input.is-invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
+.was-validated .form-control:invalid, .was-validated #footer-global-top .gform_wrapper .gfield_select:invalid, #footer-global-top .gform_wrapper .was-validated .gfield_select:invalid, .was-validated .facetwp-search:invalid, .was-validated #wpmem_login .div_text input:invalid, #wpmem_login .div_text .was-validated input:invalid, .was-validated .input-text:invalid, .was-validated body .gform_wrapper input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-invalid, #footer-global-top .gform_wrapper .is-invalid.gfield_select, .is-invalid.facetwp-search, #wpmem_login .div_text input.is-invalid, .is-invalid.input-text, body .gform_wrapper input.is-invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
 .custom-select:invalid,
 .custom-select.is-invalid {
   border-color: #ff4136; }
-  .was-validated .form-control:invalid:focus, .was-validated .facetwp-search:invalid:focus, .was-validated #wpmem_login .div_text input:invalid:focus, #wpmem_login .div_text .was-validated input:invalid:focus, .was-validated .input-text:invalid:focus, .was-validated body .gform_wrapper input:invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-invalid:focus, .is-invalid.facetwp-search:focus, #wpmem_login .div_text input.is-invalid:focus, .is-invalid.input-text:focus, body .gform_wrapper input.is-invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
+  .was-validated .form-control:invalid:focus, .was-validated #footer-global-top .gform_wrapper .gfield_select:invalid:focus, #footer-global-top .gform_wrapper .was-validated .gfield_select:invalid:focus, .was-validated .facetwp-search:invalid:focus, .was-validated #wpmem_login .div_text input:invalid:focus, #wpmem_login .div_text .was-validated input:invalid:focus, .was-validated .input-text:invalid:focus, .was-validated body .gform_wrapper input:invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .was-validated input:invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .form-control.is-invalid:focus, #footer-global-top .gform_wrapper .is-invalid.gfield_select:focus, .is-invalid.facetwp-search:focus, #wpmem_login .div_text input.is-invalid:focus, .is-invalid.input-text:focus, body .gform_wrapper input.is-invalid:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .was-validated
   .custom-select:invalid:focus,
   .custom-select.is-invalid:focus {
     border-color: #ff4136;
     box-shadow: 0 0 0 0.2rem rgba(255, 65, 54, 0.25); }
-  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .facetwp-search:invalid ~ .invalid-feedback, .was-validated #wpmem_login .div_text input:invalid ~ .invalid-feedback, #wpmem_login .div_text .was-validated input:invalid ~ .invalid-feedback, .was-validated .input-text:invalid ~ .invalid-feedback, .was-validated body .gform_wrapper input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback, body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback,
+  .was-validated .form-control:invalid ~ .invalid-feedback, .was-validated #footer-global-top .gform_wrapper .gfield_select:invalid ~ .invalid-feedback, #footer-global-top .gform_wrapper .was-validated .gfield_select:invalid ~ .invalid-feedback, .was-validated .facetwp-search:invalid ~ .invalid-feedback, .was-validated #wpmem_login .div_text input:invalid ~ .invalid-feedback, #wpmem_login .div_text .was-validated input:invalid ~ .invalid-feedback, .was-validated .input-text:invalid ~ .invalid-feedback, .was-validated body .gform_wrapper input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback, body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback,
   .was-validated .form-control:invalid ~ .invalid-tooltip,
+  .was-validated #footer-global-top .gform_wrapper .gfield_select:invalid ~ .invalid-tooltip,
+  #footer-global-top .gform_wrapper .was-validated .gfield_select:invalid ~ .invalid-tooltip,
   .was-validated .facetwp-search:invalid ~ .invalid-tooltip,
   .was-validated #wpmem_login .div_text input:invalid ~ .invalid-tooltip,
   #wpmem_login .div_text .was-validated input:invalid ~ .invalid-tooltip,
   .was-validated .input-text:invalid ~ .invalid-tooltip,
   .was-validated body .gform_wrapper input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-tooltip,
-  body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .is-invalid.facetwp-search ~ .invalid-feedback, #wpmem_login .div_text input.is-invalid ~ .invalid-feedback, .is-invalid.input-text ~ .invalid-feedback, body .gform_wrapper input.is-invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback,
+  body .gform_wrapper .was-validated input:invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, #footer-global-top .gform_wrapper .is-invalid.gfield_select ~ .invalid-feedback, .is-invalid.facetwp-search ~ .invalid-feedback, #wpmem_login .div_text input.is-invalid ~ .invalid-feedback, .is-invalid.input-text ~ .invalid-feedback, body .gform_wrapper input.is-invalid:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) ~ .invalid-feedback,
   .form-control.is-invalid ~ .invalid-tooltip,
+  #footer-global-top .gform_wrapper .is-invalid.gfield_select ~ .invalid-tooltip,
   .is-invalid.facetwp-search ~ .invalid-tooltip,
   #wpmem_login .div_text input.is-invalid ~ .invalid-tooltip,
   .is-invalid.input-text ~ .invalid-tooltip,
@@ -1698,7 +1704,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
       flex-flow: row wrap;
       align-items: center;
       margin-bottom: 0; }
-    .form-inline .form-control, .form-inline .facetwp-search, .form-inline #wpmem_login .div_text input, #wpmem_login .div_text .form-inline input, .form-inline .input-text, .form-inline body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .form-inline input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    .form-inline .form-control, .form-inline #footer-global-top .gform_wrapper .gfield_select, #footer-global-top .gform_wrapper .form-inline .gfield_select, .form-inline .facetwp-search, .form-inline #wpmem_login .div_text input, #wpmem_login .div_text .form-inline input, .form-inline .input-text, .form-inline body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .form-inline input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
       display: inline-block;
       width: auto;
       vertical-align: middle; }
@@ -3567,29 +3573,32 @@ tbody.collapse.show {
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%; }
-  .input-group > .form-control, .input-group > .facetwp-search, #wpmem_login .div_text .input-group > input, .input-group > .input-text, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .input-group > .form-control, #footer-global-top .gform_wrapper .input-group > .gfield_select, .input-group > .facetwp-search, #wpmem_login .div_text .input-group > input, .input-group > .input-text, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .input-group > .custom-select,
   .input-group > .custom-file {
     position: relative;
     flex: 1 1 auto;
     width: 1%;
     margin-bottom: 0; }
-    .input-group > .form-control:focus, .input-group > .facetwp-search:focus, #wpmem_login .div_text .input-group > input:focus, .input-group > .input-text:focus, body .gform_wrapper .input-group > input:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+    .input-group > .form-control:focus, #footer-global-top .gform_wrapper .input-group > .gfield_select:focus, .input-group > .facetwp-search:focus, #wpmem_login .div_text .input-group > input:focus, .input-group > .input-text:focus, body .gform_wrapper .input-group > input:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
     .input-group > .custom-select:focus,
     .input-group > .custom-file:focus {
       z-index: 3; }
-    .input-group > .form-control + .form-control, .input-group > .facetwp-search + .form-control, #wpmem_login .div_text .input-group > input + .form-control, .input-group > .input-text + .form-control, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .form-control, .input-group > .form-control + .facetwp-search, .input-group > .facetwp-search + .facetwp-search, #wpmem_login .div_text .input-group > input + .facetwp-search, .input-group > .input-text + .facetwp-search, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .facetwp-search, #wpmem_login .div_text .input-group > .form-control + input, #wpmem_login .div_text .input-group > .facetwp-search + input, #wpmem_login .div_text .input-group > input + input, #wpmem_login .div_text .input-group > .input-text + input, #wpmem_login .div_text body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + input, .input-group > .form-control + .input-text, .input-group > .facetwp-search + .input-text, #wpmem_login .div_text .input-group > input + .input-text, .input-group > .input-text + .input-text, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .input-text, body .gform_wrapper .input-group > .form-control + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > .facetwp-search + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), #wpmem_login .div_text body .gform_wrapper .input-group > input + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > .input-text + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+    .input-group > .form-control + .form-control, #footer-global-top .gform_wrapper .input-group > .gfield_select + .form-control, .input-group > .facetwp-search + .form-control, #wpmem_login .div_text .input-group > input + .form-control, .input-group > .input-text + .form-control, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .form-control, #footer-global-top .gform_wrapper .input-group > .form-control + .gfield_select, #footer-global-top .gform_wrapper .input-group > .gfield_select + .gfield_select, #footer-global-top .gform_wrapper .input-group > .facetwp-search + .gfield_select, #wpmem_login .div_text #footer-global-top .gform_wrapper .input-group > input + .gfield_select, #footer-global-top .gform_wrapper #wpmem_login .div_text .input-group > input + .gfield_select, #footer-global-top .gform_wrapper .input-group > .input-text + .gfield_select, body #footer-global-top .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .gfield_select, #footer-global-top body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .gfield_select, .input-group > .form-control + .facetwp-search, #footer-global-top .gform_wrapper .input-group > .gfield_select + .facetwp-search, .input-group > .facetwp-search + .facetwp-search, #wpmem_login .div_text .input-group > input + .facetwp-search, .input-group > .input-text + .facetwp-search, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .facetwp-search, #wpmem_login .div_text .input-group > .form-control + input, #footer-global-top .gform_wrapper #wpmem_login .div_text .input-group > .gfield_select + input, #wpmem_login .div_text #footer-global-top .gform_wrapper .input-group > .gfield_select + input, #wpmem_login .div_text .input-group > .facetwp-search + input, #wpmem_login .div_text .input-group > input + input, #wpmem_login .div_text .input-group > .input-text + input, #wpmem_login .div_text body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + input, .input-group > .form-control + .input-text, #footer-global-top .gform_wrapper .input-group > .gfield_select + .input-text, .input-group > .facetwp-search + .input-text, #wpmem_login .div_text .input-group > input + .input-text, .input-group > .input-text + .input-text, body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .input-text, body .gform_wrapper .input-group > .form-control + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), #footer-global-top body .gform_wrapper .input-group > .gfield_select + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body #footer-global-top .gform_wrapper .input-group > .gfield_select + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > .facetwp-search + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), #wpmem_login .div_text body .gform_wrapper .input-group > input + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > .input-text + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
     .input-group > .form-control + .custom-select,
+    #footer-global-top .gform_wrapper .input-group > .gfield_select + .custom-select,
     .input-group > .facetwp-search + .custom-select,
     #wpmem_login .div_text .input-group > input + .custom-select,
     .input-group > .input-text + .custom-select,
     body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .custom-select,
     .input-group > .form-control + .custom-file,
+    #footer-global-top .gform_wrapper .input-group > .gfield_select + .custom-file,
     .input-group > .facetwp-search + .custom-file,
     #wpmem_login .div_text .input-group > input + .custom-file,
     .input-group > .input-text + .custom-file,
     body .gform_wrapper .input-group > input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) + .custom-file,
     .input-group > .custom-select + .form-control,
+    #footer-global-top .gform_wrapper .input-group > .custom-select + .gfield_select,
     .input-group > .custom-select + .facetwp-search,
     #wpmem_login .div_text .input-group > .custom-select + input,
     .input-group > .custom-select + .input-text,
@@ -3597,6 +3606,7 @@ tbody.collapse.show {
     .input-group > .custom-select + .custom-select,
     .input-group > .custom-select + .custom-file,
     .input-group > .custom-file + .form-control,
+    #footer-global-top .gform_wrapper .input-group > .custom-file + .gfield_select,
     .input-group > .custom-file + .facetwp-search,
     #wpmem_login .div_text .input-group > .custom-file + input,
     .input-group > .custom-file + .input-text,
@@ -3604,11 +3614,11 @@ tbody.collapse.show {
     .input-group > .custom-file + .custom-select,
     .input-group > .custom-file + .custom-file {
       margin-left: -1px; }
-  .input-group > .form-control:not(:last-child), .input-group > .facetwp-search:not(:last-child), #wpmem_login .div_text .input-group > input:not(:last-child), .input-group > .input-text:not(:last-child), body .gform_wrapper .input-group > input:not(:last-child):not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .input-group > .form-control:not(:last-child), #footer-global-top .gform_wrapper .input-group > .gfield_select:not(:last-child), .input-group > .facetwp-search:not(:last-child), #wpmem_login .div_text .input-group > input:not(:last-child), .input-group > .input-text:not(:last-child), body .gform_wrapper .input-group > input:not(:last-child):not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .input-group > .custom-select:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
-  .input-group > .form-control:not(:first-child), .input-group > .facetwp-search:not(:first-child), #wpmem_login .div_text .input-group > input:not(:first-child), .input-group > .input-text:not(:first-child), body .gform_wrapper .input-group > input:not(:first-child):not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .input-group > .form-control:not(:first-child), #footer-global-top .gform_wrapper .input-group > .gfield_select:not(:first-child), .input-group > .facetwp-search:not(:first-child), #wpmem_login .div_text .input-group > input:not(:first-child), .input-group > .input-text:not(:first-child), body .gform_wrapper .input-group > input:not(:first-child):not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .input-group > .custom-select:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
@@ -8656,9 +8666,15 @@ p {
 /* 
 ** Global Footer Top
 */
-#footer-global-top .gform_wrapper .top_label .gfield_label,
-#footer-global-top .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
-#footer-global-top .validation_error {
+#footer-global-top .gform_wrapper input, #footer-global-top .gform_wrapper .gfield_select {
+  border: none; }
+
+#footer-global-top .gform_wrapper .gfield_select::placeholder {
+  color: #6c757d;
+  opacity: 1;
+  /* Firefox */ }
+
+#footer-global-top .gform_wrapper .top_label .gfield_label, #footer-global-top .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label, #footer-global-top .gform_wrapper .validation_error {
   display: none; }
 
 #footer-global-top .gform_wrapper li.gfield.gfield_error {
@@ -8754,8 +8770,10 @@ p {
 .search-form-top a:hover {
   text-decoration: none; }
 
-.search-form-top input.form-control, .search-form-top input.facetwp-search, .search-form-top #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top input, .search-form-top input.input-text, .search-form-top body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.search-form-top input.form-control, .search-form-top #footer-global-top .gform_wrapper input.gfield_select, #footer-global-top .gform_wrapper .search-form-top input.gfield_select, .search-form-top input.facetwp-search, .search-form-top #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top input, .search-form-top input.input-text, .search-form-top body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .facetwp-type-search input.form-control,
+.facetwp-type-search #footer-global-top .gform_wrapper input.gfield_select,
+#footer-global-top .gform_wrapper .facetwp-type-search input.gfield_select,
 .facetwp-type-search input.facetwp-search,
 .facetwp-type-search #wpmem_login .div_text input,
 #wpmem_login .div_text .facetwp-type-search input,
@@ -8782,6 +8800,8 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 
 .search-form-top .fas,
 .facetwp-type-search .form-control .fa,
+.facetwp-type-search #footer-global-top .gform_wrapper .gfield_select .fa,
+#footer-global-top .gform_wrapper .facetwp-type-search .gfield_select .fa,
 .facetwp-type-search .facetwp-search .fa,
 .facetwp-type-search #wpmem_login .div_text input .fa,
 #wpmem_login .div_text .facetwp-type-search input .fa,
@@ -8894,8 +8914,10 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
   cursor: default; }
 
 @media (max-width: 767px) {
-  .search-form-top .form-inline .form-control, .search-form-top .form-inline .facetwp-search, .search-form-top .form-inline #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top .form-inline input, .search-form-top .form-inline .input-text, .search-form-top .form-inline body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top .form-inline input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .search-form-top .form-inline .form-control, .search-form-top .form-inline #footer-global-top .gform_wrapper .gfield_select, #footer-global-top .gform_wrapper .search-form-top .form-inline .gfield_select, .search-form-top .form-inline .facetwp-search, .search-form-top .form-inline #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top .form-inline input, .search-form-top .form-inline .input-text, .search-form-top .form-inline body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top .form-inline input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .facetwp-type-search .form-control,
+  .facetwp-type-search #footer-global-top .gform_wrapper .gfield_select,
+  #footer-global-top .gform_wrapper .facetwp-type-search .gfield_select,
   .facetwp-type-search .facetwp-search,
   .facetwp-type-search #wpmem_login .div_text input,
   #wpmem_login .div_text .facetwp-type-search input,
@@ -8903,8 +8925,10 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
   .facetwp-type-search body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
     display: inline-block; }
-  .search-form-top input.form-control, .search-form-top input.facetwp-search, .search-form-top #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top input, .search-form-top input.input-text, .search-form-top body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .search-form-top input.form-control, .search-form-top #footer-global-top .gform_wrapper input.gfield_select, #footer-global-top .gform_wrapper .search-form-top input.gfield_select, .search-form-top input.facetwp-search, .search-form-top #wpmem_login .div_text input, #wpmem_login .div_text .search-form-top input, .search-form-top input.input-text, .search-form-top body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .search-form-top input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .facetwp-type-search .form-control,
+  .facetwp-type-search #footer-global-top .gform_wrapper .gfield_select,
+  #footer-global-top .gform_wrapper .facetwp-type-search .gfield_select,
   .facetwp-type-search .facetwp-search,
   .facetwp-type-search #wpmem_login .div_text input,
   #wpmem_login .div_text .facetwp-type-search input,
@@ -9514,7 +9538,7 @@ body .gform_wrapper .gform_footer {
   letter-spacing: 0.02em; }
 
 /* Library Hold */
-.page-template-page-library-hold .form-control, .page-template-page-library-hold .facetwp-search, .page-template-page-library-hold #wpmem_login .div_text input, #wpmem_login .div_text .page-template-page-library-hold input, .page-template-page-library-hold .input-text, .page-template-page-library-hold body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .page-template-page-library-hold input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
+.page-template-page-library-hold .form-control, .page-template-page-library-hold #footer-global-top .gform_wrapper .gfield_select, #footer-global-top .gform_wrapper .page-template-page-library-hold .gfield_select, .page-template-page-library-hold .facetwp-search, .page-template-page-library-hold #wpmem_login .div_text input, #wpmem_login .div_text .page-template-page-library-hold input, .page-template-page-library-hold .input-text, .page-template-page-library-hold body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body .gform_wrapper .page-template-page-library-hold input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
   font-size: 14px; }
 
 .kit-qty {
