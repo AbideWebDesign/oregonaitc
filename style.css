@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.4.6
+Version: 1.4.7
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8375,19 +8375,25 @@ p {
   font-size: 12px;
   line-height: 18px; }
 
-.text-md, .facetwp-checkbox, .facetwp-toggle, #wpmem_reg label, #wpmem_login label, #wpmem_msg p,
+.text-md, .facetwp-checkbox, .facetwp-toggle, #wpmem_reg label, #wpmem_login label, #wpmem_msg p, body table.gsurvey-likert th.gsurvey-likert-choice-label, body table.gsurvey-likert .gsurvey-likert-row-label, body table.gsurvey-likert .gsurvey-likert-choice,
 .text-md p,
 .facetwp-checkbox p,
 .facetwp-toggle p,
 #wpmem_reg label p,
 #wpmem_login label p,
 #wpmem_msg p p,
+body table.gsurvey-likert th.gsurvey-likert-choice-label p,
+body table.gsurvey-likert .gsurvey-likert-row-label p,
+body table.gsurvey-likert .gsurvey-likert-choice p,
 .text-md li,
 .facetwp-checkbox li,
 .facetwp-toggle li,
 #wpmem_reg label li,
 #wpmem_login label li,
-#wpmem_msg p li {
+#wpmem_msg p li,
+body table.gsurvey-likert th.gsurvey-likert-choice-label li,
+body table.gsurvey-likert .gsurvey-likert-row-label li,
+body table.gsurvey-likert .gsurvey-likert-choice li {
   font-size: 14px;
   line-height: 25px; }
 
@@ -9296,7 +9302,7 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 #account-top a:hover {
   text-decoration: none; }
 
-#row-account .text-md, #row-account .facetwp-checkbox, #row-account .facetwp-toggle, #row-account #wpmem_reg label, #wpmem_reg #row-account label, #row-account #wpmem_login label, #wpmem_login #row-account label, #row-account #wpmem_msg p, #wpmem_msg #row-account p {
+#row-account .text-md, #row-account .facetwp-checkbox, #row-account .facetwp-toggle, #row-account #wpmem_reg label, #wpmem_reg #row-account label, #row-account #wpmem_login label, #wpmem_login #row-account label, #row-account #wpmem_msg p, #wpmem_msg #row-account p, #row-account body table.gsurvey-likert th.gsurvey-likert-choice-label, body table.gsurvey-likert #row-account th.gsurvey-likert-choice-label, #row-account body table.gsurvey-likert .gsurvey-likert-row-label, body table.gsurvey-likert #row-account .gsurvey-likert-row-label, #row-account body table.gsurvey-likert .gsurvey-likert-choice, body table.gsurvey-likert #row-account .gsurvey-likert-choice {
   line-height: 100%; }
 
 #row-account a {
@@ -9396,6 +9402,22 @@ body .gform_wrapper .gform_footer {
 #footer-global-top .gform_wrapper .gform_footer input.button, #footer-global-top .gform_wrapper .gform_footer input[type=submit], #footer-global-top .gform_wrapper .gform_page_footer input.button, #footer-global-top .gform_wrapper .gform_page_footer input[type=submit] {
   border-color: white;
   color: #0FA3F2; }
+
+body table.gsurvey-likert {
+  border: none; }
+  body table.gsurvey-likert td.gsurvey-likert-choice {
+    background-color: white;
+    height: 46px; }
+  body table.gsurvey-likert th.gsurvey-likert-choice-label {
+    color: white;
+    background-color: #0FA3F2;
+    border: none; }
+  body table.gsurvey-likert .gsurvey-likert-row-label, body table.gsurvey-likert .gsurvey-likert-choice {
+    border: none; }
+  body table.gsurvey-likert th.gsurvey-likert-row-label:first-child {
+    border: none; }
+  body table.gsurvey-likert .gsurvey-likert-row-label {
+    background-color: #eee; }
 
 /* Map */
 /* Oregon Map */
