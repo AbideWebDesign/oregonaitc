@@ -2,11 +2,13 @@
 <?php /* Template Name: Library Hold Page */ ?>
 <?php get_header(); ?>
 <?php
+	
+$errors = array();
+		
 if(isset($_POST['submit'])){ 
 	
 	if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { 
 	
-		$errors = array();
 		$b = array();
 		$branches = array('Oregon', 'Washington County');
 		
@@ -74,7 +76,7 @@ if(isset($_POST['submit'])){
 													
 													<?php endforeach; ?>
 													
-													<?php echo (!$kit) ? 1 : ''; ?>
+													<?php echo (!isset($kit)) ? 1 : ''; ?>
 													
 												</td>
 												<td class="align-middle"><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
