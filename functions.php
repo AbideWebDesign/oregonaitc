@@ -424,29 +424,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
  * Nationbuilder
  */
 add_filter( 'wpmem_register_data', 'nationbuilder_hook' );
-
 function nationbuilder_hook( $fields ){	
-	
-	$token = 'aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154'; 
-	
-	$nb_url = "https://oregonaitc.nationbuilder.com/api/v1/people?access_token=" . $token;
-	 
-	// Client ID and Secret from Nation Builder
-	$CLIENT_ID	= '06f6d62b38696451d21eacfdb4700ea21ff2eee8a46df77a0ece9c85f38753f4';
-	$CLIENT_SECRET	= '80234e58d7fa84921e2120295befd33ec55a989651cbe7c7e5b7fb39752ffcef';
-	 
-	// Start a new OAuth2 Client
-	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
-	
-	$baseApiUrl = 'https://oregonaitc.nationbuilder.com';
-	$client->setAccessToken($token);
-	
-	// Set the headers for the request
-	$header = array(
-		'Authorization' => $token,
-		'Content-Type' => 'application/json', 
-		'Accept' => 'application/json'
-		);
 
 	$person = array();
 	$address = array();
@@ -541,25 +519,7 @@ function nationbuilder_hook( $fields ){
 	
 	$data = array('person' => $person);
 	
-    $ch = curl_init();
-                    
-    curl_setopt($ch, CURLOPT_URL, "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154");
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST,'PUT');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Accept: application/json'));  
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-
-	 
-	$json_response = curl_exec($ch);
-	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $content_type = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-    if ($curl_error = curl_error($ch)) {
-        throw new Exception($curl_error, Exception::CURL_ERROR);
-    } else {
-        $json_decode = json_decode($result, true);
-    }
-	
-	curl_close($ch);
+	nationbuilder_client($data);
 	
 	return $fields;
 }
@@ -568,27 +528,6 @@ function nationbuilder_hook( $fields ){
 add_action( 'gform_after_submission_1', 'nb_add_volunteer', 10, 2 );
 function nb_add_volunteer( $entry, $form ) {
 	
-	$token = 'aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154'; 
-	
-	$nb_url = "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=" . $token;
-	 
-	// Client ID and Secret from Nation Builder
-	$CLIENT_ID	= '4f23365530725bc7dd69531cbb367ad0970f5b0f2886d6f39141886eb08be3cf';
-	$CLIENT_SECRET	= '31d2b20c9637bfc260bc767c1439245716703b91510ec8c6bc835dee5e4afec2';
-	 
-	// Start a new OAuth2 Client
-	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
-	
-	$baseApiUrl = 'https://oregonaitc.nationbuilder.com';
-	$client->setAccessToken($token);
-	
-	// Set the headers for the request
-	$header = array(
-		'Authorization' => $token,
-		'Content-Type' => 'application/json', 
-		'Accept' => 'application/json'
-		);
-
 	$person = array();
 	$address = array();
 	$tags = array();
@@ -617,53 +556,14 @@ function nb_add_volunteer( $entry, $form ) {
 	$person['tags'] = $tags;
 	$data = array('person' => $person);
 	
-    $ch = curl_init();
-                    
-    curl_setopt($ch, CURLOPT_URL, "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154");
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST,'PUT');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Accept: application/json'));  
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-
-	 
-	$json_response = curl_exec($ch);
-	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $content_type = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-    if ($curl_error = curl_error($ch)) {
-        throw new Exception($curl_error, Exception::CURL_ERROR);
-    } else {
-        $json_decode = json_decode($result, true);
-    }
+	nationbuilder_client($data);
 	
-	curl_close($ch);
 }
 
 // Add Literacy Project Volunteer Form submissions to Nationbuilder
 add_action( 'gform_after_submission_2', 'nb_add_teacher', 10, 2 );
 function nb_add_teacher( $entry, $form ) {
 	
-	$token = 'aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154'; 
-	
-	$nb_url = "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=" . $token;
-
-	 
-	// Client ID and Secret from Nation Builder
-	$CLIENT_ID	= '4f23365530725bc7dd69531cbb367ad0970f5b0f2886d6f39141886eb08be3cf';
-	$CLIENT_SECRET	= '31d2b20c9637bfc260bc767c1439245716703b91510ec8c6bc835dee5e4afec2';
-	 
-	// Start a new OAuth2 Client
-	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
-	
-	$baseApiUrl = 'https://oregonaitc.nationbuilder.com';
-	$client->setAccessToken($token);
-	
-	// Set the headers for the request
-	$header = array(
-		'Authorization' => $token,
-		'Content-Type' => 'application/json', 
-		'Accept' => 'application/json'
-		);
-
 	$person = array();
 	$address = array();
 	$tags = array();
@@ -682,8 +582,6 @@ function nb_add_teacher( $entry, $form ) {
 	
 	$person['mailing_address'] = $address;
 	$person['work_address'] = $address;
-
-	
 	
 	array_push( $tags, rgar($entry, '3' ) );
 	array_push( $tags, "Literacy Project Participant" );
@@ -691,18 +589,65 @@ function nb_add_teacher( $entry, $form ) {
 	$person['tags'] = $tags;
 	$data = array('person' => $person);
 	
-    $ch = curl_init();
+	nationbuilder_client($data);
+	
+}
+
+// Add Newsletter Form submissions to Nationbuilder
+add_action( 'gform_after_submission_13', 'nb_newsletter', 10, 2 );
+function nb_newsletter( $entry, $form ) {
+	
+	$person = array();
+	$tags = array();
+		
+	$person['first_name'] = rgar( $entry, '1.3' );
+	$person['last_name'] = rgar( $entry, '1.6' );
+	$person['email'] = rgar( $entry, '2' );
+	$person['recruiter']['employer'] = rgar( $entry, '3' );
+	$person['email_opt_in'] = true;
+	
+	if (rgar( $entry, '5' ) == 'Primary') {
+		array_push($tags, 'ES');
+		array_push($tags, 'Primary E-News');
+	} elseif (rgar( $entry, '5' ) == 'Secondary') {
+		array_push($tags, 'Secondary E-news');	
+	} elseif (rgar( $entry, '5' ) == 'Both') {
+		array_push($tags, 'Primary E-News');
+		array_push($tags, 'Secondary E-news');
+	}
+	
+	$person['tags'] = $tags;
+	$data = array('person' => $person);
+	
+	nationbuilder_client($data);
+	
+}
+
+/** 
+ * Nationbuilder API
+ */
+function nationbuilder_client($data) {
+	 
+	// Client ID and Secret from Nation Builder
+	$CLIENT_ID	= '4f23365530725bc7dd69531cbb367ad0970f5b0f2886d6f39141886eb08be3cf';
+	$CLIENT_SECRET	= '31d2b20c9637bfc260bc767c1439245716703b91510ec8c6bc835dee5e4afec2';
+	 
+	// Start a new OAuth2 Client
+	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
+	$client->setAccessToken($token);
+
+	$ch = curl_init();
                     
     curl_setopt($ch, CURLOPT_URL, "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154");
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST,'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Accept: application/json'));  
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-
 	 
 	$json_response = curl_exec($ch);
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $content_type = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+    
     if ($curl_error = curl_error($ch)) {
         throw new Exception($curl_error, Exception::CURL_ERROR);
     } else {

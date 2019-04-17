@@ -1,7 +1,7 @@
 /*
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.4.7
+Version: 1.4.8
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8692,7 +8692,7 @@ body table.gsurvey-likert .gsurvey-likert-choice li {
   color: white;
   padding-top: 0; }
 
-#footer-global-top .gform_wrapper .gform_confirmation_message p {
+#footer-global-top .gform_confirmation_message p {
   color: white; }
 
 @media (max-width: 767px) {
