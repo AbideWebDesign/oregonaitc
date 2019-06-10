@@ -1,39 +1,54 @@
 <?php session_start(); ?>
 <?php /* Template Name: Library Hold Page */ ?>
 <?php get_header(); ?>
+<?php get_template_part('library/library', 'top'); ?>
+
 <?php
-	
+
 $errors = array();
+$branches = array('Oregon', 'Washington County');
+$b = array();
+
+// Submit Cart
+if( isset($_POST['submit']) ){ 
+			
+	if ( count($errors) == 0 ) {
 		
-if(isset($_POST['submit'])){ 
-	
-	if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { 
-	
-		$b = array();
-		$branches = array('Oregon', 'Washington County');
+		$status = submit_library_order();
 		
-		foreach($_SESSION['cart'] as $id=>$value) {
-			$b[] = $value['branch'];
-			if (isset($_POST['q'.$id])) {
+		session_unset();
 	
-				if ($_POST['q'.$id] == 0) {
-					$errors[] = 'Please specify quantity of kits you’d like to request (1 per student)';
-				}
+	} 
+
+} 
+
+// Validate Cart
+if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) { 
+
+	foreach( $_SESSION['cart'] as $id=>$value ) {
+		
+		$b[] = $value['branch'];
+		
+		if ( isset($_POST['q'.$id]) ) {
+
+			if ($_POST['q'.$id] == 0) {
+		
+				$errors[] = 'Please specify quantity of kits you’d like to request (1 per student)';
+		
 			}
 		}
-		
-		if(in_array_all($branches, $b)) {
-			$errors[] = 'You have items from the Washington County Resource Library. Please verify that these resources will be used in Washington County.';
-		}
-		
-		if (count($errors) == 0) {
-			$status = submit_library_order();
-			session_unset();
-		}
-	} 
+	}
+	
+	if ( in_array_all($branches, $b) ) {
+
+		$errors[] = 'You have items from the Washington County Resource Library. Please verify that these resources will be used in Washington County.';
+	
+	}
+
 }
+
 ?>
-<?php get_template_part('library/library', 'top'); ?>
+
 <div class="section section-sm section-alt">
 	<div class="container">
 		<div class="row">
@@ -76,7 +91,7 @@ if(isset($_POST['submit'])){
 													
 													<?php endforeach; ?>
 													
-													<?php echo (!isset($kit)) ? 1 : ''; ?>
+													<?php echo (!$kit) ? 1 : ''; ?>
 													
 												</td>
 												<td class="align-middle"><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
@@ -113,7 +128,7 @@ if(isset($_POST['submit'])){
 								<div class="row">
 									<div class="col">
 										<div class="text-center mt-3">
-											<button type="submit" name="submit" class="btn btn-primary btn-lg">Place Hold</button>	
+											<button <?php echo (count($errors) > 0 ? 'disabled' : '') ?> type="submit" name="submit" class="btn btn-primary btn-lg <?php echo (count($errors) > 0 ? 'disabled' : '') ?>">Place Hold</button>	
 										</div>
 									</div>
 								</div>
