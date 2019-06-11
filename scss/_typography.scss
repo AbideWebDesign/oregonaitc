@@ -1,0 +1,65 @@
+* {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 1.35em;
+	margin-bottom: 18px;	
+}
+
+h4 {
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+p, li {
+	color: #4a4a4a;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+p {
+	margin-bottom: 1.75rem;
+}
+
+.text-sm {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.text-md,
+.text-md p,
+.text-md li {
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.text-gray {
+	color: theme-color('gray-medium');
+}
+
+.text-description p,
+.list-description ul {
+	margin: 0;
+}
+
+.list-description ul {
+	padding-left: 15px;
+}
+
+.searchwp-highlight {
+	font-weight: bold;	
+}
+
+.text-white a {
+	color: white;
+}

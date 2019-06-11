@@ -1,0 +1,29 @@
+/*
+Theme Name: Oregon Ag in the Classroom
+Template: abide
+Version: 1.4.10
+*/
+
+// Bootstrap Variable Overrides
+
+// Theme colors
+$theme-colors: (
+  "primary": #0FA3F2,
+  "danger": #ff4136,
+  "success": #404954,
+  "secondary": #F6893C,
+  "green": #59C77F,
+  "gray": #333333,
+  "gray-light": #f6f6f6,
+  "gray-lighten": #cccccc,
+  "gray-medium": #666666,
+  "blue-light": #DDEDF5,
+  "blue-dark": #05354e,
+  "text": #333333
+);
+
+@import "../bootstrap/scss/bootstrap";
+@import "typography";
+@import "template";
+@import "pages";
+
