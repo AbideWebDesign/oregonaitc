@@ -39,9 +39,13 @@ if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) {
 		}
 	}
 	
-	if ( in_array_all($branches, $b) ) {
+	if ( in_array('Washington County', $b) ) {
 
-		$errors[] = 'You have items from the Washington County Resource Library. Please verify that these resources will be used in Washington County.';
+		if ( get_user_meta(get_current_user_id(), 'county', true) != 'Washington' ) {
+		
+			$errors[] = 'You have items from the Washington County Resource Library, but you do not live in that county. Washington County resources can only be checked out by users in that county.';
+
+		}
 	
 	}
 

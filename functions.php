@@ -352,6 +352,7 @@ function show_pagination_links()
 /**
  * WP-Membership
  */
+/*
 function my_register_form_rows_filter($rows, $action) {
 		$rows[] = array( 
 			'row_before' => '<div class="form-group">',
@@ -361,6 +362,7 @@ function my_register_form_rows_filter($rows, $action) {
 	return $rows;
 }
 add_filter( 'wpmem_register_form_args', 'my_register_form_args', 10, 2 );
+*/
 
 function my_register_links( $string ) {
     $string = str_replace( '<li><a href="https://oregonaitc.org">Begin using the site.</a></li>	', '', $string);     
