@@ -849,7 +849,7 @@ function wc_shipping_cost_tiers( $cost, $method ) {
 
 		// if we have items that need shipping, round the quantity / 2 to the nearest whole number
 		// this produces tiered cost increases for every 2 items
-		if ( $cart_item_count > 1 ) {
+		if ( $cart_item_count >= 1 ) {
 			
 			$cart_items = WC()->cart->get_cart_contents();
 			
