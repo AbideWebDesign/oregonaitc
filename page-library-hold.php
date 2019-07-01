@@ -75,7 +75,7 @@ if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) {
 							<form method="post" id="form" class="inb30" action="<?php echo home_url(); ?>/place-hold">
 								<div class="table-responsive">
 									<table class="table table-bordered text-md	">
-										<tr><th>Resource Name</th><th>Library Branch</th><th>Qyt</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
+										<tr><th>Resource Name</th><th>Branch</th><th>Qty</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
 										<?php foreach($_SESSION['cart'] as $id=>$value): ?>											
 											<?php $permalink = get_permalink($id); ?>
 											<?php $types = get_the_terms($id, 'resource_type'); ?>
