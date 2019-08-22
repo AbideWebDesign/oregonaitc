@@ -137,44 +137,42 @@ if (is_user_logged_in()) {
 		</div>
 	</div>
 </div>	
-<?php if(!is_user_logged_in()): ?>
-	<div class="section section-alt">
-		<div class="container">
-			<div class="row align-items-stretch">
-				<div class="col-lg-3 d-flex flex-column mb-5 mb-lg-0">
-					<div class="mb-3"><h2><?php the_field('library_intro_title'); ?></h2></div>
-					<div class="lead-text mb-3"><?php the_field('library_intro_text'); ?></div>
-					<div><a href="<?php the_field('library_intro_link'); ?>" class="btn btn-primary btn-lg"><?php the_field('library_intro_label'); ?></a></div>
-				</div>
-				<div class="col-lg-3 d-flex mb-4 mb-lg-0">
-					<div class="card card-steps">
-						<div class="card-icon mb-lg-5 mb-3 text-center"><i class="fas <?php the_field('library_intro_step_1_icon'); ?> fa-3x text-primary"></i></div>
-						<div class="card-body text-center align-self-center">
-							<h5 class="card-title"><?php the_field('library_intro_step_1_title'); ?></h5>
-							<div class="card-text text-md"><?php the_field('library_intro_step_1_text'); ?></div>
-						</div>
+<div class="section section-alt">
+	<div class="container">
+		<div class="row align-items-stretch">
+			<div class="col-lg-3 d-flex flex-column mb-5 mb-lg-0">
+				<div class="mb-3"><h2><?php the_field('library_intro_title'); ?></h2></div>
+				<div class="lead-text mb-3"><?php the_field('library_intro_text'); ?></div>
+				<div><a href="<?php the_field('library_intro_link'); ?>" class="btn btn-primary btn-lg"><?php the_field('library_intro_label'); ?></a></div>
+			</div>
+			<div class="col-lg-3 d-flex mb-4 mb-lg-0">
+				<div class="card card-steps">
+					<div class="card-icon mb-lg-5 mb-3 text-center"><i class="fas <?php the_field('library_intro_step_1_icon'); ?> fa-3x text-primary"></i></div>
+					<div class="card-body text-center align-self-center">
+						<h5 class="card-title"><?php the_field('library_intro_step_1_title'); ?></h5>
+						<div class="card-text text-md"><?php the_field('library_intro_step_1_text'); ?></div>
 					</div>
 				</div>
-				<div class="col-lg-3 d-flex mb-4 mb-lg-0">
-					<div class="card card-steps">
-						<div class="card-icon mb-lg-5 mb-3 text-center"><i class="fas <?php the_field('library_intro_step_2_icon'); ?> fa-3x text-primary"></i></div>
-						<div class="card-body text-center align-self-center">
-							<h5 class="card-title"><?php the_field('library_intro_step_2_title'); ?></h5>
-							<div class="card-text text-md"><?php the_field('library_intro_step_2_text'); ?></div>
-						</div>
+			</div>
+			<div class="col-lg-3 d-flex mb-4 mb-lg-0">
+				<div class="card card-steps">
+					<div class="card-icon mb-lg-5 mb-3 text-center"><i class="fas <?php the_field('library_intro_step_2_icon'); ?> fa-3x text-primary"></i></div>
+					<div class="card-body text-center align-self-center">
+						<h5 class="card-title"><?php the_field('library_intro_step_2_title'); ?></h5>
+						<div class="card-text text-md"><?php the_field('library_intro_step_2_text'); ?></div>
 					</div>
 				</div>
-				<div class="col-lg-3 d-flex mb-4 mb-lg-0">
-					<div class="card card-steps text-center">
-						<div class="card-icon mb-lg-5 mb-3"><i class="fas <?php the_field('library_intro_step_3_icon'); ?> fa-3x text-primary"></i></div>
-						<div class="card-body text-center align-self-center">
-							<h5 class="card-title"><?php the_field('library_intro_step_3_title'); ?></h5>
-							<div class="card-text text-md"><?php the_field('library_intro_step_3_text'); ?></div>
-						</div>
+			</div>
+			<div class="col-lg-3 d-flex mb-4 mb-lg-0">
+				<div class="card card-steps text-center">
+					<div class="card-icon mb-lg-5 mb-3"><i class="fas <?php the_field('library_intro_step_3_icon'); ?> fa-3x text-primary"></i></div>
+					<div class="card-body text-center align-self-center">
+						<h5 class="card-title"><?php the_field('library_intro_step_3_title'); ?></h5>
+						<div class="card-text text-md"><?php the_field('library_intro_step_3_text'); ?></div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </div>
-<?php endif; ?>
 <?php get_footer(); ?>	
