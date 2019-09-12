@@ -30,14 +30,9 @@ if ( have_posts() ) :
 										<li class="text-white text-md"><span class="fa-li"><i class="fas fa-university pr-2"></i></span>State Standards:<br><small><?php the_field('lesson_plan_subject_standards'); ?></small></li>
 									<?php endif; ?>
 									</ul>
-									<?php if (get_field('lesson_plan_pdf')): ?>
-										<?php if (is_user_logged_in()): ?>
-											<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white">Download PDF</a></p>
-										<?php else: ?>
-											<p class="text-center m-2 text-md">Want to download a .pdf of this lesson? Sign-up for a free account!</p>
-											<p class="text-center m-0"><a href="<?php echo home_url(); ?>/login?redirect_to=oregonaitc.org/lessonplans/?lessonplan_id=<?php the_ID(); ?>" class="btn btn-white">Sign up</a></p>
-										<?php endif; ?>
-									<?php endif; ?> 
+									<?php if ( get_field('lesson_plan_pdf') ): ?>
+										<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white">Download PDF</a></p>
+									<?php endif; ?>
 								</div>
 							</div>
 							<div class="card mb-3 mb-lg-0">
@@ -46,6 +41,20 @@ if ( have_posts() ) :
 									<div class="list-description text-md"><?php the_field('lesson_plan_materials'); ?></div>
 								</div>
 							</div>
+							
+<!--
+							<?php if ( get_field('link_to_matrix') ): ?>
+							
+							<div class="card mt-3">
+								<div class="card-body">
+									<h5 class="card-title">Curriculum Matrix</h5>
+									<p class="text-center mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-primary" target="_blank">View Lesson</a></p>
+								</div>
+							</div>
+							
+							<?php endif; ?>
+-->
+							
 						</div>
 						<div class="col-lg-9">
 							<div class="card">
