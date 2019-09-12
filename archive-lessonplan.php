@@ -17,8 +17,8 @@
 				</div>
 			</div>
 			<div class="col-lg-9">
-				<?php if (have_posts()): ?>
-					<?php while (have_posts()): the_post(); ?>
+				<?php if ( have_posts() ): ?>
+					<?php while ( have_posts() ): the_post(); ?>
 						<?php get_template_part('library/library', 'search-item'); ?>						
 					<?php endwhile; ?>
 					<?php show_pagination_links(); ?>

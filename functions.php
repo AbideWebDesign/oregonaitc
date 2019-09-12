@@ -888,3 +888,21 @@ function wc_shipping_cost_tiers( $cost, $method ) {
 	return $cost;
 }
 add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
+
+/**
+ * Resource Library
+ */
+function lesson_plan_sort_order($query){
+    
+    if (  is_post_type_archive( 'lessonplan' ) ) {
+    
+       //Set the order ASC or DESC
+       $query->set( 'order', 'ASC' );
+    
+       //Set the orderby
+       $query->set( 'orderby', 'title' );
+    
+    } 
+    
+};
+add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
