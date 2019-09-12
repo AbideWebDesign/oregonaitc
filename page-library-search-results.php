@@ -31,7 +31,9 @@ if ( class_exists( 'SWP_Query' ) ) {
 }
 
 get_header(); ?>
+
 <?php get_template_part('library/library', 'top'); ?>
+
 <div class="section section-alt section-sm">
 	<div class="container">
 		<div class="row">

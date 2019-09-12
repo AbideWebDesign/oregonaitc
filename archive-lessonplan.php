@@ -10,6 +10,8 @@
 						<?php echo do_shortcode('[facetwp facet="search_lesson_plan"]'); ?>
 						<h6 class="card-title">Lesson Plan Categories</h6>
 						<?php echo do_shortcode('[facetwp facet="lesson_plan_categories"]'); ?>
+						<h6 class="card-title">Grade Level</h6>
+						<?php echo do_shortcode('[facetwp facet="lesson_plan_grades"]'); ?>
 						<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
 					</div>
 				</div>
