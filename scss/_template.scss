@@ -1169,18 +1169,30 @@ height: 42px;
 .woocommerce-checkout #payment{
 	background-color: white;
 }
-
-.woocommerce .page-title {
+form.woocommerce-checkout, .woocommerce ul.order_details {
+	background-color: white;
+	padding: 2em;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 5px;
+}
+.woocommerce .page-title, .woocommerce-customer-details {
 	display:  none;
 }
-
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	@extend .form-control;
+}
+.woocommerce form .form-row {
+	@extend .form-group;
+}
 .products {
 	@extend .d-flex;
 	@extend .flex-wrap;
 	@extend .justify-content-center;
 	@extend .align-content-stretch;
 }
-
+.woocommerce ul.order_details {
+	padding: 1em;
+}
 .related.products {
 	@extend .d-block;
 }
@@ -1216,10 +1228,74 @@ height: 42px;
 	background-color: theme-color('primary');
 }
 
+.woocommerce-message, .woocommerce-info, .woocommerce form.checkout_coupon, .woocommerce form.checkout_coupon .woocommerce form.login, .woocommerce form.register {
+	background-color: white;
+	border: 1px solid rgba(0,0,0,.1);
+	border-top-color: theme-color('green');
+	border-top-width: 5px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.woocommerce form.checkout_coupon p {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+.woocommerce-privacy-policy-text {
+	p {
+		@extend .text-sm;
+	}
+}
+#add_payment_method #payment div.form-row, .woocommerce-cart #payment div.form-row, .woocommerce-checkout #payment div.form-row {
+	padding: 1em 0;
+}
+.woocommerce-terms-and-conditions-wrapper {
+	width: 100%;
+}
+.woocommerce-message::before, .woocommerce-info::before {
+	color: theme-color('green');
+}
+
+.woocommerce-cart-form {
+	.product-thumbnail {
+		display: none;
+	}
+	.actions {
+		button, button.button:disabled, button.button:disabled[disabled] {
+			@extend .btn-sm;
+			color: white;
+		}
+		.input-text {
+			@extend .form-control-sm;
+		}
+	}
+}
+.woocommerce table.shop_table {
+	tr {
+		font-size: 16px;
+	}
+}
 .woocommerce ul.products li.product .button {
 	margin-bottom: 1em;
 }
 
+.cart-collaterals, .cart-collaterals li, .cart-collaterals p, .woocommerce ul#shipping_method li label, .variation-DinnerAttendees, .variation-DinnerAttendees p, .wc-item-meta p, .wc-item-meta strong {
+	font-size: 14px;
+	line-height: 100%;
+}
+.woocommerce td.product-name dl.variation dd.variation-DinnerAttendees {
+	margin-top: 4px;
+}
+.wc-item-meta {
+	padding-left: 0;
+}
+.select2-container--default .select2-selection--single {
+	border-color: #ced4da;
+	padding: .375rem .75rem;
+	line-height: 1.5em;
+}
+.select2-container .select2-selection--single {
+	height: 38px;
+}
 .woocommerce-result-count,
 .woocommerce-ordering,
 .posted_in  {

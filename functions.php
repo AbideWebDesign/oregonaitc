@@ -835,10 +835,6 @@ function in_array_any($needles, $haystack) {
 
 /**
  * Filters the shipping method cost to account for tiered quantity pricing.
- * 
- * @param float $cost the shipping method cost
- * @param \WC_Shipping_Rate $method the shipping method
- * @return float cost
  */
 function wc_shipping_cost_tiers( $cost, $method ) {
 
@@ -888,6 +884,114 @@ function wc_shipping_cost_tiers( $cost, $method ) {
 	return $cost;
 }
 add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
+
+/**
+ * Add custom field for Fall Harvest Dinner product page. 
+ */
+
+function harvest_product_custom_field() {
+    
+    if ( is_single( 'fall-harvest' ) ) {
+	    
+	    $value = isset( $_POST['_harvest_attendees'] ) ? sanitize_text_field( $_POST['_harvest_attendees'] ) : '';
+	    
+	    printf( '<div class="form-group"><label for="_harvest_attendees">%s</label><input class="form-control" name="_harvest_attendees" type="textarea" value="%s" /></div>', __( 'Please Provide Names of Attendees', 'oregonaitc' ), esc_attr( $value ) );
+	    
+    } 
+    
+}
+add_action( 'woocommerce_before_add_to_cart_button', 'harvest_product_custom_field', 9 );
+
+/*
+ * Add custom data to the cart item
+ */
+function harvest_add_cart_item_data( $cart_item, $product_id ) {
+
+    if ( isset( $_POST['_harvest_attendees'] ) ) {
+	    
+        $cart_item['harvest_attendees'] = sanitize_text_field( $_POST['_harvest_attendees'] );
+        
+    }
+
+    return $cart_item;
+
+}
+add_filter( 'woocommerce_add_cart_item_data', 'harvest_add_cart_item_data', 10, 2 );
+
+/*
+ * Add meta to order item
+ */
+function harvest_add_order_item_meta( $item_id, $values ) {
+
+    if ( ! empty( $values['harvest_attendees'] ) ) {
+		
+		wc_add_order_item_meta( $item_id, 'Dinner Attendees', $values['harvest_attendees'] );           
+    
+    }
+}
+add_action( 'woocommerce_add_order_item_meta', 'harvest_add_order_item_meta', 10, 2 );
+
+/*
+ * Get item data to display in cart
+ */
+function harvest_get_item_data( $other_data, $cart_item ) {
+
+    if ( isset( $cart_item['harvest_attendees'] ) ){
+
+        $other_data[] = array(
+            'name' => __( 'Dinner Attendees', 'oregonaitc' ),
+            'value' => sanitize_text_field( $cart_item['harvest_attendees'] )
+        );
+
+    }
+
+    return $other_data;
+
+}
+add_filter( 'woocommerce_get_item_data', 'harvest_get_item_data', 10, 2 );
+
+/*
+ * Load cart data from session
+ */
+function harvest_get_cart_item_from_session( $cart_item, $values ) {
+
+    if ( isset( $values['harvest_attendees'] ) ){
+	    
+        $cart_item['harvest_attendees'] = $values['harvest_attendees'];
+        
+    }
+
+    return $cart_item;
+
+}
+add_filter( 'woocommerce_get_cart_item_from_session', 'harvest_get_cart_item_from_session', 20, 2 );
+
+/*
+ * Show custom field in order overview
+ */
+function harvest_order_item_product( $cart_item, $order_item ){
+
+    if( isset( $order_item['harvest_attendees'] ) ){
+	    
+        $cart_item_meta['harvest_attendees'] = $order_item['harvest_attendees'];
+    
+    }
+
+    return $cart_item;
+
+}
+add_filter( 'woocommerce_order_item_product', 'harvest_order_item_product', 10, 2 );
+
+/* 
+ * Add the field to order emails 
+ */ 
+function harvest_email_order_meta_fields( $fields ) { 
+   
+    $fields['harvest_attendees'] = __( 'Dinner Attendees', 'oregonaitc' ); 
+    return $fields; 
+
+} 
+add_filter('woocommerce_email_order_meta_fields', 'harvest_email_order_meta_fields');
 
 /**
  * Resource Library
