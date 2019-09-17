@@ -906,3 +906,19 @@ function lesson_plan_sort_order($query){
     
 };
 add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
+
+/**
+ * Sort grade levels in dropdown filter
+ */
+function grade_level_sort ( $orderby, $facet ) {
+    
+    if ( 'lesson_plan_grades' == $facet['name'] ) {
+    
+        $orderby = 'FIELD(f.facet_display_value, "K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")';
+    
+    }
+    
+    return $orderby;
+    
+}
+add_filter( 'facetwp_facet_orderby', 'grade_level_sort', 10, 2 );
