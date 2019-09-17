@@ -891,7 +891,7 @@ add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
 
 function harvest_product_custom_field() {
     
-    if ( is_single( 'fall-harvest' ) ) {
+    if ( is_single( '2019-fall-harvest-dinner-tickets' ) ) {
 	    
 	    $value = isset( $_POST['_harvest_attendees'] ) ? sanitize_text_field( $_POST['_harvest_attendees'] ) : '';
 	    
