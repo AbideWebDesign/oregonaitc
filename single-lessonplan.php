@@ -80,9 +80,9 @@ if ( have_posts() ) :
 										
 										<?php foreach ( $categories as $category ): ?>
 											
-											<?php echo ($x > 0) ? ", " : ""; ?>
-											
-											<a href="<?php echo home_url(); ?>/lessonplan/?fwp_lesson_plan_categories=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>
+											<?php echo ($x > 0) ? ", " : ""; ?>
+												
+												<a href="<?php echo home_url(); ?>/lessonplan/?fwp_lesson_plan_categories=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>
 											
 											<?php $x++; ?>
 										
