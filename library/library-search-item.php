@@ -1,14 +1,18 @@
 <?php
 $type = get_post_type(get_the_ID());
 
-if ($type == 'resource') { 
+if ( $type == 'resource' ) { 
+	
 	$types = get_the_terms(get_the_ID(), 'resource_type');
 	$categories = get_the_terms(get_the_ID(), 'resource_category');
+
 }
 
-if ($type == 'lessonplan') { 
+if ( $type == 'lessonplan' ) { 
+
 	$types = get_the_terms(get_the_ID(), 'lessonplan_type');
 	$categories = get_the_terms(get_the_ID(),'lessonplan_category');
+
 }
 
 $available = get_field('total_available');
@@ -66,7 +70,7 @@ $branch = get_queried_object();
 					</div>
 					<div class="col-sm-8 col-lg-9">
 						<div class="border-bottom border-light mb-2">
-							<h5 class="card-title"><a href="<?php the_permalink(); ?>?branch=<?php echo $branch->name; ?>"><?php the_title(); ?></a></h5>
+							<h5 class="card-title"><a href="<?php the_permalink(); ?> <?php if ( $type == 'resource' ): ?>?branch=<?php echo $branch->name; ?><?php endif; ?>"><?php the_title(); ?></a></h5>
 					
 							<?php if ( $type == 'lessonplan' ): ?>
 					

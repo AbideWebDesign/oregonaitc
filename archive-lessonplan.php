@@ -1,6 +1,9 @@
 <?php session_start(); ?>
+
 <?php get_header(); ?>
+
 <?php get_template_part('library/library', 'top'); ?>
+
 <div class="section section-alt py-4">
 	<div class="container">
 		<div class="row">
@@ -17,18 +20,27 @@
 				</div>
 			</div>
 			<div class="col-lg-9">
+				
 				<?php if ( have_posts() ): ?>
+				
 					<?php while ( have_posts() ): the_post(); ?>
+				
 						<?php get_template_part('library/library', 'search-item'); ?>						
+				
 					<?php endwhile; ?>
+				
 					<?php show_pagination_links(); ?>
+				
 				<?php else: ?>
+				
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title m-0 text-center"><?php _e('No resources were found.', 'oregonaitc'); ?></h3>
 						</div>
 					</div>
+				
 				<?php endif; ?>
+			
 			</div>
 		</div>
 	</div>
