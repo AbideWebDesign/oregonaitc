@@ -17,11 +17,11 @@
 						<div class="mt-4">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary"><?php the_sub_field('lead_button_label'); ?></a>
+									<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary btn-lg"><?php the_sub_field('lead_button_label'); ?></a>
 								</li>
 								<?php if (get_sub_field('lead_button_2_label')): ?>
 									<li class="list-inline-item">
-										<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary"><?php the_sub_field('lead_button_2_label'); ?></a>
+										<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary btn-lg"><?php the_sub_field('lead_button_2_label'); ?></a>
 									</li>
 								<?php endif; ?>
 							</ul>
@@ -38,11 +38,11 @@
 					<div class="mt-4">
 						<ul class="list-inline">
 							<li class="list-inline-item">
-								<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary"><?php the_sub_field('lead_button_label'); ?></a>
+								<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary btn-lg"><?php the_sub_field('lead_button_label'); ?></a>
 							</li>
 							<?php if (get_sub_field('lead_button_2_label')): ?>
 								<li class="list-inline-item">
-									<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary"><?php the_sub_field('lead_button_2_label'); ?></a>
+									<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary btn-lg"><?php the_sub_field('lead_button_2_label'); ?></a>
 								</li>
 							<?php endif; ?>
 						</ul>
@@ -57,11 +57,11 @@
 					<div class="mt-4">
 						<ul class="list-inline">
 							<li class="list-inline-item">
-								<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary"><?php the_sub_field('lead_button_label'); ?></a>
+								<a href="<?php the_sub_field('lead_button_link'); ?>" class="btn btn-primary btn-lg"><?php the_sub_field('lead_button_label'); ?></a>
 							</li>
 							<?php if (get_sub_field('lead_button_2_label')): ?>
 								<li class="list-inline-item">
-									<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary"><?php the_sub_field('lead_button_2_label'); ?></a>
+									<a href="<?php the_sub_field('lead_button_2_link'); ?>" class="btn btn-secondary btn-lg"><?php the_sub_field('lead_button_2_label'); ?></a>
 								</li>
 							<?php endif; ?>
 						</ul>

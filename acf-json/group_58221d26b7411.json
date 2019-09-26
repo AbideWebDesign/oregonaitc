@@ -1,12 +1,12 @@
 {
     "key": "group_58221d26b7411",
-    "title": "Post Type - Lesson Plan",
+    "title": "Lesson Plan Fields",
     "fields": [
         {
-            "key": "field_5d7a803393482",
-            "label": "Link to Matrix",
-            "name": "link_to_matrix",
-            "type": "true_false",
+            "key": "field_5d8d217956134",
+            "label": "Lesson Plan Instructions",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,34 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5d7a808493483",
-            "label": "Matrix Link",
-            "name": "matrix_link",
-            "type": "link",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5d7a803393482",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_55b69b50d9563",
@@ -77,246 +51,10 @@
                 "id": ""
             },
             "default_value": "",
-            "toolbar": "full",
-            "media_upload": 1,
             "tabs": "all",
-            "delay": 0
-        },
-        {
-            "key": "field_55b69b83d9565",
-            "label": "Lesson Plan Time Estimate",
-            "name": "lesson_plan_time_estimate",
-            "type": "number",
-            "instructions": "Use number only in minutes.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 0,
-            "max": "",
-            "step": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55b69ba0d9566",
-            "label": "Lesson Plan Grade Level Minimum",
-            "name": "lesson_plan_grade_level_minimum",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "K": "K",
-                "1st": "1st",
-                "2nd": "2nd",
-                "3rd": "3rd",
-                "4th": "4th",
-                "5th": "5th",
-                "6th": "6th",
-                "7th": "7th",
-                "8th": "8th",
-                "9th": "9th",
-                "10th": "10th",
-                "11th": "11th",
-                "12th": "12th"
-            },
-            "default_value": [
-                "K"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0,
-            "return_format": "value"
-        },
-        {
-            "key": "field_55b69bd4d9567",
-            "label": "Lesson Plan Grade Level Maximum",
-            "name": "lesson_plan_grade_level_maximum",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "K": "K",
-                "1st": "1st",
-                "2nd": "2nd",
-                "3rd": "3rd",
-                "4th": "4th",
-                "5th": "5th",
-                "6th": "6th",
-                "7th": "7th",
-                "8th": "8th",
-                "9th": "9th",
-                "10th": "10th",
-                "11th": "11th",
-                "12th": "12th"
-            },
-            "default_value": [
-                "K"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5d80f17254e91",
-            "label": "Lesson Plan Grade Levels",
-            "name": "lesson_plan_grade_levels",
-            "type": "checkbox",
-            "instructions": "For filtering by grade.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "K": "K",
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "7": "7",
-                "8": "8",
-                "9": "9",
-                "10": "10",
-                "11": "11",
-                "12": "12"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "horizontal",
-            "toggle": 1,
-            "return_format": "value",
-            "save_custom": 0
-        },
-        {
-            "key": "field_55b69be4d9568",
-            "label": "Lesson Plan Essential Skills",
-            "name": "lesson_plan_essential_skills",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "formatting": "none",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55b69bf6d9569",
-            "label": "Lesson Plan Subject Standards",
-            "name": "lesson_plan_subject_standards",
-            "type": "textarea",
-            "instructions": "Separate standards by using a comma.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55b69c51369d7",
-            "label": "Lesson Plan Materials",
-            "name": "lesson_plan_materials",
-            "type": "wysiwyg",
-            "instructions": "Use unordered list.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
             "toolbar": "basic",
-            "media_upload": 0,
-            "tabs": "all",
+            "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_55b69ebf066fe",
-            "label": "Lesson Plan PDF",
-            "name": "lesson_plan_pdf",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "library": "all",
-            "return_format": "url",
-            "min_size": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_55b69ed1066ff",
-            "label": "Lesson Plan PDF Only",
-            "name": "lesson_plan_pdf_only",
-            "type": "true_false",
-            "instructions": "Check this if this lesson only has a pdf.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         },
         {
             "key": "field_55b6aa0a878f1",
@@ -413,6 +151,272 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5d8d211856133",
+            "label": "Lesson Plan Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d7a803393482",
+            "label": "Link to Matrix",
+            "name": "link_to_matrix",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d7a808493483",
+            "label": "Matrix Link",
+            "name": "matrix_link",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d7a803393482",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
+            "key": "field_55b69b83d9565",
+            "label": "Time Estimate",
+            "name": "lesson_plan_time_estimate",
+            "type": "number",
+            "instructions": "Use number only in minutes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_55b69ba0d9566",
+            "label": "Grade Level Minimum",
+            "name": "lesson_plan_grade_level_minimum",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "K": "K",
+                "1st": "1st",
+                "2nd": "2nd",
+                "3rd": "3rd",
+                "4th": "4th",
+                "5th": "5th",
+                "6th": "6th",
+                "7th": "7th",
+                "8th": "8th",
+                "9th": "9th",
+                "10th": "10th",
+                "11th": "11th",
+                "12th": "12th"
+            },
+            "default_value": [
+                "K"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_55b69bd4d9567",
+            "label": "Grade Level Maximum",
+            "name": "lesson_plan_grade_level_maximum",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "K": "K",
+                "1st": "1st",
+                "2nd": "2nd",
+                "3rd": "3rd",
+                "4th": "4th",
+                "5th": "5th",
+                "6th": "6th",
+                "7th": "7th",
+                "8th": "8th",
+                "9th": "9th",
+                "10th": "10th",
+                "11th": "11th",
+                "12th": "12th"
+            },
+            "default_value": [
+                "K"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d80f17254e91",
+            "label": "Grade Levels",
+            "name": "lesson_plan_grade_levels",
+            "type": "checkbox",
+            "instructions": "For filtering by grade.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "K": "K",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "11": "11",
+                "12": "12"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_55b69bf6d9569",
+            "label": "Subject Standards",
+            "name": "lesson_plan_subject_standards",
+            "type": "textarea",
+            "instructions": "Separate standards by using a comma.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_55b69be4d9568",
+            "label": "Essential Skills",
+            "name": "lesson_plan_essential_skills",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_55b69c51369d7",
+            "label": "Materials",
+            "name": "lesson_plan_materials",
+            "type": "wysiwyg",
+            "instructions": "Use unordered list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_55b69ebf066fe",
+            "label": "PDF Download",
+            "name": "lesson_plan_pdf",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -442,5 +446,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1568732082
+    "modified": 1569531951
 }

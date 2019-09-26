@@ -43,7 +43,13 @@ if ( have_posts() ) :
 									
 									<?php if ( get_field('lesson_plan_pdf') ): ?>
 									
-										<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white" onClick="ga('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?>', 10);">Download PDF</a></p>
+										<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white btn-sm btn-block" onClick="ga('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?>', 10);"><i class="fa fa-download"></i> Download PDF</a></p>
+									
+									<?php endif; ?>
+									
+									<?php if ( get_field('link_to_matrix') ): ?>
+									
+										<p class="text-center mt-2 mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-white btn-sm btn-block"><i class="fa fa-external-link-alt"></i> Curriculum Matrix</a></p>
 									
 									<?php endif; ?>
 								
@@ -55,20 +61,6 @@ if ( have_posts() ) :
 									<div class="list-description text-md"><?php the_field('lesson_plan_materials'); ?></div>
 								</div>
 							</div>
-							
-<!--
-							<?php if ( get_field('link_to_matrix') ): ?>
-							
-							<div class="card mt-3">
-								<div class="card-body">
-									<h5 class="card-title">Curriculum Matrix</h5>
-									<p class="text-center mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-primary" target="_blank">View Lesson</a></p>
-								</div>
-							</div>
-							
-							<?php endif; ?>
--->
-							
 						</div>
 						<div class="col-lg-9">
 							<div class="card">

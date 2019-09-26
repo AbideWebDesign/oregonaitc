@@ -74,7 +74,7 @@ if ( isset($_GET['branch']) ) {
 					
 					<?php elseif ( is_archive('lessonplan') || $branch == '' ): ?>
 					
-						<a class="text-white" href="<?php home_url(); ?>/lessonplan">Lesson Plans</a>
+						<a class="text-white" href="<?php home_url(); ?>/lesson-plans">Lesson Plans</a>
 					
 					<?php endif; ?>
 				
@@ -108,8 +108,8 @@ if ( isset($_GET['branch']) ) {
 			<?php else: ?>
 			
 				<div class="col-lg-7 col-12 d-flex flex-lg-row-reverse order-1 order-lg-2">
-					<div class="mr-3 mr-lg-0"><a href="<?php echo home_url(); ?>/matrix" class="btn btn-white btn-sm">Curriculum Matrix</a></div>
-					<div class="mr-3"><a href="<?php echo home_url(); ?>/lesson-plans" class="btn btn-white btn-sm">Lesson Plans Home</a></div>
+					<div class="mr-3 mr-lg-0"><a href="<?php echo home_url(); ?>/matrix" class="btn btn-green btn-sm">Curriculum Matrix</a></div>
+					<div class="mr-3"><a href="<?php echo home_url(); ?>/lesson-plans" class="btn btn-green btn-sm">Lesson Plans Home</a></div>
 				</div>
 			
 			<?php endif; ?>
