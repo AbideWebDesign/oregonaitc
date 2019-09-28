@@ -49,7 +49,7 @@ if ( have_posts() ) :
 									
 									<?php if ( get_field('link_to_matrix') ): ?>
 									
-										<p class="text-center mt-2 mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-white btn-sm btn-block"><i class="fa fa-external-link-alt"></i> Curriculum Matrix</a></p>
+										<p class="text-center mt-2 mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-white btn-sm btn-block"><i class="fa fa-external-link-alt"></i> View Lesson</a></p>
 									
 									<?php endif; ?>
 								
