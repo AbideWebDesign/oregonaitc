@@ -22,7 +22,7 @@ if (is_user_logged_in()) {
 			<?php if (is_user_logged_in()): ?> 
 				<?php $current_user = wp_get_current_user(); ?>
 				<div class="col-lg-5 col-9 welcome d-flex flex-lg-row-reverse order-1 order-lg-2">
-					<div class="d-flex flex-column">
+					<div class="d-flex flex-column align-self-center">
 						<div class="text-white text-md">Welcome back, <strong><?php echo $current_user->user_firstname; ?></strong> | <a href="/login/?a=logout" class="plain-link text-white">Log Out</a></div>
 					</div>
 				</div>

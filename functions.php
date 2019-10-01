@@ -364,21 +364,21 @@ function my_register_form_rows_filter($rows, $action) {
 add_filter( 'wpmem_register_form_args', 'my_register_form_args', 10, 2 );
 */
 
-function my_register_links( $string ) {
+function oregonaitc_register_links( $string ) {
     $string = str_replace( '<li><a href="https://oregonaitc.org">Begin using the site.</a></li>	', '', $string);     
     return $string;
 }
-add_filter( 'wpmem_register_links', 'my_register_links' );
+add_filter( 'wpmem_register_links', 'oregonaitc_register_links' );
  
-function my_forgot_link( $str ) {
+function oregonaitc_forgot_link( $str ) {
     return home_url() . '/password-reset';
 }
-add_filter( 'wpmem_forgot_link', 'my_forgot_link' );
+add_filter( 'wpmem_forgot_link', 'oregonaitc_forgot_link' );
 
-function my_username_link_str( $str, $link ) {
+function oregonaitc_username_link_str( $str, $link ) {
 	return "<a href=" . home_url('/username-lost') .">Retrieve Username</a>";
 }
-add_filter( 'wpmem_username_link_str', 'my_username_link_str', 10, 2 );
+add_filter( 'wpmem_username_link_str', 'oregonaitc_username_link_str', 10, 2 );
 
 function remove_username_field_filter( $fields, $tag ) {
  
@@ -395,6 +395,25 @@ function set_email_for_username_filter( $fields ) {
     return $fields;
 }
 add_filter( 'wpmem_pre_validate_form', 'set_email_for_username_filter' );
+
+function oregonaitc_login_redirect( $redirect_to, $user_id ) {
+    
+    return home_url( '/library/' );
+
+}
+add_filter( 'wpmem_login_redirect', 'oregonaitc_login_redirect', 10, 2 );
+
+function oregonaitc_auto_login( $user_id ) {
+
+	wp_set_current_user( $user_id );
+	
+	wp_set_auth_cookie( $user_id );
+	
+	wp_redirect( home_url( '/library/' ) );
+	
+	exit(); 
+}
+add_action( 'user_register', 'oregonaitc_auto_login' );
 
 /**
  * Woocommerce
