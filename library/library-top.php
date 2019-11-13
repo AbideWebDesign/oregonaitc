@@ -73,9 +73,13 @@ if ( isset($_GET['branch']) ) {
 					
 						<a class="text-white" href="/library/<?php echo $slug; ?>"><?php echo $branch; ?> Resource Library</a> 
 					
-					<?php elseif ( is_archive('lessonplan') || $branch == '' ): ?>
+					<?php elseif ( is_archive('lessonplan') && $branch == '' ): ?>
 					
 						<a class="text-white" href="<?php home_url(); ?>/lesson-plans">Lesson Plans</a>
+					
+					<?php else: ?>
+					
+						<span class="text-white">Checkout</span>
 					
 					<?php endif; ?>
 				

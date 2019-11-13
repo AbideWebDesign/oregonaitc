@@ -21,7 +21,7 @@
 	
 						<?php $image = $card['card_image']; ?>
 		
-						<?php if ( $link ): ?>
+						<?php if ( isset($link) ): ?>
 		
 							<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo wp_get_attachment_image( $image['id'], 'card-4', 0, array('class' => 'card-img-top img-fluid') ); ?></a>
 		
@@ -43,7 +43,7 @@
 						<h5 class="card-title"><?php echo $card['card_title']; ?></h5>
 						<p class="card-text mb-0"><?php echo $card['card_text']; ?></p>
 		
-						<?php if ( $link ): ?>
+						<?php if ( isset($link) ): ?>
 		
 							<div class="text-center mt-3">
 								<a class="btn btn-primary" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $card['card_label']; ?></a>

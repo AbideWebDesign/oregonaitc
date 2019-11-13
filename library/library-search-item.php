@@ -42,7 +42,7 @@ $branch = get_queried_object();
 								<?php elseif ( $available > 0 ): ?>
 						
 						 			<p class="text-center mt-2 mb-0">
-						 				<a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch->name; ?>" class="btn btn-primary btn-sm btn-block d-none d-lg-block">Place Hold</a>
+						 				<a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch->slug; ?>" class="btn btn-primary btn-sm btn-block d-none d-lg-block">Place Hold</a>
 						 			</p>
 						
 						 		<?php elseif ( $available == 0 ): ?>
@@ -70,7 +70,7 @@ $branch = get_queried_object();
 					</div>
 					<div class="col-sm-8 col-lg-9">
 						<div class="border-bottom border-light mb-2">
-							<h5 class="card-title"><a href="<?php the_permalink(); ?> <?php if ( $type == 'resource' ): ?>?branch=<?php echo $branch->name; ?><?php endif; ?>"><?php the_title(); ?></a></h5>
+							<h5 class="card-title"><a href="<?php the_permalink(); ?><?php if ( $type == 'resource' ): ?>?branch=<?php echo $branch->slug; ?><?php endif; ?>"><?php the_title(); ?></a></h5>
 					
 							<?php if ( $type == 'lessonplan' ): ?>
 					

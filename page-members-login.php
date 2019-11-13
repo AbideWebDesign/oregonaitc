@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-lg-7">
 					<?php the_content(); ?>
-					<?php if (isset($_GET['redirect_to'])): ?>
+					<?php if ( isset($_GET['redirect_to']) ): ?>
 						<a href="<?php echo home_url(); ?>/signup/?redirect_to=<?php echo $_GET['redirect_to']; ?>" class="btn btn-primary">Signup</a>
 					<?php else: ?>
 						<a href="<?php echo home_url(); ?>/signup/" class="btn btn-primary">Signup</a>
@@ -16,7 +16,7 @@
 				<div class="col-lg-4 offset-lg-1">
 					<div class="card">
 						<div class="card-body">
-							<?php echo do_shortcode('[wp-members page="login"]'); ?>
+							<?php echo do_shortcode('[wpmem_form login]'); ?>
 						</div>
 					</div>
 				</div>

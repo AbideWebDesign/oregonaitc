@@ -70,9 +70,38 @@ add_image_size('card-4', 362, 200, true);
 add_image_size('photo-3', 255, 170, true);
 
 /**
+ * Remove WP User Frontend contact methods
+ */
+function remove_custom_user_contact_methods() {
+    
+    remove_filter( 'user_contactmethods', 'modify_contact_methods' );
+
+}
+
+add_action( 'plugins_loaded', 'remove_custom_user_contact_methods' );
+
+remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+function yoast_seo_admin_user_remove_social ( $contactmethods ) {
+	unset( $contactmethods['myspace'] );
+	unset( $contactmethods['wikipedia'] );
+	unset( $contactmethods['facebook'] );
+	unset( $contactmethods['linkedin'] );
+	unset( $contactmethods['pinterest'] );
+	unset( $contactmethods['soundcloud'] );
+	unset( $contactmethods['tumblr'] );
+	unset( $contactmethods['twitter'] );
+	unset( $contactmethods['youtube'] );
+	unset( $contactmethods['instagram'] );	
+	return $contactmethods;
+}
+
+add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
+
+/**
  * ACF Options page
  */
-if( function_exists('acf_add_options_page') ) {
+if ( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Map Settings',
@@ -324,8 +353,7 @@ add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
 /**
  * Pagination Links
  */
-function show_pagination_links()
-{
+function show_pagination_links() {
     global $wp_query;
 
     $page_tot   = $wp_query->max_num_pages;
@@ -352,17 +380,6 @@ function show_pagination_links()
 /**
  * WP-Membership
  */
-/*
-function my_register_form_rows_filter($rows, $action) {
-		$rows[] = array( 
-			'row_before' => '<div class="form-group">',
-			'row_after'  => '</div>'
-		);
-
-	return $rows;
-}
-add_filter( 'wpmem_register_form_args', 'my_register_form_args', 10, 2 );
-*/
 
 function oregonaitc_register_links( $string ) {
     $string = str_replace( '<li><a href="https://oregonaitc.org">Begin using the site.</a></li>	', '', $string);     
@@ -402,18 +419,6 @@ function oregonaitc_login_redirect( $redirect_to, $user_id ) {
 
 }
 add_filter( 'wpmem_login_redirect', 'oregonaitc_login_redirect', 10, 2 );
-
-function oregonaitc_auto_login( $user_id ) {
-
-	wp_set_current_user( $user_id );
-	
-	wp_set_auth_cookie( $user_id );
-	
-	wp_redirect( home_url( '/library/' ) );
-	
-	exit(); 
-}
-add_action( 'user_register', 'oregonaitc_auto_login' );
 
 /**
  * Woocommerce
@@ -655,7 +660,8 @@ function nationbuilder_client($data) {
 	 
 	// Start a new OAuth2 Client
 	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
-	$client->setAccessToken($token);
+	// No $token variable
+	// $client->setAccessToken($token);
 
 	$ch = curl_init();
                     
@@ -672,7 +678,8 @@ function nationbuilder_client($data) {
     if ($curl_error = curl_error($ch)) {
         throw new Exception($curl_error, Exception::CURL_ERROR);
     } else {
-        $json_decode = json_decode($result, true);
+	    // No $result variable
+		// $json_decode = json_decode($result, true);
     }
 	
 	curl_close($ch);
