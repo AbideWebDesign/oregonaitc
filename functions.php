@@ -456,22 +456,8 @@ add_action( 'gform_user_registered','oregonaitc_autologin', 10, 4 );
 
 function oregonaitc_autologin( $user_id, $config, $entry, $password ) {
 	
-	update_user_meta( $user_id, 'address_type', rgar( $entry, '3' ) );
-	update_user_meta( $user_id, 'addr1', rgar( $entry, '4.1' ) );
-	update_user_meta( $user_id, 'addr2', rgar( $entry, '4.2' ) );
-	update_user_meta( $user_id, 'city', rgar( $entry, '4.3' ) );
-	update_user_meta( $user_id, 'thestate', rgar( $entry, '4.4' ) );
-	update_user_meta( $user_id, 'zip', rgar( $entry, '4.5' ) );
-	update_user_meta( $user_id, 'phone1', rgar( $entry, '5' ) );
-	update_user_meta( $user_id, 'user_email', rgar( $entry, '6' ) );
-	update_user_meta( $user_id, 'school', rgar( $entry, '8' ) );
-	update_user_meta( $user_id, 'school_district', rgar( $entry, '13' ) );	
-	update_user_meta( $user_id, 'county', rgar( $entry, '9' ) );	
-	update_user_meta( $user_id, 'library_user_role', rgar( $entry, '10' ) );	
-	update_user_meta( $user_id, 'grade', rgar( $entry, '11' ) );	
-	update_user_meta( $user_id, 'subscribe', rgar( $entry, '12.1' ) );	
-
 	wp_set_auth_cookie( $user_id, false, '' );
+
 }
 
 /**
