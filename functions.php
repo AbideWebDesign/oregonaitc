@@ -446,243 +446,32 @@ function custom_override_checkout_fields( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
-/**
- * Nationbuilder
- */
-add_filter( 'wpmem_register_data', 'nationbuilder_hook' );
-function nationbuilder_hook( $fields ){	
-
-	$person = array();
-	$address = array();
-	$tags = array();
-	
-	$person['email'] = $fields['user_email'];
-	$person['first_name'] = $fields['first_name'];
-	$person['last_name'] = $fields['last_name'];
-	
-	
-	$address['address1'] = $fields['addr1'];
-	$address['address2'] = $fields['addr2'];
-	$address['city'] = $fields['city'];
-	$address['state'] = $fields['thestate'];
-	$address['zip'] = $fields['zip'];
-	
-	if ($fields['address_type'] == "home") {
-		$person['mailing_address'] = $address;
-		$person['home_address'] = $address;
-	} else {
-		$person['mailing_address'] = $address;
-		$person['work_address'] = $address;
-	}
-	
-	$person['phone'] = $fields['phone1'];
-	
-	if($fields['grade']) {
-		$grades = $fields['grade'];
-		$grades = explode(", ", $grades);
-		
-		$es = array('k','1','2','3','4','5');
-		$ms = array('6','7','8');
-		$hs = array('9','10','11','12');
-		
-		if(in_array_any($es, $grades)) {
-			array_push($tags, 'ES');
-			array_push($tags, 'Primary E-News');
-		}
-		if(in_array_any($ms, $grades)) {
-			array_push($tags, 'MS');
-			array_push($tags, 'Secondary E-news');
-		} 
-		if(in_array_any($hs, $grades)) {
-			array_push($tags, 'HS');
-			array_push($tags, 'Secondary E-news');
-		}		
-		
-		foreach($grades as $grade) {
-			array_push($tags, $grade);
-		}
-	}
-	
-	$person['county_district'] = $fields['county'];
-	array_push($tags, $fields['county']);
-	
-	switch($fields['library_user_role']) {
-		case 'Classroom_Teacher':
-			$person['employer'] = $fields['school'];
-			$person['occupation'] = 'Classroom Teacher';
-			array_push($tags, 'Teacher');
-			break;
-		case 'Informal_Educator':
-			array_push($tags, 'Partner');
-			break;
-		case 'Volunteer':
-			array_push($tags, 'Volunteer');
-			break;
-		case 'Homeschool':
-			array_push($tags, 'Other, Homeschool');
-			break;
-		case 'Parent':
-			array_push($tags, 'Other');
-			break;
-		case 'Administrator':
-			array_push($tags, 'Teacher, Administrator');
-			$person['employer'] = $fields['school'];
-			$person['occupation'] = 'Administrator';
-			break;
-		case 'Student':
-			array_push($tags, 'Other, Student');
-			$person['occupation'] = 'Student';
-			break;
-	}
-	
-	if ($fields['subscribe'] != 'subscribed') {
-		$person['email_opt_in'] = false;
-	}
-	
-	array_push($tags, 'Library User');
-	
-	$person['tags'] = $tags;
-	
-	$data = array('person' => $person);
-	
-	nationbuilder_client($data);
-	
-	return $fields;
-}
-
-// Add Literacy Project Volunteer Form submissions to Nationbuilder
-add_action( 'gform_after_submission_1', 'nb_add_volunteer', 10, 2 );
-function nb_add_volunteer( $entry, $form ) {
-	
-	$person = array();
-	$address = array();
-	$tags = array();
-		
-	$person['email'] = rgar( $entry, '3' );
-	$person['first_name'] = rgar( $entry, '1.3' );
-	$person['last_name'] = rgar( $entry, '1.6' );
-	$person['phone'] = rgar( $entry, '4' );
-	
-	$address['address1'] = rgar( $entry, '5.1' );
-	$address['address2'] = rgar( $entry, '5.2' );
-	$address['city'] = rgar( $entry, '5.3' );
-	$address['state'] = rgar( $entry, '5.4' );
-	$address['zip'] = rgar( $entry, '5.5' );
-	
-	$person['mailing_address'] = $address;
-	$person['home_address'] = $address;
-
-	
-	if ( rgar( $entry, '2' ) != "None" ) {
-		 array_push( $tags, rgar($entry, '2' ) );
-	} 
-	
-	array_push( $tags, "Literacy Project Volunteer" );
-	
-	$person['tags'] = $tags;
-	$data = array('person' => $person);
-	
-	nationbuilder_client($data);
-	
-}
-
-// Add Literacy Project Volunteer Form submissions to Nationbuilder
-add_action( 'gform_after_submission_2', 'nb_add_teacher', 10, 2 );
-function nb_add_teacher( $entry, $form ) {
-	
-	$person = array();
-	$address = array();
-	$tags = array();
-		
-	$person['first_name'] = rgar( $entry, '1.3' );
-	$person['last_name'] = rgar( $entry, '1.6' );
-	$person['phone'] = rgar( $entry, '5' );
-	$person['email'] = rgar( $entry, '6' );
-	$person['recruiter']['employer'] = rgar ( $entry, '2' );
-	
-	$address['address1'] = rgar( $entry, '7.1' );
-	$address['address2'] = rgar( $entry, '7.2' );
-	$address['city'] = rgar( $entry, '7.3' );
-	$address['state'] = rgar( $entry, '7.4' );
-	$address['zip'] = rgar( $entry, '7.5' );
-	
-	$person['mailing_address'] = $address;
-	$person['work_address'] = $address;
-	
-	array_push( $tags, rgar($entry, '3' ) );
-	array_push( $tags, "Literacy Project Participant" );
-	
-	$person['tags'] = $tags;
-	$data = array('person' => $person);
-	
-	nationbuilder_client($data);
-	
-}
-
-// Add Newsletter Form submissions to Nationbuilder
-add_action( 'gform_after_submission_13', 'nb_newsletter', 10, 2 );
-function nb_newsletter( $entry, $form ) {
-	
-	$person = array();
-	$tags = array();
-		
-	$person['first_name'] = rgar( $entry, '1.3' );
-	$person['last_name'] = rgar( $entry, '1.6' );
-	$person['email'] = rgar( $entry, '2' );
-	$person['recruiter']['employer'] = rgar( $entry, '3' );
-	$person['email_opt_in'] = true;
-	
-	if (rgar( $entry, '5' ) == 'Primary') {
-		array_push($tags, 'ES');
-		array_push($tags, 'Primary E-News');
-	} elseif (rgar( $entry, '5' ) == 'Secondary') {
-		array_push($tags, 'Secondary E-news');	
-	} elseif (rgar( $entry, '5' ) == 'Both') {
-		array_push($tags, 'Primary E-News');
-		array_push($tags, 'Secondary E-news');
-	}
-	
-	$person['tags'] = $tags;
-	$data = array('person' => $person);
-	
-	nationbuilder_client($data);
-	
-}
-
 /** 
- * Nationbuilder API
+ * Gravity Forms
  */
-function nationbuilder_client($data) {
-	 
-	// Client ID and Secret from Nation Builder
-	$CLIENT_ID	= '4f23365530725bc7dd69531cbb367ad0970f5b0f2886d6f39141886eb08be3cf';
-	$CLIENT_SECRET	= '31d2b20c9637bfc260bc767c1439245716703b91510ec8c6bc835dee5e4afec2';
-	 
-	// Start a new OAuth2 Client
-	$client = new OAuth2\Client($CLIENT_ID, $CLIENT_SECRET);
-	// No $token variable
-	// $client->setAccessToken($token);
 
-	$ch = curl_init();
-                    
-    curl_setopt($ch, CURLOPT_URL, "https://oregonaitc.nationbuilder.com/api/v1/people/push?access_token=aa0fc381738ea46bcbe1fa73f3ba8311f56f4280f637c1caee993fafd4e81154");
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST,'PUT');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Accept: application/json'));  
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-	 
-	$json_response = curl_exec($ch);
-	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $content_type = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-    
-    if ($curl_error = curl_error($ch)) {
-        throw new Exception($curl_error, Exception::CURL_ERROR);
-    } else {
-	    // No $result variable
-		// $json_decode = json_decode($result, true);
-    }
+// Auto login to site after GF User Registration Form Submittal
+
+add_action( 'gform_user_registered','oregonaitc_autologin', 10, 4 );
+
+function oregonaitc_autologin( $user_id, $config, $entry, $password ) {
 	
-	curl_close($ch);
+	update_user_meta( $user_id, 'address_type', rgar( $entry, '3' ) );
+	update_user_meta( $user_id, 'addr1', rgar( $entry, '4.1' ) );
+	update_user_meta( $user_id, 'addr2', rgar( $entry, '4.2' ) );
+	update_user_meta( $user_id, 'city', rgar( $entry, '4.3' ) );
+	update_user_meta( $user_id, 'thestate', rgar( $entry, '4.4' ) );
+	update_user_meta( $user_id, 'zip', rgar( $entry, '4.5' ) );
+	update_user_meta( $user_id, 'phone1', rgar( $entry, '5' ) );
+	update_user_meta( $user_id, 'user_email', rgar( $entry, '6' ) );
+	update_user_meta( $user_id, 'school', rgar( $entry, '8' ) );
+	update_user_meta( $user_id, 'school_district', rgar( $entry, '13' ) );	
+	update_user_meta( $user_id, 'county', rgar( $entry, '9' ) );	
+	update_user_meta( $user_id, 'library_user_role', rgar( $entry, '10' ) );	
+	update_user_meta( $user_id, 'grade', rgar( $entry, '11' ) );	
+	update_user_meta( $user_id, 'subscribe', rgar( $entry, '12.1' ) );	
+
+	wp_set_auth_cookie( $user_id, false, '' );
 }
 
 /**
