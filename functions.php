@@ -455,9 +455,8 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 add_action( 'gform_user_registered','oregonaitc_autologin', 10, 4 );
 
 function oregonaitc_autologin( $user_id, $config, $entry, $password ) {
-	
-	wp_set_auth_cookie( $user_id, false, '' );
 
+	wp_set_auth_cookie( $user_id, false, '' );
 }
 
 /**

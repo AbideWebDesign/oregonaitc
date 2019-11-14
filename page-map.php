@@ -415,7 +415,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $shrimp_clatsop['content']; ?>
 													    <?php if ($shrimp_clatsop['learn_more_page']): ?><a href='<?php echo $shrimp_clatsop['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>
-														<?php if($shrimp_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($shrimp_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">													
 											<image id="shrimp-clatsop-img" data-name="shrimp-clatsop" width="870" height="1161" transform="translate(115.27 95.98) scale(0.06 0.07)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/shrimp.png"/>
@@ -430,7 +430,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_tillamook['content']; ?>
 													    <?php if ($tree_tillamook['learn_more_page']): ?><a href='<?php echo $tree_tillamook['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>
-														<?php if($tree_tillamook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_tillamook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">	
 									   		<image id="tree-tillamook-img" data-name="Tree" width="425" height="833" transform="translate(285.44 42.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -445,7 +445,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grapes_yamhill['content']; ?>
 													    <?php if ($grapes_yamhill['learn_more_page']): ?><a href='<?php echo $grapes_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grapes_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grapes_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="grapes-yamhill-img" data-name="grapes-yamhill-im" width="727" height="897" transform="translate(328.34 337.58) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grapes.png"/>
@@ -460,7 +460,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_columbia['content']; ?>
 													    <?php if ($nursery_columbia['learn_more_page']): ?><a href='<?php echo $nursery_columbia['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_columbia['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_columbia['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="nursery-columbia-img" data-name="nursery-columbia-img" width="511" height="386" transform="translate(362.77 91.92) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -475,7 +475,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_yamhill['content']; ?>
 													    <?php if ($nursery_yamhill['learn_more_page']): ?><a href='<?php echo $nursery_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="nursery-yamhill-img" data-name="nursery-yamhill-img" width="511" height="386" transform="translate(332.44 265.97) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -490,7 +490,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grass_seed_yamhill['content']; ?>
 													    <?php if ($grass_seed_yamhill['learn_more_page']): ?><a href='<?php echo $grass_seed_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grass_seed_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grass_seed_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="grass-seed-yamhill-img" data-name="grass-seed-yamhill-img" width="693" height="1302" transform="translate(303.58 235.73) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
@@ -505,7 +505,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_clatsop['content']; ?>
 													    <?php if ($dairy_clatsop['learn_more_page']): ?><a href='<?php echo $dairy_clatsop['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-clatsop-img" data-name="dairy-clatsop-img" width="446" height="310" transform="translate(186.33 75.81) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -520,7 +520,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $bean_multnomah['content']; ?>
 													    <?php if ($bean_multnomah['learn_more_page']): ?><a href='<?php echo $bean_multnomah['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($bean_multnomah['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($bean_multnomah['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="beans-multnomah" data-name="beans-multnomah" width="597" height="872" transform="translate(454.42 176.46) scale(0.09 0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/beans.png"/>
@@ -535,7 +535,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $shrimp_lincoln['content']; ?>
 													    <?php if ($shrimp_lincoln['learn_more_page']): ?><a href='<?php echo $shrimp_lincoln['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($shrimp_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($shrimp_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="shrimp-lincoln" data-name="shrimp-lincoln" width="870" height="1161" transform="translate(78.37 571.4) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/shrimp.png"/>
@@ -550,7 +550,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $blueberries_marion['content']; ?>
 													    <?php if ($blueberries_marion['learn_more_page']): ?><a href='<?php echo $blueberries_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($blueberries_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($blueberries_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="blueberry-marion-img" data-name="blueberry-marion-img" width="736" height="616" transform="translate(439.57 440.1) scale(0.06 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/blueberry.png"/>
@@ -565,7 +565,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $christmas_tree_benton['content']; ?>
 													    <?php if ($christmas_tree_benton['learn_more_page']): ?><a href='<?php echo $christmas_tree_benton['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($christmas_tree_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($christmas_tree_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="christmas-tree-benton" data-name="christmas-tree-benton" width="292" height="437" transform="translate(232.93 560.18) scale(0.23)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/christmasTree.png"/>
@@ -580,7 +580,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $christmas_tree_clackamas['content']; ?>
 													    <?php if ($christmas_tree_clackamas['learn_more_page']): ?><a href='<?php echo $christmas_tree_clackamas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($christmas_tree_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($christmas_tree_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="christmas-tree-clackamas-img" data-name="christmas-tree-clackamas-img" width="292" height="437" transform="translate(662.08 314.64) scale(0.23)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/christmasTree.png"/>
@@ -595,7 +595,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $pumpkin_benton['content']; ?>
 													    <?php if ($pumpkin_benton['learn_more_page']): ?><a href='<?php echo $pumpkin_benton['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($pumpkin_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($pumpkin_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="pumpkin-benton-img" data-name="pumpkin-benton-img" width="624" height="588" transform="translate(300.11 603.48) scale(0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/pumpkin.png"/>
@@ -610,7 +610,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_lincoln['content']; ?>
 													    <?php if ($tree_lincoln['learn_more_page']): ?><a href='<?php echo $tree_lincoln['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-lincoln-img" data-name="tree-lincoln-img" width="425" height="833" transform="translate(186.44 398.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -625,7 +625,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_clackamas['content']; ?>
 													    <?php if ($nursery_clackamas['learn_more_page']): ?><a href='<?php echo $nursery_clackamas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="nursery-clackamas-img" data-name="nursery-clackamas-img" width="511" height="386" transform="translate(626.77 244.72) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -640,7 +640,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_marion['content']; ?>
 													    <?php if ($nursery_marion['learn_more_page']): ?><a href='<?php echo $nursery_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="nursery-marion-img" data-name="nursery-marion-img" width="511" height="386" transform="translate(538.77 432.92) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -655,7 +655,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grass_seed_benton['content']; ?>
 													    <?php if ($grass_seed_benton['learn_more_page']): ?><a href='<?php echo $grass_seed_benton['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grass_seed_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grass_seed_benton['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="grass-seed-benton-img" data-name="grass-seed-benton-img" width="693" height="1302" transform="translate(315.63 513.4) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
@@ -670,14 +670,14 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grass_seed_marion['content']; ?>
 													    <?php if ($grass_seed_marion['learn_more_page']): ?><a href='<?php echo $grass_seed_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grass_seed_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grass_seed_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="grass-seed-marion-img" data-name="grass-seed-marion-img" width="693" height="1302" transform="translate(494.7 412.8) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
 									   	</a>
 									</g>
 									<g id="dairy-polk">
-										<a class="pop" role="button" tabindex="0" data-toggle="popover" data-html="true" data-trigger="click focus" data-container="body" data-video='<?php echo $dairy_polk_img['video_url']; ?>' title="<?php echo $dairy_polk_img['title']; ?>" data-content="
+										<a class="pop" role="button" tabindex="0" data-toggle="popover" data-html="true" data-trigger="click focus" data-container="body" data-video='<?php echo $dairy_polk['video_url']; ?>' title="<?php echo $dairy_polk['title']; ?>" data-content="
 												<div class='media'>
 													<div class='pull-left'>
 												   		<img class='media-object' src='<?php echo $dairy_polk_img['sizes']['thumbnail']; ?>'>
@@ -685,7 +685,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_polk['content']; ?>
 													    <?php if ($dairy_polk['learn_more_page']): ?><a href='<?php echo $dairy_polk['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-polk-img" data-name="dairy-polk-img" width="446" height="310" transform="translate(240.27 391.93) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -700,7 +700,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_yamhill['content']; ?>
 													    <?php if ($dairy_yamhill['learn_more_page']): ?><a href='<?php echo $dairy_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-yamhill-img" data-name="dairy-yamhill-img" width="446" height="310" transform="translate(372.44 314.6) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -715,7 +715,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_tillamook['content']; ?>
 													    <?php if ($dairy_tillamook['learn_more_page']): ?><a href='<?php echo $dairy_tillamook['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_tillamook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_tillamook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-tillamook-img" data-name="dairy-tillamook-img" width="446" height="310" transform="translate(181.53 248.13) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -730,7 +730,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $corn_clackamas['content']; ?>
 													    <?php if ($corn_clackamas['learn_more_page']): ?><a href='<?php echo $corn_clackamas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($corn_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($corn_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="corn-clackamas-img" data-name="corn-clackamas-img" width="621" height="1268" transform="translate(594.87 281.24) scale(0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/corn.png"/>
@@ -745,7 +745,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $sheep_linn['content']; ?>
 													    <?php if ($sheep_linn['learn_more_page']): ?><a href='<?php echo $sheep_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($sheep_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($sheep_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="sheep-linn-img" data-name="sheep-linn-img" width="867" height="740" transform="translate(578.2 602.46) scale(0.07)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/sheep.png"/>
@@ -760,7 +760,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_lane['content']; ?>
 													    <?php if ($tree_lane['learn_more_page']): ?><a href='<?php echo $tree_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-lane-img" data-name="tree-lane-img" width="425" height="833" transform="translate(639.44 727.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -775,7 +775,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_linn['content']; ?>
 													    <?php if ($tree_linn['learn_more_page']): ?><a href='<?php echo $tree_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-linn-img" data-name="tree-linn-img" width="425" height="833" transform="translate(686.44 457.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -790,7 +790,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grass_seed_lane['content']; ?>
 													    <?php if ($grass_seed_lane['learn_more_page']): ?><a href='<?php echo $grass_seed_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grass_seed_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grass_seed_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="grass-seed-lane-img" data-name="grass-seed-lane-img" width="693" height="1302" transform="translate(367.28 733.29) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
@@ -805,7 +805,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $berries_marion['content']; ?>
 													    <?php if ($berries_marion['learn_more_page']): ?><a href='<?php echo $berries_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($berries_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($berries_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="berries-lane-img" data-name="berries-lane-img" width="964" height="829" transform="translate(624.44 438.48) scale(0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/berries.png"/>
@@ -820,7 +820,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_lane['content']; ?>
 													    <?php if ($tree_lane['learn_more_page']): ?><a href='<?php echo $tree_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-lane-img" data-name="tree-lane-img" width="425" height="833" transform="translate(163.9 648.92) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -835,7 +835,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $bean_lane['content']; ?>
 													    <?php if ($bean_lane['learn_more_page']): ?><a href='<?php echo $bean_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($bean_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($bean_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="bean-lane-img" data-name="bean-lane-img" width="597" height="872" transform="translate(443.12 697.57) scale(0.09 0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/beans.png"/>
@@ -850,7 +850,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_lane['content']; ?>
 													    <?php if ($angus_lane['learn_more_page']): ?><a href='<?php echo $angus_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-lane-img" data-name="angus-lane-img" width="795" height="1151" transform="translate(254.99 660.86) scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -865,7 +865,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_lane['content']; ?>
 													    <?php if ($dairy_lane['learn_more_page']): ?><a href='<?php echo $dairy_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-lane-img" data-name="dairy-lane-img" width="446" height="310" transform="translate(522.82 722.28) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -880,7 +880,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_linn['content']; ?>
 													    <?php if ($dairy_linn['learn_more_page']): ?><a href='<?php echo $dairy_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-linn-img" data-name="dairy-linn-img" width="446" height="310" transform="translate(384.32 561.28) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -895,7 +895,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $carrot_linn['content']; ?>
 													    <?php if ($carrot_linn['learn_more_page']): ?><a href='<?php echo $carrot_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($carrot_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($carrot_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="carrott-linn-img" data-name="carrott-linn-img" width="845" height="775" transform="translate(596.32 520.76) scale(0.1)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/carrott.png"/>
@@ -910,7 +910,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_coos['content']; ?>
 													    <?php if ($tree_coos['learn_more_page']): ?><a href='<?php echo $tree_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-coos-img" data-name="tree-coos-img" width="425" height="833" transform="translate(171.02 893.64) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -925,7 +925,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_josephine['content']; ?>
 													    <?php if ($tree_josephine['learn_more_page']): ?><a href='<?php echo $tree_josephine['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_josephine['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_josephine['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-josephine-img" data-name="tree-josephine-img" width="425" height="833" transform="translate(161.45 1142.23) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -940,7 +940,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $cranberries_coos['content']; ?>
 													    <?php if ($cranberries_coos['learn_more_page']): ?><a href='<?php echo $cranberries_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($cranberries_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($cranberries_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="cranberries-coos-img" data-name="cranberries-coos-img" width="299" height="406" transform="matrix(0, -0.09, 0.09, 0, 115.35, 919)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cranberries.png"/>
@@ -955,7 +955,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $cranberries_curry['content']; ?>
 													    <?php if ($cranberries_curry['learn_more_page']): ?><a href='<?php echo $cranberries_curry['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($cranberries_curry['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($cranberries_curry['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="cranberries-curry-img" data-name="cranberries-curry-img" width="299" height="406" transform="matrix(0, -0.09, 0.09, 0, 57.5, 1163.6)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cranberries.png"/>
@@ -970,7 +970,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_douglas['content']; ?>
 													    <?php if ($angus_douglas['learn_more_page']): ?><a href='<?php echo $angus_douglas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_douglas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_douglas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-douglas-img" data-name="angus-douglas-img" width="795" height="1151" transform="translate(257.03 1008.73)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -985,7 +985,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_coos['content']; ?>
 													    <?php if ($dairy_coos['learn_more_page']): ?><a href='<?php echo $dairy_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-coos-img" data-name="dairy-coos-img" width="446" height="310" transform="translate(75.84 1008.78) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -1000,7 +1000,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $shrimp_coos['content']; ?>
 													    <?php if ($shrimp_coos['learn_more_page']): ?><a href='<?php echo $shrimp_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($shrimp_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($shrimp_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="shrimp-coos-img" data-name="shrimp-coos-img" width="870" height="1161" transform="translate(0 992.41) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/shrimp.png"/>
@@ -1015,7 +1015,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $pears_jackson['content']; ?>
 													    <?php if ($pears_jackson['learn_more_page']): ?><a href='<?php echo $pears_jackson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($pears_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($pears_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="pears-jackson-img" data-name="pears-jackson-img" width="635" height="574" transform="translate(396.26 1204.34) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/pears.png"/>
@@ -1030,7 +1030,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_klamath['content']; ?>
 													    <?php if ($dairy_klamath['learn_more_page']): ?><a href='<?php echo $dairy_klamath['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-klamath-img" data-name="dairy-klamath-img" width="446" height="310" transform="translate(651.31 1166.29) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -1045,7 +1045,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grapes_jackson['content']; ?>
 													    <?php if ($grapes_jackson['learn_more_page']): ?><a href='<?php echo $grapes_jackson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grapes_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grapes_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="grapes-jackson-img" data-name="grapes-jackson-img" width="727" height="897" transform="translate(495.55 1160.13) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grapes.png"/>
@@ -1060,7 +1060,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_jackson['content']; ?>
 													    <?php if ($angus_jackson['learn_more_page']): ?><a href='<?php echo $angus_jackson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_jackson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-jackson-img" data-name="angus-jackson-img" width="795" height="1151" transform="translate(416.27 1282.4)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1075,7 +1075,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_josephine['content']; ?>
 													    <?php if ($dairy_josephine['learn_more_page']): ?><a href='<?php echo $dairy_josephine['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_josephine['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_josephine['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-josephine-img" data-name="dairy-josephine-img" width="446" height="310" transform="translate(234.84 1307.27) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -1090,7 +1090,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_lake['content']; ?>
 													    <?php if ($tree_lake['learn_more_page']): ?><a href='<?php echo $tree_lake['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-lake-img" data-name="tree-lake-img" width="425" height="833" transform="translate(1093.21 1016.28) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -1105,7 +1105,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_klamath['content']; ?>
 													    <?php if ($potatoes_klamath['learn_more_page']): ?><a href='<?php echo $potatoes_klamath['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-klamath-img" data-name="potatoes-klamath-img" width="907" height="504" transform="translate(812.73 1338.79) scale(0.07 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1120,7 +1120,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_lake['content']; ?>
 													    <?php if ($angus_lake['learn_more_page']): ?><a href='<?php echo $angus_lake['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-lake-img" data-name="angus-lake-img" width="795" height="1151" transform="translate(1172.97 1245.85)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1135,7 +1135,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_klamath['content']; ?>
 													    <?php if ($angus_klamath['learn_more_page']): ?><a href='<?php echo $angus_klamath['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-klamath-img" data-name="angus-klamath-img" width="795" height="1251" transform="translate(797.95 1199.28)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1150,7 +1150,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $carrot_jefferson['content']; ?>
 													    <?php if ($carrot_jefferson['learn_more_page']): ?><a href='<?php echo $carrot_jefferson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($carrot_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($carrot_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="carrot-jefferson-img" data-name="carrot-jefferson-img" width="845" height="775" transform="translate(918.81 481.15) scale(0.1)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/carrott.png"/>
@@ -1165,7 +1165,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_wheeler['content']; ?>
 													    <?php if ($tree_wheeler['learn_more_page']): ?><a href='<?php echo $tree_wheeler['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_wheeler['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_wheeler['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-wheeler-img" data-name="tree-wheeler-img" width="425" height="833" transform="translate(1205.44 477.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -1180,7 +1180,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_crook['content']; ?>
 													    <?php if ($angus_crook['learn_more_page']): ?><a href='<?php echo $angus_crook['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_crook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_crook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-crook-img" data-name="angus-crook-img" width="795" height="1151" transform="translate(1134.8 672.7)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1195,7 +1195,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_deschutes['content']; ?>
 													    <?php if ($angus_deschutes['learn_more_page']): ?><a href='<?php echo $angus_deschutes['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_deschutes['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_deschutes['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-deshutes-img" data-name="angus-deshutes-img" width="795" height="1151" transform="translate(763.82 636.16)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1210,7 +1210,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_wasco['content']; ?>
 													    <?php if ($wheat_wasco['learn_more_page']): ?><a href='<?php echo $wheat_wasco['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_wasco['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_wasco['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-wasco-img" data-name="wheat-wasco-img" width="634" height="1640" transform="translate(802.07 352.03) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1225,7 +1225,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_jefferson['content']; ?>
 													    <?php if ($wheat_jefferson['learn_more_page']): ?><a href='<?php echo $wheat_jefferson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-jefferson" data-name="wheat-jefferson" width="634" height="1640" transform="translate(870.37 476.02) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1240,7 +1240,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $pears_hood_river['content']; ?>
 													    <?php if ($pears_hood_river['learn_more_page']): ?><a href='<?php echo $pears_hood_river['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($pears_hood_river['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($pears_hood_river['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="pears-hood-river-img" data-name="pears-hood-river-img" width="635" height="574" transform="translate(765.94 265.69) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/pears.png"/>
@@ -1255,7 +1255,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_morrow['content']; ?>
 													    <?php if ($potatoes_morrow['learn_more_page']): ?><a href='<?php echo $potatoes_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-morrow-img" data-name="potatoes-morrow-img" width="907" height="504" transform="translate(1286.91 131.74) scale(0.05 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1270,7 +1270,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $cherries_wasco['content']; ?>
 													    <?php if ($cherries_wasco['learn_more_page']): ?><a href='<?php echo $cherries_wasco['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($cherries_wasco['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($cherries_wasco['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="cherries-wasco-img" data-name="cherries-wasco-img" width="904" height="872" transform="translate(920.12, 236.3) scale(.05 .06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"/>
@@ -1285,7 +1285,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $cherries_hood_river['content']; ?>
 													    <?php if ($cherries_hood_river['learn_more_page']): ?><a href='<?php echo $cherries_hood_river['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($cherries_hood_river['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($cherries_hood_river['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="cherries-hood-river-img" data-name="cherries-hood-river-img" width="904" height="872" transform="translate(761.78, 190.63) scale(.05 .06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"/>
@@ -1300,7 +1300,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_morrow['content']; ?>
 													    <?php if ($angus_morrow['learn_more_page']): ?><a href='<?php echo $angus_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-morrow-img" data-name="angus-morrow-img" width="795" height="1151" transform="translate(1267.13 261.68)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1315,7 +1315,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_gilliam['content']; ?>
 													    <?php if ($angus_gilliam['learn_more_page']): ?><a href='<?php echo $angus_gilliam['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_gilliam['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_gilliam['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-gilliam-img" data-name="angus-gilliam-img" width="795" height="1151" transform="translate(1082.65 270.88)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1330,7 +1330,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_morrow['content']; ?>
 													    <?php if ($dairy_morrow['learn_more_page']): ?><a href='<?php echo $dairy_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-morrow-img" data-name="dairy-morrow-img" width="446" height="310" transform="translate(1206.05 170.12) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -1345,7 +1345,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_sherman['content']; ?>
 													    <?php if ($wheat_sherman['learn_more_page']): ?><a href='<?php echo $wheat_sherman['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_sherman['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_sherman['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-sherman-img" data-name="wheat-sherman-img" width="634" height="1640" transform="translate(999.56 260.63) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1360,7 +1360,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_gilliam['content']; ?>
 													    <?php if ($wheat_gilliam['learn_more_page']): ?><a href='<?php echo $wheat_gilliam['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_gilliam['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_gilliam['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-gilliam-img" data-name="wheat-gilliam-img" width="634" height="1640" transform="translate(1147.56 174.63) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1375,7 +1375,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $watermelon_umatilla['content']; ?>
 													    <?php if ($watermelon_umatilla['learn_more_page']): ?><a href='<?php echo $watermelon_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($watermelon_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($watermelon_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="watermelon-umatilla-img" data-name="watermelon-umatilla-img" width="831" height="618" transform="translate(1405.85 58.76) scale(0.11)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/watermelon.png"/>
@@ -1390,7 +1390,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_umatilla['content']; ?>
 													    <?php if ($potatoes_umatilla['learn_more_page']): ?><a href='<?php echo $potatoes_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-umatilla-img" data-name="potatoes-umatilla-img" width="907" height="504" transform="translate(1520.99 99.3) scale(0.07 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1405,7 +1405,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $corn_umatilla['content']; ?>
 													    <?php if ($corn_umatilla['learn_more_page']): ?><a href='<?php echo $corn_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($corn_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($corn_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="corn-umatilla-img" data-name="corn-umatilla-img" width="621" height="1268" transform="translate(1446 130.12) scale(0.05 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/corn.png"/>
@@ -1420,7 +1420,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_umatilla['content']; ?>
 													    <?php if ($angus_umatilla['learn_more_page']): ?><a href='<?php echo $angus_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-umatilla-img" data-name="angus-umatilla-img" width="795" height="1151" transform="translate(1425.64 309.27)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1435,7 +1435,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $onions_umatilla['content']; ?>
 													    <?php if ($onions_umatilla['learn_more_page']): ?><a href='<?php echo $onions_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($onions_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($onions_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="onions-umatilla-img" data-name="onions-umatilla-img" width="832" height="729" transform="translate(1620.66 107.58) scale(0.07)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/onions.png"/>
@@ -1450,7 +1450,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grapes_umatilla['content']; ?>
 													    <?php if ($grapes_umatilla['learn_more_page']): ?><a href='<?php echo $grapes_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grapes_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grapes_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="grapes-umatilla-img" data-name="grapes-umatilla-img" width="727" height="897" transform="translate(1524.13 219.77) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grapes.png"/>
@@ -1465,7 +1465,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_umatilla['content']; ?>
 													    <?php if ($wheat_umatilla['learn_more_page']): ?><a href='<?php echo $wheat_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-umatilla-img" data-name="wheat-umatilla-img" width="634" height="1640" transform="translate(1442.2 206.45) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1480,7 +1480,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_morrow['content']; ?>
 													    <?php if ($wheat_morrow['learn_more_page']): ?><a href='<?php echo $wheat_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-morrow-img" data-name="wheat-morrow-img" width="634" height="1640" transform="translate(1221.09 238.66) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1495,7 +1495,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $apple_umatilla['content']; ?>
 													    <?php if ($apple_umatilla['learn_more_page']): ?><a href='<?php echo $apple_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($apple_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($apple_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="apple-umatilla-img" width="500" height="507" transform="translate(1370.63 144.81) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/apple.png"/>
@@ -1510,7 +1510,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $mint_union['content']; ?>
 													    <?php if ($mint_union['learn_more_page']): ?><a href='<?php echo $mint_union['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($mint_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($mint_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									      <image id="mint-union-img" data-name="mint-union-img" width="634" height="685" transform="translate(1591.51 297.68) scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/mint.png"/>
@@ -1525,7 +1525,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $tree_union['content']; ?>
 													    <?php if ($tree_union['learn_more_page']): ?><a href='<?php echo $tree_union['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($tree_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($tree_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="tree-union-img" data-name="tree-union-img" width="425" height="833" transform="translate(1739.43 104.48) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/tree.png"/>
@@ -1540,7 +1540,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_baker['content']; ?>
 													    <?php if ($potatoes_baker['learn_more_page']): ?><a href='<?php echo $potatoes_baker['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_baker['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_baker['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-baker-img" data-name="potatoes-baker-img" width="907" height="504" transform="translate(1859.15 466.62) scale(0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1555,7 +1555,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_union['content']; ?>
 													    <?php if ($potatoes_union['learn_more_page']): ?><a href='<?php echo $potatoes_union['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-union-img" data-name="potatoes-union-img" width="907" height="504" transform="translate(1593.43 372.53) scale(0.07 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1570,7 +1570,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_baker['content']; ?>
 													    <?php if ($angus_baker['learn_more_page']): ?><a href='<?php echo $angus_baker['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_baker['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_baker['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-baker-img" data-name="angus-baker-img" width="795" height="1151" transform="translate(1667 423.72)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1585,7 +1585,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_union['content']; ?>
 													    <?php if ($wheat_union['learn_more_page']): ?><a href='<?php echo $wheat_union['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-union-img" data-name="wheat-union-img" width="634" height="1640" transform="translate(1659.31 273.9) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1600,7 +1600,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $corn_malheur['content']; ?>
 													    <?php if ($corn_malheur['learn_more_page']): ?><a href='<?php echo $corn_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($corn_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($corn_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="corn-malheur-img" data-name="corn-malheur-img" width="621" height="1268" transform="translate(1735.3 683.58) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/corn.png"/>
@@ -1615,7 +1615,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $potatoes_malheur['content']; ?>
 													    <?php if ($potatoes_malheur['learn_more_page']): ?><a href='<?php echo $potatoes_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($potatoes_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($potatoes_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="potatoes-malheur-img" data-name="potatoes-malheur-img" width="907" height="504" transform="translate(1854.88 674.38) scale(0.07 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/potatoes.png"/>
@@ -1630,7 +1630,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $onions_malheur['content']; ?>
 													    <?php if ($onions_malheur['learn_more_page']): ?><a href='<?php echo $onions_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($onions_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($onions_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="onions-malheur-img" data-name="onions-malheur-img" width="832" height="729" transform="translate(1883.63 739.3) scale(0.07)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/onions.png"/>
@@ -1645,7 +1645,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_harney['content']; ?>
 													    <?php if ($angus_harney['learn_more_page']): ?><a href='<?php echo $angus_harney['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_harney['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_harney['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-harney-img" data-name="angus-harney-img" width="795" height="1151" transform="translate(1316.96 836.37)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1660,7 +1660,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_grant['content']; ?>
 													    <?php if ($angus_grant['learn_more_page']): ?><a href='<?php echo $angus_grant['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_grant['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_grant['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-grant-img" data-name="angus-grant-img" width="795" height="1151" transform="translate(1369.45 599.36)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1675,7 +1675,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_wallowa['content']; ?>
 													    <?php if ($angus_wallowa['learn_more_page']): ?><a href='<?php echo $angus_wallowa['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_wallowa['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_wallowa['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-wallowa-img" data-name="angus-wallowa-img" width="795" height="1151" transform="translate(1817.93 95.39)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1690,7 +1690,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_malheur['content']; ?>
 													    <?php if ($angus_malheur['learn_more_page']): ?><a href='<?php echo $angus_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-malheur-img" data-name="angus-malheur-img" width="795" height="1151" transform="translate(1768.96 1199.87)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1705,7 +1705,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_malheur['content']; ?>
 													    <?php if ($wheat_malheur['learn_more_page']): ?><a href='<?php echo $wheat_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-malheur-img" data-name="wheat-malheur-img" width="634" height="1640" transform="translate(1728.63 958.21) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1720,7 +1720,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $grass_seed_linn['content']; ?>
 													    <?php if ($grass_seed_linn['learn_more_page']): ?><a href='<?php echo $grass_seed_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($grass_seed_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($grass_seed_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="grass-seed-linn-img" data-name="grass-seed-linn-img" width="693" height="1302" transform="translate(511.15 585.38) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
@@ -1735,7 +1735,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_klamath['content']; ?>
 													    <?php if ($wheat_klamath['learn_more_page']): ?><a href='<?php echo $wheat_klamath['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-klamath-img" data-name="wheat-klamath-img" width="634" height="1640" transform="translate(738.17 922.02) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1750,7 +1750,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_lane['content']; ?>
 													    <?php if ($nursery_lane['learn_more_page']): ?><a href='<?php echo $nursery_lane['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_lane['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="nursery-lane-img" data-name="nursery-lane-img" width="511" height="386" transform="translate(509.46 838.52) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -1765,7 +1765,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_linn['content']; ?>
 													    <?php if ($wheat_linn['learn_more_page']): ?><a href='<?php echo $wheat_linn['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_linn['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-linn-img" data-name="wheat-linn-img" width="634" height="1640" transform="translate(475.17 481.04) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1780,7 +1780,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $dairy_malheur['content']; ?>
 													    <?php if ($dairy_malheur['learn_more_page']): ?><a href='<?php echo $dairy_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($dairy_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($dairy_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="dairy-malheur-img" data-name="dairy-malheur-img" width="446" height="310" transform="translate(1682.47 797.75) scale(0.23 0.24)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/dairy.png"/>
@@ -1795,7 +1795,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $onions_morrow['content']; ?>
 													    <?php if ($onions_morrow['learn_more_page']): ?><a href='<?php echo $onions_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($onions_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($onions_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="onions-morrow-img" data-name="onions-morrow-img" width="832" height="729" transform="translate(1326.25 226.56) scale(0.07)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/onions.png"/>
@@ -1810,7 +1810,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_union['content']; ?>
 													    <?php if ($angus_union['learn_more_page']): ?><a href='<?php echo $angus_union['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_union['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-union-img" data-name="angus-union-img" width="795" height="1151" transform="translate(1711.58 290.15)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1825,7 +1825,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $blueberries_washington['content']; ?>
 													    <?php if ($blueberries_washington['learn_more_page']): ?><a href='<?php echo $blueberries_washington['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($blueberries_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($blueberries_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="blueberry-washington-img" data-name="blueberry-washington-img" width="736" height="616" transform="translate(378.21 205.81) scale(0.06 0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/blueberry.png"/>
@@ -1840,7 +1840,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $wheat_washington['content']; ?>
 													    <?php if ($wheat_washington['learn_more_page']): ?><a href='<?php echo $wheat_washington['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($wheat_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($wheat_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="wheat-washington-img" data-name="wheat-washington-img" width="634" height="1640" transform="translate(426.55 203.44) scale(0.06)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/wheat.png"/>
@@ -1855,7 +1855,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_wheeler['content']; ?>
 													    <?php if ($angus_wheeler['learn_more_page']): ?><a href='<?php echo $angus_wheeler['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_wheeler['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_wheeler['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-wheeler-img" data-name="angus-wheeler-img" width="795" height="1151" transform="translate(1116.39 381.51)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1870,7 +1870,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $broccoli_marion['content']; ?>
 													    <?php if ($broccoli_marion['learn_more_page']): ?><a href='<?php echo $broccoli_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($broccoli_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($broccoli_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="brocolli-marion-img" width="892" height="993" transform="translate(448.49 370.84) scale(0.04)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/brocolli.png"/>
@@ -1885,7 +1885,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $filberts_yamhill['content']; ?>
 													    <?php if ($filberts_yamhill['learn_more_page']): ?><a href='<?php echo $filberts_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($filberts_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($filberts_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="filberts-yamhill-img" width="762" height="498" transform="translate(216.58 348.79) scale(0.08)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/filberts.png"/>
@@ -1900,7 +1900,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $angus_jefferson['content']; ?>
 													    <?php if ($angus_jefferson['learn_more_page']): ?><a href='<?php echo $angus_jefferson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($angus_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($angus_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="angus-jefferson-img" data-name="angus-jefferson-img" width="795" height="1151" transform="translate(758.12 510.15)  scale(0.09 0.09)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/angus.png"/>
@@ -1915,7 +1915,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $christmas_tree_marion['content']; ?>
 													    <?php if ($christmas_tree_marion['learn_more_page']): ?><a href='<?php echo $christmas_tree_marion['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($christmas_tree_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($christmas_tree_marion['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 									   		<image id="christmas-tree-marion-img" data-name="christmas-tree-marion-img" width="292" height="437" transform="translate(370.04 369.97) scale(0.23)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/christmasTree.png"/>
@@ -1930,7 +1930,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $nursery_washington['content']; ?>
 													    <?php if ($nursery_washington['learn_more_page']): ?><a href='<?php echo $nursery_washington['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($nursery_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($nursery_washington['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="nursery-washington-img" data-name="nursery-washington-img" width="511" height="386" transform="translate(325.96 153.14) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/nursery.png"/>
@@ -1945,7 +1945,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_malheur['content']; ?>
 													    <?php if ($hay_malheur['learn_more_page']): ?><a href='<?php echo $hay_malheur['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_malheur['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-malheur-img" width="688" height="746" transform="translate(1824.16 1027.58) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -1960,7 +1960,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_harney['content']; ?>
 													    <?php if ($hay_harney['learn_more_page']): ?><a href='<?php echo $hay_harney['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_harney['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_harney['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-harney-img" width="688" height="746" transform="translate(1487.29 1089.13) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -1975,7 +1975,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_wallowa['content']; ?>
 													    <?php if ($hay_wallowa['learn_more_page']): ?><a href='<?php echo $hay_wallowa['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_wallowa['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_wallowa['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-wallowa-img" width="688" height="746" transform="translate(1943.32 239.45) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -1990,7 +1990,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_umatilla['content']; ?>
 													    <?php if ($hay_umatilla['learn_more_page']): ?><a href='<?php echo $hay_umatilla['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_umatilla['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-umatilla-img" width="688" height="746" transform="translate(1578.12 154.97) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2005,7 +2005,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_morrow['content']; ?>
 													    <?php if ($hay_morrow['learn_more_page']): ?><a href='<?php echo $hay_morrow['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_morrow['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-morrow-img" width="688" height="746" transform="translate(1328.57 322.17) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2020,7 +2020,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_crook['content']; ?>
 													    <?php if ($hay_crook['learn_more_page']): ?><a href='<?php echo $hay_crook['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_crook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_crook['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-crook-img" width="688" height="746" transform="translate(963.9 596.4) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2035,7 +2035,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_jefferson['content']; ?>
 													    <?php if ($hay_jefferson['learn_more_page']): ?><a href='<?php echo $hay_jefferson['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_jefferson['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-jefferson-img" width="688" height="746" transform="translate(1000.21 446.4) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2050,7 +2050,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_deschutes['content']; ?>
 													    <?php if ($hay_deschutes['learn_more_page']): ?><a href='<?php echo $hay_deschutes['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_deschutes['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_deschutes['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-deschutes-img" width="688" height="746" transform="translate(731.87 757.19) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2065,7 +2065,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_lake['content']; ?>
 													    <?php if ($hay_lake['learn_more_page']): ?><a href='<?php echo $hay_lake['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_lake['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-lake-img" width="688" height="746" transform="translate(894.87 1019.45) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2080,7 +2080,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_klamath['content']; ?>
 													    <?php if ($hay_klamath['learn_more_page']): ?><a href='<?php echo $hay_klamath['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_klamath['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-klamath-img" width="688" height="746" transform="translate(667.5 1266.65) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2095,7 +2095,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $hay_douglas['content']; ?>
 													    <?php if ($hay_douglas['learn_more_page']): ?><a href='<?php echo $hay_douglas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($hay_douglas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($hay_douglas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="hay-douglas-img" width="688" height="746" transform="translate(455.52 964.88) scale(0.14)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/hay.png"/>
@@ -2110,7 +2110,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $crab_clatsop['content']; ?>
 													    <?php if ($crab_clatsop['learn_more_page']): ?><a href='<?php echo $crab_clatsop['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($crab_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($crab_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="crab-clatsop-img" width="491" height="349" transform="translate(91.54 21.24) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/crab.png"/>
@@ -2125,7 +2125,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $crab_lincoln['content']; ?>
 													    <?php if ($crab_lincoln['learn_more_page']): ?><a href='<?php echo $crab_lincoln['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if($crab_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($crab_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="crab-lincoln-img" width="491" height="349" transform="translate(61.67 472.54) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/crab.png"/>
@@ -2140,7 +2140,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo  $crab_coos['content']; ?>
 													    <?php if ($crab_coos['learn_more_page']): ?><a href='<?php echo $crab_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if( $crab_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($crab_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="crab-coos-img" width="491" height="349" transform="translate(18.26 876.06) scale(0.15)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/crab.png"/>
@@ -2155,7 +2155,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $fish_coos['content']; ?>
 													    <?php if ($fish_coos['learn_more_page']): ?><a href='<?php echo $fish_coos['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if( $fish_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($fish_coos['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="fish-coos-img" width="421" height="391" transform="translate(6.12 928.28) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/fish.png"/>
@@ -2170,7 +2170,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $fish_lincoln['content']; ?>
 													    <?php if ($fish_lincoln['learn_more_page']): ?><a href='<?php echo $fish_lincoln['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if( $fish_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($fish_lincoln['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="fish-lincoln-img" width="421" height="391" transform="translate(63.82 522.51) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/fish.png"/>
@@ -2185,7 +2185,7 @@ $wheat_washington_img = $wheat_washington['image'];
 													<div class='media-body'>
 												    	<?php echo $fish_clatsop['content']; ?>
 													    <?php if ($fish_clatsop['learn_more_page']): ?><a href='<?php echo $fish_clatsop['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-														<?php if( $fish_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+														<?php if ($fish_clatsop['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 													</div>
 												</div>" data-placement="auto right">
 											<image id="fish-clatsop-img" width="421" height="391" transform="translate(92.17 68.44) scale(0.16)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/fish.png"/>
@@ -2200,7 +2200,7 @@ $wheat_washington_img = $wheat_washington['image'];
 												<div class='media-body'>
 											    	<?php echo $eggs_clackamas['content']; ?>
 													<?php if ($eggs_clackamas['learn_more_page']): ?><a href='<?php echo $eggs_clackamas['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-													<?php if( $eggs_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+													<?php if ($eggs_clackamas['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 												</div>
 											</div>" data-placement="auto right">
 										      <g id="chicken-clackamas">
@@ -2220,7 +2220,7 @@ $wheat_washington_img = $wheat_washington['image'];
 												<div class='media-body'>
 											    	<?php echo $eggs_polk['content']; ?>
 													<?php if ($eggs_polk['learn_more_page']): ?><a href='<?php echo $eggs_polk['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-													<?php if( $eggs_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+													<?php if ($eggs_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 												</div>
 											</div>" data-placement="auto right">
 										      <g id="chicken-polk">
@@ -2240,7 +2240,7 @@ $wheat_washington_img = $wheat_washington['image'];
 												<div class='media-body'>
 											    	<?php echo $eggs_yamhill['content']; ?>
 													<?php if ($eggs_yamhill['learn_more_page']): ?><a href='<?php echo $eggs_yamhill['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-													<?php if( $eggs_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+													<?php if ($eggs_yamhill['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 												</div>
 											</div>" data-placement="auto right">
 									      <g id="chicken-yamhill">
@@ -2260,7 +2260,7 @@ $wheat_washington_img = $wheat_washington['image'];
 												<div class='media-body'>
 											    	<?php echo $grass_seed_polk['content']; ?>
 													<?php if ($grass_seed_polk['learn_more_page']): ?><a href='<?php echo $grass_seed_polk['learn_more_page']; ?>' class='btn btn-primary'>Learn More</a> <?php endif; ?>	
-													<?php if( $grass_seed_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
+													<?php if ($grass_seed_polk['video_url']): ?><a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a><?php endif; ?>
 												</div>
 											</div>" data-placement="auto right">
 									   		<image id="grass-seed-polk-img" data-name="grass-seed-polk-img" width="693" height="1302" transform="translate(322.92 424.78) scale(0.06 0.05)" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/grassSeed.png"/>
@@ -2294,7 +2294,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region1['region_name']; ?> <i id="caret-collapse1" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-										<div class="legend-content pt-2"><?php echo $region1['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region1['region_content']; ?>
+											
+											<?php if ( isset($region1['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region1['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -2307,7 +2317,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region2['region_name']; ?> <i id="caret-collapse2" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-										<div class="legend-content pt-2"><?php echo $region2['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region2['region_content']; ?>
+											
+											<?php if ( isset($region2['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region2['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>									
 									</div>
 								</div>
 							</div>
@@ -2320,7 +2340,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region3['region_name']; ?> <i id="caret-collapse3" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-										<div class="legend-content pt-2"><?php echo $region3['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region3['region_content']; ?>
+											
+											<?php if ( isset($region3['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region3['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -2333,7 +2363,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region4['region_name']; ?> <i id="caret-collapse4" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
-										<div class="legend-content pt-2"><?php echo $region4['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region4['region_content']; ?>
+											
+											<?php if ( isset($region4['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region4['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -2346,7 +2386,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region5['region_name']; ?> <i id="caret-collapse5" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
-										<div class="legend-content pt-2"><?php echo $region5['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region5['region_content']; ?>
+											
+											<?php if ( isset($region5['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region5['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -2359,7 +2409,17 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region6['region_name']; ?> <i id="caret-collapse6" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
-										<div class="legend-content pt-2"><?php echo $region6['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region6['region_content']; ?>
+											
+											<?php if ( isset($region6['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region6['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -2372,14 +2432,24 @@ $wheat_washington_img = $wheat_washington['image'];
 										<h4 class="media-heading mb-0 mt-1"><?php echo $region7['region_name']; ?> <i id="caret-collapse7" class="fa fa-caret-right"></i></h4>
 									</a>
 									<div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-										<div class="legend-content pt-2"><?php echo $region7['region_content']; ?></div>
+										<div class="legend-content pt-2">
+											<?php echo $region7['region_content']; ?>
+											
+											<?php if ( isset($region7['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region7['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
 									</div>
 								</div>
 							</div>
 						</li>									
 					</ul>
 				</div>
-				<?php if( have_rows('video_legend', 'option') ): ?>
+				<?php if ( have_rows('video_legend', 'option') ): ?>
 				<div class="map-legend video-legend">
 					<h3 class="mt-3">Virtual Videos</h3>
 					<ul class="list-group">
@@ -2394,7 +2464,7 @@ $wheat_washington_img = $wheat_washington['image'];
 					</ul>		
 				</div>
 				<?php endif; ?>
-				<?php if( have_rows('educational_videos', 'options') ): ?>
+				<?php if ( have_rows('educational_videos', 'options') ): ?>
 				<div class="map-legend video-legend">
 					<h3 class="mt-3">Educational Videos</h3>
 					<ul class="list-group">
