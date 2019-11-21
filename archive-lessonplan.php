@@ -4,7 +4,7 @@
 
 <?php get_template_part('library/library', 'top'); ?>
 
-<div class="section section-alt py-4">
+<div id="lesson-plan-wrapper" class="section section-alt py-4">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
@@ -29,8 +29,22 @@
 				
 					<?php endwhile; ?>
 				
-					<?php show_pagination_links(); ?>
-				
+					<div class="row justify-content-center align-items-center mb-2">
+						<div class="col-12 text-center mb-3"><?php echo do_shortcode('[facetwp pager="true"]'); ?></div>
+						<div class="col-2"><?php echo do_shortcode('[facetwp per_page="true"]'); ?></div>
+						<div class="col-10 text-right text-sm">Viewing <?php echo do_shortcode('[facetwp counts="true"]'); ?></div>
+					</div>		
+				<script>
+					(function($) {
+					    $(document).on('facetwp-loaded', function() {
+					        if (FWP.loaded) {
+					            $('html, body').animate({
+					                scrollTop: $('#lesson-plan-wrapper').offset().top
+					            }, 500);
+					        }
+					    });
+					})(jQuery);
+				</script>
 				<?php else: ?>
 				
 					<div class="card">
