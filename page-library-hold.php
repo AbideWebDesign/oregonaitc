@@ -95,7 +95,7 @@ if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) {
 													
 													<?php endforeach; ?>
 													
-													<?php echo (!$kit) ? 1 : ''; ?>
+													<?php echo (!isset($kit)) ? 1 : ''; ?>
 													
 												</td>
 												<td class="align-middle"><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>

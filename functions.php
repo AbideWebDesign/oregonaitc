@@ -74,7 +74,7 @@ add_image_size('photo-3', 255, 170, true);
  */
 function remove_custom_user_contact_methods() {
     
-    remove_filter( 'user_contactmethods', 'modify_contact_methods' );
+	remove_filter( 'user_contactmethods', 'modify_contact_methods' );
 
 }
 
@@ -603,9 +603,10 @@ function submit_library_order() {
 			update_field('comment', $comment, $post_id);
 		}
 	} 
-		
+	
 	// Send notification
 	wp_mail(get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers);
+	wp_mail($current_user->user_email, 'Library Order Confirmation', $content, $headers);
 }
 
 function washington_county_filter($query) {
