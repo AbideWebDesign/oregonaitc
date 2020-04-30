@@ -29,7 +29,7 @@ $branch = get_queried_object();
 						
 						<?php if ( $type == 'resource' ): ?>
 						
-							<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 mb-lg-0 w-100')); ?></a>
+							<a href="<?php the_permalink(); ?><?php if ( $type == 'resource' ): ?>?branch=<?php echo $branch->slug; ?><?php endif; ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 mb-lg-0 w-100')); ?></a>
 						
 							<?php if ( is_user_logged_in() ): ?>
 						
