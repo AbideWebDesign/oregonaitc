@@ -34,7 +34,8 @@ if ( isset($_GET['branch']) ) {
 		$class = 'section-primary';
 	
 	} else {
-	
+		
+		$branch = 'Washington County';
 		$class = 'section-secondary';
 	
 	}

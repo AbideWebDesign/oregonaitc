@@ -21,7 +21,17 @@
 				
 				<div class="col-lg-3 col-sm-6 text-center mb-3 mb-lg-0 d-flex align-items-end">
 					<div class="card w-100">
-						<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+						
+						<?php if ( is_array($image) ): ?>
+						
+							<a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+							
+						<?php else: ?>
+						
+							<a href="<?php the_permalink(); ?>"><img class="img-fluid mb-3 card-image-top" src="<?php echo $image; ?>" /></a>
+
+						<?php endif; ?>
+						
 					    <h5 class="card-title text-md mb-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 					    <div class="card-body p-0">
 					    	<p class="card-text text-sm mb-0">For Grades: <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> 
