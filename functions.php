@@ -827,3 +827,8 @@ function grade_level_sort ( $orderby, $facet ) {
     
 }
 add_filter( 'facetwp_facet_orderby', 'grade_level_sort', 10, 2 );
+
+/**
+ * Woocommerce - turn off upsell ads
+ */
+add_filter( 'woocommerce_helper_suppress_admin_notices', '__return_true' );
