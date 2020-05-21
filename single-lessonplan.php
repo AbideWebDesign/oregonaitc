@@ -47,6 +47,12 @@ if ( have_posts() ) :
 									
 									<?php endif; ?>
 									
+									<?php if ( get_field('lesson_plan_pdf_sp') ): ?>
+									
+										<p class="text-center mt-1 mb-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf_sp'); ?>" class="btn btn-white btn-sm btn-block" onClick="ga('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?> - SP', 10);"><i class="fa fa-download"></i> Descargar</a></p>
+									
+									<?php endif; ?>
+									
 									<?php if ( get_field('link_to_matrix') ): ?>
 									
 										<p class="text-center mt-2 mb-0"><a href="<?php the_field('matrix_link'); ?>" class="btn btn-white btn-sm btn-block"><i class="fa fa-external-link-alt"></i> View Lesson</a></p>
