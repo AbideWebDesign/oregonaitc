@@ -43,6 +43,7 @@ get_header(); ?>
 						<?php echo do_shortcode('[facetwp facet="search_resource"]'); ?>
 						<?php echo do_shortcode('[facetwp facet="categories"]'); ?>
 						<?php echo do_shortcode('[facetwp facet="resource_category"]'); ?>
+						<?php echo do_shortcode('[facetwp facet="resource_grade_level"]'); ?>
 					</div>
 				</div>
 			</div>

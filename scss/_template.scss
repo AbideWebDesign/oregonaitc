@@ -486,7 +486,16 @@
 .search-form-top a:hover {
 	text-decoration: none;
 }
-
+.facetwp-type-fselect .fs-label, .facetwp-type-fselect .fs-option .fs-option-label {
+	font-size: 14px;
+}
+.facetwp-type-fselect .fs-search {
+	display: none;
+}
+.facetwp-type-fselect .fs-wrap.multiple .fs-option.selected .fs-checkbox i {
+	background-color: #757575;
+	background-image: none;
+}
 .search-form-top input.form-control,
 .facetwp-type-search input.form-control {
     background-color: theme-color('gray-light');
@@ -550,7 +559,6 @@
 	padding-right: 12px;
 	display: inline-block;
 }
-
 .facetwp-facet {
 	@extend .mb-4;	
 }

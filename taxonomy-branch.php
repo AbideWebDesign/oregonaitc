@@ -7,12 +7,21 @@
 			<div class="col-lg-3">
 				<div class="card">
 					<div class="card-body">
+						<div class="mb-3 text-center">
+							<button class="btn btn-primary btn-sm" onclick="FWP.refresh()">Apply</button>
+							<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
+						</div>
 						<?php echo do_shortcode('[facetwp facet="search_resource"]'); ?>
+						<h6 class="card-title">Grade Level</h6>
+						<?php echo do_shortcode('[facetwp facet="resource_grade_level"]'); ?>
 						<h6 class="card-title">Resource Types</h6>
 						<?php echo do_shortcode('[facetwp facet="resource_type"]'); ?>
 						<h6 class="card-title">Resource Categories</h6>
 						<?php echo do_shortcode('[facetwp facet="resource_category"]'); ?>
-						<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
+						<div class="text-center">
+							<button class="btn btn-primary btn-sm" onclick="FWP.refresh()">Apply</button>
+							<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
+						</div>
 					</div>
 				</div>
 				<?php get_template_part('library/library', 'promo'); ?>
@@ -50,6 +59,12 @@
 	            }, 500);
 	        }
 	    });
+	   
+	    $(function() {
+        	if ('undefined' !== typeof FWP) {
+            	FWP.auto_refresh = false;
+        	}
+    	});
 	})(jQuery);
 </script>
 <?php get_footer(); ?>
