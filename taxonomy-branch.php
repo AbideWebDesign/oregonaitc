@@ -12,8 +12,6 @@
 							<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
 						</div>
 						<?php echo do_shortcode('[facetwp facet="search_resource"]'); ?>
-						<h6 class="card-title">Grade Level</h6>
-						<?php echo do_shortcode('[facetwp facet="resource_grade_level"]'); ?>
 						<h6 class="card-title">Resource Types</h6>
 						<?php echo do_shortcode('[facetwp facet="resource_type"]'); ?>
 						<h6 class="card-title">Resource Categories</h6>
