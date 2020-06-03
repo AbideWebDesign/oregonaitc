@@ -111,6 +111,41 @@
             "mime_types": ""
         },
         {
+            "key": "field_5ed7ec94e71c9",
+            "label": "Resource Grade Levels",
+            "name": "resource_grade_levels",
+            "type": "checkbox",
+            "instructions": "For filtering by grade",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "K": "K",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "11": "11",
+                "12": "12"
+            },
+            "allow_custom": 0,
+            "default_value": false,
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
             "key": "field_559170f4e1a3e",
             "label": "Minimum Age Group",
             "name": "minimum_age_group",
@@ -421,5 +456,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591049038
+    "modified": 1591209269
 }
