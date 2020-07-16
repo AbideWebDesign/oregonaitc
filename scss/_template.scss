@@ -1472,3 +1472,35 @@ body table.gsurvey-likert {
 		background-color: #eee;
 	}
 }
+.gf_simple_horizontal_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
+.gf_simple_horizontal_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle,
+.gf_simple_horizontal_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last {
+  padding-top: 0 !important;
+}
+
+.gf_simple_horizontal_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container input[type=text],
+.gf_simple_horizontal_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container select {
+  margin-bottom: 0 !important;
+}
+
+.gf_simple_horizontal_wrapper li.hidden_label input {
+  margin-top: 0 !important;
+}
+
+body .gf_simple_horizontal_wrapper .top_label div.ginput_container {
+  margin-top: 0 !important;
+}
+
+.gf_simple_horizontal div.gform_footer.top_label {
+  width: auto !important;
+  vertical-align: top !important;
+}
+
+.gf_simple_horizontal div.gform_body {
+  width: auto !important;
+}
+
+/* Adobe Viewer */
+#embed-wrap {
+	width: 100%;
+}

@@ -104,6 +104,14 @@ add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
 if ( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
+		'page_title' 	=> 'Subscriptions',
+		'menu_title'	=> 'Subscriptions',
+		'menu_slug' 	=> 'subscriptions',
+		'redirect'		=> false,
+		'icon_url'		=> 'dashicons-tickets-alt',
+	));
+
+	acf_add_options_page(array(
 		'page_title' 	=> 'Map Settings',
 		'menu_title'	=> 'Map Settings',
 		'menu_slug' 	=> 'map-settings',
@@ -812,6 +820,16 @@ function lesson_plan_sort_order($query){
 };
 add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
 
+/** 
+ * Change Gravity Forms Spinner
+ */
+// Change spinner
+function spinner_url( $image_src, $form ) {
+    return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+}
+add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+
 /**
  * Sort grade levels in dropdown filter
  */
@@ -832,3 +850,78 @@ add_filter( 'facetwp_facet_orderby', 'grade_level_sort', 10, 2 );
  * Woocommerce - turn off upsell ads
  */
 add_filter( 'woocommerce_helper_suppress_admin_notices', '__return_true' );
+
+/**
+ * Woocommerce - Get Oregonized Online Viewer Access
+ */
+function oregonaitc_go_access_fields() {
+    
+    $fields = array(
+		array(
+            'type'        => 'select',
+            'label'       => __( 'Valid Subscription', 'oregonaitc' ),
+            'id'		  => 'go_access_valid',
+            'options' 	  => array( 'yes' => 'Yes', 'no' => 'No' ),
+		),
+	    array(
+            'type'        => 'text',
+            'label'       => __( 'Get Oregonized Code', 'oregonaitc' ),
+            'id'		  => 'go_access_code',
+            'placeholder' => __( '', 'oregonaitc' ),
+		),	
+    );   
+
+    return $fields;
+}
+
+// Add custom fields on virtual book purchases
+
+function oregonaitc_woocommerce_order_status_completed( $order_id ) {
+	
+	$current_user = wp_get_current_user();
+	
+	$order = wc_get_order( $order_id );
+	
+	foreach ( $order->get_items() as $item_id => $item ) {
+   
+		$product_id = $item->get_product_id();
+	
+		if ( $product_id == '20294' ) {
+
+			$row = array (
+				'teacher'		=> $current_user->ID,
+				'access_code'	=> wp_generate_password( 8, false ),
+				'valid'			=> true,
+			);
+		
+			add_row( 'teachers', $row, 'option' );								
+			
+		}
+		
+	}
+
+}
+add_action( 'woocommerce_order_status_completed', 'oregonaitc_woocommerce_order_status_completed', 10, 1 );
+
+// Validation function for virtual book access
+function go_access_check( $access_code ) {
+	
+	if ( have_rows('teachers', 'options') ) {
+		
+		while ( have_rows('teachers', 'options') ) {
+		
+			the_row(); 
+			
+			if ( get_sub_field('access_code') == $access_code && get_sub_field('valid') ) {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+}
