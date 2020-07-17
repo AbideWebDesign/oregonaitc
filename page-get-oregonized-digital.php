@@ -83,7 +83,7 @@ get_header();
 
 					<div class="bg-white p-3 p-lg-3 border d-flex justify-content-center">
 						
-						<?php echo do_shortcode( '[gravityform id="38" title="false" description="false" ajax="true"]' ); ?>
+						<?php echo do_shortcode( '[gravityform id="' . get_field('get_oregonized_access_form') . '" title="false" description="false" ajax="true"]' ); ?>
 						
 					</div>
 					

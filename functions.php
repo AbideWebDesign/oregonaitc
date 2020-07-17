@@ -17,8 +17,6 @@ function enqueue_child_theme_styles() {
 	
 	$parent_style = 'abide-style';
 	
-	wp_enqueue_style( $parent_style, get_template_directory_uri().'/style.css' );
-	
 	wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
         array( $parent_style ),
@@ -43,13 +41,6 @@ function enqueue_child_theme_scripts() {
 		wp_enqueue_style( 'gijgo.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/css/gijgo.min.css' );
 		wp_enqueue_script( 'gijgo.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/js/gijgo.min.js', 'jquery', '', true );
 		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
-	}
-	
-	// Remove woocommerce scripts
-	if (!is_woocommerce() && !is_cart() && !is_checkout()) {
-		remove_action('wp_enqueue_scripts', [WC_Frontend_Scripts::class, 'load_scripts']);
-		remove_action('wp_print_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
-		remove_action('wp_print_footer_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
 	}
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
@@ -817,7 +808,7 @@ function lesson_plan_sort_order($query){
     
     } 
     
-};
+}
 add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
 
 /** 
@@ -885,8 +876,8 @@ function oregonaitc_woocommerce_order_status_completed( $order_id ) {
 	foreach ( $order->get_items() as $item_id => $item ) {
    
 		$product_id = $item->get_product_id();
-	
-		if ( $product_id == '20294' ) {
+		
+		if ( $product_id == '25012' ) {
 
 			$row = array (
 				'teacher'		=> $current_user->ID,
@@ -925,3 +916,56 @@ function go_access_check( $access_code ) {
 	}
 	
 }
+
+// Helper function to get virtual book access code
+function go_get_access() {
+	
+	$current_user = get_current_user();
+	
+	if ( have_rows('teachers', 'options') ) {
+		
+		while ( have_rows('teachers', 'options') ) {
+		
+			the_row(); 
+			
+			$user = get_sub_field('user'); 
+			
+			if ( $user->id == $current_user->id && get_sub_field('valid') ) {
+				
+				return get_sub_field('access_code');
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+}
+
+/*
+ * Add Get Oregonized Access code to email notification
+ */
+function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text ) {
+	
+	foreach ( $order->get_items() as $item_id => $item ) {
+   
+		$product_id = $item->get_product_id();
+		
+		if ( $product_id == '25012' ) {
+						
+			$access_code = go_get_access();
+			
+			$access_url = home_url() . '/get-oregonized-digital/?access=' . $access_code;
+			
+			echo '<h2>Get Oregonized Access</h2><strong>Access URL:</strong><a href="' . $access_url . '"> ' . $access_url . '</a><br><strong>Access Code:</strong> ' . $access_code . '<br><br>';
+
+		}
+		
+	}
+
+	return;
+	
+}
+add_action( 'woocommerce_email_order_meta', 'oregonaitc_email_order_meta_fields', 10, 3 );

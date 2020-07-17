@@ -3,6 +3,23 @@
     "title": "Get Oregonized Digital",
     "fields": [
         {
+            "key": "field_5f11d6ebd21c2",
+            "label": "Get Oregonized Access Form",
+            "name": "get_oregonized_access_form",
+            "type": "forms",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
             "key": "field_5f08e661cd4bd",
             "label": "Get Oregonized Media",
             "name": "get_oregonized_media",
@@ -53,5 +70,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1594418819
+    "modified": 1595004672
 }

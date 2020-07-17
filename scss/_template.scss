@@ -1165,13 +1165,6 @@ height: 42px;
 	margin-bottom: 0;
 }
 
-/*
-.page-template-page-members-profile li {
-	display: inline-block;
-	padding-right: 30px;
-}
-*/
-
 #account-top a:hover {
 	text-decoration: none;
 }
@@ -1240,7 +1233,6 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 .single-product .product {
 	@extend .card-body;
 }
-
 .woocommerce-loop-product__title,
 .woocommerce ul.products li.product .price {
 	text-align: center;
@@ -1251,11 +1243,10 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 	@extend .btn-primary;	
 }
 
-.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
-	@extend .btn:hover;
-	@extend .btn-primary:hover;
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover,  .woocommerce input.button.alt:hover {
+	background-color: darken(#0FA3F2, 20);
+	border-color: darken(#0FA3F2, 20);
 }
-
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
 	background-color: theme-color('primary');
 }
