@@ -920,7 +920,7 @@ function go_access_check( $access_code ) {
 // Helper function to get virtual book access code
 function go_get_access() {
 	
-	$current_user = get_current_user();
+	$current_user_id = get_current_user_id();
 	
 	if ( have_rows('teachers', 'options') ) {
 		
@@ -928,9 +928,9 @@ function go_get_access() {
 		
 			the_row(); 
 			
-			$user = get_sub_field('user'); 
-			
-			if ( $user->id == $current_user->id && get_sub_field('valid') ) {
+			$user_id = get_sub_field('teacher');
+						
+			if ( $user_id == $current_user_id && get_sub_field('valid') ) {
 				
 				return get_sub_field('access_code');
 				
@@ -959,7 +959,7 @@ function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text
 			
 			$access_url = home_url() . '/get-oregonized-digital/?access=' . $access_code;
 			
-			echo '<h2>Get Oregonized Access</h2><strong>Access URL:</strong><a href="' . $access_url . '"> ' . $access_url . '</a><br><strong>Access Code:</strong> ' . $access_code . '<br><br>';
+			echo '<h2>Get Oregonized Access</h2><strong>Access URL:</strong> <a href="' . $access_url . '">' . $access_url . '</a><br><strong>Access Code:</strong> ' . $access_code . '<br><br>';
 
 		}
 		
@@ -969,3 +969,31 @@ function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text
 	
 }
 add_action( 'woocommerce_email_order_meta', 'oregonaitc_email_order_meta_fields', 10, 3 );
+
+/**
+ * Auto Complete Get Oregonized Access orders.
+ */
+function oregonaitc_auto_complete_order( $order_id ) {
+	
+    if ( ! $order_id ) {
+    
+        return;
+    
+    }
+
+    $order = wc_get_order( $order_id );
+    
+    foreach ( $order->get_items() as $item_id => $item ) {
+   
+		$product_id = $item->get_product_id();
+		
+		if ( $product_id == '25012' ) {
+			
+			$order->update_status( 'completed' );
+			
+		}
+		
+	}
+	
+}
+add_action( 'woocommerce_thankyou', 'oregonaitc_auto_complete_order' );
