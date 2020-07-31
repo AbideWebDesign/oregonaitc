@@ -1364,7 +1364,9 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3 {
 	padding-top: 5px;
 }
-
+.woocommerce-checkout .woocommerce .col2-set::before {
+	display: inherit;
+}
 .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
 	@extend .col-8;
 }

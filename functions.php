@@ -969,6 +969,37 @@ function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text
 	
 }
 add_action( 'woocommerce_email_order_meta', 'oregonaitc_email_order_meta_fields', 10, 3 );
+  
+/**
+ * Bypass order processing email for Get Oregonized Access orders
+ */
+function oregonaitc_disable_order_processing_email( $recipient, $order ) {
+
+	$page = $_GET['page'] = isset( $_GET['page'] ) ? $_GET['page'] : '';
+	
+	if ( 'wc-settings' === $page ) {
+		
+		return $recipient; 
+	
+	}
+	
+	foreach ( $order->get_items() as $item_id => $item ) {
+   
+		$product_id = $item->get_product_id();
+		
+		if ( $product_id == '25012' ) {
+
+			$recipient = '';
+			
+		
+		}
+		
+	}
+		
+	return $recipient;
+		
+}
+add_filter( 'woocommerce_email_recipient_customer_processing_order', 'oregonaitc_disable_order_processing_email', 10, 2 );
 
 /**
  * Auto Complete Get Oregonized Access orders.
@@ -997,3 +1028,28 @@ function oregonaitc_auto_complete_order( $order_id ) {
 	
 }
 add_action( 'woocommerce_thankyou', 'oregonaitc_auto_complete_order' );
+
+/**
+ * Remove WP-Members fields on Woocommerce checkout
+ */
+function oregonaitc_remove_reg_fields_filter( $fields, $tag ) {
+ 
+    if ( is_checkout() ) {
+	    
+        unset( $fields['addr1'] );
+        unset( $fields['addr2'] );
+        unset( $fields['city'] );
+        unset( $fields['thestate'] );
+        unset( $fields['zip'] );
+        unset( $fields['phone1'] );
+        unset( $fields['library_user_role'] );
+		unset( $fields['grade'] );
+		unset( $fields['county'] );
+		unset( $fields['school'] );
+		unset( $fields['school_district'] );
+		
+	}
+    
+    return $fields;
+}
+add_filter( 'wpmem_fields', 'oregonaitc_remove_reg_fields_filter', 10, 2 );
