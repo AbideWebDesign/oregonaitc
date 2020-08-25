@@ -1036,6 +1036,7 @@ function oregonaitc_remove_reg_fields_filter( $fields, $tag ) {
  
     if ( is_checkout() ) {
 	    
+	    unset( $fields['address_type'] );
         unset( $fields['addr1'] );
         unset( $fields['addr2'] );
         unset( $fields['city'] );
