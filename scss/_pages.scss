@@ -1,116 +1,119 @@
 /* Map */
 /* Oregon Map */
-.page-template-page-map .popover {
-	max-width: 500px;
-}
-.page-template-page-map .popover-title {
-	font-size: 20px;
-	font-weight: bold;
-}
-.page-template-page-map .popover-body {
-	@extend .p-3;	
-}
-.page-template-page-map .modal {
-	top: 160px;
-}
-.page-template-page-map .popover-body {
-	height: 300px;
-	overflow-y: auto;
-}
-.page-template-page-map .pop-legend {
-	cursor: pointer;
-	line-height: 100%;
-}
-.page-template-page-map .list-group-item .media {
-	height: auto;
-	overflow: none;
-}
-.page-template-page-map .pull-left {
-	@extend .pr-3;
-}
-.page-template-page-map .media-body p {
-	margin-top: 0;
-	padding-top: 0;
-	font-size: 16px;
-	line-height: 28px;
-}
-.page-template-page-map .media-object {
-	width: 100px;
-}
-.page-template-page-map image:hover {
-	cursor: pointer;
-}
-.map-legend .list-group, .video-legend .list-group{
-	margin-left: 0;
-}
-.map-legend .list-group h4 {
-	font-size: 13px;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-.map-legend .marker {
-	width: 20px;
-	height: 20px;
-	background-color: #ccc;
-	margin-right: 20px;
-}
-.map-legend .fa {
-	float: right;
-	padding-top: 2px;
-}
-.btn-legend:hover {
-	text-decoration: none;
-}
-.video-legend .fa {
-	padding-top: 5px;
-}
-.legend-content {
-	font-size: 14px;
-	line-height: 20px;
-}
-.video-legend {
-	.list-group {
-		max-height: 350px;
-		overflow-y: scroll;
-		border: 1px solid rgba(0, 0, 0, 0.125);
-	    border-radius: 5px;
-	    
-	    li {
-		    border-left-color: transparent;
-		    border-right-color: transparent;
-	    }
-	    li:first-child {
-		    border-top-color: transparent;
-	    }
-	    li:last-child {
-		    border-bottom-color: transparent;
-	    }
+.page-template-page-map, .page-template-page-map-2020 {
+	.popover {
+		max-width: 500px;
 	}
-}
-.video-legend {
-		/* width */
-		::-webkit-scrollbar {
-		    width: 10px;
+	 .popover-title {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	 .popover-body {
+		@extend .p-3;	
+	}
+	 .modal {
+		top: 160px;
+	}
+	 .popover-body {
+		height: 300px;
+		overflow-y: auto;
+	}
+	 .pop-legend {
+		cursor: pointer;
+		line-height: 100%;
+	}
+	 .list-group-item .media {
+		height: auto;
+		overflow: none;
+	}
+	 .pull-left {
+		@extend .pr-3;
+	}
+	 .media-body p {
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 16px;
+		line-height: 28px;
+	}
+	 .media-object {
+		width: 100px;
+	}
+	 image:hover {
+		cursor: pointer;
+	}
+	.map-legend .list-group, .video-legend .list-group{
+		margin-left: 0;
+	}
+	.map-legend .list-group h4 {
+		font-size: 13px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.map-legend .marker {
+		width: 20px;
+		height: 20px;
+		background-color: #ccc;
+		margin-right: 20px;
+	}
+	.map-legend .fa {
+		float: right;
+		padding-top: 2px;
+	}
+	.btn-legend:hover {
+		text-decoration: none;
+	}
+	.video-legend .fa {
+		padding-top: 5px;
+	}
+	.legend-content {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.video-legend {
+		.list-group {
+			max-height: 350px;
+			overflow-y: scroll;
+			border: 1px solid rgba(0, 0, 0, 0.125);
+		    border-radius: 5px;
+		    
+		    li {
+			    border-left-color: transparent;
+			    border-right-color: transparent;
+		    }
+		    li:first-child {
+			    border-top-color: transparent;
+		    }
+		    li:last-child {
+			    border-bottom-color: transparent;
+		    }
 		}
+	}
+	.video-legend {
+			/* width */
+			::-webkit-scrollbar {
+			    width: 10px;
+			}
+			
+			/* Track */
+			::-webkit-scrollbar-track {
+			    background: #f1f1f1; 
+			}
+			 
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			    background: #888; 
+			}
+			
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+			    background: #555; 
+			}
+	
+	}
 		
-		/* Track */
-		::-webkit-scrollbar-track {
-		    background: #f1f1f1; 
-		}
-		 
-		/* Handle */
-		::-webkit-scrollbar-thumb {
-		    background: #888; 
-		}
-		
-		/* Handle on hover */
-		::-webkit-scrollbar-thumb:hover {
-		    background: #555; 
-		}
-
 }
 @media (max-width: 767px) {
-	.page-template-page-map .media {
+	.page-template-page-map .media, .page-template-page-map-2020 .media  {
 		width: 100%;
 		height: auto;
 	}
@@ -163,7 +166,23 @@
 .cls-18 {
 	letter-spacing: 0.02em;
 }
-
+.st0{fill:none;}
+.st1{fill:#F7BC60;}
+.st2{fill:#FFFFFF;}
+.st3{fill:#B08153;stroke:#FFFFFF;}
+.st4{fill:#92A9D7;stroke:#FFFFFF;}
+.st5{fill:#CFDD45;stroke:#FFFFFF;}
+.st6{fill:#FAA22C;stroke:#FFFFFF;}
+.st7{fill:#E86E34;stroke:#FFFFFF;}
+.st8{fill:#B08153;}
+.st9{opacity:0.99;fill:#B08153;stroke:#FFFFFF;}
+.st10{fill:#EAD57D;stroke:#FFFFFF;}
+.st11{fill:#A5AD7A;stroke:#FFFFFF;}
+.st12{fill:#A5AD7A;}
+.st13{fill:#77AAAA;stroke:#FFFFFF;}
+.st14{fill:none;stroke:#FFFFFF;}
+.st15{font-family:'MyriadPro-BoldCond';}
+.st16{font-size:26px;}
 /* Library Hold */
 .page-template-page-library-hold .form-control, .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
 	font-size: 14px;

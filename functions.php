@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
  * Enqueue Scripts
  */
 function enqueue_child_theme_scripts() {
-	if (is_page_template('page-map.php')) {
+	if (is_page_template('page-map.php')||is_page_template('page-map-2020.php')) {
 		wp_enqueue_script( 'oregon-map', get_stylesheet_directory_uri() . '/includes/js/oregon-map.js', array( 'jquery', 'bootstrap' ), null, true );
 	}
 	wp_deregister_script( 'jquery' );
@@ -127,6 +127,12 @@ if ( function_exists('acf_add_options_page') ) {
 		'menu_title' 	=> 'Beans',
 		'parent_slug' 	=> 'map-settings',
 	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Beet',
+		'menu_title' 	=> 'Beet',
+		'parent_slug' 	=> 'map-settings',
+	));
 		
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Berries',
@@ -187,6 +193,12 @@ if ( function_exists('acf_add_options_page') ) {
 		'menu_title' 	=> 'Dairy',
 		'parent_slug' 	=> 'map-settings',
 	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Easter Lilies',
+		'menu_title' 	=> 'Easter lilies',
+		'parent_slug' 	=> 'map-settings',
+	));
 	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Eggs',
@@ -221,6 +233,12 @@ if ( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Hay',
 		'menu_title' 	=> 'Hay',
+		'parent_slug' 	=> 'map-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Hops',
+		'menu_title' 	=> 'Hops',
 		'parent_slug' 	=> 'map-settings',
 	));
 	
@@ -1054,3 +1072,35 @@ function oregonaitc_remove_reg_fields_filter( $fields, $tag ) {
     return $fields;
 }
 add_filter( 'wpmem_fields', 'oregonaitc_remove_reg_fields_filter', 10, 2 );
+
+/**
+ * Oregon Map Functions
+ */
+function get_map_icon_html( $icon_group, $icon_image ) {
+	
+	if ( $icon_group ) {
+		
+		$learn_more = ( $icon_group['learn_more_page'] ? "<a href='" . $icon_group['learn_more_page'] . "' class='btn btn-primary'>Learn More</a>" : "" );
+		
+		$video = ( $icon_group['video_url'] ? "<a class='btn btn-secondary ml-2' data-toggle='modal' data-target='#videoModal'>Video</a>" : "" );	
+		
+		$html = 'class="pop" role="button" tabindex="0" data-toggle="popover" data-html="true" data-trigger="click focus" data-container="body" data-placement="auto right" data-video="' . $icon_group['video_url'] . '" title="' . $icon_group['title'] . '" data-content="';
+		$html .= "<div class='media'>
+				<div class='pull-left'>
+					<img class='media-object' src='" . $icon_image['sizes']['thumbnail'] . "'>
+				</div>
+				<div class='media-body'>" . 
+					$icon_group['content'] . $learn_more . $video . 
+				"</div>
+			</div>";
+		$html .= '"';
+		
+		return $html;
+	
+	} else {
+		
+		return '';
+		
+	}
+	
+}
