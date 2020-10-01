@@ -2068,20 +2068,20 @@ $wheat_washington_img = $wheat_washington['image'];
 									<g id="Eggs_6_">
 										<a <?php echo get_map_icon_html($eggs_clackamas, $eggs_clackamas_img); ?>>	
 											<g id="Eggs_2_">
-												<image style="overflow:visible;" width="318" height="369" id="Chicken" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="matrix(0.1389 0 0 0.1389 559.9811 291.119)"></image>
-												<image style="overflow:visible;" width="628" height="436" id="Egg" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="matrix(4.741100e-02 0 0 4.741100e-02 592.527 320.1893)"></image>
+												<image style="overflow:visible;" width="318" height="369" id="Chicken" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="translate(576.86 313.91) scale(0.08)"></image>
+												<image style="overflow:visible;" width="628" height="436" id="Egg" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="translate(574.31 284.84) scale(0.14)"></image>
 											</g>
 										</a>
 										<a <?php echo get_map_icon_html($eggs_polk, $eggs_polk_img); ?>>
 											<g id="Eggs_1_">
-												<image style="overflow:visible;" width="318" height="369" id="chicken_3_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="matrix(0.1389 0 0 0.1389 297.1765 400.5925)"></image>
-												<image style="overflow:visible;" width="628" height="436" id="Eggs_4_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="matrix(4.741100e-02 0 0 4.741100e-02 329.7214 429.6623)"></image>
+												<image style="overflow:visible;" width="318" height="369" id="chicken_3_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="translate(276.53 432.28) scale(0.08)"></image>
+												<image style="overflow:visible;" width="628" height="436" id="Eggs_4_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="translate(274.07 402.35) scale(0.14)"></image>
 											</g>
 										</a>
 										<a <?php echo get_map_icon_html($eggs_yamhill, $eggs_yamhill_img); ?>>
 											<g id="Eggs">
-												<image style="overflow:visible;" width="318" height="369" id="chicken_2_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="matrix(0.1389 0 0 0.1389 273.0181 337.0714)"></image>
-												<image style="overflow:visible;" width="628" height="436" id="Eggs_3_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="matrix(4.741100e-02 0 0 4.741100e-02 305.563 366.1428)"></image>
+												<image style="overflow:visible;" width="318" height="369" id="chicken_2_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/egg.png"  transform="translate(250.56 366.14) scale(0.08)"></image>
+												<image style="overflow:visible;" width="628" height="436" id="Eggs_3_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/chicken.png"  transform="translate(248.02 337.07) scale(0.14)"></image>
 											</g>
 										</a>
 									</g>
@@ -2166,10 +2166,10 @@ $wheat_washington_img = $wheat_washington['image'];
 									</g>
 									<g id="Cherry">
 										<a <?php echo get_map_icon_html($cherries_wasco, $cherries_wasco_img); ?>>
-											<image style="overflow:visible;" width="904" height="872" id="Cherry_2_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"  transform="matrix(-1.500000e-05 5.865600e-02 -5.865600e-02 -1.500000e-05 920.1167 236.2951)"></image>
+											<image style="overflow:visible;" width="904" height="872" id="Cherry_2_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"  transform="translate(920.12, 236.3) scale(.05 .06)"></image>
 										</a>
 										<a <?php echo get_map_icon_html($cherries_hood_river, $cherries_hood_river_img); ?>>
-											<image style="overflow:visible;" width="904" height="872" id="Cherry_1_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"  transform="matrix(-1.500000e-05 5.865600e-02 -5.865600e-02 -1.500000e-05 761.7837 190.6286)"></image>
+											<image style="overflow:visible;" width="904" height="872" id="Cherry_1_" xlink:href="<?php echo home_url(); ?>/wp-content/themes/oregonaitc/map/cherries.png"  transform="translate(700.78, 190.63) scale(.05 .06)"></image>
 										</a>
 									</g>
 									<g id="Carrots">
