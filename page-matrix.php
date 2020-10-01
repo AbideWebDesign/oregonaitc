@@ -6,11 +6,11 @@
 
 	if ( isset( $_GET['lpid'] ) ) {
 		
-		$url = "https://agclassroom.org/oregon/matrix/lessonplan.cfm?lpid=" . $_GET['lpid'];
+		$url = "https://iframe.agclassroom.org/oregon/lesson/" . $_GET['lpid'];
 	
 	} else {
 	
-		$url = "https://agclassroom.org/oregon/matrix/";
+		$url = "https://iframe.agclassroom.org/oregon/";
 	}
 
 ?>
