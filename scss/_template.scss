@@ -1492,7 +1492,26 @@ body .gf_simple_horizontal_wrapper .top_label div.ginput_container {
 .gf_simple_horizontal div.gform_body {
   width: auto !important;
 }
-
+.gfield_select, .gform_wrapper select {
+	@extend .custom-select;
+}
+.gform_wrapper.gf_browser_chrome .ginput_complex .ginput_right select, .gform_wrapper.gf_browser_chrome .ginput_complex select {
+	margin-top: 0;
+}
+.gform_wrapper .chosen-container-multi .chosen-choices {
+	border: 1px solid #ced4da;
+	background-image: none;
+	border-radius: 0.25rem;
+	padding: 5px;
+}
+body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	padding: 4px 0 4px 3px;
+}
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+	@extend .btn-block;
+	@extend .btn-lg;
+	margin-top: 1em;
+}
 /* Adobe Viewer */
 #embed-wrap {
 	width: 100%;

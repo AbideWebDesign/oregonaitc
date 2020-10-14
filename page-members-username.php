@@ -1,6 +1,6 @@
 <?php /* Template Name: Members Username Lost */ ?>
 <?php get_header(); ?>
-<div class="section section-alt section-sm">
+<div class="section section-alt">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-4">

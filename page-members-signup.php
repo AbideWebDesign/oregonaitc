@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-	<div class="section section-sm section-alt">
+	<div class="section section-alt">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
