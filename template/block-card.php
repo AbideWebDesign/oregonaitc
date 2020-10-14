@@ -23,7 +23,7 @@
 	
 						<?php $image = $card['card_image']; ?>
 		
-						<?php if ( isset($link) && $link != '' ): ?>
+						<?php if ( isset( $link ) && $link != '' ): ?>
 		
 							<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo wp_get_attachment_image( $image['id'], 'card-4', 0, array('class' => 'card-img-top img-fluid') ); ?></a>
 		
@@ -47,7 +47,7 @@
 						
 						<p class="card-text mb-0"><?php echo $card['card_text']; ?></p>
 		
-						<?php if ( isset($link) ): ?>
+						<?php if ( isset( $link ) && $link != '' ): ?>
 		
 							<div class="text-center mt-3">
 							

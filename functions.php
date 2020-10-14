@@ -3,6 +3,7 @@
  * Theme Updater
  */
 require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
+
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/AbideWebDesign/oregonaitc',
 	__FILE__,
@@ -17,11 +18,8 @@ function enqueue_child_theme_styles() {
 	
 	$parent_style = 'abide-style';
 	
-	wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );	
+	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), wp_get_theme()->get('Version') );
+    	
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
 
@@ -29,21 +27,32 @@ add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
  * Enqueue Scripts
  */
 function enqueue_child_theme_scripts() {
-	if (is_page_template('page-map.php')||is_page_template('page-map-2020.php')) {
+	
+	if ( is_page_template('page-map.php') || is_page_template('page-map-2020.php') ) {
+	
 		wp_enqueue_script( 'oregon-map', get_stylesheet_directory_uri() . '/includes/js/oregon-map.js', array( 'jquery', 'bootstrap' ), null, true );
+	
 	}
+	
 	wp_deregister_script( 'jquery' );
+	
 	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, null );
+	
 	wp_enqueue_script( 'jquery' );
 	
 	// Library resource scripts
-	if (is_page_template('page-library-hold.php')) {
+	if ( is_page_template( 'page-library-hold.php' ) ) {
+	
 		wp_enqueue_style( 'gijgo.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/css/gijgo.min.css' );
+	
 		wp_enqueue_script( 'gijgo.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/js/gijgo.min.js', 'jquery', '', true );
+	
 		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
+	
 	}
+
 }
-add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
+add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_scripts' );
 
 /**
  * Register Menus
@@ -53,12 +62,12 @@ register_nav_menu( 'Menu Footer', 'Footer Menu' );
 /**
  * Custom Sizes
  */
-add_image_size('logo-sm', 300, 150);
-add_image_size('jumbotron', 1280, 600, true);
-add_image_size('jumbotron-mobile', 375, 500, true);
-add_image_size('card-3', 255, 141, true);
-add_image_size('card-4', 362, 200, true);
-add_image_size('photo-3', 255, 170, true);
+add_image_size( 'logo-sm', 300, 150 );
+add_image_size( 'jumbotron', 1280, 600, true );
+add_image_size( 'jumbotron-mobile', 375, 500, true );
+add_image_size( 'card-3', 255, 141, true );
+add_image_size( 'card-4', 362, 200, true );
+add_image_size( 'photo-3', 255, 170, true );
 
 /**
  * Remove WP User Frontend contact methods
@@ -68,12 +77,12 @@ function remove_custom_user_contact_methods() {
 	remove_filter( 'user_contactmethods', 'modify_contact_methods' );
 
 }
-
 add_action( 'plugins_loaded', 'remove_custom_user_contact_methods' );
 
 remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 
 function yoast_seo_admin_user_remove_social ( $contactmethods ) {
+	
 	unset( $contactmethods['myspace'] );
 	unset( $contactmethods['wikipedia'] );
 	unset( $contactmethods['facebook'] );
@@ -85,8 +94,8 @@ function yoast_seo_admin_user_remove_social ( $contactmethods ) {
 	unset( $contactmethods['youtube'] );
 	unset( $contactmethods['instagram'] );	
 	return $contactmethods;
+	
 }
-
 add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
 
 /**
@@ -312,10 +321,15 @@ if ( function_exists('acf_add_options_page') ) {
  * FacetWP
  */
 function oregonaitc_facetwp_is_main_query( $is_main_query, $query ) {
+    
     if ( isset( $query->query_vars['facetwp'] ) ) {
+    
         $is_main_query = true;
+    
     }
+    
     return $is_main_query;
+
 }
 add_filter( 'facetwp_is_main_query', 'oregonaitc_facetwp_is_main_query', 10, 2 );
 
@@ -331,6 +345,7 @@ function search_media_direct_link( $permalink, $post ) {
 	}
 
 	return esc_url( $permalink );
+	
 }
 add_filter( 'the_permalink', 'search_media_direct_link', 10, 2 );
 
@@ -338,24 +353,28 @@ add_filter( 'the_permalink', 'search_media_direct_link', 10, 2 );
  * Add custom fields to search
  */
 function searchwp_acf_repeater_keys( $keys ) {
+	
 	$keys[] = 'page_blocks_%';
 
 	return $keys;
+	
 }
-
 add_filter( 'searchwp_custom_field_keys', 'searchwp_acf_repeater_keys' );
 
 /**
  * Add search highlight
  */
 function searchwp_term_highlight_auto_excerpt( $excerpt ) {
+	
 	global $post;
 
 	if ( ! is_search() ) {
+		
 		return $excerpt;
+	
 	}
 
-	// prevent recursion
+	// Prevent recursion
 	remove_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
 
 	$global_excerpt = '...' . searchwp_term_highlight_get_the_excerpt_global( $post->ID, null, get_search_query() ) . '...';
@@ -363,14 +382,15 @@ function searchwp_term_highlight_auto_excerpt( $excerpt ) {
 	add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
 
 	return wp_kses_post( $global_excerpt );
+	
 }
-
 add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
 
 /**
  * Pagination Links
  */
 function show_pagination_links() {
+    
     global $wp_query;
 
     $page_tot   = $wp_query->max_num_pages;
@@ -392,41 +412,54 @@ function show_pagination_links() {
             'type'      => 'list'
         )
     );
+    
 }
 
 /**
  * WP-Membership
  */
-
 function oregonaitc_register_links( $string ) {
+   
     $string = str_replace( '<li><a href="https://oregonaitc.org">Begin using the site.</a></li>	', '', $string);     
+   
     return $string;
+
 }
 add_filter( 'wpmem_register_links', 'oregonaitc_register_links' );
  
 function oregonaitc_forgot_link( $str ) {
+	
     return home_url() . '/password-reset';
+
 }
 add_filter( 'wpmem_forgot_link', 'oregonaitc_forgot_link' );
 
 function oregonaitc_username_link_str( $str, $link ) {
+	
 	return "<a href=" . home_url('/username-lost') .">Retrieve Username</a>";
+
 }
 add_filter( 'wpmem_username_link_str', 'oregonaitc_username_link_str', 10, 2 );
 
 function remove_username_field_filter( $fields, $tag ) {
  
     if ( 'register' == $tag ) {
+	    
         unset( $fields['username'] );
+    
     }
      
     return $fields;
+
 }
 add_filter( 'wpmem_fields', 'remove_username_field_filter', 10, 2 );
  
 function set_email_for_username_filter( $fields ) {
+ 	
  	$fields['username'] = $fields['user_email'];
+    
     return $fields;
+
 }
 add_filter( 'wpmem_pre_validate_form', 'set_email_for_username_filter' );
 
@@ -440,13 +473,15 @@ add_filter( 'wpmem_login_redirect', 'oregonaitc_login_redirect', 10, 2 );
 /**
  * Woocommerce
  */
-
 function add_woocommerce_support() {
+	
 	add_theme_support( 'woocommerce' );
+
 }
 add_action( 'after_setup_theme', 'add_woocommerce_support' );
 
 function custom_override_checkout_fields( $fields ) {
+	
 	$fields['billing']['billing_first_name']['placeholder'] = $fields['billing']['billing_first_name']['label'];
 	$fields['billing']['billing_last_name']['placeholder'] = $fields['billing']['billing_last_name']['label'];
 	$fields['billing']['billing_company']['placeholder'] = "School or Organization";
@@ -460,6 +495,7 @@ function custom_override_checkout_fields( $fields ) {
 	$fields['shipping']['shipping_address_1']['placeholder'] = "Shipping Address 1";
 	$fields['shipping']['shipping_address_2']['placeholder'] = "Shipping Address 2";
     return $fields;
+    
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
@@ -468,12 +504,12 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
  */
 
 // Auto login to site after GF User Registration Form Submittal
-
 add_action( 'gform_user_registered','oregonaitc_autologin', 10, 4 );
 
 function oregonaitc_autologin( $user_id, $config, $entry, $password ) {
 
 	wp_set_auth_cookie( $user_id, false, '' );
+	
 }
 
 /**
@@ -482,6 +518,7 @@ function oregonaitc_autologin( $user_id, $config, $entry, $password ) {
  
 // Library hold submission
 function submit_library_order() {
+	
 	$current_user = wp_get_current_user();
 	
 	$mailing_address = $current_user->school
@@ -505,6 +542,8 @@ function submit_library_order() {
 				. $current_user->user_firstname 
 				. " " 
 				. $current_user->user_lastname
+				. "<br>"
+				. $current_user->county
 				. "<br><br>" 
 				. "<strong>Mailing Address:</strong><br>"
 				. $mailing_address
@@ -522,13 +561,14 @@ function submit_library_order() {
 						<td><strong>Link</strong></td>
 					</tr>";
 	
-	$headers = array('Content-Type: text/html; charset=UTF-8');
+	$headers = array( 'Content-Type: text/html; charset=UTF-8' );
 	
 	$order = array();
 	
 	// Run through order
-	foreach($_SESSION['cart'] as $id=>$value) {
-		$resource = get_field_object('resource_name', $id);
+	foreach( $_SESSION['cart'] as $id=>$value ) {
+		
+		$resource = get_field_object( 'resource_name', $id );
 		$name = $resource['value'];
 		$branch = $value['branch'];
 		$link = get_permalink($id);	
@@ -536,30 +576,40 @@ function submit_library_order() {
 		$return_date = $_POST['return-date-picker-' . $id];		
 		
 		// Update quantity available and checkout total
-		$available = get_field_object('total_available', $id);
+		$available = get_field_object( 'total_available', $id );
+		
 		$a = $available['value'] - 1;
 		
-		$total = get_field_object('checked_out_total', $id);
-		$types = get_the_terms($id, 'resource_type');
+		$total = get_field_object( 'checked_out_total', $id );
+		$types = get_the_terms( $id, 'resource_type' );
 		$quantity = 1;
 		
-		foreach($types as $type) {
-			if ($type->name == "Kits") {
+		foreach( $types as $type ) {
+			
+			if ( $type->name == 'Kits' ) {
+			
 				$t = $total['value'] + $_POST['q'.$id];
+			
 				$quantity = $_POST['q'.$id];
+			
 			} else {
+			
 				$t = $total['value'] + 1;
+			
 			}
+		
 		}
 		
-		$usertotal = get_user_meta($current_user->ID, 'total_library_checkouts'); 
+		$usertotal = get_user_meta( $current_user->ID, 'total_library_checkouts' ); 
+		
 		$ut = (int)$usertotal + 1;
 		
-		update_field('total_available', $a, $id);
-		update_field('checked_out_total', $t, $id);
+		update_field( 'total_available', $a, $id );
+		
+		update_field( 'checked_out_total', $t, $id );
 		
 		// Update user checkout total
-		update_user_meta($current_user->ID, 'total_library_checkouts', $ut);
+		update_user_meta( $current_user->ID, 'total_library_checkouts', $ut );
 		
 		// Add to content string
 		$content .= "<tr><td>$name</td><td>$branch</td><td>$quantity</td><td>$arrival_date</td><td>$return_date</td><td><a href='$link' target='_blank'>Resource Link</a></td></tr>";
@@ -578,12 +628,16 @@ function submit_library_order() {
 			'arrival' => $arrival_date,
 			'return' => $return_date,
 		);
+		
 	}
 	
 	// Check if there is a comment
-	if (isset($_POST['comment'])) {
+	if ( isset( $_POST['comment'] ) ) {
+		
 		$content .= "<p><strong>Comments</strong><br>" . $_POST['comment'] . "</p>";
+		
 		$comment = $_POST['comment'];
+	
 	} 
 	
 	$content .="</table>";
@@ -597,58 +651,75 @@ function submit_library_order() {
 	);
 	
 	// Insert the post into Wordpress
- 	$post_id = wp_insert_post($post_data, true);
+ 	$post_id = wp_insert_post( $post_data, true );
  	
-	if($post_id) {		
+	if ( $post_id ) {		
+		
 		$title = 'Order #' . $post_id;
+		
 		$post = array(
 			'ID' => $post_id,
 			'post_title' => $title,	
 		);
-		wp_update_post($post);
 		
-		foreach($order as $o) {
+		wp_update_post( $post );
+		
+		foreach( $order as $o ) {
+			
 			// Add row to repeater field
-			add_row('order', $o, $post_id);
+			add_row( 'order', $o, $post_id );
+		
 		}
 		
-		update_field('user', $current_user, $post_id);
-		update_field('mailing_address', $mailing_address, $post_id);
-		update_field('contact_information', $contact_info, $post_id);
+		update_field( 'user', $current_user, $post_id );
+		update_field( 'mailing_address', $mailing_address, $post_id );
+		update_field( 'contact_information', $contact_info, $post_id );
 		
-		if ($comment) {
-			update_field('comment', $comment, $post_id);
+		if ( $comment ) {
+			
+			update_field( 'comment', $comment, $post_id );
+		
 		}
+	
 	} 
 	
 	// Send notification
-	wp_mail(get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers);
-	wp_mail($current_user->user_email, 'Library Order Confirmation', $content, $headers);
+	wp_mail( get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers );
+	wp_mail( $current_user->user_email, 'Library Order Confirmation', $content, $headers );
+	
 }
 
-function washington_county_filter($query) {
-	if (!is_admin() && $query->is_main_query() && $query->is_tax('branch', 'washington_county')){
-		$query->set('tax_query', array(
+function washington_county_filter( $query ) {
+	
+	if ( !is_admin() && $query->is_main_query() && $query->is_tax( 'branch', 'washington_county' ) ) {
+		
+		$query->set( 'tax_query', array(
             'relation' => 'OR',
             array(
                 'taxonomy' => 'branch',
                 'field' => 'slug',
-                'terms' => array('oregon', 'washington_county'),
+                'terms' => array( 'oregon', 'washington_county' ),
                 'operator' => 'IN'
             )
-        ));			
+        ) );
+        			
 	}
+	
 }
-add_action('pre_get_posts','washington_county_filter', 999);
+add_action( 'pre_get_posts','washington_county_filter', 999 );
 
 // Check for both branches in placing holds
 function in_array_all($needles, $haystack) {
+	
    return empty(array_diff($needles, $haystack));
+
 }
 
 // Check if any key exists
 function in_array_any($needles, $haystack) {
+   
    return !empty(array_intersect($needles, $haystack));
+
 }
 
 /**
@@ -657,12 +728,14 @@ function in_array_any($needles, $haystack) {
 function wc_shipping_cost_tiers( $cost, $method ) {
 
 	// see if this shipping instance is one we want to modify cost for
+	
 	if ( in_array( $method->get_instance_id(), array( 1 ) ) && WC()->cart ) {
 		
 		$cart_item_count = WC()->cart->get_cart_contents_count();
 
 		// if we have items that need shipping, round the quantity / 2 to the nearest whole number
 		// this produces tiered cost increases for every 2 items
+		
 		if ( $cart_item_count >= 1 ) {
 			
 			$cart_items = WC()->cart->get_cart_contents();
@@ -706,7 +779,6 @@ add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
 /**
  * Add custom field for Fall Harvest Dinner product page. 
  */
-
 function harvest_product_custom_field() {
     
     if ( is_single( '2019-fall-harvest-dinner-tickets' ) ) {
@@ -832,7 +904,6 @@ add_action( 'pre_get_posts', 'lesson_plan_sort_order' );
 /** 
  * Change Gravity Forms Spinner
  */
-// Change spinner
 function spinner_url( $image_src, $form ) {
     return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
@@ -883,8 +954,9 @@ function oregonaitc_go_access_fields() {
     return $fields;
 }
 
-// Add custom fields on virtual book purchases
-
+/**
+ *  Add custom fields on virtual book purchases
+ */
 function oregonaitc_woocommerce_order_status_completed( $order_id ) {
 	
 	$current_user = wp_get_current_user();
@@ -912,7 +984,9 @@ function oregonaitc_woocommerce_order_status_completed( $order_id ) {
 }
 add_action( 'woocommerce_order_status_completed', 'oregonaitc_woocommerce_order_status_completed', 10, 1 );
 
-// Validation function for virtual book access
+/**
+ * Validation function for virtual book access
+ */
 function go_access_check( $access_code ) {
 	
 	if ( have_rows('teachers', 'options') ) {
@@ -935,7 +1009,9 @@ function go_access_check( $access_code ) {
 	
 }
 
-// Helper function to get virtual book access code
+/**
+ * Helper function to get virtual book access code
+ */
 function go_get_access() {
 	
 	$current_user_id = get_current_user_id();
