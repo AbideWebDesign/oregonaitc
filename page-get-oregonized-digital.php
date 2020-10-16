@@ -43,7 +43,7 @@ get_header();
 							
 							<script type="text/javascript">
 								document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-									var adobeDCView = new AdobeDC.View({clientId: "36cb24da2b494a26b65aa039c56c119e", divId: "adobe-dc-view"});
+									var adobeDCView = new AdobeDC.View({clientId: "733532322b684c1994cdbc5fbf1156a2", divId: "adobe-dc-view"});
 									adobeDCView.previewFile({
 										content:{location: {url: "<?php the_field('get_oregonized_media'); ?>"}},
 										metaData:{fileName: "Get Oregonized"}
