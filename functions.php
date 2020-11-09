@@ -578,7 +578,7 @@ function submit_library_order() {
 		// Update quantity available and checkout total
 		$available = get_field_object( 'total_available', $id );
 		
-		$a = $available['value'] - 1;
+		
 		
 		$total = get_field_object( 'checked_out_total', $id );
 		$types = get_the_terms( $id, 'resource_type' );
@@ -586,15 +586,19 @@ function submit_library_order() {
 		
 		foreach( $types as $type ) {
 			
-			if ( $type->name == 'Kits' ) {
+			if ( $type->name == 'Kits' || $type->name == 'Printed Materials' ) {
 			
 				$t = $total['value'] + $_POST['q'.$id];
-			
+				
 				$quantity = $_POST['q'.$id];
+				
+				$a = $available['value'] - $quantity;
 			
 			} else {
 			
 				$t = $total['value'] + 1;
+				
+				$a = $available['value'] - 1;
 			
 			}
 		

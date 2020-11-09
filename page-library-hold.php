@@ -60,45 +60,54 @@ if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) {
 				<div class="card">
 					<div class="card-body">
 						
-						<?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+						<?php if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ): ?>
 							
 							<h2 class="mb-2"><?php the_title(); ?></h2>
 							
-							<?php if (count($errors) > 0): ?>
-								<?php foreach($errors as $error): ?>
-								<div class="alert alert-danger" role="alert">
-									<p class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php echo $error; ?></p>
-								</div>
+							<?php if ( count( $errors ) > 0 ): ?>
+								
+								<?php foreach ( $errors as $error ): ?>
+								
+									<div class="alert alert-danger" role="alert">
+										<p class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php echo $error; ?></p>
+									</div>
+								
 								<?php endforeach; ?>
+							
 							<?php endif; ?>
 							
 							<form method="post" id="form" class="inb30" action="<?php echo home_url(); ?>/place-hold">
 								<div class="table-responsive">
 									<table class="table table-bordered text-md	">
 										<tr><th>Resource Name</th><th>Branch</th><th>Qty</th><th>Type</th><th>Age Group</th><th>Arrival Date</th><th>Return Date</th><th></th></tr>
-										<?php foreach($_SESSION['cart'] as $id=>$value): ?>											
+										
+										<?php foreach ( $_SESSION['cart'] as $id=>$value ): ?>											
+											
 											<?php $permalink = get_permalink($id); ?>
+											
 											<?php $types = get_the_terms($id, 'resource_type'); ?>
+											
 											<?php $categories = get_the_terms($id, 'resource_category'); ?>
+											
 											<tr>
 												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a></td>
 												<td class="align-middle"><?php echo $value['branch']; ?></td>
 												<td class="align-middle">
 													
-													<?php foreach($types as $type): ?>
+													<?php foreach ( $types as $type ): ?>
 														
-														<?php if($type->name == "Kits"): $kit = true; ?>
+														<?php if ( $type->name == "Kits" || $type->name == "Printed Materials" ): $kit = true; ?>
 															
 															<input class="kit-qty" type="text" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
-														
+																												
 														<?php endif; ?>
 													
 													<?php endforeach; ?>
 													
-													<?php echo (!isset($kit)) ? 1 : ''; ?>
+													<?php echo ( ! isset( $kit ) ) ? 1 : ''; ?>
 													
 												</td>
-												<td class="align-middle"><?php foreach($types as $type) echo rtrim($type->name, "s"); ?></td>
+												<td class="align-middle"><?php foreach ( $types as $type ) echo rtrim( $type->name, "s" ); ?></td>
 												<td class="align-middle"><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
 												<td class="align-middle"><input name="<?php echo $id; ?>" id="<?php echo $id; ?>" class="datepicker" width="150" /></td>
 												<td class="align-middle">
