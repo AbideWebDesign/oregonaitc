@@ -58,7 +58,7 @@ add_action('admin_head', 'admin_styles');
 
 function admin_styles() {
   echo '<style>
-  .notice-otgs, .otgs-installer-notice {display: none;}
+  .notice-otgs, .otgs-installer-notice {display: none !important;}
       </style>';
 }
 
