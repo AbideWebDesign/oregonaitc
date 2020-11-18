@@ -54,6 +54,14 @@ function enqueue_child_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_scripts' );
 
+add_action('admin_head', 'admin_styles');
+
+function admin_styles() {
+  echo '<style>
+  .notice-otgs, .otgs-installer-notice {display: none;}
+      </style>';
+}
+
 /**
  * Register Menus
  */
