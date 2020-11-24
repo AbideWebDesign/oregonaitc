@@ -16,13 +16,13 @@
 					
 				<div class="p-3 text-center mb-3 mb-lg-4 mt-4 border-bottom">
 					
-					<?php if ( get_sub_filed('sponsor_level_name') ): ?>
+					<?php if ( get_sub_field('sponsor_level_name') ): ?>
 					
 						<h2 class="m-0 p-0 text-primary"><?php the_sub_field('sponsor_level_name'); ?></h2>
 						
 					<?php endif; ?>
 					
-					<?php if ( get_sub_filed('sponsor_level_amount') ): ?>
+					<?php if ( get_sub_field('sponsor_level_amount') ): ?>
 					
 						<p class="lead-text mb-2"><?php the_sub_field('sponsor_level_amount'); ?></p>
 						
