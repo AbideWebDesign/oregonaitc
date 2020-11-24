@@ -16,9 +16,17 @@
 					
 				<div class="p-3 text-center mb-3 mb-lg-4 mt-4 border-bottom">
 					
-					<h2 class="m-0 p-0 text-primary"><?php the_sub_field('sponsor_level_name'); ?></h2>
+					<?php if ( get_sub_filed('sponsor_level_name') ): ?>
 					
-					<p class="lead-text mb-2"><?php the_sub_field('sponsor_level_amount'); ?></p>
+						<h2 class="m-0 p-0 text-primary"><?php the_sub_field('sponsor_level_name'); ?></h2>
+						
+					<?php endif; ?>
+					
+					<?php if ( get_sub_filed('sponsor_level_amount') ): ?>
+					
+						<p class="lead-text mb-2"><?php the_sub_field('sponsor_level_amount'); ?></p>
+						
+					<?php endif; ?>
 					
 				</div>
 					
@@ -48,12 +56,12 @@
 										
 										<?php if ( get_sub_field('name') ):  ?>
 										
-											<a href="<?php the_sub_field('link'); ?>" target="_blank" class="text-dark">
-												
+											<?php if ( get_sub_field('link') ): ?><a href="<?php the_sub_field('link'); ?>" target="_blank" class="text-dark"> <?php endif; ?>
+											
 												<h4 class="m-0 p-0 text-center"><?php the_sub_field('name'); ?></h4>
-												
-											</a>
-										
+																							
+											<?php if ( get_sub_field('link') ): ?></a><?php endif; ?>
+											
 										<?php endif; ?>
 										
 									</div>
