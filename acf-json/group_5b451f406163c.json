@@ -796,6 +796,37 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_5fbd307cfb822": {
+                            "key": "layout_5fbd307cfb822",
+                            "name": "sponsor_logos",
+                            "label": "Sponsor Logos",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5fbd3083fb823",
+                                    "label": "Sponsor Logos",
+                                    "name": "sponsor_logos",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_5fbc0d0ac72bc"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "button_label": "Add Page Block",
@@ -810,7 +841,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-teachers-corner.php"
             }
         ],
         [
@@ -818,6 +849,13 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-simple.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -840,7 +878,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1540999127
+    "modified": 1606234392
 }

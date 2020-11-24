@@ -141,6 +141,10 @@
 
 .section-alt {
 	background-color: theme-color('gray-light');
+	
+	.border-bottom {
+		border-color: $gray-400 !important;
+	}
 }
 
 .section-blue {

@@ -113,7 +113,13 @@
 							
 							<?php get_template_part('template/block', 'image-gallery'); ?>
 						
-						<?php endif; ?>																					
+						<?php endif; ?>			
+						
+						<?php if(get_row_layout() == 'sponsor_logos'): ?>
+							
+							<?php get_template_part('template/block', 'sponsors'); ?>
+						
+						<?php endif; ?>																			
 						
 					<?php endwhile; // while Page Block end ?>
 					
