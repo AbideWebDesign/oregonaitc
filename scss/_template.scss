@@ -1320,8 +1320,10 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 	padding: .375rem .75rem;
 	line-height: 1.5em;
 }
-.select2-container .select2-selection--single {
-	height: 38px;
+.gfield_select, .address_state select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 16px !important;
 }
 .woocommerce-result-count,
 .woocommerce-ordering,
@@ -1339,7 +1341,7 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 }
 
 .woocommerce div.product p.price, .woocommerce div.product span.price {
-	@extend .text-green;
+	color: $primary;
 }
 
 .woocommerce-Tabs-panel h2, .cart_totals h2 {
@@ -1427,23 +1429,29 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 */
 body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
 	@extend .form-control;
+	padding: 7px 0 7px 3px !important;
 }
-
 body .gform_wrapper .gform_footer {
 	padding-top: 5px;
 	margin-top: 5px;
-	text-align: right;
 }
-
 .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
 	@extend .btn;
 	@extend .btn-primary;
 }
-
+.gform_wrapper .top_label li ul.gfield_checkbox, .gform_wrapper .top_label li ul.gfield_radio {
+	width: 100% !important;
+}
 #footer-global-top .gform_wrapper .gform_footer input.button, #footer-global-top .gform_wrapper .gform_footer input[type=submit], #footer-global-top .gform_wrapper .gform_page_footer input.button, #footer-global-top .gform_wrapper .gform_page_footer input[type=submit] {
 	@extend .btn-white;
 	border-color: white;
 	color: theme-color('primary');
+}
+.validation_error {
+	display: none;
+}
+.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+	border: none !important;
 }
 body table.gsurvey-likert {
 	border: none;
@@ -1516,6 +1524,21 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
 	@extend .btn-lg;
 	margin-top: 1em;
 }
+.processing-fee {
+	margin: 0 !important;
+	height: 0 !important;
+	.ginput_container_product_calculation {
+		display: none;
+	}
+}
+body .gform_wrapper span.ginput_product_price {
+	color: theme-color('secondary');
+	font-weight: bold;
+}
+body .ginput_quantity {
+	display: inline-block !important;
+	width: auto !important;
+}
 /* Spinner */
 .gform_ajax_spinner {
 	margin-left: 20px;
@@ -1534,7 +1557,82 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
 		transform: rotate(360deg);
 	}
 }
-
+body .gform_wrapper .radio-buttons {
+	.gfield_radio {
+		display: flex;
+		@extend .clearfix;
+		input[type=text] {
+			border:none;
+		}
+		li {
+			margin: 0 10px 5px 0;
+			position: relative;
+			overflow: hidden;
+			-ms-flex: 1 1 auto!important;
+			flex: 1 1 auto!important;
+			height: 60px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		@media(max-width: 767px) {
+			li {
+				width: 100%;
+			}
+			
+		}
+		label, input {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: all .3s ease-in-out;
+			color: white;
+		}
+		input[type="radio"] {
+			opacity: 0.011;
+			z-index: 100;
+		}
+		label {
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 1.2em;
+			padding: 0px;
+			margin: 0;
+			border: none; 
+			cursor: pointer;
+		    z-index: 90;
+		    height: 100%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    text-align: center;
+		    background-color: $gray-400;
+		    color: $gray-900;
+		    width: 100%;
+		    max-width: 100%;
+		}
+		label:hover {
+			background-color: theme-color('primary');
+			color: white;
+		}
+		input[type="radio"]:checked + label {
+			background: theme-color('primary');
+			color: white;
+			
+			&:before {
+				font-family: "Font Awesome 5 Free";
+			    color: white;
+			    content: "\f00c";
+			    position: absolute;
+			    left: 10%;
+			    top: 35%;
+			}
+		}
+	}
+}
 /* Adobe Viewer */
 #embed-wrap {
 	width: 100%;

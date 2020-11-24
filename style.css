@@ -2,7 +2,7 @@
 /*!
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.9.7
+Version: 1.9.8
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8039,7 +8039,7 @@ button.bg-text:focus {
   border-radius: 0 !important;
 }
 
-.clearfix::after {
+.clearfix::after, body .gform_wrapper .radio-buttons .gfield_radio::after {
   display: block;
   clear: both;
   content: "";
@@ -10801,7 +10801,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #1d2124 !important;
 }
 
-.text-green, .woocommerce div.product p.price, .woocommerce div.product span.price {
+.text-green {
   color: #59C77F !important;
 }
 
@@ -12338,14 +12338,20 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
   line-height: 1.5em;
 }
 
-.select2-container .select2-selection--single {
-  height: 38px;
+.gfield_select, .address_state select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 16px !important;
 }
 
 .woocommerce-result-count,
 .woocommerce-ordering,
 .posted_in {
   display: none;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+  color: #007bff;
 }
 
 .woocommerce-loop-product__title h2, .woocommerce-loop-product__title .woocommerce div.product .product_title, .woocommerce div.product .woocommerce-loop-product__title .product_title, .related h2, .related .woocommerce div.product .product_title, .woocommerce div.product .related .product_title {
@@ -12409,15 +12415,30 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 /*
 ** Gravity Form Overrides
 */
+body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  padding: 7px 0 7px 3px !important;
+}
+
 body .gform_wrapper .gform_footer {
   padding-top: 5px;
   margin-top: 5px;
-  text-align: right;
+}
+
+.gform_wrapper .top_label li ul.gfield_checkbox, .gform_wrapper .top_label li ul.gfield_radio {
+  width: 100% !important;
 }
 
 #footer-global-top .gform_wrapper .gform_footer input.button, #footer-global-top .gform_wrapper .gform_footer input[type=submit], #footer-global-top .gform_wrapper .gform_page_footer input.button, #footer-global-top .gform_wrapper .gform_page_footer input[type=submit] {
   border-color: white;
   color: #0FA3F2;
+}
+
+.validation_error {
+  display: none;
+}
+
+.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  border: none !important;
 }
 
 body table.gsurvey-likert {
@@ -12489,6 +12510,24 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
   margin-top: 1em;
 }
 
+.processing-fee {
+  margin: 0 !important;
+  height: 0 !important;
+}
+.processing-fee .ginput_container_product_calculation {
+  display: none;
+}
+
+body .gform_wrapper span.ginput_product_price {
+  color: #F6893C;
+  font-weight: bold;
+}
+
+body .ginput_quantity {
+  display: inline-block !important;
+  width: auto !important;
+}
+
 /* Spinner */
 .gform_ajax_spinner {
   margin-left: 20px;
@@ -12508,6 +12547,78 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
     transform: rotate(360deg);
   }
 }
+body .gform_wrapper .radio-buttons .gfield_radio {
+  display: flex;
+}
+body .gform_wrapper .radio-buttons .gfield_radio input[type=text] {
+  border: none;
+}
+body .gform_wrapper .radio-buttons .gfield_radio li {
+  margin: 0 10px 5px 0;
+  position: relative;
+  overflow: hidden;
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+  height: 60px;
+}
+body .gform_wrapper .radio-buttons .gfield_radio li:last-child {
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  body .gform_wrapper .radio-buttons .gfield_radio li {
+    width: 100%;
+  }
+}
+body .gform_wrapper .radio-buttons .gfield_radio label, body .gform_wrapper .radio-buttons .gfield_radio input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+body .gform_wrapper .radio-buttons .gfield_radio input[type=radio] {
+  opacity: 0.011;
+  z-index: 100;
+}
+body .gform_wrapper .radio-buttons .gfield_radio label {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.2em;
+  padding: 0px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  z-index: 90;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ced4da;
+  color: #212529;
+  width: 100%;
+  max-width: 100%;
+}
+body .gform_wrapper .radio-buttons .gfield_radio label:hover {
+  background-color: #0FA3F2;
+  color: white;
+}
+body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + label {
+  background: #0FA3F2;
+  color: white;
+}
+body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + label:before {
+  font-family: "Font Awesome 5 Free";
+  color: white;
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 35%;
+}
+
 /* Adobe Viewer */
 #embed-wrap {
   width: 100%;
