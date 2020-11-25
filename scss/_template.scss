@@ -1447,6 +1447,19 @@ body .gform_wrapper .gform_footer {
 	border-color: white;
 	color: theme-color('primary');
 }
+body .gform_wrapper ul li.gsection:first-child {
+	margin-top: 0;
+}
+body .gform_wrapper ul li.gfield.gsection {
+	margin-top: 2.5em;
+}
+.ginput_container_product_calculation {
+	font-size: $font-size-sm;
+}
+body .gform_wrapper span.ginput_total {
+	color: theme-color('primary');
+	font-weight: bold;
+}
 .validation_error {
 	display: none;
 }
@@ -1532,7 +1545,7 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
 	}
 }
 body .gform_wrapper span.ginput_product_price {
-	color: theme-color('secondary');
+	color: theme-color('primary');
 	font-weight: bold;
 }
 body .ginput_quantity {

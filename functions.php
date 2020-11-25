@@ -922,6 +922,15 @@ function spinner_url( $image_src, $form ) {
 }
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
 
+// Edit gravity form fee product label on payment form
+add_filter( 'gform_product_price', 'set_price_label', 10, 2 );
+
+function set_price_label( $sublabel, $form_id ) {
+	
+	return 'Credit Card Processing Fee';
+
+}
+
 /**
  * Sort grade levels in dropdown filter
  */

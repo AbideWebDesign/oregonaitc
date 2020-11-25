@@ -2,7 +2,7 @@
 /*!
 Theme Name: Oregon Ag in the Classroom
 Template: abide
-Version: 1.9.8
+Version: 1.9.9
 */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -12433,6 +12433,23 @@ body .gform_wrapper .gform_footer {
   color: #0FA3F2;
 }
 
+body .gform_wrapper ul li.gsection:first-child {
+  margin-top: 0;
+}
+
+body .gform_wrapper ul li.gfield.gsection {
+  margin-top: 2.5em;
+}
+
+.ginput_container_product_calculation {
+  font-size: 0.875rem;
+}
+
+body .gform_wrapper span.ginput_total {
+  color: #0FA3F2;
+  font-weight: bold;
+}
+
 .validation_error {
   display: none;
 }
@@ -12519,7 +12536,7 @@ body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
 }
 
 body .gform_wrapper span.ginput_product_price {
-  color: #F6893C;
+  color: #0FA3F2;
   font-weight: bold;
 }
 
