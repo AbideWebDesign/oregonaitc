@@ -1455,6 +1455,10 @@ body .gform_wrapper ul li.gfield.gsection {
 }
 .ginput_container_product_calculation {
 	font-size: $font-size-sm;
+	
+	.ginput_product_price_label {
+		display: none;
+	}
 }
 body .gform_wrapper span.ginput_total {
 	color: theme-color('primary');
