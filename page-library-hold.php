@@ -1,18 +1,21 @@
 <?php session_start(); ?>
+
 <?php /* Template Name: Library Hold Page */ ?>
+
 <?php get_header(); ?>
-<?php get_template_part('library/library', 'top'); ?>
 
 <?php
 
+get_template_part( 'library/library', 'top' );
+	
 $errors = array();
 $branches = array('Oregon', 'Washington County');
 $b = array();
 
 // Submit Cart
-if( isset($_POST['submit']) ){ 
+if( isset( $_POST['submit'] ) ) { 
 			
-	if ( count($errors) == 0 ) {
+	if ( count( $errors ) == 0 ) {
 		
 		$status = submit_library_order();
 		
@@ -23,13 +26,13 @@ if( isset($_POST['submit']) ){
 } 
 
 // Validate Cart
-if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) { 
+if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { 
 
-	foreach( $_SESSION['cart'] as $id=>$value ) {
+	foreach ( $_SESSION['cart'] as $id=>$value ) {
 		
 		$b[] = $value['branch'];
 		
-		if ( isset($_POST['q'.$id]) ) {
+		if ( isset( $_POST['q'.$id] ) ) {
 
 			if ($_POST['q'.$id] == 0) {
 		
@@ -39,7 +42,7 @@ if ( isset($_SESSION['cart']) && count($_SESSION['cart']) > 0 ) {
 		}
 	}
 	
-	if ( in_array('Washington County', $b) ) {
+	if ( in_array( 'Washington County', $b ) ) {
 
 		if ( get_user_meta(get_current_user_id(), 'county', true) != 'Washington' ) {
 		

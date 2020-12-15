@@ -913,6 +913,20 @@ function lesson_plan_sort_order($query){
 }
 add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
 
+function library_redirects() {
+
+	if ( is_page('place-hold') && ! is_user_logged_in() ) {
+
+		wp_redirect( '/library' ); 
+
+		exit;
+		
+    }
+    
+}
+add_action( 'template_redirect', 'library_redirects' );
+
+
 /** 
  * Change Gravity Forms Spinner
  */
