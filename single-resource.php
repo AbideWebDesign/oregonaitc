@@ -121,10 +121,10 @@ if ( have_posts() ):
 								</div>
 							</div>
 						</div>
-						
+												
 						<?php get_template_part('library/library', 'related-resources'); ?>
 						
-						<?php get_template_part('library/library', 'comment'); ?>
+						<?php get_template_part('library/library', 'comments'); ?>
 						
 						<?php get_template_part('library/library', 'featured-resources'); ?>
 						

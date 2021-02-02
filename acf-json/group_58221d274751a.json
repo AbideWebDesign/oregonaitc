@@ -139,7 +139,7 @@
                 "12": "12"
             },
             "allow_custom": 0,
-            "default_value": false,
+            "default_value": [],
             "layout": "horizontal",
             "toggle": 1,
             "return_format": "value",
@@ -173,9 +173,7 @@
                 "11th": "11th",
                 "12th": "12th"
             },
-            "default_value": [
-                "K"
-            ],
+            "default_value": "K",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -217,9 +215,11 @@
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
-            "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0,
+            "return_format": "value"
         },
         {
             "key": "field_55afe352dcf63",
@@ -435,6 +435,65 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_60187f9eee6d4",
+            "label": "Resource Comments",
+            "name": "resource_comments",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_60187fb0ee6d5",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Comment",
+            "sub_fields": [
+                {
+                    "key": "field_60187fb0ee6d5",
+                    "label": "Name",
+                    "name": "comment_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60187fbeee6d6",
+                    "label": "Comment",
+                    "name": "comment_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -454,7 +513,7 @@
     "hide_on_screen": [
         "categories"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591209269
+    "modified": 1612218368
 }
