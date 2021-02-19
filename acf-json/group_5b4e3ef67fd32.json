@@ -3,6 +3,27 @@
     "title": "Post Type - Resource Order",
     "fields": [
         {
+            "key": "field_602ffa4511748",
+            "label": "Order Number",
+            "name": "order_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_5b4e3efdf826c",
             "label": "User",
             "name": "user",
@@ -11,7 +32,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "15",
                 "class": "",
                 "id": ""
             },
@@ -19,6 +40,43 @@
             "allow_null": 0,
             "multiple": 0,
             "return_format": "array"
+        },
+        {
+            "key": "field_602ffa2711746",
+            "label": "Name",
+            "name": "order_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "24",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602ffa3811747",
+            "label": "Email",
+            "name": "order_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5be0ceca149f7",
@@ -29,7 +87,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "15",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -37,9 +95,7 @@
                 "Processing": "Processing",
                 "Shipped": "Shipped"
             },
-            "default_value": [
-                "Processing"
-            ],
+            "default_value": "Processing",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -75,30 +131,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "65",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "url"
-                },
-                {
-                    "key": "field_5be0beca904b0",
-                    "label": "Branch",
-                    "name": "branch",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "15",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 },
                 {
                     "key": "field_5b7459110818c",
@@ -230,7 +267,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1541459801
+    "modified": 1613757456
 }

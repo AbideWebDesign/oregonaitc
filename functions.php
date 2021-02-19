@@ -612,19 +612,24 @@ function submit_library_order() {
 	foreach( $_SESSION['cart'] as $id=>$value ) {
 		
 		$resource = get_field_object( 'resource_name', $id );
+	
 		$name = $resource['value'];
+	
 		$branch = $value['branch'];
+	
 		$link = get_permalink($id);	
+	
 		$arrival_date = $_POST[$id];
+	
 		$return_date = $_POST['return-date-picker-' . $id];		
 		
 		// Update quantity available and checkout total
 		$available = get_field_object( 'total_available', $id );
-		
-		
-		
+			
 		$total = get_field_object( 'checked_out_total', $id );
+	
 		$types = get_the_terms( $id, 'resource_type' );
+	
 		$quantity = 1;
 		
 		foreach( $types as $type ) {
@@ -649,7 +654,7 @@ function submit_library_order() {
 		
 		$usertotal = get_user_meta( $current_user->ID, 'total_library_checkouts' ); 
 		
-		$ut = (int)$usertotal + 1;
+		$ut = (int) $usertotal + 1;
 		
 		update_field( 'total_available', $a, $id );
 		
@@ -661,14 +666,14 @@ function submit_library_order() {
 		// Add to content string
 		$content .= "<tr><td>$name</td><td>$branch</td><td>$quantity</td><td>$arrival_date</td><td>$return_date</td><td><a href='$link' target='_blank'>Resource Link</a></td></tr>";
 		
-		$item = array(
+		$item = array (
 			'url' => $link,
 			'target' => '_blank',
 			'title' => $name	
 		);
 		
 		// Add to order array
-		$order[] = array(
+		$order[] = array (
 			'item' => $item,
 			'branch' => $branch,
 			'quantity' => $quantity,
@@ -681,7 +686,7 @@ function submit_library_order() {
 	// Check if there is a comment
 	if ( isset( $_POST['comment'] ) ) {
 		
-		$content .= "<p><strong>Comments</strong><br>" . $_POST['comment'] . "</p>";
+		$content .= '<p><strong>Comments</strong><br>' . $_POST['comment'] . '</p>';
 		
 		$comment = $_POST['comment'];
 	
@@ -719,7 +724,15 @@ function submit_library_order() {
 		}
 		
 		update_field( 'user', $current_user, $post_id );
+		
+		update_field( 'order_number', $post_id, $post_id );
+		
+		update_field( 'order_name', $current_user->user_firstname . ' ' . $current_user->user_lastname, $post_id );
+		
+		update_field( 'order_email', $current_user->user_email, $post_id );
+	
 		update_field( 'mailing_address', $mailing_address, $post_id );
+	
 		update_field( 'contact_information', $contact_info, $post_id );
 		
 		if ( $comment ) {
@@ -731,8 +744,9 @@ function submit_library_order() {
 	} 
 	
 	// Send notification
-	wp_mail( get_field('library_order_email', 'options'), 'Library Hold Placed', $content, $headers );
-	wp_mail( $current_user->user_email, 'Library Order Confirmation', $content, $headers );
+	wp_mail( get_field('library_order_email', 'options'), 'Library Hold Placed - #' . $post_id, $content, $headers );
+	
+	wp_mail( $current_user->user_email, 'Library Order Confirmation - #' . $post_id, $content, $headers );
 	
 }
 
@@ -772,6 +786,8 @@ function in_array_any($needles, $haystack) {
 /**
  * Filters the shipping method cost to account for tiered quantity pricing.
  */
+add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
+
 function wc_shipping_cost_tiers( $cost, $method ) {
 
 	// see if this shipping instance is one we want to modify cost for
@@ -821,11 +837,12 @@ function wc_shipping_cost_tiers( $cost, $method ) {
 
 	return $cost;
 }
-add_filter( 'woocommerce_shipping_rate_cost', 'wc_shipping_cost_tiers', 10, 2 );
 
 /**
  * Add custom field for Fall Harvest Dinner product page. 
  */
+add_action( 'woocommerce_before_add_to_cart_button', 'harvest_product_custom_field', 9 );
+
 function harvest_product_custom_field() {
     
     if ( is_single( '2019-fall-harvest-dinner-tickets' ) ) {
@@ -837,11 +854,12 @@ function harvest_product_custom_field() {
     } 
     
 }
-add_action( 'woocommerce_before_add_to_cart_button', 'harvest_product_custom_field', 9 );
 
 /*
  * Add custom data to the cart item
  */
+add_filter( 'woocommerce_add_cart_item_data', 'harvest_add_cart_item_data', 10, 2 );
+
 function harvest_add_cart_item_data( $cart_item, $product_id ) {
 
     if ( isset( $_POST['_harvest_attendees'] ) ) {
@@ -853,11 +871,12 @@ function harvest_add_cart_item_data( $cart_item, $product_id ) {
     return $cart_item;
 
 }
-add_filter( 'woocommerce_add_cart_item_data', 'harvest_add_cart_item_data', 10, 2 );
 
 /*
  * Add meta to order item
  */
+add_action( 'woocommerce_add_order_item_meta', 'harvest_add_order_item_meta', 10, 2 );
+
 function harvest_add_order_item_meta( $item_id, $values ) {
 
     if ( ! empty( $values['harvest_attendees'] ) ) {
@@ -866,11 +885,12 @@ function harvest_add_order_item_meta( $item_id, $values ) {
     
     }
 }
-add_action( 'woocommerce_add_order_item_meta', 'harvest_add_order_item_meta', 10, 2 );
 
 /*
  * Get item data to display in cart
  */
+add_filter( 'woocommerce_get_item_data', 'harvest_get_item_data', 10, 2 );
+
 function harvest_get_item_data( $other_data, $cart_item ) {
 
     if ( isset( $cart_item['harvest_attendees'] ) ){
@@ -885,7 +905,6 @@ function harvest_get_item_data( $other_data, $cart_item ) {
     return $other_data;
 
 }
-add_filter( 'woocommerce_get_item_data', 'harvest_get_item_data', 10, 2 );
 
 /*
  * Load cart data from session
@@ -937,6 +956,7 @@ function harvest_email_order_meta_fields( $fields ) {
  * Resource Library
  */
 add_action( 'pre_get_posts', 'lesson_plan_sort_order' );
+
 function lesson_plan_sort_order($query){
     
     if (  is_post_type_archive( 'lessonplan' ) ) {
@@ -951,11 +971,14 @@ function lesson_plan_sort_order($query){
     
 } 
 
+/**
+ * Resource Redirects
+ */
 add_action( 'template_redirect', 'library_redirects' );
 
 function library_redirects() {
 
-	if ( is_page('place-hold') && ! is_user_logged_in() ) {
+	if ( is_page( 'place-hold' ) && ! is_user_logged_in() ) {
 
 		wp_redirect( '/library' ); 
 
