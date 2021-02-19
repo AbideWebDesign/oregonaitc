@@ -183,12 +183,13 @@
 .st14{fill:none;stroke:#FFFFFF;}
 .st15{font-family:'MyriadPro-BoldCond';}
 .st16{font-size:26px;}
+
 /* Library Hold */
 .page-template-page-library-hold .form-control, .gj-picker-bootstrap table tr td div, .gj-picker-bootstrap table tr th div {
 	font-size: 14px;
 }
 .kit-qty {
-	width: 50px;
-	padding: 0 5px;
+	width: 65px;
 	font-weight: bold;
+	@extend .form-control;
 }

@@ -48,18 +48,53 @@ function enqueue_child_theme_scripts() {
 		wp_enqueue_script( 'gijgo.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/js/gijgo.min.js', 'jquery', '', true );
 	
 		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
+		
+		wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library.js', 'jquery', '', true );
 	
 	}
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_scripts' );
 
+function ajax_site_scripts() {
+	
+    // Enqueue our JS file
+    wp_enqueue_script( 'ajax_js', get_stylesheet_directory_uri() . '/includes/js/ajax.js', array( 'jquery' ), '', true );
+    
+    // Provide a global object to our JS file containing the AJAX url and security nonce
+    wp_localize_script( 'ajax_js', 'ajax_object',
+        
+        array (
+            'ajax_url'      => admin_url('admin-ajax.php'),
+            'ajax_nonce'    => wp_create_nonce('ajax_nonce'),
+        )
+        
+    );
+    
+}
+add_action( 'wp_enqueue_scripts', 'ajax_site_scripts', 999 ) ;
+
 add_action('admin_head', 'admin_styles');
 
 function admin_styles() {
-  echo '<style>
-  .notice-otgs, .otgs-installer-notice {display: none !important;}
-      </style>';
+	
+  echo '<style>.notice-otgs, .otgs-installer-notice {display: none !important;}</style>';
+
+}
+
+/**
+ * Start Sessions
+ */
+add_action( 'init', 'session_init' );
+
+function session_init() {
+
+	if ( ! session_id() ) {
+
+		session_start();
+
+	}
+
 }
 
 /**
@@ -855,6 +890,8 @@ add_filter( 'woocommerce_get_item_data', 'harvest_get_item_data', 10, 2 );
 /*
  * Load cart data from session
  */
+add_filter( 'woocommerce_get_cart_item_from_session', 'harvest_get_cart_item_from_session', 20, 2 );
+
 function harvest_get_cart_item_from_session( $cart_item, $values ) {
 
     if ( isset( $values['harvest_attendees'] ) ){
@@ -866,11 +903,12 @@ function harvest_get_cart_item_from_session( $cart_item, $values ) {
     return $cart_item;
 
 }
-add_filter( 'woocommerce_get_cart_item_from_session', 'harvest_get_cart_item_from_session', 20, 2 );
 
 /*
  * Show custom field in order overview
  */
+add_filter( 'woocommerce_order_item_product', 'harvest_order_item_product', 10, 2 );
+
 function harvest_order_item_product( $cart_item, $order_item ){
 
     if( isset( $order_item['harvest_attendees'] ) ){
@@ -882,22 +920,23 @@ function harvest_order_item_product( $cart_item, $order_item ){
     return $cart_item;
 
 }
-add_filter( 'woocommerce_order_item_product', 'harvest_order_item_product', 10, 2 );
 
 /* 
  * Add the field to order emails 
  */ 
+add_filter('woocommerce_email_order_meta_fields', 'harvest_email_order_meta_fields');
+
 function harvest_email_order_meta_fields( $fields ) { 
    
     $fields['harvest_attendees'] = __( 'Dinner Attendees', 'oregonaitc' ); 
     return $fields; 
 
 } 
-add_filter('woocommerce_email_order_meta_fields', 'harvest_email_order_meta_fields');
 
 /**
  * Resource Library
  */
+add_action( 'pre_get_posts', 'lesson_plan_sort_order' );
 function lesson_plan_sort_order($query){
     
     if (  is_post_type_archive( 'lessonplan' ) ) {
@@ -910,8 +949,9 @@ function lesson_plan_sort_order($query){
     
     } 
     
-}
-add_action( 'pre_get_posts', 'lesson_plan_sort_order' ); 
+} 
+
+add_action( 'template_redirect', 'library_redirects' );
 
 function library_redirects() {
 
@@ -922,23 +962,49 @@ function library_redirects() {
 		exit;
 		
     }
-    
+        
 }
-add_action( 'template_redirect', 'library_redirects' );
 
+/**
+ * Ajax function to return event shipping address meta values
+ */ 
+add_action( 'wp_ajax_set_quantity_session', 'set_quantity_session' );
+add_action( 'wp_ajax_nopriv_set_quantity_session', 'set_quantity_session' );
+
+function set_quantity_session() {
+
+	if ( ! wp_verify_nonce( $_POST['security'], 'ajax_nonce' ) ) {
+
+		wp_send_json_error( array( 'message' => 'Nonce is invalid.' ) );
+	
+	}
+	
+	$id = $_POST['id'];
+	
+	$qty = $_POST['qty'];
+	
+	$_SESSION['cart'][$id]['qty'] = $qty;
+		
+	wp_send_json_success( array( 'message' => 'success', 'quantity' => $qty, 'ID' => $id ) );
+
+}
 
 /** 
  * Change Gravity Forms Spinner
  */
+add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+
 function spinner_url( $image_src, $form ) {
-    return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+	
+	return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 }
-add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
 
 /**
  * Sort grade levels in dropdown filter
  */
+add_filter( 'facetwp_facet_orderby', 'grade_level_sort', 10, 2 );
+
 function grade_level_sort ( $orderby, $facet ) {
     
     if ( 'lesson_plan_grades' == $facet['name'] ) {
@@ -950,7 +1016,6 @@ function grade_level_sort ( $orderby, $facet ) {
     return $orderby;
     
 }
-add_filter( 'facetwp_facet_orderby', 'grade_level_sort', 10, 2 );
 
 /**
  * Woocommerce - turn off upsell ads
@@ -983,6 +1048,8 @@ function oregonaitc_go_access_fields() {
 /**
  *  Add custom fields on virtual book purchases
  */
+add_action( 'woocommerce_order_status_completed', 'oregonaitc_woocommerce_order_status_completed', 10, 1 );
+
 function oregonaitc_woocommerce_order_status_completed( $order_id ) {
 	
 	$current_user = wp_get_current_user();
@@ -1008,7 +1075,6 @@ function oregonaitc_woocommerce_order_status_completed( $order_id ) {
 	}
 
 }
-add_action( 'woocommerce_order_status_completed', 'oregonaitc_woocommerce_order_status_completed', 10, 1 );
 
 /**
  * Validation function for virtual book access
@@ -1067,6 +1133,8 @@ function go_get_access() {
 /*
  * Add Get Oregonized Access code to email notification
  */
+add_action( 'woocommerce_email_order_meta', 'oregonaitc_email_order_meta_fields', 10, 3 );
+
 function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text ) {
 	
 	foreach ( $order->get_items() as $item_id => $item ) {
@@ -1088,11 +1156,12 @@ function oregonaitc_email_order_meta_fields( $order, $sent_to_admin, $plain_text
 	return;
 	
 }
-add_action( 'woocommerce_email_order_meta', 'oregonaitc_email_order_meta_fields', 10, 3 );
   
 /**
  * Bypass order processing email for Get Oregonized Access orders
  */
+add_filter( 'woocommerce_email_recipient_customer_processing_order', 'oregonaitc_disable_order_processing_email', 10, 2 );
+
 function oregonaitc_disable_order_processing_email( $recipient, $order ) {
 
 	$page = $_GET['page'] = isset( $_GET['page'] ) ? $_GET['page'] : '';
@@ -1119,11 +1188,12 @@ function oregonaitc_disable_order_processing_email( $recipient, $order ) {
 	return $recipient;
 		
 }
-add_filter( 'woocommerce_email_recipient_customer_processing_order', 'oregonaitc_disable_order_processing_email', 10, 2 );
 
 /**
  * Auto Complete Get Oregonized Access orders.
  */
+add_action( 'woocommerce_thankyou', 'oregonaitc_auto_complete_order' );
+
 function oregonaitc_auto_complete_order( $order_id ) {
 	
     if ( ! $order_id ) {
@@ -1147,11 +1217,12 @@ function oregonaitc_auto_complete_order( $order_id ) {
 	}
 	
 }
-add_action( 'woocommerce_thankyou', 'oregonaitc_auto_complete_order' );
 
 /**
  * Remove WP-Members fields on Woocommerce checkout
  */
+add_filter( 'wpmem_fields', 'oregonaitc_remove_reg_fields_filter', 10, 2 );
+
 function oregonaitc_remove_reg_fields_filter( $fields, $tag ) {
  
     if ( is_checkout() ) {
@@ -1173,7 +1244,6 @@ function oregonaitc_remove_reg_fields_filter( $fields, $tag ) {
     
     return $fields;
 }
-add_filter( 'wpmem_fields', 'oregonaitc_remove_reg_fields_filter', 10, 2 );
 
 /**
  * Oregon Map Functions
@@ -1205,4 +1275,17 @@ function get_map_icon_html( $icon_group, $icon_image ) {
 		
 	}
 	
+}
+
+/**
+ * Helper Function
+ */
+if ( ! function_exists('write_log')) {
+   function write_log ( $log )  {
+      if ( is_array( $log ) || is_object( $log ) ) {
+         error_log( print_r( $log, true ) );
+      } else {
+         error_log( $log );
+      }
+   }
 }

@@ -500,6 +500,10 @@
 	background-color: #757575;
 	background-image: none;
 }
+body .facetwp-facet input.facetwp-search, body .facetwp-facet input.facetwp-location {
+	min-width: inherit;
+	border: 1px solid #ced4da;
+}
 .search-form-top input.form-control,
 .facetwp-type-search input.form-control {
     background-color: theme-color('gray-light');

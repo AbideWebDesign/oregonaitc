@@ -1,0 +1,1 @@
+$(".kit-qty").change((function(){var a={qty:$(this).val(),id:$(this).data("id"),action:"set_quantity_session",security:ajax_object.ajax_nonce};$.ajax({type:"POST",url:ajax_object.ajax_url,data:a,success:function(a){},fail:function(a){console.log("failure")}})}));
