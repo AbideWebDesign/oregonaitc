@@ -26,10 +26,16 @@ jQuery( document ).ready( function( $ ) {
 				
 			}
 
+			total_qty ++;
+		
+		} );
+		
+		$.each( $( '.resource-qty' ), function( index, value ) { // Count additional quantities.
+
 			total_qty += parseInt( $( this ).val() );
 		
 		} );
-
+		
 		if ( total_qty > 30 ) { // Limit total number of items to 30
 									
 			errors = true;

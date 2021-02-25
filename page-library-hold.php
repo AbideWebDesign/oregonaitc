@@ -134,7 +134,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 															      													
       													<?php else: ?>
       													      														
-      														<input class="kit-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
+      														<input class="resource-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
       													
 														<?php endif; ?>
 													

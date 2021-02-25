@@ -625,6 +625,9 @@ height: 42px;
 .facetwp-toggle {
 	@extend .text-primary;
 }
+.resource-qty {
+	max-width: 66px;
+}
 
 /* Pagination Styles */
 .page-numbers {
