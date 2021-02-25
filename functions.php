@@ -49,7 +49,7 @@ function enqueue_child_theme_scripts() {
 	
 		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
 		
-		wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library.js', 'jquery', '', true );
+		wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/includes/js/library.js'), true );
 	
 	}
 
