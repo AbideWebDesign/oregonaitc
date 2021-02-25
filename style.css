@@ -11059,6 +11059,11 @@ body table.gsurvey-likert th.gsurvey-likert-choice-label li,
   color: white;
 }
 
+.card .cart-notice p {
+  font-size: 16px;
+  margin: 0;
+}
+
 /* 
 ** Bootstrap Overrides
 */
@@ -11543,6 +11548,11 @@ body table.gsurvey-likert th.gsurvey-likert-choice-label li,
 */
 .search-form-top .form-group, .search-form-top .form-row, .search-form-top .woocommerce form .form-row, .woocommerce form .search-form-top .form-row {
   width: 100%;
+}
+
+.custom-control-label::before {
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 .search-form-top a:hover {

@@ -1,11 +1,14 @@
 <?php /* Template Name: Library Hold Page */ ?>
 
 <?php
-// session_destroy();
 
+session_start();
+	
 get_header(); 
 
 get_template_part( 'library/library', 'top' ); 
+
+$current_user = wp_get_current_user();
 
 $errors = array();
 
@@ -167,46 +170,80 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 
 								<div class="row">
 
-									<div class="col-lg-6 mb-3 mb-lg-0">
+									<div class="col-lg-5">
 
-										<h5 class="card-title"><?php _e('Before You Submit:'); ?></h5> 
-
-										<div class="card bg-light border">
-
-											<div class="card-body">
-
-												<div class="text-md text-description"><?php the_field('library_hold_message', 'options'); ?></div>
-
-											</div>
-
-										</div>
-
-									</div>
-
-									<div class="col-lg-6">
-
-										<div class="form-group m-0">
+										<div class="form-group mb-3">
 
 											<h5 class="card-title"><label for="comment"><?php _e('Comments:'); ?></label></h5>
 
 										  	<textarea class="form-control input-lg" rows="3" name="comment" id="comment"></textarea>
 
 										</div>
-
-									</div>
-
-								</div>
-
-								<div class="row">
-
-									<div class="col">
-
-										<div class="text-center mt-3">
-
-											<a id="library-hold" class="btn btn-primary btn-lg text-white <?php echo ( count($errors) > 0 ? 'disabled' : '' ) ?>"><?php _e('Place Hold'); ?></a>	
+										
+										<h5 class="card-title"><?php _e('Shipping Information:'); ?></h5>
+										
+										<div class="text-md">
+											
+											<?php echo $current_user->user_firstname; ?> <?php echo $current_user->user_lastname; ?><br />
+											
+											<?php echo $current_user->school; ?><br />
+											
+											<?php echo $current_user->addr1; ?><br />
+											
+											<?php if ( $current_user->addr2 != '' ): ?>
+											
+												<?php echo $current_user->addr2; ?><br />
+											
+											<?php endif; ?>
+											
+											<?php echo $current_user->city; ?>, <?php echo $current_user->thestate; ?> <?php echo $current_user->zip; ?><br />
+											
+											<a href="<?php echo home_url('/member-profile/?a=edit'); ?>"><?php _e('Edit Address'); ?></a>
 
 										</div>
 
+									</div>
+									
+									<div class="col-lg-7 mb-3 mb-lg-0">
+
+										<h5 class="card-title"><?php _e('Before You Submit:'); ?></h5> 
+
+										<div class="card bg-light border mb-3">
+
+											<div class="card-body">
+												
+												<div class="cart-notice text-md">
+												
+													<?php the_field('library_hold_message', 'options'); ?>
+													
+													<div class="custom-control custom-checkbox mt-3 mb-2 ">
+
+														<input type="checkbox" class="custom-control-input" id="termCheck">
+				
+														<label class="custom-control-label" for="termCheck"><?php _e('I agree to the Terms and Conditions.'); ?> <a href="<?php echo home_url('/lending-library-terms-and-conditions/'); ?>" target="_blank"><?php _e('View terms and conditions'); ?></a>.</label>
+														
+														<div class="invalid-feedback"><?php _e('You must agree to our terms before placing an order.'); ?></div>
+			
+													</div>
+													
+													<div class="custom-control custom-checkbox mb-3 text-md">
+			
+														<input type="checkbox" class="custom-control-input" id="shippingCheck">
+				
+														<label class="custom-control-label" for="shippingCheck"><?php _e('I confirm that the shipping address and information is correct.'); ?></label>
+														
+														<div class="invalid-feedback"><?php _e('Please confirm your shipping address information.'); ?></div>
+			
+													</div>
+												
+													<a id="library-hold" class="btn btn-primary btn-lg text-white <?php echo ( count( $errors ) > 0 ? 'disabled' : '' ) ?>"><?php _e('Place Hold'); ?></a>
+
+												</div>
+													
+											</div>
+
+										</div>
+									
 									</div>
 
 								</div>
@@ -215,11 +252,15 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 							
 							</form>
 						
-						<?php elseif ( isset( $_POST['submit'] ) && !$error ): ?> 
+						<?php elseif ( isset( $_POST['submit'] ) && ! $error ): ?> 
 							
-							<h2 class="mb-3"><?php _e('Success!'); ?></h2>
+							<div class="p-5">
+								
+								<h1 class="mb-3 text-center"><?php _e('Success!'); ?></h1>
 						
-							<div class="text-description"><?php the_field('library_hold_success_message', 'options'); ?></div> 
+								<div class="text-description text-center text-lg"><?php the_field('library_hold_success_message', 'options'); ?></div> 
+								
+							</div>
 						
 						<?php elseif ( $error ): ?>
 							
@@ -229,9 +270,13 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 						
 						<?php else: ?>
 							
-							<h2 class="mb-3"><?php _e('Library Cart'); ?></h2>
+							<div class="p-5">
+								
+								<h1 class="mb-3 text-center"><?php _e('Library Cart'); ?></h1>
 						
-							<div class="text-description"><?php the_field('library_hold_empty_message', 'options'); ?></div> 
+								<div class="text-description text-center text-lg"><?php the_field('library_hold_empty_message', 'options'); ?></div> 
+								
+							</div>
 						
 						<?php endif; ?>
 					

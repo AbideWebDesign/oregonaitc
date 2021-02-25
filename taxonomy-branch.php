@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php get_header(); ?>
 
 <?php get_template_part( 'library/library', 'top' ); ?>

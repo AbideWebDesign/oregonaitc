@@ -1,6 +1,7 @@
 <?php
 
 /* Template Name: Library Search Results */
+session_start();
 
 global $post;
 

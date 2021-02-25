@@ -486,7 +486,10 @@
 .search-form-top .form-group {
 	width: 100%;
 }
-
+.custom-control-label::before {
+	background-color: white;
+	border: 1px solid #ccc;
+}
 .search-form-top a:hover {
 	text-decoration: none;
 }

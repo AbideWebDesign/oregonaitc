@@ -31,12 +31,36 @@ jQuery( document ).ready( function( $ ) {
 		} );
 
 		if ( total_qty > 30 ) { // Limit total number of items to 30
-						
-			$( '#error-max-qty' ).removeClass( 'd-none' );
-			
+									
 			errors = true;
 			
+			$( '#error-max-qty' ).removeClass( 'd-none' );
+			
 		}
+		
+		 if ( ! $( '#termCheck').prop( 'checked' ) ) {
+			 
+			 errors = true;
+			 
+			 $( '#termCheck').addClass( 'is-invalid' );
+			 
+		 } else {
+			 
+			  $( '#termCheck').removeClass( 'is-invalid' );
+			 
+		 }
+		 
+		 if ( ! $( '#shippingCheck').prop( 'checked' ) ) {
+			 
+			 errors = true;
+			 
+			 $( '#shippingCheck').addClass( 'is-invalid' );
+			 
+		 } else {
+			 
+			  $( '#shippingCheck').removeClass( 'is-invalid' );
+			 
+		 }
 		
 		if ( ! errors ) {
 			

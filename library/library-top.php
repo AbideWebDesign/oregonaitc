@@ -128,11 +128,7 @@ if ( isset( $_GET['branch'] ) ) {
 				
 				<?php endif; ?>
 			
-			<?php elseif ( is_page( 'place-hold' ) ): ?>
-			
-				
-				
-			<?php else: ?>
+			<?php elseif ( ! is_page( 'place-hold' ) ): ?>
 			
 				<div class="col-lg-7 col-12 d-flex flex-lg-row-reverse order-1 order-lg-2">
 	

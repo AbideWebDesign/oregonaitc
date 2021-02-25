@@ -83,21 +83,6 @@ function admin_styles() {
 }
 
 /**
- * Start Sessions
- */
-add_action( 'init', 'session_init' );
-
-function session_init() {
-
-	if ( ! session_id() ) {
-
-		session_start();
-
-	}
-
-}
-
-/**
  * Register Menus
  */
 register_nav_menu( 'Menu Footer', 'Footer Menu' );

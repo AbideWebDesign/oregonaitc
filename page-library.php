@@ -4,28 +4,6 @@
 
 get_header();
 
-if ( is_user_logged_in() ) {
-
-	if( isset( $_GET['action'] ) && $_GET['action'] == 'add' ) {	
-
-		if( ! isset( $_SESSION['cart'][$_GET['id']] ) ) { 
-
-			$_SESSION['cart'][$_GET['id']] = $_GET['id'];
-
-		}
-
-	} elseif ( isset( $_GET['action'] ) && $_GET['action'] == 'remove' ) {
-
-		if( isset( $_SESSION['cart'][$_GET['id']] ) ) { 
-
-			unset( $_SESSION['cart'][$_GET['id']] );
-
-		}
-
-	}
-
-}
-
 ?>
 
 <div class="section section-xs section-primary">
