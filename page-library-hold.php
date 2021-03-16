@@ -16,13 +16,11 @@ $branches = array( 'Oregon', 'Washington County' );
 
 $b = array();
 
-if( isset( $_POST['submit'] ) ) { // Submit Cart
+if( isset( $_POST['submit'] ) && isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Submit Cart
 			
 	if ( count( $errors ) == 0 ) {
 		
-		$status = submit_library_order();
-		
-		session_unset();
+		submit_library_order();
 	
 	} 
 
@@ -126,23 +124,21 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 
 												<td class="align-middle">
 													
-													<?php foreach ( $types as $type ): ?>
-														
-														<?php if ( $type->name == 'Kits' || $type->name == 'Printed Materials' ): $kit = true; ?>
-															
-															<input class="kit-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
-															      													
-      													<?php else: ?>
-      													      														
-      														<input class="resource-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
-      													
-														<?php endif; ?>
+													<?php $kits = array( 'Kits', 'Printed Materials' ); ?>
 													
-													<?php endforeach; ?>
-																										
+													<?php if ( has_term( $kits, 'resource_type', $id) ): $kit = true; ?>
+														
+														<input class="kit-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
+															      													
+      												<?php else: ?>
+      													      														
+      													<input class="resource-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
+      													
+													<?php endif; ?>
+													
 												</td>
 
-												<td class="align-middle"><?php foreach ( $types as $type ) echo rtrim( $type->name, "s" ); ?></td>
+												<td class="align-middle"><?php foreach ( $types as $type ) echo rtrim( $type->name, "s" ) . '<br>'; ?></td>
 
 												<td class="align-middle"><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
 

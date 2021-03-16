@@ -733,6 +733,8 @@ function submit_library_order() {
 	
 	wp_mail( $current_user->user_email, 'Library Order Confirmation - #' . $post_id, $content, $headers );
 	
+	unset($_SESSION['cart']);
+	
 }
 
 function washington_county_filter( $query ) {
