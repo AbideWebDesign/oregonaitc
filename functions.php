@@ -551,6 +551,8 @@ function submit_library_order() {
 	
 	$mailing_address = $current_user->school
 				. "<br>"
+				. $current_user->address_type
+				. "<br>"
 				. $current_user->addr1
 				. " "
 				. $current_user->addr2
