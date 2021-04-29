@@ -10,6 +10,7 @@ $region4 = get_field('legend_region_4', 'options');
 $region5 = get_field('legend_region_5', 'options');
 $region6 = get_field('legend_region_6', 'options');
 $region7 = get_field('legend_region_7', 'options');
+$region8 = get_field('legend_region_8', 'options');
 
 $angus_baker = get_field('angus_baker', 'options');
 $angus_baker_img = $angus_baker['image'];
@@ -2474,7 +2475,31 @@ $wheat_washington_img = $wheat_washington['image'];
 									</div>
 								</div>
 							</div>
+						</li>
+						<li class="list-group-item">
+							<div class="media">
+								<div id="marker-8" class="pull-left marker" style="background-color: <?php echo $region8['color']; ?>"></div>
+								<div class="media-body">
+									<a class="btn-legend" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+										<h4 class="media-heading mb-0 mt-1"><?php echo $region8['region_name']; ?> <i id="caret-collapse8" class="fa fa-caret-right"></i></h4>
+									</a>
+									<div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+										<div class="legend-content pt-2">
+											<?php echo $region8['region_content']; ?>
+											
+											<?php if ( isset($region8['region_video']) ): ?>
+											
+												<div class="pt-3">
+													<a class="pop-legend" data-toggle='modal' data-target='#videoModal' data-video='<?php echo $region8['region_video']; ?>'><i class="fa fa-sm fa-video float-left pr-2 pt-1"></i> Watch Video</a>
+												</div>
+											
+											<?php endif; ?>
+										</div>										
+									</div>
+								</div>
+							</div>
 						</li>									
+															
 					</ul>
 				</div>
 				<?php if ( have_rows('video_legend', 'option') ): ?>
