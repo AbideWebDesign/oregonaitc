@@ -90,7 +90,8 @@ function remove_dashboard_widgets() {
 	
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 	remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal');
-
+	remove_meta_box('dashboard_custom_feed', 'dashboard', 'normal');
+	
 }
 
 /**

@@ -11706,7 +11706,7 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 
 .facetwp-per-page:before, .facetwp-sort:before {
   font-family: fontawesome;
-  content: "";
+  content: "\f0d7";
   position: absolute;
   top: 8px;
   right: 15px;
@@ -12020,13 +12020,13 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 
 .accordion button:after {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "\f0d7";
   position: absolute;
   right: 30px;
 }
 
 .accordion button.collapsed:after {
-  content: "";
+  content: "\f0da";
 }
 
 .accordion .btn-link:focus {
@@ -12372,6 +12372,14 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
   line-height: 1.5em;
 }
 
+.select2-container .select2-selection--single {
+  height: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  margin-top: 4px;
+}
+
 .gfield_select, .address_state select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -12667,7 +12675,7 @@ body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + lab
 body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + label:before {
   font-family: "Font Awesome 5 Free";
   color: white;
-  content: "";
+  content: "\f00c";
   position: absolute;
   left: 10%;
   top: 35%;
