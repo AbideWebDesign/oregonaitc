@@ -1,15 +1,4 @@
 <?php
-/**
- * Theme Updater
- */
-require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
-
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/AbideWebDesign/oregonaitc',
-	__FILE__,
-	'oregonaitc'
-);
-$myUpdateChecker->setBranch('master'); 
 
 /**
  * Enqueue Styles
@@ -79,6 +68,28 @@ add_action('admin_head', 'admin_styles');
 function admin_styles() {
 	
   echo '<style>.notice-otgs, .otgs-installer-notice {display: none !important;}</style>';
+
+}
+
+/*
+ * Remove unused dashboard widgets
+ */
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+function remove_dashboard_widgets() {
+	
+	global $wp_meta_boxes;
+
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+	
+	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+	remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal');
 
 }
 
