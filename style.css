@@ -12454,6 +12454,10 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
   color: #333333;
 }
 
+.woocommerce-invalid .input-text {
+  border-color: #ff4136 !important;
+}
+
 /*
 ** Gravity Form Overrides
 */

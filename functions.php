@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Enqueue Styles
  */
@@ -67,7 +66,7 @@ add_action('admin_head', 'admin_styles');
 
 function admin_styles() {
 	
-  echo '<style>.notice-otgs, .otgs-installer-notice {display: none !important;}</style>';
+  echo '<style>.notice-otgs, .otgs-installer-notice, .notice.wcs-nux__notice {display: none !important;}</style>';
 
 }
 
@@ -1045,6 +1044,9 @@ function grade_level_sort ( $orderby, $facet ) {
  * Woocommerce - turn off upsell ads
  */
 add_filter( 'woocommerce_helper_suppress_admin_notices', '__return_true' );
+add_filter( 'jetpack_just_in_time_msgs', '__return_false' );
+add_filter( 'jetpack_show_promotions', '__return_false', 20 );
+
 
 /**
  * Woocommerce - Get Oregonized Online Viewer Access
@@ -1312,4 +1314,149 @@ if ( ! function_exists('write_log')) {
          error_log( $log );
       }
    }
+}
+
+/*
+ * Check if Harvest Product is in Cart
+ */
+function harvest_in_cart() {
+	
+	global $woocommerce;
+	
+	$product_id = 37592;
+	
+	$parent_id  = wp_get_post_parent_id( $product_id );
+	
+	$product_id = $parent_id > 0 ? $parent_id : $product_id;
+	
+	foreach ( $woocommerce->cart->get_cart() as $cart_item ) {
+	    
+	    if ( $cart_item['product_id'] === $product_id ) {
+	    
+	        return true;
+	    
+	    } else {
+	    
+	        return false;
+	    
+	    }
+	
+	}
+
+}
+
+/*
+ * Check if Harvest Product is in Order
+ */
+function harvest_in_order( $order ) {
+
+	$items = $order->get_items(); 
+
+	foreach ( $items as $item_id => $item ) {
+
+		if ( $item->get_product_id() === 37592 ) {
+			
+			return true;
+			
+		}
+
+	}
+	
+	return false;
+
+}
+
+/**
+ * Woocommerce fields
+ */
+add_action( 'woocommerce_checkout_before_customer_details', 'harvest_custom_checkout_fields' );
+
+function harvest_custom_checkout_fields() {
+
+	if ( harvest_in_cart() ) {
+		
+		$checkout = WC()->checkout;
+	
+		echo '<div class="my-3 bg-light border rounded p-3"><h3>' . __('Attendee Names') . '</h3>';
+		
+		woocommerce_form_field( 'harvest_attendees', array (
+		    'type'          => 'textarea',
+		    'class'         => array( 'form-row-wide' ),
+		    'required'		=> true,
+		    'placeholder'   => __('Please provide attendee names, one per line'),
+		    ), $checkout->get_value( 'harvest_attendees' ) );
+		
+		echo '</div>';
+		
+	}
+    
+}
+
+/**
+ * Validate custom field
+ */
+add_action('woocommerce_checkout_process', 'harvest_custom_checkout_field_process');
+
+function harvest_custom_checkout_field_process() {
+
+	if ( ! $_POST['harvest_attendees'] && harvest_in_cart() ) {
+		
+		wc_add_notice( __( 'Please provide attendee names.' ), 'error' );
+	
+	}
+
+}
+
+/**
+ * Update the order meta with field value
+ */
+add_action( 'woocommerce_checkout_update_order_meta', 'harvest_custom_checkout_field_update_order_meta' );
+
+function harvest_custom_checkout_field_update_order_meta( $order_id ) {
+	
+	if ( ! empty( $_POST['harvest_attendees'] ) ) {
+	
+	    update_post_meta( $order_id, 'harvest_attendee_names', sanitize_textarea_field( $_POST['harvest_attendees'] ) );
+	
+	}
+
+}
+
+/**
+ * Display field value on the order edit page
+ */
+add_action( 'woocommerce_admin_order_data_after_shipping_address', 'harvest_custom_checkout_field_display_admin_order_meta', 10, 1 );
+
+function harvest_custom_checkout_field_display_admin_order_meta( $order ){
+	
+	if ( harvest_in_order( $order ) ) {
+		
+		echo '<h3 style="margin-bottom:1em;">' . __( 'Attendee Names' ) . '</h3>';
+		
+		echo '<textarea disabled>' . esc_textarea( get_post_meta( $order->get_id(), 'harvest_attendee_names', true ) ) . '</textarea>';
+		
+		echo '<style>textarea { resize: none; height: 135px; border: none; color: #777 !important; padding: 0; font-size: 13px; }</style>';
+	 	
+	}
+
+}
+
+/*
+ * Add harvest attendees to email notification
+ */
+
+add_action( 'woocommerce_email_after_order_table', 'harvest_email_after_order_table', 10, 4 );
+
+function harvest_email_after_order_table( $order, $sent_to_admin, $plain_text, $email ) { 
+	
+	if ( harvest_in_order( $order ) ) {
+		
+		echo '<h2 style="margin-bottom:1em;">' . __( 'Attendee Names' ) . '</h2>';
+		
+		echo '<textarea disabled>' . esc_textarea( get_post_meta( $order->get_id(), 'harvest_attendee_names', true ) ) . '</textarea>';
+		
+		echo '<style>textarea { resize: none; height: 135px; border: none; color: #636363 !important; line-height: 150%; padding: 0; font-size: 14px; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;}</style>';
+		
+	}
+
 }

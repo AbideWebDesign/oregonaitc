@@ -1440,6 +1440,12 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 	color: theme-color('text');
 }
 
+.woocommerce-invalid {
+	.input-text  {
+		border-color: theme-color('danger') !important;
+	}
+}
+
 /*
 ** Gravity Form Overrides
 */
