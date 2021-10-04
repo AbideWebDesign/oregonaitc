@@ -3,6 +3,25 @@
     "title": "Block - Image Gallery",
     "fields": [
         {
+            "key": "field_615b44c15bd0a",
+            "label": "Hide on Print",
+            "name": "hide_on_print",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5bd0dd0f1ca41",
             "label": "Type",
             "name": "type",
@@ -52,7 +71,9 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ".jpg, .jpeg, .png"
+            "mime_types": ".jpg, .jpeg, .png",
+            "return_format": "array",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -70,7 +91,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1540418808
+    "modified": 1633371347
 }

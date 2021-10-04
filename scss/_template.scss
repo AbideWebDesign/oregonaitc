@@ -1676,3 +1676,16 @@ body .gform_wrapper .radio-buttons {
 #embed-wrap {
 	width: 100%;
 }
+
+/* Print View */
+.wrapper-print {
+	iframe, .wrapper-cards {
+		display: none;
+	}
+	.section {
+		padding: 1em 0;
+	}
+	.section-alt {
+		background-color: white;
+	}
+}

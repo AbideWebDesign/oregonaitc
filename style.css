@@ -11001,7 +11001,6 @@ h4 {
 }
 
 p, li {
-  color: #4a4a4a;
   font-size: 18px;
   line-height: 30px;
 }
@@ -12688,6 +12687,17 @@ body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + lab
 /* Adobe Viewer */
 #embed-wrap {
   width: 100%;
+}
+
+/* Print View */
+.wrapper-print iframe, .wrapper-print .wrapper-cards {
+  display: none;
+}
+.wrapper-print .section {
+  padding: 1em 0;
+}
+.wrapper-print .section-alt {
+  background-color: white;
 }
 
 /* Map */

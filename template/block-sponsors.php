@@ -1,4 +1,4 @@
-<?php if ( get_sub_field('sponsors_display') ): ?>
+<?php if ( get_sub_field('sponsors_display') && get_query_var( 'view' ) != 'print' ): ?>
 
 	<div class="section-alt basic-content-block">
 		
@@ -85,5 +85,3 @@
 	</div>
 		
 <?php endif; ?>
-	
-	

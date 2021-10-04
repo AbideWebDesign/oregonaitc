@@ -11,10 +11,14 @@
  *
  * @package oregonaitc
  */
-
-get_header();
 ?>
-<?php get_template_part('template/block', 'jumbotron'); ?>
-<?php get_template_part('template/content', 'page-default'); ?>
+
+<?php get_header(); ?>
+
+<?php get_template_part( 'template/block', 'jumbotron' ); ?>
+
+<?php get_template_part( 'template/content', 'page-default' ); ?>
+
 <?php
+
 get_footer();

@@ -2,6 +2,9 @@
 /**
  * Enqueue Styles
  */
+
+add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
+
 function enqueue_child_theme_styles() {
 	
 	$parent_style = 'abide-style';
@@ -9,11 +12,12 @@ function enqueue_child_theme_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), wp_get_theme()->get('Version') );
     	
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
 
 /**
  * Enqueue Scripts
  */
+add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_scripts' );
+
 function enqueue_child_theme_scripts() {
 	
 	if ( is_page_template('page-map.php') || is_page_template('page-map-2020.php') ) {
@@ -42,7 +46,8 @@ function enqueue_child_theme_scripts() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_scripts' );
+
+add_action( 'wp_enqueue_scripts', 'ajax_site_scripts', 999 ) ;
 
 function ajax_site_scripts() {
 	
@@ -60,13 +65,25 @@ function ajax_site_scripts() {
     );
     
 }
-add_action( 'wp_enqueue_scripts', 'ajax_site_scripts', 999 ) ;
 
 add_action('admin_head', 'admin_styles');
 
 function admin_styles() {
 	
   echo '<style>.notice-otgs, .otgs-installer-notice, .notice.wcs-nux__notice {display: none !important;}</style>';
+
+}
+
+/*
+ * Register query var
+ */
+add_filter( 'query_vars', 'oregonaitc_query_vars' );
+
+function oregonaitc_query_vars( $qvars ) {
+
+	$qvars[] = 'view';
+
+	return $qvars;
 
 }
 
@@ -111,14 +128,18 @@ add_image_size( 'photo-3', 255, 170, true );
 /**
  * Remove WP User Frontend contact methods
  */
+ 
+add_action( 'plugins_loaded', 'remove_custom_user_contact_methods' );
+
 function remove_custom_user_contact_methods() {
     
 	remove_filter( 'user_contactmethods', 'modify_contact_methods' );
 
 }
-add_action( 'plugins_loaded', 'remove_custom_user_contact_methods' );
 
 remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
 
 function yoast_seo_admin_user_remove_social ( $contactmethods ) {
 	
@@ -135,7 +156,6 @@ function yoast_seo_admin_user_remove_social ( $contactmethods ) {
 	return $contactmethods;
 	
 }
-add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
 
 /**
  * ACF Options page
@@ -1444,7 +1464,6 @@ function harvest_custom_checkout_field_display_admin_order_meta( $order ){
 /*
  * Add harvest attendees to email notification
  */
-
 add_action( 'woocommerce_email_after_order_table', 'harvest_email_after_order_table', 10, 4 );
 
 function harvest_email_after_order_table( $order, $sent_to_admin, $plain_text, $email ) { 
