@@ -55,20 +55,44 @@ if ( get_field('jumbotron_image_mobile') ) {
 	
 					<div class="col-12 d-flex align-items-end h-100">
 	
-						<div class="jumbotron-content d-flex flex-column">
+						<div class="jumbotron-content w-100">
 	
-							<h1><?php the_field('jumbotron_title'); ?></h1>
-	
-							<?php if ( get_field('jumbotron_text') ): ?>
-	
-								<p class="mb-0"><?php the_field('jumbotron_text'); ?></p>
-	
-							<?php endif; ?>
+							<div class="d-flex justify-content-between">
+								
+								<div class="d-flex flex-column">
+											
+									<h1><?php the_field('jumbotron_title'); ?></h1>
+			
+									<?php if ( get_field('jumbotron_text') ): ?>
+			
+										<p class="mb-0"><?php the_field('jumbotron_text'); ?></p>
+			
+									<?php endif; ?>
+									
+								</div>
+								
+								<div class="d-flex align-self-center">
+									
+									<div class="mr-2">
+										
+										<a target="_blank" href="<?php echo get_the_permalink() . '?view=print'; ?>"><i class="fa fa-print text-white"></i></a>
+										
+									</div>
+									
+									<div class="mr-2">
+										
+										<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook-square text-white"></i></a>
+										
+									</div>
+								
+								</div>
+								
+							</div>
 	
 						</div>
 	
 					</div>
-	
+						
 				</div>
 	
 			</div>
