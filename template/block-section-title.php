@@ -1,27 +1,23 @@
 <?php if ( get_query_var( 'view' ) == 'print' ): ?>
 
 	<?php if ( ! get_sub_field('hide_on_print') ): ?>
-
-		<div class="container">
 			
-			<div class="row">
+		<div class="row">
+			
+			<div class="col-12">
 				
-				<div class="col-12">
-					
-					<h2 class="mb-4"><?php the_sub_field('section_title'); ?></h2>
+				<h2 class="mb-4"><?php the_sub_field('section_title'); ?></h2>
+	
+				<?php if ( get_sub_field('section_lead_text') ): ?>
 		
-					<?php if ( get_sub_field('section_lead_text') ): ?>
-			
-						<div class="mb-0"><?php the_sub_field('section_lead_text'); ?></div>
-			
-					<?php endif; ?>
-					
-				</div>
+					<div class="mb-0"><?php the_sub_field('section_lead_text'); ?></div>
+		
+				<?php endif; ?>
 				
 			</div>
 			
 		</div>
-		
+					
 	<?php endif; ?>
 
 <?php else: ?>

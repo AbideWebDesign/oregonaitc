@@ -19,9 +19,9 @@ if ( get_field('jumbotron_image_mobile') ) {
 
 	<?php if ( ! get_sub_field('hide_on_print') ): ?>
 	
-		<div class="container h-100">
+		<div class="container">
 		
-			<div class="row h-100">
+			<div class="row">
 		
 				<div class="col-12">
 					

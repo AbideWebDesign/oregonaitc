@@ -3,75 +3,71 @@
 <?php if ( get_query_var( 'view' ) == 'print' ): ?>
 
 	<?php if ( ! get_sub_field('hide_on_print') ): ?>
+			
+		<div class="row">
+			
+			<div class="col-12">
+				
+				<h2 class="mb-4"><?php the_sub_field('section_title'); ?></h2>
+	
+				<?php if ( get_sub_field('section_text') ): ?>
 
-		<div class="container">
-			
-			<div class="row">
-				
-				<div class="col-12">
-					
-					<h2 class="mb-4"><?php the_sub_field('section_title'); ?></h2>
-		
-					<?php if ( get_sub_field('section_text') ): ?>
+					<div class="mb-5"><?php the_sub_field('section_text'); ?></div>
+
+				<?php endif; ?>
+
+				<?php if ( have_rows('tabs') ): ?>
 	
-						<div class="mb-5"><?php the_sub_field('section_text'); ?></div>
+					<?php while ( have_rows('tabs') ): the_row(); ?>
+
+						<div class="mb-3">
+							
+							<?php if ( get_sub_field('tab_image') ): ?>
 	
-					<?php endif; ?>
-	
-					<?php if ( have_rows('tabs') ): ?>
-		
-						<?php while ( have_rows('tabs') ): the_row(); ?>
-	
-							<div class="mb-3">
-								
-								<?php if ( get_sub_field('tab_image') ): ?>
-		
-									<?php $image = get_sub_field('tab_image'); ?>
-	
-									<div class="row">
-	
-										<div class="col-md-5">
-	
-											<?php echo wp_get_attachment_image( $image, 'col-5', 0, array( 'class' => 'img-fluid mb-4 mb-md-0' ) ); ?>
-	
-											<?php if ( $image['caption'] ): ?>
-	
-												<div class="caption"><?php echo $image['caption']; ?></div>
-	
-											<?php endif; ?>
-	
-										</div>
-	
-										<div class="col-md-7 align-self-center">
-	
-											<h3 class="mt-3"><?php the_sub_field('tab_title'); ?></h3>
-	
-											<?php the_sub_field('tab_content'); ?>
-	
-										</div>
-	
+								<?php $image = get_sub_field('tab_image'); ?>
+
+								<div class="row">
+
+									<div class="col-md-5">
+
+										<?php echo wp_get_attachment_image( $image, 'col-5', 0, array( 'class' => 'img-fluid mb-4 mb-md-0' ) ); ?>
+
+										<?php if ( $image['caption'] ): ?>
+
+											<div class="caption"><?php echo $image['caption']; ?></div>
+
+										<?php endif; ?>
+
 									</div>
-	
-								<?php else: ?>
-	
-									<h3><?php the_sub_field('tab_title'); ?></h3>
-	
-									<?php the_sub_field('tab_content'); ?>
-	
-								<?php endif; ?>
-								
-							</div>
-	
-						<?php endwhile; ?>
-	
-					<?php endif; ?>
-			
-				</div>
-				
+
+									<div class="col-md-7 align-self-center">
+
+										<h3 class="mt-3"><?php the_sub_field('tab_title'); ?></h3>
+
+										<?php the_sub_field('tab_content'); ?>
+
+									</div>
+
+								</div>
+
+							<?php else: ?>
+
+								<h3><?php the_sub_field('tab_title'); ?></h3>
+
+								<?php the_sub_field('tab_content'); ?>
+
+							<?php endif; ?>
+							
+						</div>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+		
 			</div>
 			
 		</div>
-		
+					
 	<?php endif; ?>
 
 <?php else: ?>

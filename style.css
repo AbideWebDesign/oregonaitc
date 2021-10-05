@@ -12699,6 +12699,9 @@ body .gform_wrapper .radio-buttons .gfield_radio input[type=radio]:checked + lab
 .wrapper-print .section-alt {
   background-color: white;
 }
+.wrapper-print .caption, .wrapper-print .wp-caption-text {
+  font-size: 1rem;
+}
 
 /* Map */
 /* Oregon Map */
