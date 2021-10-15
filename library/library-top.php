@@ -132,7 +132,7 @@ if ( isset( $_GET['branch'] ) ) {
 			
 				<div class="col-lg-7 col-12 d-flex flex-lg-row-reverse order-1 order-lg-2">
 	
-					<div class="mr-3 mr-lg-0"><a href="<?php echo home_url(); ?>/matrix" class="btn btn-white btn-sm"><?php _e('Curriculum Matrix'); ?></a></div>
+					<div class="mr-3 mr-lg-0"><a href="https://oregonmatrix.agclassroom.org/" class="btn btn-white btn-sm"><?php _e('Curriculum Matrix'); ?></a></div>
 	
 					<div class="mr-3"><a href="<?php echo home_url(); ?>/lesson-plans" class="btn btn-white btn-sm"><?php _e('Lesson Plans Home'); ?></a></div>
 	
