@@ -392,58 +392,6 @@ function oregonaitc_facetwp_is_main_query( $is_main_query, $query ) {
 }
 add_filter( 'facetwp_is_main_query', 'oregonaitc_facetwp_is_main_query', 10, 2 );
 
-/**
- * SearchWP
- */
-function search_media_direct_link( $permalink, $post ) {
-	
-	if ( is_search() && 'attachment' === get_post_type( $post ) ) {
-		
-		$permalink = wp_get_attachment_url( $post->ID );
-		
-	}
-
-	return esc_url( $permalink );
-	
-}
-add_filter( 'the_permalink', 'search_media_direct_link', 10, 2 );
-
-/**
- * Add custom fields to search
- */
-function searchwp_acf_repeater_keys( $keys ) {
-	
-	$keys[] = 'page_blocks_%';
-
-	return $keys;
-	
-}
-add_filter( 'searchwp_custom_field_keys', 'searchwp_acf_repeater_keys' );
-
-/**
- * Add search highlight
- */
-function searchwp_term_highlight_auto_excerpt( $excerpt ) {
-	
-	global $post;
-
-	if ( ! is_search() ) {
-		
-		return $excerpt;
-	
-	}
-
-	// Prevent recursion
-	remove_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
-
-	$global_excerpt = '...' . searchwp_term_highlight_get_the_excerpt_global( $post->ID, null, get_search_query() ) . '...';
-
-	add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
-
-	return wp_kses_post( $global_excerpt );
-	
-}
-add_filter( 'get_the_excerpt', 'searchwp_term_highlight_auto_excerpt' );
 
 /**
  * Pagination Links
