@@ -12448,9 +12448,13 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 
 @media (max-width: 991.98px) {
   .col-1, .col-2 {
-    width: 100%;
-    flex: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    flex: 100% !important;
+    max-width: 100% !important;
+  }
+
+  form.woocommerce-checkout, .woocommerce ul.order_details {
+    padding: 1em !important;
   }
 }
 /*
