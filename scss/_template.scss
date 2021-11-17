@@ -1410,17 +1410,6 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 	@extend .row;
 }
 
-.woocommerce form .form-row label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-
 .woocommerce form .form-row-first, .woocommerce-page form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-last {
 	display: block;
 	float: none;
@@ -1445,7 +1434,13 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 		border-color: theme-color('danger') !important;
 	}
 }
-
+@include media-breakpoint-down(md) {
+	.col-1, .col-2 {
+		width: 100%;
+		flex: 100%;
+		max-width: 100%;
+	}
+}
 /*
 ** Gravity Form Overrides
 */
