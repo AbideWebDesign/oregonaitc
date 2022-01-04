@@ -8,7 +8,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<h3>Manage Profile</h3>
 					<div class="card">
-						<div class="card-body">
+						<div class="card-body border">
 							<?php the_content(); ?>
 						</div>
 					</div>
