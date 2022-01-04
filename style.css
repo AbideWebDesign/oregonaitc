@@ -12193,6 +12193,10 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 /*
 ** WP-Members
 */
+#wpmem_login, #wpmem_msg, #wpmem_reg, .wpmem_msg {
+  width: 100%;
+}
+
 #wpmem_reg fieldset, #wpmem_login fieldset {
   margin: 0;
 }

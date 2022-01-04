@@ -15,7 +15,7 @@
 				</div>
 				<div class="col-lg-4 offset-lg-1">
 					<div class="card">
-						<div class="card-body">
+						<div class="card-body border">
 							<?php echo do_shortcode('[wpmem_form login]'); ?>
 						</div>
 					</div>

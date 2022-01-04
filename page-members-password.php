@@ -7,7 +7,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-4">
 					<div class="card">
-						<div id="password-reset" class="card-body">
+						<div id="password-reset" class="card-body border">
 							<?php echo do_shortcode('[wpmem_form password]'); ?>
 						</div>
 					</div>

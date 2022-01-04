@@ -5,7 +5,7 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-4">
 				<div class="card">
-					<div class="card-body">
+					<div class="card-body border">
 						<?php echo do_shortcode('[wpmem_form forgot_username]'); ?>
 					</div>
 				</div>
