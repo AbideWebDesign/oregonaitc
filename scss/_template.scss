@@ -1450,6 +1450,9 @@ form.woocommerce-checkout, .woocommerce ul.order_details {
 /*
 ** Gravity Form Overrides
 */
+#gform_wrapper_37 .ginput_container_password .gform_show_password {
+	display: none;
+}
 body .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
 	@extend .form-control;
 	padding: 7px 0 7px 3px !important;

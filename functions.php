@@ -570,7 +570,7 @@ function submit_library_order() {
 						<td><strong>Link</strong></td>
 					</tr>";
 	
-	$headers = array( 'Content-Type: text/html; charset=UTF-8' );
+	$headers = array( 'Content-Type: text/html; charset=UTF-8', 'From: Oregon Agriculture in the Classroom <noreply@oregonaitc.org>', 'Reply-To: Oregon Agriculture in the Classroom <aitc@oregonstate.edu>');
 	
 	$order = array();
 	
@@ -714,7 +714,7 @@ function submit_library_order() {
 	
 	wp_mail( $current_user->user_email, 'Library Order Confirmation - #' . $post_id, $content, $headers );
 	
-	unset($_SESSION['cart']);
+	unset( $_SESSION['cart'] );
 	
 }
 
