@@ -577,7 +577,7 @@ function submit_library_order() {
 	// Run through order
 	foreach( $_SESSION['cart'] as $id=>$value ) {
 		
-		$resource = get_field( 'resource_name', $id );
+		$resource = get_field_object( 'resource_name', $id );
 	
 		$name = $resource['value'];
 	
@@ -590,9 +590,9 @@ function submit_library_order() {
 		$return_date = $_POST['return-date-picker-' . $id];		
 		
 		// Update quantity available and checkout total
-		$available = get_field( 'total_available', $id );
+		$available = get_field_object( 'total_available', $id );
 			
-		$total = get_field( 'checked_out_total', $id );
+		$total = get_field_object( 'checked_out_total', $id );
 	
 		$types = get_the_terms( $id, 'resource_type' );
 	
