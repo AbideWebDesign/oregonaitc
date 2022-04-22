@@ -1,11 +1,11 @@
 {
-    "key": "group_5a5e4908cf0a2",
-    "title": "Map - Apple",
+    "key": "group_5a5f724b2b4a3",
+    "title": "Map - Shrimp",
     "fields": [
         {
-            "key": "field_5f74b7a0cb72c",
-            "label": "Apple Hood River",
-            "name": "apple_hood_river",
+            "key": "field_5a5f724b56ae0",
+            "label": "Shrimp Clatsop",
+            "name": "shrimp_clatsop",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,7 +18,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5f74b7a0cb72d",
+                    "key": "field_5a5f724b5c4b8",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -42,7 +42,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb72e",
+                    "key": "field_5a5f724b5c52f",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -61,7 +61,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb72f",
+                    "key": "field_5a5f724b5c5a1",
                     "label": "Content",
                     "name": "content",
                     "type": "wysiwyg",
@@ -80,7 +80,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5f74b7a0cb730",
+                    "key": "field_5a5f724b5c613",
                     "label": "Video URL",
                     "name": "video_url",
                     "type": "url",
@@ -96,11 +96,11 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb731",
+                    "key": "field_5ace23fd7f59a",
                     "label": "Learn More Page",
                     "name": "learn_more_page",
                     "type": "page_link",
-                    "instructions": "Optional",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -111,7 +111,7 @@
                     "post_type": [
                         "page"
                     ],
-                    "taxonomy": "",
+                    "taxonomy": [],
                     "allow_null": 1,
                     "allow_archives": 0,
                     "multiple": 0
@@ -119,9 +119,9 @@
             ]
         },
         {
-            "key": "field_5a5e4908e8625",
-            "label": "Apple Umatilla",
-            "name": "apple_umatilla",
+            "key": "field_5a5f728f34d6a",
+            "label": "Shrimp Coos",
+            "name": "shrimp_coos",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -134,7 +134,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5a5e4908eef9c",
+                    "key": "field_5a5f728f34d6b",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -158,7 +158,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5a5e4908ef014",
+                    "key": "field_5a5f728f34d6c",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -177,7 +177,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5a5e4908ef086",
+                    "key": "field_5a5f728f34d6d",
                     "label": "Content",
                     "name": "content",
                     "type": "wysiwyg",
@@ -196,7 +196,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5a5e4908ef0f7",
+                    "key": "field_5a5f728f34d6e",
                     "label": "Video URL",
                     "name": "video_url",
                     "type": "url",
@@ -212,11 +212,127 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5acd3757f9c67",
+                    "key": "field_5ace240b7f59b",
                     "label": "Learn More Page",
                     "name": "learn_more_page",
                     "type": "page_link",
-                    "instructions": "Optional",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "allow_archives": 0,
+                    "multiple": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5a5f727334d65",
+            "label": "Shrimp Lincoln",
+            "name": "shrimp_lincoln",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5a5f727334d66",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5a5f727334d67",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a5f727334d68",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5a5f727334d69",
+                    "label": "Video URL",
+                    "name": "video_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ace241b7f59c",
+                    "label": "Learn More Page",
+                    "name": "learn_more_page",
+                    "type": "page_link",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -240,7 +356,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-apple"
+                "value": "acf-options-shrimp"
             }
         ]
     ],
@@ -253,5 +369,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650642835
+    "modified": 1650642728
 }

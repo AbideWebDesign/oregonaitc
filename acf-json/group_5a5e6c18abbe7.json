@@ -1,11 +1,11 @@
 {
-    "key": "group_5a5e4908cf0a2",
-    "title": "Map - Apple",
+    "key": "group_5a5e6c18abbe7",
+    "title": "Map - Crab",
     "fields": [
         {
-            "key": "field_5f74b7a0cb72c",
-            "label": "Apple Hood River",
-            "name": "apple_hood_river",
+            "key": "field_5a5e6c18b84a5",
+            "label": "Crab Clatsop",
+            "name": "crab_clatsop",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,7 +18,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5f74b7a0cb72d",
+                    "key": "field_5a5e6c18bf0db",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -42,7 +42,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb72e",
+                    "key": "field_5a5e6c18bf155",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -61,7 +61,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb72f",
+                    "key": "field_5a5e6c18bf1c7",
                     "label": "Content",
                     "name": "content",
                     "type": "wysiwyg",
@@ -80,7 +80,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5f74b7a0cb730",
+                    "key": "field_5a5e6c18bf23b",
                     "label": "Video URL",
                     "name": "video_url",
                     "type": "url",
@@ -96,11 +96,11 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5f74b7a0cb731",
+                    "key": "field_5acd3d39e5e0a",
                     "label": "Learn More Page",
                     "name": "learn_more_page",
                     "type": "page_link",
-                    "instructions": "Optional",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -111,7 +111,7 @@
                     "post_type": [
                         "page"
                     ],
-                    "taxonomy": "",
+                    "taxonomy": [],
                     "allow_null": 1,
                     "allow_archives": 0,
                     "multiple": 0
@@ -119,9 +119,9 @@
             ]
         },
         {
-            "key": "field_5a5e4908e8625",
-            "label": "Apple Umatilla",
-            "name": "apple_umatilla",
+            "key": "field_5a5e6c55b2bba",
+            "label": "Crab Coos",
+            "name": "crab_coos",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -134,7 +134,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5a5e4908eef9c",
+                    "key": "field_5a5e6c55b2bbb",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -158,7 +158,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5a5e4908ef014",
+                    "key": "field_5a5e6c55b2bbc",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -177,7 +177,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5a5e4908ef086",
+                    "key": "field_5a5e6c55b2bbd",
                     "label": "Content",
                     "name": "content",
                     "type": "wysiwyg",
@@ -196,7 +196,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5a5e4908ef0f7",
+                    "key": "field_5a5e6c55b2bbe",
                     "label": "Video URL",
                     "name": "video_url",
                     "type": "url",
@@ -212,11 +212,127 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5acd3757f9c67",
+                    "key": "field_5acd3d49e5e0b",
                     "label": "Learn More Page",
                     "name": "learn_more_page",
                     "type": "page_link",
-                    "instructions": "Optional",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "allow_archives": 0,
+                    "multiple": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5a5e6c3db2bb5",
+            "label": "Crab Lincoln",
+            "name": "crab_lincoln",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5a5e6c3db2bb6",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5a5e6c3db2bb7",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a5e6c3db2bb8",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5a5e6c3db2bb9",
+                    "label": "Video URL",
+                    "name": "video_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5acd3d5de5e0c",
+                    "label": "Learn More Page",
+                    "name": "learn_more_page",
+                    "type": "page_link",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -240,7 +356,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-apple"
+                "value": "acf-options-crab"
             }
         ]
     ],
@@ -253,5 +369,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650642835
+    "modified": 1650642657
 }
