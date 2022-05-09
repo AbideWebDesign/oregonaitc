@@ -27,17 +27,17 @@ $logo = get_field('logo_color', 'options');
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37648780-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71986030-1"></script>
 
 	<script>
 
-	  window.dataLayer = window.dataLayer || [];
-
-	  function gtag(){dataLayer.push(arguments);}
-
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-71986030-1');
+		window.dataLayer = window.dataLayer || [];
+		
+		function gtag(){dataLayer.push(arguments);}
+		
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-71986030-1');
 
 	</script>
 
