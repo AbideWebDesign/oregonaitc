@@ -93,9 +93,7 @@ jQuery( document ).ready( function( $ ) {
         eventLabel = eventParams[2]
     
 		gtag( 'event',eventAction,{ 'event_category': eventCategory,'event_label': eventLabel } )
-    
-		console.log("The Google Analytics Event passed is Action: " + eventAction + ", Category: " + eventCategory + ", Label: " + eventLabel);
-    
+        
     } );
 
 } );
