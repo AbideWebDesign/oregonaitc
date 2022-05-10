@@ -75,5 +75,27 @@ jQuery( document ).ready( function( $ ) {
 		}
 		
 	} );
+	
+	$( document ).on( 'click', '[data-gaevent]', function( e ) {
+
+		var $link = $(this);
+		
+		var csvEventData = $link.data('gaevent');
+
+		var eventParams = csvEventData.split(',');
+
+		if ( ! eventParams ) { return; }
+	        
+        eventCategory = eventParams[0]
+        
+        eventAction = eventParams[1]
+        
+        eventLabel = eventParams[2]
+    
+		gtag( 'event',eventAction,{ 'event_category': eventCategory,'event_label': eventLabel } )
+    
+		console.log("The Google Analytics Event passed is Action: " + eventAction + ", Category: " + eventCategory + ", Label: " + eventLabel);
+    
+    } );
 
 } );

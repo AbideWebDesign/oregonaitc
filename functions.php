@@ -32,6 +32,8 @@ function enqueue_child_theme_scripts() {
 	
 	wp_enqueue_script( 'jquery' );
 	
+	wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/includes/js/library.js'), true );
+
 	// Library resource scripts
 	if ( is_page_template( 'page-library-hold.php' ) ) {
 	
@@ -40,9 +42,7 @@ function enqueue_child_theme_scripts() {
 		wp_enqueue_script( 'gijgo.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.10/combined/js/gijgo.min.js', 'jquery', '', true );
 	
 		wp_enqueue_script( 'date-picker.js', get_stylesheet_directory_uri() . '/includes/js/date-picker.js', 'gijgo.min.js', '', true );
-		
-		wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/includes/js/library.js'), true );
-	
+			
 	}
 
 }
