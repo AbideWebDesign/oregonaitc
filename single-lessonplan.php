@@ -43,13 +43,13 @@ if ( have_posts() ) :
 									
 									<?php if ( get_field('lesson_plan_pdf') ): ?>
 									
-										<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white btn-sm btn-block" onClick="ga('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?>', 10);"><i class="fa fa-download"></i> Download PDF</a></p>
+										<p class="text-center m-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf'); ?>" class="btn btn-white btn-sm btn-block" onClick="gtag('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?>', 10);"><i class="fa fa-download"></i> Download PDF</a></p>
 									
 									<?php endif; ?>
 									
 									<?php if ( get_field('lesson_plan_pdf_sp') ): ?>
 									
-										<p class="text-center mt-1 mb-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf_sp'); ?>" class="btn btn-white btn-sm btn-block" onClick="ga('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?> - SP', 10);"><i class="fa fa-download"></i> Download PDF (Spanish)</a></p>
+										<p class="text-center mt-1 mb-0"><a target="_blank" href="<?php the_field('lesson_plan_pdf_sp'); ?>" class="btn btn-white btn-sm btn-block" onClick="gtag('send', 'event', 'Lesson Plans', 'Download', '<?php the_title(); ?> - SP', 10);"><i class="fa fa-download"></i> Download PDF (Spanish)</a></p>
 									
 									<?php endif; ?>
 									
