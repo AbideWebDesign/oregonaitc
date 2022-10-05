@@ -44,7 +44,7 @@ if ( have_posts() ):
 
 								<h5 class="card-title text-white mb-1"><?php _e('Reserve Item'); ?></h3>
 								
-								<?php if ( get_field('track_inventory') ): ?>
+								<?php if ( get_field('track_inventory') && ! get_field('unlimited_quantity') ): ?>
 								
 									<p class="mb-1 text-white text-md"><strong><?php _e('Total Available:'); ?> </strong> <?php the_field('total_available'); ?> <?php _e('(of'); ?> <?php the_field('total_copies'); ?><?php _e(')'); ?></p>
 								
@@ -74,7 +74,7 @@ if ( have_posts() ):
 
 						</div>
 
-						<div class="card d-none d-md-block">
+						<div class="card border d-none d-md-block">
 
 							<div class="card-body">
 
@@ -104,7 +104,7 @@ if ( have_posts() ):
 							
 						<?php endif; ?>
 						
-						<div class="card mb-1">
+						<div class="card border mb-2">
 
 							<div class="card-body">									
 
@@ -134,7 +134,7 @@ if ( have_posts() ):
 	
 						</div>
 	
-						<div class="card bg-primary mb-1">
+						<div class="card bg-primary mb-2">
 	
 							<div class="card-body">
 	
@@ -144,7 +144,7 @@ if ( have_posts() ):
 	
 						</div>
 	
-						<div class="card mb-1">
+						<div class="card border mb-2">
 
 							<div class="card-body">
 

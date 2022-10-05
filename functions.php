@@ -10,7 +10,9 @@ function enqueue_child_theme_styles() {
 	$parent_style = 'abide-style';
 	
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), wp_get_theme()->get('Version') );
-    	
+	
+	wp_enqueue_style( 'fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css' );
+  	
 }
 
 /**
@@ -33,6 +35,8 @@ function enqueue_child_theme_scripts() {
 	wp_enqueue_script( 'jquery' );
 	
 	wp_enqueue_script( 'library.js', get_stylesheet_directory_uri() . '/includes/js/library-min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/includes/js/library.js'), true );
+	
+	wp_enqueue_script( 'fancybox.js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js', array( 'jquery' ), true );
 
 	// Library resource scripts
 	if ( is_page_template( 'page-library-hold.php' ) ) {

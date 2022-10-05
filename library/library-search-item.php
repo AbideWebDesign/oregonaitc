@@ -1,9 +1,11 @@
 <?php
+
 $type = get_post_type(get_the_ID());
 
 if ( $type == 'resource' ) { 
 	
 	$types = get_the_terms(get_the_ID(), 'resource_type');
+	
 	$categories = get_the_terms(get_the_ID(), 'resource_category');
 
 }
@@ -11,20 +13,30 @@ if ( $type == 'resource' ) {
 if ( $type == 'lessonplan' ) { 
 
 	$types = get_the_terms(get_the_ID(), 'lessonplan_type');
+	
 	$categories = get_the_terms(get_the_ID(),'lessonplan_category');
 
 }
 
 $available = get_field('total_available');
+
 $image = get_field('resource_image');
+
 $branch = get_the_terms(get_the_ID(), 'branch');
+
+$unlimted = get_field('unlimited_quantity');
 ?>
 
 <div class="row mb-3">
+
 	<div class="col-12">
-		<div class="card w-100">
+
+		<div class="card border w-100">
+
 			<div class="card-body">
+
 				<div class="row">
+
 					<div class="col-sm-4 col-lg-3">
 						
 						<?php if ( $type == 'resource' ): ?>
@@ -33,16 +45,20 @@ $branch = get_the_terms(get_the_ID(), 'branch');
 						
 							<?php if ( is_user_logged_in() ): ?>
 						
-								<?php if ( isset($_SESSION['cart'][$id]) ): ?>
+								<?php if ( isset( $_SESSION['cart'][$id] ) ): ?>
 						
 						 			<p class="text-center mt-2 mb-0">
+						 
 						 				<a href="#" class="btn btn-secondary btn-disabled btn-sm btn-block d-none d-lg-block"><i class="fas fa-shopping-cart"></i> In Cart</a>
+						 
 						 			</p>
 						
-								<?php elseif ( $available > 0 ): ?>
+								<?php elseif ( $available > 0 || $unlimted ): ?>
 						
 						 			<p class="text-center mt-2 mb-0">
+						 
 						 				<a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch[0]->slug; ?>" class="btn btn-primary btn-sm btn-block d-none d-lg-block">Place Hold</a>
+						 
 						 			</p>
 						
 						 		<?php elseif ( $available == 0 ): ?>
@@ -54,7 +70,9 @@ $branch = get_the_terms(get_the_ID(), 'branch');
 							<?php else: ?>
 						
 								<p class="text-center m-0">
+						
 									<a href="<?php echo home_url(); ?>/login?redirect_to=oregonaitc.org/place-hold/?resource_id=<?php the_ID(); ?>" class="btn btn-primary btn-sm btn-block mt-2 d-none d-lg-block">Login to Hold</a>
+						
 								</p>
 						
 							<?php endif; ?>
@@ -65,11 +83,14 @@ $branch = get_the_terms(get_the_ID(), 'branch');
 						
 						<?php endif; ?>
 						
-						<?php if ( $type == 'resource' ): ?><p class="mt-2 mb-0 text-sm d-none d-lg-block"><strong>Total Available: </strong><?php the_field('total_available'); ?> (of <?php the_field('total_copies'); ?>)</p><?php endif; ?>
+						<?php if ( $type == 'resource' && ! $unlimted ): ?><p class="mt-2 mb-0 text-sm d-none d-lg-block"><strong>Total Available: </strong><?php the_field('total_available'); ?> (of <?php the_field('total_copies'); ?>)</p><?php endif; ?>
 					
 					</div>
+				
 					<div class="col-sm-8 col-lg-9">
+				
 						<div class="border-bottom border-light mb-2">
+				
 							<h5 class="card-title"><a href="<?php the_permalink(); ?><?php if ( $type == 'resource' ): ?>?branch=<?php echo $branch[0]->slug; ?><?php endif; ?>"><?php the_title(); ?></a></h5>
 					
 							<?php if ( $type == 'lessonplan' ): ?>
@@ -119,6 +140,7 @@ $branch = get_the_terms(get_the_ID(), 'branch');
 						<?php endif; ?>
 						
 						<div class="card-footer px-0 pb-0">				
+					
 							<p class="text-md text-grey m-0 pt-2 border-top border-light">Categories: 
 							
 							<?php $last = end($categories); ?>
@@ -160,9 +182,15 @@ $branch = get_the_terms(get_the_ID(), 'branch');
 							<?php endif; ?>
 						
 						</div>
+
 					</div>
+
 				</div>
+
 			</div>
+
 		</div>
+
 	</div>
+
 </div>

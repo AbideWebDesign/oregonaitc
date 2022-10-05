@@ -20,6 +20,16 @@ jQuery( document ).ready( function( $ ) {
 				
 				errors = true;
 																
+			} else if ( $( this ).val() > $( this ).attr( 'max' ) ) {
+			
+				$( this ).addClass( 'is-invalid' ); 
+				
+				$( '#error-kit-qty-max' ).removeClass( 'd-none' );
+				
+				$( '#error-kit-qty-max-text').append(' Max amount you can order is ' + $( this ).attr( 'max' ) + '.' );
+				
+				errors = true;
+				
 			} else {
 				
 				$( this ).removeClass( 'is-invalid' );

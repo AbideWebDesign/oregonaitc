@@ -650,10 +650,10 @@
                 "id": ""
             },
             "default_value": "",
+            "delay": 0,
             "tabs": "all",
             "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "media_upload": 0
         },
         {
             "key": "field_5b4e38648ff71",
@@ -669,10 +669,10 @@
                 "id": ""
             },
             "default_value": "",
+            "delay": 0,
             "tabs": "all",
             "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "media_upload": 0
         },
         {
             "key": "field_5b4e7ac70e0a0",
@@ -688,10 +688,29 @@
                 "id": ""
             },
             "default_value": "",
+            "delay": 0,
             "tabs": "all",
             "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "media_upload": 0
+        },
+        {
+            "key": "field_633caea2b5285",
+            "label": "Library Hold Max Kit Qty Message",
+            "name": "library_hold_max_kit_qty_message",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_602f079929225",
@@ -846,5 +865,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1613751526
+    "show_in_rest": 0,
+    "modified": 1664921453
 }

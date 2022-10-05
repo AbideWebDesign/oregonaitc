@@ -60,7 +60,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 
 			<div class="col">
 
-				<div class="card">
+				<div class="card border">
 
 					<div class="card-body">
 
@@ -91,6 +91,12 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 							<div id="error-kit-qty" class="alert alert-danger d-none" role="alert">
 
 								<p class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php the_field('library_order_kit_quantity_message', 'options'); ?></p>
+
+							</div>
+							
+							<div id="error-kit-qty-max" class="alert alert-danger d-none" role="alert">
+
+								<p id="error-kit-qty-max-text" class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php the_field('library_hold_max_kit_qty_message', 'options'); ?></p>
 
 							</div>
 							
@@ -128,11 +134,11 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 													
 													<?php if ( has_term( $kits, 'resource_type', $id) ): $kit = true; ?>
 														
-														<input class="kit-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
+														<input class="kit-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : get_field('total_available', $id) ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
 															      													
       												<?php else: ?>
       													      														
-      													<input class="resource-qty form-control" type="number" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
+      													<input class="resource-qty form-control" type="number" min="1" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
       													
 													<?php endif; ?>
 													

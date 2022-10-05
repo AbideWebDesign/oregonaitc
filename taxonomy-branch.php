@@ -62,11 +62,9 @@
 
 					<?php endwhile; ?>
 
-					
-
 				<?php else: ?>
 
-					<div class="card">
+					<div class="card border">
 
 						<div class="card-body">
 

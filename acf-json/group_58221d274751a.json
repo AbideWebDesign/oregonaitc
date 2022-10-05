@@ -236,9 +236,28 @@
             },
             "message": "",
             "default_value": 1,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_633cb378479d0",
+            "label": "Unlimited Quantity",
+            "name": "unlimited_quantity",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_559187e95b1cf",
@@ -253,6 +272,11 @@
                         "field": "field_55afe352dcf63",
                         "operator": "==",
                         "value": "1"
+                    },
+                    {
+                        "field": "field_633cb378479d0",
+                        "operator": "!=",
+                        "value": "1"
                     }
                 ]
             ],
@@ -262,14 +286,12 @@
                 "id": ""
             },
             "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": "",
             "max": "",
+            "placeholder": "",
             "step": "",
-            "readonly": 0,
-            "disabled": 0
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_559188655b1d0",
@@ -284,6 +306,11 @@
                         "field": "field_55afe352dcf63",
                         "operator": "==",
                         "value": "1"
+                    },
+                    {
+                        "field": "field_633cb378479d0",
+                        "operator": "!=",
+                        "value": "1"
                     }
                 ]
             ],
@@ -293,14 +320,12 @@
                 "id": ""
             },
             "default_value": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": "",
             "max": "",
+            "placeholder": "",
             "step": "",
-            "readonly": 0,
-            "disabled": 0
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_55a6971e4fb5f",
@@ -340,9 +365,9 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_55f89ffe8781f",
@@ -472,7 +497,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_60187f9eee6d4"
                 },
                 {
                     "key": "field_60187fbeee6d6",
@@ -491,9 +517,11 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_60187f9eee6d4"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -507,7 +535,7 @@
     ],
     "menu_order": 0,
     "position": "acf_after_title",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
@@ -515,5 +543,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1612218368
+    "show_in_rest": 0,
+    "modified": 1664923228
 }
