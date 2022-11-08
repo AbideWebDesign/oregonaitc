@@ -65,6 +65,8 @@ p {
 .card .cart-notice {
 	p {
 		font-size: 16px;
+	}
+	p:last-child {
 		margin: 0;
 	}
 }

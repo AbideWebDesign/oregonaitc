@@ -25,6 +25,7 @@ $image = get_field('resource_image');
 $branch = get_the_terms(get_the_ID(), 'branch');
 
 $unlimted = get_field('unlimited_quantity');
+
 ?>
 
 <div class="row mb-3">

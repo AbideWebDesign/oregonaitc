@@ -260,6 +260,54 @@
             "ui": 1
         },
         {
+            "key": "field_6349a7e3886b8",
+            "label": "Class Set",
+            "name": "class_set",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Treat this resource as a class set",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6349a80e886b9",
+            "label": "Class Set Unit",
+            "name": "class_set_unit",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6349a7e3886b8",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_559187e95b1cf",
             "label": "Total Copies",
             "name": "total_copies",
@@ -544,5 +592,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664923228
+    "modified": 1665771564
 }

@@ -594,7 +594,12 @@ function submit_library_order() {
 		$return_date = $_POST['return-date-picker-' . $id];		
 		
 		// Update quantity available and checkout total
-		$available = get_field_object( 'total_available', $id );
+		
+		if ( ! get_field('unlimited_quantity', $id) ) {
+			
+			$available = get_field_object( 'total_available', $id );
+			
+		}
 			
 		$total = get_field_object( 'checked_out_total', $id );
 	
@@ -603,23 +608,12 @@ function submit_library_order() {
 		$quantity = 1;
 		
 		foreach( $types as $type ) {
+
+			$t = $total['value'] + $_POST['q'.$id];
 			
-			if ( $type->name == 'Kits' || $type->name == 'Printed Materials' ) {
+			$quantity = $_POST['q'.$id];
 			
-				$t = $total['value'] + $_POST['q'.$id];
-				
-				$quantity = $_POST['q'.$id];
-				
-				$a = $available['value'] - $quantity;
-			
-			} else {
-			
-				$t = $total['value'] + 1;
-				
-				$a = $available['value'] - 1;
-			
-			}
-		
+			$a = $available['value'] - $quantity;		
 		}
 		
 		$usertotal = get_user_meta( $current_user->ID, 'total_library_checkouts' ); 
@@ -653,16 +647,18 @@ function submit_library_order() {
 		
 	}
 	
+	$content .= "</table>";
+	
 	// Check if there is a comment
 	if ( isset( $_POST['comment'] ) ) {
 		
-		$content .= '<p><strong>Comments</strong><br>' . $_POST['comment'] . '</p>';
-		
 		$comment = $_POST['comment'];
-	
+		
+		$content .= '<p><strong>Comments</strong><br>' . $comment . '</p>';
+			
 	} 
 	
-	$content .="</table>";
+	$content .= '<p><strong>Students Reached: </strong>' . $_POST['students'] . '</p>';
 	
 	// Create new Order post		
 	$post_data = array(
@@ -704,6 +700,8 @@ function submit_library_order() {
 		update_field( 'mailing_address', $mailing_address, $post_id );
 	
 		update_field( 'contact_information', $contact_info, $post_id );
+		
+		update_field( 'students_reached', $_POST['students'], $post_id );
 		
 		if ( $comment ) {
 			

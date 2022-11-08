@@ -618,6 +618,25 @@
             "ui": 1
         },
         {
+            "key": "field_6349b5a670c36",
+            "label": "Library Number of Students Message",
+            "name": "library_students_message",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5b4e2bb412d7e",
             "label": "Library Hold Message",
             "name": "library_hold_message",
@@ -866,5 +885,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664921453
+    "modified": 1665775181
 }

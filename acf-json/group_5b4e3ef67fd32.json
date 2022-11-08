@@ -135,7 +135,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url"
+                    "return_format": "url",
+                    "parent_repeater": "field_5b7458b40818a"
                 },
                 {
                     "key": "field_5b7459110818c",
@@ -156,7 +157,8 @@
                     "append": "",
                     "min": "",
                     "max": "",
-                    "step": ""
+                    "step": "",
+                    "parent_repeater": "field_5b7458b40818a"
                 },
                 {
                     "key": "field_5b74591f0818d",
@@ -173,7 +175,8 @@
                     },
                     "display_format": "m\/d\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 1,
+                    "parent_repeater": "field_5b7458b40818a"
                 },
                 {
                     "key": "field_5b74592c0818e",
@@ -190,9 +193,11 @@
                     },
                     "display_format": "m\/d\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 1,
+                    "parent_repeater": "field_5b7458b40818a"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_5b745c03cfabd",
@@ -250,6 +255,27 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_6349b86b2ed85",
+            "label": "Number of Students Reached",
+            "name": "students_reached",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -269,5 +295,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1613757456
+    "show_in_rest": 0,
+    "modified": 1665775749
 }

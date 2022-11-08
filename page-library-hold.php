@@ -1,6 +1,4 @@
-<?php /* Template Name: Library Hold Page */ ?>
-
-<?php
+<?php /* Template Name: Library Hold Page */ 
 
 session_start();
 	
@@ -99,7 +97,13 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 								<p id="error-kit-qty-max-text" class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php the_field('library_hold_max_kit_qty_message', 'options'); ?></p>
 
 							</div>
-							
+
+							<div id="error-students" class="alert alert-danger d-none" role="alert">
+
+								<p id="error-students-text" class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php the_field('library_students_message', 'options'); ?></p>
+
+							</div>
+
 							<form method="post" id="form" class="inb30" action="<?php echo home_url(); ?>/place-hold">
 
 								<div class="table-responsive">
@@ -124,21 +128,23 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 											
 											<tr>
 
-												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a></td>
+												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a><?php if ( get_field('class_set', $id) ): ?><div class="badge badge-secondary text-white d-block"><i class="fa fa-users"></i> Class Set of <?php the_field('class_set_unit', $id); ?></div><?php endif; ?></td>
 
 												<td class="align-middle"><?php echo ucfirst( $value['branch'] ); ?></td>
 
 												<td class="align-middle">
 													
 													<?php $kits = array( 'Kits', 'Printed Materials' ); ?>
-													
+																										
 													<?php if ( has_term( $kits, 'resource_type', $id) ): $kit = true; ?>
+													
+														<?php $total_available = ( get_field('class_set', $id ) ? round( get_field('total_available', $id) / get_field('class_set_unit', $id) ) : get_field('total_available', $id) ); ?>
 														
-														<input class="kit-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : get_field('total_available', $id) ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
+														<input class="resource-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
 															      													
       												<?php else: ?>
       													      														
-      													<input class="resource-qty form-control" type="number" min="1" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1" readonly="readonly">
+      													<input class="resource-qty form-control" type="number" min="1" max="<?php echo get_field('total_available', $id) ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
       													
 													<?php endif; ?>
 													
@@ -173,6 +179,16 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 								<div class="row">
 
 									<div class="col-lg-5">
+
+										<div class="form-group mb-3">
+
+											<h5 class="card-title mb-1"><label for="students-reached"><?php _e('Students Reached:'); ?></label></h5>
+											
+											<p class="text-md mb-2"><?php the_field('library_students_message', 'options'); ?></p>
+
+										  	<input class="form-control" type="number" min="1" name="students" id="students" placeholder="Number of students">
+
+										</div>
 
 										<div class="form-group mb-3">
 

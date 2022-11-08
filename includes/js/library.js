@@ -10,7 +10,7 @@ jQuery( document ).ready( function( $ ) {
 		
 		$( '#error-kit-qty' ).addClass( 'd-none' );
 		
-		$.each( $( '.kit-qty' ), function( index, value ) { // Check for errors in quantity
+		$.each( $( '.resource-qty' ), function( index, value ) { // Check for errors in quantity
 
 			if ( $( this ).val() == 0 ) {
 				
@@ -20,8 +20,8 @@ jQuery( document ).ready( function( $ ) {
 				
 				errors = true;
 																
-			} else if ( $( this ).val() > $( this ).attr( 'max' ) ) {
-			
+			} else if ( parseInt ( $( this ).val() ) > parseInt( $( this ).attr( 'max' ) ) ) {
+
 				$( this ).addClass( 'is-invalid' ); 
 				
 				$( '#error-kit-qty-max' ).removeClass( 'd-none' );
@@ -36,13 +36,7 @@ jQuery( document ).ready( function( $ ) {
 				
 			}
 
-			total_qty ++;
-		
-		} );
-		
-		$.each( $( '.resource-qty' ), function( index, value ) { // Count additional quantities.
-
-			total_qty += parseInt( $( this ).val() );
+			total_qty += parseInt( $( this ).val() )
 		
 		} );
 		
@@ -54,29 +48,45 @@ jQuery( document ).ready( function( $ ) {
 			
 		}
 		
-		 if ( ! $( '#termCheck').prop( 'checked' ) ) {
-			 
-			 errors = true;
-			 
-			 $( '#termCheck').addClass( 'is-invalid' );
-			 
-		 } else {
-			 
-			  $( '#termCheck').removeClass( 'is-invalid' );
-			 
-		 }
+		if ( ! $( '#termCheck').prop( 'checked' ) ) {
 		 
-		 if ( ! $( '#shippingCheck').prop( 'checked' ) ) {
+			errors = true;
+			
+			$( '#termCheck').addClass( 'is-invalid' );
+		 
+		} else {
+		 
+			$( '#termCheck').removeClass( 'is-invalid' );
+		 
+		}
+		
+		if ( ! $( '#shippingCheck').prop( 'checked' ) ) {
+		 
+			errors = true;
+			
+			$( '#shippingCheck').addClass( 'is-invalid' );
+		 
+		} else {
+		 
+			$( '#shippingCheck').removeClass( 'is-invalid' );
+		 
+		}
+		 
+		if ( ! $( '#students').val() ) {
 			 
-			 errors = true;
+			errors = true;
+			
+			$( '#error-students' ).removeClass( 'd-none' );
+			
+			$( '#students').addClass( 'is-invalid' );
 			 
-			 $( '#shippingCheck').addClass( 'is-invalid' );
-			 
-		 } else {
-			 
-			  $( '#shippingCheck').removeClass( 'is-invalid' );
-			 
-		 }
+		} else {
+			
+			$( '#error-students' ).addClass( 'd-none' );
+			
+			$( '#students').removeClass( 'is-invalid' );
+			
+		}
 		
 		if ( ! errors ) {
 			

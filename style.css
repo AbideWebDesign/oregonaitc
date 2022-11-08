@@ -11060,6 +11060,8 @@ body table.gsurvey-likert th.gsurvey-likert-choice-label li,
 
 .card .cart-notice p {
   font-size: 16px;
+}
+.card .cart-notice p:last-child {
   margin: 0;
 }
 
