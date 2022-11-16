@@ -40,14 +40,6 @@ jQuery( document ).ready( function( $ ) {
 		
 		} );
 		
-		if ( total_qty > 30 ) { // Limit total number of items to 30
-									
-			errors = true;
-			
-			$( '#error-max-qty' ).removeClass( 'd-none' );
-			
-		}
-		
 		if ( ! $( '#termCheck').prop( 'checked' ) ) {
 		 
 			errors = true;

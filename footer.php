@@ -100,7 +100,7 @@
 	
 					<div class="col-sm-6 text-center text-sm-right">
 	
-						Website Design & Maintaince by <a href="https://abidewebdesign.com" target="_blank">Abide Web Design</a>
+						Website Design & Maintenance by <a href="https://abidewebdesign.com" target="_blank">Abide Web Design</a>
 	
 					</div>
 	

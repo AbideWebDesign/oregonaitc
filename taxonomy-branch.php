@@ -16,14 +16,6 @@
 
 					<div class="card-body">
 
-						<div class="mb-3 text-center">
-
-							<button class="btn btn-primary btn-sm" onclick="FWP.refresh()"><?php _e('Apply'); ?></button>
-
-							<button class="btn btn-secondary btn-sm" onclick="FWP.reset()"><?php _e('Clear'); ?></button>
-
-						</div>
-
 						<?php echo do_shortcode( '[facetwp facet="search_resource"]' ); ?>
 
 						<h6 class="card-title"><?php _e('Resource Types'); ?></h6>
@@ -33,14 +25,6 @@
 						<h6 class="card-title"><?php _e('Resource Categories'); ?></h6>
 
 						<?php echo do_shortcode( '[facetwp facet="resource_category"]' ); ?>
-
-						<div class="text-center">
-
-							<button class="btn btn-primary btn-sm" onclick="FWP.refresh()"><?php _e('Apply'); ?></button>
-
-							<button class="btn btn-secondary btn-sm" onclick="FWP.reset()"><?php _e('Clear'); ?></button>
-
-						</div>
 
 					</div>
 
@@ -53,7 +37,7 @@
 			<div class="col-lg-9">
 
 				<div class="mb-1 text-right text-sm"><?php _e('Viewing'); ?> <?php echo do_shortcode( '[facetwp counts="true"]' ); ?></div>
-
+				
 				<?php if ( have_posts() ): ?>
 
 					<?php while ( have_posts() ): the_post(); ?>					
@@ -112,16 +96,7 @@
 	    
 	    } );
 	   
-	    $( function() {
-        	
-        	if ( 'undefined' !== typeof FWP ) {
-            
-            	FWP.auto_refresh = false;
-        	
-        	}
-    	
-    	} );
-	
+	  	
 	} ) ( jQuery );
 	
 </script>
