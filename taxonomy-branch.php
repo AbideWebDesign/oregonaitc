@@ -25,6 +25,8 @@
 						<h6 class="card-title"><?php _e('Resource Categories'); ?></h6>
 
 						<?php echo do_shortcode( '[facetwp facet="resource_category"]' ); ?>
+						
+						<button class="btn btn-secondary btn-sm" onclick="FWP.reset()">Clear</button>
 
 					</div>
 
