@@ -1,5 +1,7 @@
 jQuery( document ).ready( function( $ ) {
-
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
 	$( '#library-hold' ).click( function( e ) {
 
 		var total_qty = 0;

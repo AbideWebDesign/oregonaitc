@@ -112,7 +112,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 										
 										<thead>
 											
-											<tr><th><?php _e('Resource Name'); ?></th><th><?php _e('Branch'); ?></th><th><?php _e('Qty'); ?></th><th><?php _e('Type'); ?></th><th><?php _e('Age Group'); ?></th><th><?php _e('Arrival Date'); ?></th><th><?php _e('Return Date'); ?></th><th></th></tr>
+											<tr><th><?php _e('Resource Name'); ?></th><th><?php _e('Branch'); ?></th><th width="80" class="text-center"><?php _e('Qty'); ?></th><th width="100" class="text-center"><?php _e('Unit Qty'); ?> <a class="text-primary" data-toggle="tooltip" data-placement="top" title="This is the number of units you will receive for a quantity of 1."><i class="fa fa-info-circle"></i></a></th><th><?php _e('Type'); ?></th><th width="100"><?php _e('Age Group'); ?></th><th><?php _e('Arrival Date'); ?></th><th><?php _e('Return Date'); ?></th><th></th></tr>
 										
 										</thead>
 										
@@ -128,7 +128,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 											
 											<tr>
 
-												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a><?php if ( get_field('class_set', $id) ): ?><div class="badge badge-secondary text-white d-block"><i class="fa fa-users"></i> Class Set of <?php the_field('class_set_unit', $id); ?></div><?php endif; ?></td>
+												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a><?php if ( get_field('class_set', $id) ): ?><div class="badge badge-secondary text-white text-left px-2 py-1 mt-1 d-block"><i class="fa fa-users"></i> This resource comes as a class set of <?php the_field('class_set_unit', $id); ?></div><?php endif; ?></td>
 
 												<td class="align-middle"><?php echo ucfirst( $value['branch'] ); ?></td>
 
@@ -149,12 +149,14 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 													<?php endif; ?>
 													
 												</td>
+												
+												<td class="align-middle text-center"><?php echo ( get_field('class_set', $id) ? the_field('class_set_unit', $id) : '1' ); ?></td>
 
-												<td class="align-middle"><?php foreach ( $types as $type ) echo rtrim( $type->name, "s" ) . '<br>'; ?></td>
+												<td class="align-middle text-center"><?php foreach ( $types as $type ) echo rtrim( $type->name, "s" ) . '<br>'; ?></td>
 
-												<td class="align-middle"><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
+												<td class="align-middle text-center"><?php the_field('minimum_age_group', $id); ?> - <?php the_field('maximum_age_group', $id); ?></td>
 
-												<td class="align-middle"><input name="<?php echo $id; ?>" id="<?php echo $id; ?>" class="datepicker" width="150" readonly="readonly" /></td>
+												<td class="align-middle text-center"><input name="<?php echo $id; ?>" id="<?php echo $id; ?>" class="datepicker" width="150" readonly="readonly" /></td>
 
 												<td class="align-middle">
 
