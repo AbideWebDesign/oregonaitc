@@ -144,7 +144,11 @@ $unlimted = get_field('unlimited_quantity');
 					
 							<p class="text-md text-grey m-0 pt-2 border-top border-light">Categories: 
 							
-							<?php $last = end($categories); ?>
+							<?php if ( is_array( $categories ) ) ?>
+							
+								<?php $last = end( $categories ); ?>
+								
+							<?php else: ?>
 							
 							<?php foreach ( $categories as $category ): ?>
 							
