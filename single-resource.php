@@ -16,7 +16,7 @@ if ( have_posts() ):
 		
 		$id = get_the_ID();
 		
-		$available = get_field_object('total_available', $id);
+		$available = ( get_field('unlimited_quantity') ? '1' : get_field_object( 'total_available', $id ) );
 		
 		$image = get_field('resource_image');
 		
