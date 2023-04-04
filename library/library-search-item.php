@@ -141,28 +141,30 @@ $unlimted = get_field('unlimited_quantity');
 						<?php endif; ?>
 						
 						<div class="card-footer px-0 pb-0">				
-					
-							<p class="text-md text-grey m-0 pt-2 border-top border-light">Categories: 
 							
+							<p class="text-md text-grey m-0 pt-2 border-top border-light">
+												
 							<?php if ( is_array( $categories ) ): ?>
 							
+								Categories: 
+							
 								<?php $last = end( $categories ); ?>
+															
+								<?php foreach ( $categories as $category ): ?>
 								
-							<?php endif; ?>
-							
-							<?php foreach ( $categories as $category ): ?>
-							
-								<?php if ( $category == $last ): ?>
+									<?php if ( $category == $last ): ?>
+										
+										<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch[0]->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a> 
 									
-									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch[0]->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a> 
+									<?php else: ?>
+									
+										<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch[0]->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>, 
+									
+									<?php endif; ?>
 								
-								<?php else: ?>
+								<?php endforeach; ?>	
 								
-									<a href="<?php echo home_url(); ?>/<?php echo ($type == 'resource') ? 'library/' . $branch[0]->slug . '/?fwp_resource_category' : 'lessonplan?fwp_lesson_plan_categories'; ?>=<?php echo $category->slug; ?>"><?php echo $category->name; ?></a>, 
-								
-								<?php endif; ?>
-							
-							<?php endforeach; ?>						
+							<?php endif; ?>					
 							
 							<?php if ( $type == 'resource' ): ?>
 								
