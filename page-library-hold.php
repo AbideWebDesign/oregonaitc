@@ -138,13 +138,13 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 																										
 													<?php if ( has_term( $kits, 'resource_type', $id) ): $kit = true; ?>
 													
-														<?php $total_available = ( get_field('class_set', $id ) ? round( get_field('total_available', $id) / get_field('class_set_unit', $id) ) : get_field('total_available', $id) ); ?>
+														<?php $total_available = get_field('total_available', $id); ?>
 														
 														<input class="resource-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
 															      													
       												<?php else: ?>
       													      														
-      													<input class="resource-qty form-control" type="number" min="1" max="<?php echo get_field('total_available', $id) ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
+      													<input class="resource-qty form-control" type="number" min="1" max="<?php echo $total_available; ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
       													
 													<?php endif; ?>
 													
