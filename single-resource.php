@@ -58,7 +58,7 @@ if ( have_posts() ):
 							 			
 							 			<p class="mb-0"><a class="btn btn-secondary btn-block" href="<?php echo home_url(); ?>/place-hold"></i> <?php _e('Check Out'); ?></a></p>										 		
 								
-									<?php elseif ( $available['value'] > 0 ): ?>
+									<?php elseif ( isset( $available['value'] ) && $available['value'] > 0 ): ?>
 								
 										<p class="mb-0"><a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch[0]->slug; ?>" class="btn btn-white btn-block"><?php _e('Place Hold'); ?></a></p>
 								
