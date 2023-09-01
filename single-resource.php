@@ -62,6 +62,10 @@ if ( have_posts() ):
 								
 										<p class="mb-0"><a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch[0]->slug; ?>" class="btn btn-white btn-block"><?php _e('Place Hold'); ?></a></p>
 								
+									<?php else: ?>
+									
+										<p class="mb-0"><?php _e('Out of Stock'); ?></p>
+										
 									<?php endif; ?>
 								
 								<?php else: ?>
