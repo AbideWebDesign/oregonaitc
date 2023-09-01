@@ -64,7 +64,7 @@ if ( have_posts() ):
 								
 									<?php else: ?>
 									
-										<p class="mb-0"><?php _e('Out of Stock'); ?></p>
+										<p class="mt-2 mb-0 bg-secondary text-white p-1 text-center"><?php _e('Out of Stock'); ?></p>
 										
 									<?php endif; ?>
 								
