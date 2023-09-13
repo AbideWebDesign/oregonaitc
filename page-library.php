@@ -128,7 +128,7 @@ get_header();
 
 						<?php else: ?>
 						
-							<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+						<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( '18849', 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
 						
 						<?php endif; ?>
 						
@@ -184,7 +184,7 @@ get_header();
 
 					<?php else: ?>
 					
-						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+						<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( '18849', 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
 					
 					<?php endif; ?>
 
@@ -240,7 +240,7 @@ get_header();
 
 					<?php else: ?>
 					
-						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+						<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( '18849', 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
 					
 					<?php endif; ?>
 
@@ -296,7 +296,7 @@ get_header();
 
 					<?php else: ?>
 					
-						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+						<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( '18849', 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
 					
 					<?php endif; ?>
 
