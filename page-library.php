@@ -128,7 +128,7 @@ get_header();
 
 					    <div class="card-body">
 
-					    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?> <?php _e('| Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?></p>
+					    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
 
 					    </div>
 
@@ -162,7 +162,7 @@ get_header();
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?> <?php _e('| Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?></p>
+				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
 
 				    </div>
 
@@ -196,7 +196,7 @@ get_header();
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?> <?php _e('| Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?></p>
+				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
 
 				    </div>
 
@@ -230,7 +230,7 @@ get_header();
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?> <?php _e('| Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?></p>
+				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
 
 				    </div>
 
