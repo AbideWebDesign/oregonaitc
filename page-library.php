@@ -121,14 +121,36 @@ get_header();
 						<?php $terms = get_the_terms( $post->id, 'resource_type' ); ?>
 
 						<?php $image = get_field('resource_image'); ?>
+						
+						<?php if ( $image ): ?>
+						
+					    	<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
 
-					    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
-
+						<?php else: ?>
+						
+							<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+						
+						<?php endif; ?>
+						
 					    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
-
+						
 					    <div class="card-body">
-
-					    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
+							
+							<p class="card-text text-sm mb-0">
+								
+								<?php if ( get_field('minimum_age_group') &&  get_field('maximum_age_group') ): ?>
+								
+						    		<?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?>
+						    		
+						    	<?php endif; ?>
+						    	
+						    	<?php if ( $terms ): ?>
+						    	
+						    		<?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?>
+						    		
+						    	<?php endif; ?>
+					    	
+					    	</p>
 
 					    </div>
 
@@ -156,13 +178,35 @@ get_header();
 
 					<?php $image = get_field('resource_image'); ?>
 
-				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
+					<?php if ( $image ): ?>
+					
+				    	<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
+
+					<?php else: ?>
+					
+						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+					
+					<?php endif; ?>
 
 				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
+						<p class="card-text text-sm mb-0">
+							
+							<?php if ( get_field('minimum_age_group') &&  get_field('maximum_age_group') ): ?>
+							
+					    		<?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?>
+					    		
+					    	<?php endif; ?>
+					    	
+					    	<?php if ( $terms ): ?>
+					    	
+					    		<?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?>
+					    		
+					    	<?php endif; ?>
+				    	
+				    	</p>
 
 				    </div>
 
@@ -190,13 +234,35 @@ get_header();
 
 					<?php $image = get_field('resource_image'); ?>
 
-				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image($image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top')); ?></a>
+					<?php if ( $image ): ?>
+					
+				    	<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
+
+					<?php else: ?>
+					
+						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+					
+					<?php endif; ?>
 
 				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
+						<p class="card-text text-sm mb-0">
+							
+							<?php if ( get_field('minimum_age_group') &&  get_field('maximum_age_group') ): ?>
+							
+					    		<?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?>
+					    		
+					    	<?php endif; ?>
+					    	
+					    	<?php if ( $terms ): ?>
+					    	
+					    		<?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?>
+					    		
+					    	<?php endif; ?>
+				    	
+				    	</p>
 
 				    </div>
 
@@ -224,13 +290,35 @@ get_header();
 
 					<?php $image = get_field('resource_image'); ?>
 
-				    <a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array( 'class' => 'img-fluid mb-3 card-image-top' ) ); ?></a>
+					<?php if ( $image ): ?>
+					
+				    	<a href="<?php the_permalink(); ?>?branch=oregon"><?php echo wp_get_attachment_image( $image['id'], 'medium', 0, array('class' => 'img-fluid mb-3 card-image-top') ); ?></a>
+
+					<?php else: ?>
+					
+						<a href="<?php the_permalink(); ?>?branch=oregon"><img width="300" height="200" src="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-300x200.png.webp" class="card-img-top img-fluid" alt="" decoding="async" srcset="https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1.png.webp 300w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-225x150.png.webp 225w, https://oregonaitc.org/wp-content/uploads/2019/08/Copy-of-Copy-of-Copy-of-K-12-1-255x170.png.webp 255w" sizes="(max-width: 300px) 100vw, 300px"></a>
+					
+					<?php endif; ?>
 
 				    <h5 class="card-title m-0"><a href="<?php the_permalink(); ?>?branch=oregon"><?php the_title(); ?></a></h5>
 
 				    <div class="card-body">
 
-				    	<p class="card-text text-sm mb-0"><?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> <?php _e('-'); ?> <?php the_field('maximum_age_group'); ?><?php if ( $terms ): ?> <?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?><?php endif; ?></p>
+						<p class="card-text text-sm mb-0">
+							
+							<?php if ( get_field('minimum_age_group') &&  get_field('maximum_age_group') ): ?>
+							
+					    		<?php _e('For Grades:'); ?> <?php the_field('minimum_age_group'); ?> - <?php the_field('maximum_age_group'); ?>
+					    		
+					    	<?php endif; ?>
+					    	
+					    	<?php if ( $terms ): ?>
+					    	
+					    		<?php _e(' | Type:'); ?> <?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?>
+					    		
+					    	<?php endif; ?>
+				    	
+				    	</p>
 
 				    </div>
 
