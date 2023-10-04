@@ -16,7 +16,7 @@ if ( have_posts() ):
 		
 		$id = get_the_ID();
 		
-		$available = ( get_field('unlimited_quantity') ? '1' : get_field_object( 'total_available', $id ) );
+		$available = ( get_field('unlimited_quantity') ? '1' : get_field( 'total_available') );
 		
 		$image = get_field('resource_image');
 		
@@ -30,6 +30,7 @@ if ( have_posts() ):
 		}
 		
 		?>
+		
 		<div class="section section-sm section-alt">
 
 			<div class="container">
@@ -58,7 +59,7 @@ if ( have_posts() ):
 							 			
 							 			<p class="mb-0"><a class="btn btn-secondary btn-block" href="<?php echo home_url(); ?>/place-hold"></i> <?php _e('Check Out'); ?></a></p>										 		
 								
-									<?php elseif ( isset( $available['value'] ) && $available['value'] > 0 ): ?>
+									<?php elseif ( $available > 0 ): ?>
 								
 										<p class="mb-0"><a href="<?php the_permalink(); ?>?id=<?php the_ID(); ?>&action=add&branch=<?php echo $branch[0]->slug; ?>" class="btn btn-white btn-block"><?php _e('Place Hold'); ?></a></p>
 								
