@@ -34,6 +34,21 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 			
 		}
 		
+		// Check to make sure item is still available
+		if ( get_field('track_inventory', $id) && ! get_field('unlimited_quantity', $id) ) {
+			
+			$available = get_field('total_available', $id);
+			
+			if ( $available <= 0 ) {
+				
+				unset( $_SESSION['cart'][$id] );
+				
+				$errors[] = 'The following item has been removed from your cart because it is no longer available: ' . get_the_title( $id );
+			
+			}
+			
+		}
+		
 	}
 	
 	if ( in_array( 'Washington County', $b ) ) {
