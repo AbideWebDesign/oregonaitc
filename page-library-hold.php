@@ -10,13 +10,34 @@ $current_user = wp_get_current_user();
 
 $errors = array();
 
+$messages = array();
+
 $branches = array( 'Oregon', 'Washington County' );
 
 $b = array();
 
-if( isset( $_POST['submit'] ) && isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Submit Cart
+if ( isset( $_POST['submit'] ) && isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Submit Cart
+	
+	foreach ( $_SESSION['cart'] as $id => $value ) {
+		
+		// Check to make sure item is still available
+		if ( get_field('track_inventory', $id) && ! get_field('unlimited_quantity', $id) ) {
 			
-	if ( count( $errors ) == 0 ) {
+			$available = get_field('total_available', $id);
+			
+			if ( $available <= 0 ) {
+				
+				unset( $_SESSION['cart'][$id] );
+				
+				$messages[] = 'The following item has been removed from your cart because it is no longer available: ' . get_the_title( $id );
+			
+			}
+			
+		}	
+		
+	}
+			
+	if ( count( $errors ) == 0 && count ( $messages ) == 0 ) {
 		
 		submit_library_order();
 	
@@ -43,7 +64,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 				
 				unset( $_SESSION['cart'][$id] );
 				
-				$errors[] = 'The following item has been removed from your cart because it is no longer available: ' . get_the_title( $id );
+				$messages[] = 'The following item has been removed from your cart because it is no longer available: ' . get_the_title( $id );
 			
 			}
 			
@@ -81,7 +102,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 							
 							<h2 class="mb-2"><?php the_title(); ?></h2>
 							
-							<?php if ( count( $errors ) > 0 ): ?>
+							<?php if ( count( $errors ) > 0 || count( $messages ) > 0 ): ?>
 								
 								<?php foreach ( $errors as $error ): ?>
 								
@@ -92,6 +113,16 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 									</div>
 								
 								<?php endforeach; ?>
+								
+								<?php foreach ( $messages as $message ): ?>
+								
+									<div class="alert alert-danger" role="alert">
+
+										<p class="m-0 text-md"><i class="fa fa-exclamation-circle"></i> <?php echo $message; ?></p>
+
+									</div>
+								
+								<?php endforeach; ?>								
 							
 							<?php endif; ?>
 							
@@ -141,6 +172,8 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 											
 											<?php $qty = ( isset( $_SESSION['cart'][$id]['qty'] ) ? $_SESSION['cart'][$id]['qty'] : '0' ); ?>
 											
+											<?php $total_available = get_field('total_available', $id); ?>
+											
 											<tr>
 
 												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a><?php if ( get_field('class_set', $id) ): ?><div class="badge badge-secondary text-white text-left px-2 py-1 mt-1 d-block"><i class="fa fa-users"></i> This resource comes as a class set of <?php the_field('class_set_unit', $id); ?></div><?php endif; ?></td>
@@ -152,9 +185,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 													<?php $kits = array( 'Kits', 'Printed Materials' ); ?>
 																										
 													<?php if ( has_term( $kits, 'resource_type', $id) ): $kit = true; ?>
-													
-														<?php $total_available = get_field('total_available', $id); ?>
-														
+																											
 														<input class="resource-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
 															      													
       												<?php else: ?>

@@ -147,17 +147,17 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "5",
+                        "width": "10",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "min": "",
                     "max": "",
+                    "placeholder": "",
                     "step": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_5b7458b40818a"
                 },
                 {
@@ -296,5 +296,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1665775749
+    "modified": 1701188799
 }

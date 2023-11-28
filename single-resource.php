@@ -85,7 +85,7 @@ if ( have_posts() ):
 
 								<h5 class="card-title mb-1"><?php _e('Resource Type'); ?></h5>
 
-								<p class="mb-2 text-md"><?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ); ?></p>
+								<p class="mb-2 text-md"><?php foreach( $terms as $term ) echo rtrim( $term->name, 's' ) . ' '; ?></p>
 
 								<h5 class="card-title mb-1"><?php _e('Age Range'); ?></h5>
 

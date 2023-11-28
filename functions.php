@@ -585,47 +585,40 @@ function submit_library_order() {
 	// Run through order
 	foreach( $_SESSION['cart'] as $id=>$value ) {
 		
-		$resource = get_field_object( 'resource_name', $id );
-	
-		$name = $resource['value'];
-	
+		$name = get_field( 'resource_name', $id );
+		
 		$branch = $value['branch'];
 	
-		$link = get_permalink($id);	
+		$link = get_permalink( $id );	
 	
 		$arrival_date = $_POST[$id];
 	
 		$return_date = $_POST['return-date-picker-' . $id];		
-		
-		// Update quantity available and checkout total
-		
-		if ( ! get_field('unlimited_quantity', $id) ) {
-			
-			$available = get_field_object( 'total_available', $id );
-			
-		}
-			
-		$total = get_field_object( 'checked_out_total', $id );
-	
-		$types = get_the_terms( $id, 'resource_type' );
-	
-		$quantity = 1;
-		
-		foreach( $types as $type ) {
 
-			$t = $total['value'] + $_POST['q'.$id];
-			
-			$quantity = $_POST['q'.$id];
-			
-			$a = $available['value'] - $quantity;		
-		}
+		$total = get_field('checked_out_total', $id);
+		
+		$t = $total + $_POST['q'.$id];
+		
+		$quantity = ( isset( $_POST['q'.$id] ) ? $_POST['q'.$id] : 1 );
+	
+		$types = get_the_terms($id, 'resource_type');
 		
 		$usertotal = get_user_meta( $current_user->ID, 'total_library_checkouts' ); 
 		
 		$ut = (int) $usertotal + 1;
+			
+		// Update quantity available and checkout total
 		
-		update_field( 'total_available', $a, $id );
-		
+		if ( ! get_field('unlimited_quantity', $id) && get_field('track_inventory', $id) ) {
+			
+			$available = get_field('total_available', $id);
+			
+			$a = $available - $quantity;
+			
+			update_field( 'total_available', $a, $id );
+			
+		}
+						
 		update_field( 'checked_out_total', $t, $id );
 		
 		// Update user checkout total

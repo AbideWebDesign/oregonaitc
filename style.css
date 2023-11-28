@@ -11717,7 +11717,7 @@ body .gform_wrapper .facetwp-type-search input:not([type=radio]):not([type=check
 }
 
 .resource-qty {
-  max-width: 66px;
+  width: 70px;
 }
 
 /* Pagination Styles */
