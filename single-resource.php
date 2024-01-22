@@ -18,6 +18,8 @@ if ( have_posts() ):
 		
 		$available = ( get_field('unlimited_quantity') ? '1' : get_field( 'total_available') );
 		
+		$limit_1 = get_field('limit_1');
+		
 		$image = get_field('resource_image');
 		
 		$branch = get_the_terms(get_the_ID(), 'branch');
@@ -48,6 +50,12 @@ if ( have_posts() ):
 								<?php if ( get_field('track_inventory') && ! get_field('unlimited_quantity') ): ?>
 								
 									<p class="mb-1 text-white text-md"><strong><?php _e('Total Available:'); ?> </strong> <?php the_field('total_available'); ?> <?php _e('(of'); ?> <?php the_field('total_copies'); ?><?php _e(')'); ?></p>
+								
+								<?php endif; ?>
+								
+								<?php if ( $limit_1 ): ?>
+								
+									<p class="mb-2 text-light text-sm"><i class="fas fa-info-circle"></i> <?php _e('Limit 1 per order'); ?></p>
 								
 								<?php endif; ?>
 								

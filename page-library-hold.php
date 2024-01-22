@@ -176,7 +176,31 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 											
 											<tr>
 
-												<td class="align-middle"><a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a><?php if ( get_field('class_set', $id) ): ?><div class="badge badge-secondary text-white text-left px-2 py-1 mt-1 d-block"><i class="fa fa-users"></i> This resource comes as a class set of <?php the_field('class_set_unit', $id); ?></div><?php endif; ?></td>
+												<td class="align-middle">
+													
+													<a href="<?php echo $permalink; ?>"><?php the_field('resource_name', $id); ?></a>
+												
+													<?php if ( get_field('class_set', $id) ): ?>
+													
+														<div class="badge badge-secondary text-white text-left px-2 py-1 mt-1 d-block">
+															
+															<i class="fas fa-users"></i> This resource comes as a class set of <?php the_field('class_set_unit', $id); ?>
+															
+														</div>
+														
+													<?php endif; ?>
+													
+													<?php if ( get_field('limit_1', $id) ): ?>
+													
+														<div class="badge badge-secondary text-white text-left px-2 py-1 mt-1 d-block">
+															
+															<i class="fas fa-info-circle"></i> Limit 1 per order
+															
+														</div>
+														
+													<?php endif; ?>
+													
+												</td>
 
 												<td class="align-middle"><?php echo ucfirst( $value['branch'] ); ?></td>
 
@@ -188,6 +212,10 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 																											
 														<input class="resource-qty form-control" type="number" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
 															      													
+      												<?php elseif ( get_field('limit_1', $id) ): ?>
+      												
+      													<input class="resource-qty form-control" type="number" min="1" max="1" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
+      												
       												<?php else: ?>
       													      														
       													<input class="resource-qty form-control" type="number" min="1" max="<?php echo $total_available; ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
