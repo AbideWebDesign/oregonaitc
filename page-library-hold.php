@@ -214,7 +214,9 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 															      													
       												<?php elseif ( get_field('limit_1', $id) ): ?>
       												
-      													<input class="resource-qty form-control" type="number" min="1" max="1" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
+      													<input class="resource-qty form-control" type="hidden" min="1" max="1" name="q<?php echo $id ?>" id="q<?php echo $id ?>" value="1">
+      													
+	  													<div class="text-center"><?php _e('1'); ?></div>
       												
       												<?php else: ?>
       													      														
