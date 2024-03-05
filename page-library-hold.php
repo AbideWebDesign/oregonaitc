@@ -214,7 +214,7 @@ if ( isset( $_SESSION['cart'] ) && count( $_SESSION['cart'] ) > 0 ) { // Validat
 													
 													<?php elseif ( has_term( $kits, 'resource_type', $id) && get_field('limit_1', $id) ): $kit = true; ?>		      	
 														
-														<input class="resource-qty form-control" type="hidden" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="<?php echo $qty; ?>">
+														<input class="resource-qty form-control" type="hidden" min="1" max="<?php echo ( get_field('unlimited_quantity', $id) ? '99999' : $total_available ); ?>" name="q<?php echo $id ?>" id="q<?php echo $id ?>" data-id="<?php echo $id; ?>" value="1">
 																									
       													<div class="text-center"><?php _e('1'); ?></div>
 
