@@ -2,6 +2,13 @@
 /**
  * Enqueue Styles
  */
+add_filter( 'acf/the_field/allow_unsafe_html', function( $allowed, $selector ) {
+    
+    return true;
+    
+    return $allowed;
+    
+}, 10, 2);
 
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
 
