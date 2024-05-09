@@ -109,7 +109,7 @@ if ( have_posts() ):
 
 								<div class="card-body text-center">
 								
-									<div class="text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
+									<div class="text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="25px" /> Must be returned</div>
 									
 								</div>
 								
