@@ -90,6 +90,10 @@ $unlimted = get_field('unlimited_quantity');
 						
 							<div class="mt-1 text-sm text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
 					
+						<?php else: ?>
+						
+							<div class="mt-1 text-sm text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-nonreturnable.svg" width="18px" /> Does not need to be returned</div>
+						
 						<?php endif; ?>
 						
 					</div>

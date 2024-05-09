@@ -114,7 +114,19 @@ if ( have_posts() ):
 								</div>
 								
 							</div>
-					
+						
+						<?php else: ?>
+						
+							<div class="card border mt-2">
+
+								<div class="card-body text-center">
+								
+									<div class="text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-nonreturnable.svg" width="25px" /> Does not need to be returned</div>
+									
+								</div>
+								
+							</div>							
+						
 						<?php endif; ?>
 
 					</div>
