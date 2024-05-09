@@ -104,8 +104,16 @@ if ( have_posts() ):
 						</div>
 						
 						<?php if ( get_field('must_be_returned') ): ?>
-						
-							<div class="mt-2 text-sm text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
+							
+							<div class="card border mt-2">
+
+								<div class="card-body text-center">
+								
+									<div class="text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
+									
+								</div>
+								
+							</div>
 					
 						<?php endif; ?>
 
