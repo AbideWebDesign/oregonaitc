@@ -85,9 +85,13 @@ $unlimted = get_field('unlimited_quantity');
 						<?php endif; ?>
 						
 						<?php if ( $type == 'resource' && ! $unlimted ): ?><p class="mt-2 mb-0 text-sm d-none d-lg-block"><strong>Total Available: </strong><?php the_field('total_available'); ?> (of <?php the_field('total_copies'); ?>)</p><?php endif; ?>
+						
+						<?php if ( get_field('must_be_returned') ): ?>
+						
+							<div class="mt-1 text-sm text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
 					
-						<div class="mt-1 text-sm text-primary font-weight-bold"><img src="/wp-content/themes/oregonaitc/includes/img/icon-returnable.svg" width="18px" /> Must be returned</div>
-					
+						<?php endif; ?>
+						
 					</div>
 				
 					<div class="col-sm-8 col-lg-9">
