@@ -27,7 +27,7 @@ $logo = get_field('logo_color', 'options');
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71986030-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HLF9LRKGQ6"></script>
 
 	<script>
 
@@ -37,7 +37,7 @@ $logo = get_field('logo_color', 'options');
 		
 		gtag('js', new Date());
 		
-		gtag('config', 'UA-71986030-1');
+		gtag('config', 'G-HLF9LRKGQ6');
 
 	</script>
 
